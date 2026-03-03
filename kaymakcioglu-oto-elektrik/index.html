@@ -1,0 +1,708 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Kaymakcioglu Oto Elektrik | Araç Bakım ve Onarımı Kastamonu</title>
+    <meta name="description"
+        content="Kaymakcioglu Oto Elektrik — Kastamonu'da profesyonel araç bakım ve onarımı. Aracınız emin ellerde. Hemen arayın: 0546 218 54 07">
+    <meta name="theme-color" content="#1e40af">
+
+    <!-- Open Graph & Schema -->
+    <meta property="og:title" content="Kaymakcioglu Oto Elektrik">
+    <meta property="og:description" content="Kastamonu'da profesyonel araç bakım ve onarımı. Aracınız emin ellerde.">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="tr_TR">
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "AutoRepair",
+      "name": "Kaymakcioglu Oto Elektrik",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Kuzeykent, Kastamonu Sanayi Sitesi No:66",
+        "addressLocality": "Kastamonu Merkez",
+        "addressRegion": "Kastamonu",
+        "postalCode": "37150",
+        "addressCountry": "TR"
+      },
+      "telephone": "+905462185407",
+      "openingHours": ["Mo-Sa 09:00-20:00"],
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "5.0",
+        "reviewCount": "1"
+      }
+    }
+    </script>
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: { primary: "#1e40af" },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        display: ['Outfit', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Font Awesome & Google Fonts -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;600;800;900&display=swap"
+        rel="stylesheet">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            overflow-x: hidden;
+            background-color: #f8fafc;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4 {
+            font-family: 'Outfit', sans-serif;
+        }
+
+        /* Glassmorphism */
+        .glass {
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+        }
+
+        .glass-dark {
+            background: rgba(15, 23, 42, 0.85);
+            backdrop-filter: blur(16px);
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        /* Animations */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .fade-in.is-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .glow-button {
+            transition: all 0.3s ease;
+            box-shadow: 0 0 15px rgba(30, 64, 175, 0.4);
+        }
+
+        .glow-button:hover {
+            box-shadow: 0 0 25px rgba(30, 64, 175, 0.6);
+            transform: translateY(-2px);
+        }
+
+        .whatsapp-glow {
+            box-shadow: 0 0 15px rgba(37, 211, 102, 0.4);
+        }
+
+        .whatsapp-glow:hover {
+            box-shadow: 0 0 25px rgba(37, 211, 102, 0.6);
+            transform: translateY(-2px);
+        }
+
+        .pulse-ring {
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% {
+                box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7);
+            }
+
+            70% {
+                box-shadow: 0 0 0 15px rgba(37, 211, 102, 0);
+            }
+
+            100% {
+                box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
+            }
+        }
+
+        /* Logo Glow */
+        .svg-glow {
+            filter: drop-shadow(0 0 10px rgba(30, 64, 175, 0.6));
+        }
+
+        /* Service Cards */
+        .service-card {
+            transition: all 0.3s ease;
+            border: 1px solid #f1f5f9;
+        }
+
+        .service-card:hover {
+            transform: translateY(-8px);
+            border-color: #1e40af;
+            box-shadow: 0 10px 30px rgba(30, 64, 175, 0.15);
+        }
+
+        /* FAQ Accordion */
+        .faq-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+        }
+
+        .faq-item.active .faq-content {
+            max-height: 200px;
+        }
+
+        .faq-item.active .faq-icon {
+            transform: rotate(180deg);
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #cbd5e1;
+            border-radius: 4px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: #94a3b8;
+        }
+
+        /* Mobile padding adjustment for bottom bar */
+        @media (max-width: 768px) {
+            body {
+                padding-bottom: 70px;
+            }
+        }
+    </style>
+</head>
+
+<body class="text-slate-800 antialiased selection:bg-primary selection:text-white">
+
+    <!-- 🌟 NAVBAR -->
+    <nav class="glass fixed w-full z-50 top-0 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <a href="#" class="flex items-center gap-3 group">
+                    <div
+                        class="w-12 h-12 rounded-full bg-gradient-to-br from-primary to-blue-500 flex items-center justify-center svg-glow transition-transform group-hover:scale-105">
+                        <i class="fas fa-car text-white text-lg"></i>
+                    </div>
+                    <div class="flex flex-col">
+                        <span
+                            class="font-display font-black text-slate-900 text-lg leading-tight group-hover:text-primary transition-colors">KAYMAKCIOGLU</span>
+                        <span class="text-[11px] font-bold text-primary tracking-widest uppercase">Oto Elektrik</span>
+                    </div>
+                </a>
+
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex items-center gap-8">
+                    <a href="#farkimiz"
+                        class="text-sm font-semibold text-slate-600 hover:text-primary transition-colors">Farkımız</a>
+                    <a href="#hizmetler"
+                        class="text-sm font-semibold text-slate-600 hover:text-primary transition-colors">Hizmetler</a>
+                    <a href="#hakkimizda"
+                        class="text-sm font-semibold text-slate-600 hover:text-primary transition-colors">Mesai</a>
+                    <a href="#sss"
+                        class="text-sm font-semibold text-slate-600 hover:text-primary transition-colors">SSS</a>
+                    <a href="tel:905462185407"
+                        class="glow-button bg-primary text-white px-6 py-2.5 rounded-full text-sm font-bold flex items-center gap-2">
+                        <i class="fas fa-phone-alt"></i> 0546 218 54 07
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 🌟 HERO SECTION -->
+    <section class="relative h-[90vh] min-h-[600px] flex items-center justify-center overflow-hidden">
+        <!-- Background Image with Overlay -->
+        <div class="absolute inset-0 z-0">
+            <img src="https://source.unsplash.com/1600x900/?auto,mechanic,repair" alt="Araç Bakım Merkezi"
+                class="w-full h-full object-cover">
+            <div class="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/80 to-slate-900/40"></div>
+        </div>
+
+        <div class="relative z-10 text-center px-4 max-w-4xl mx-auto mt-16 fade-in">
+            <div
+                class="inline-flex items-center gap-2 bg-white/10 backdrop-blur-md text-white/90 border border-white/20 px-4 py-1.5 rounded-full text-xs font-bold tracking-widest uppercase mb-6 mx-auto">
+                <i class="fas fa-tools text-primary-300"></i> Profesyonel Oto Elektrik & Bakım
+            </div>
+
+            <h1
+                class="text-4xl md:text-6xl lg:text-7xl font-display font-black text-white leading-tight mb-6 drop-shadow-lg">
+                Aracınız <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-primary">Emin
+                    Ellerde</span>
+            </h1>
+
+            <p class="text-lg md:text-xl text-slate-300 mb-8 max-w-2xl mx-auto font-light">
+                Kastamonu Sanayi Sitesi'nde yılların tecrübesiyle aracınızın elektrik ve elektronik tüm arızalarını
+                garantili bir şekilde çözüyoruz.
+            </p>
+
+            <!-- Trust Badge Stars -->
+            <div class="flex items-center justify-center gap-2 mb-10">
+                <div class="flex text-yellow-400 text-lg drop-shadow-md">
+                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                        class="fas fa-star"></i><i class="fas fa-star"></i>
+                </div>
+                <span class="text-white font-medium text-sm">Google'da 5.0 Değerlendirme</span>
+            </div>
+
+            <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+                <a href="tel:905462185407"
+                    class="glow-button w-full sm:w-auto bg-primary text-white px-8 py-4 rounded-xl font-bold text-lg flex items-center justify-center gap-3">
+                    <i class="fas fa-phone-alt"></i> Hemen Ara
+                </a>
+                <a href="https://wa.me/905462185407?text=Merhaba%20bilgi%20almak%20istiyorum." target="_blank"
+                    class="whatsapp-glow w-full sm:w-auto bg-[#25D366] text-white px-8 py-4 rounded-xl font-bold text-lg flex items-center justify-center gap-3">
+                    <i class="fab fa-whatsapp text-xl"></i> WhatsApp'tan Yaz
+                </a>
+            </div>
+        </div>
+
+        <!-- Scroll Down Indicator -->
+        <a href="#farkimiz"
+            class="absolute bottom-8 left-1/2 -translate-x-1/2 text-white/50 hover:text-white transition-colors animate-bounce">
+            <i class="fas fa-chevron-down text-2xl"></i>
+        </a>
+    </section>
+
+    <!-- 🌟 NEDEN BİZ? (TRUST BAND) -->
+    <section id="farkimiz" class="relative -mt-10 z-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 fade-in">
+        <div class="bg-white rounded-2xl shadow-xl p-8 md:p-12 border border-slate-100">
+            <div class="grid md:grid-cols-3 gap-8 divide-y md:divide-y-0 md:divide-x divide-slate-100">
+                <div class="flex flex-col items-center text-center px-4 pt-4 md:pt-0">
+                    <div
+                        class="w-16 h-16 rounded-full bg-blue-50 text-primary flex items-center justify-center text-2xl mb-4">
+                        <i class="fas fa-stopwatch"></i>
+                    </div>
+                    <h3 class="font-display font-bold text-slate-900 text-lg mb-2">Hızlı ve Kesin Çözüm</h3>
+                    <p class="text-slate-500 text-sm">Arızayı en kısa sürede tespit edip, sizi bekletmeden onarıyoruz.
+                    </p>
+                </div>
+                <div class="flex flex-col items-center text-center px-4 pt-8 md:pt-0">
+                    <div
+                        class="w-16 h-16 rounded-full bg-blue-50 text-primary flex items-center justify-center text-2xl mb-4">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3 class="font-display font-bold text-slate-900 text-lg mb-2">Garantili İşlem</h3>
+                    <p class="text-slate-500 text-sm">Yaptığımız tüm onarım ve parça değişimleri işletmemiz güvencesi
+                        altındadır.</p>
+                </div>
+                <div class="flex flex-col items-center text-center px-4 pt-8 md:pt-0">
+                    <div
+                        class="w-16 h-16 rounded-full bg-blue-50 text-primary flex items-center justify-center text-2xl mb-4">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h3 class="font-display font-bold text-slate-900 text-lg mb-2">%100 Memnuniyet</h3>
+                    <p class="text-slate-500 text-sm">Müşterilerimizin memnuniyeti ve güvenliği her zaman
+                        önceliğimizdir.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 🌟 HİZMETLERİMİZ -->
+    <section id="hizmetler" class="py-20 lg:py-28 bg-slate-50 fade-in">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-2xl mx-auto mb-16">
+                <span class="text-primary font-bold tracking-widest text-sm uppercase mb-2 block">Uzmanlık
+                    Alanlarımız</span>
+                <h2 class="text-3xl md:text-5xl font-display font-black text-slate-900 mb-6">Neler Yapıyoruz?</h2>
+                <div class="w-20 h-1 bg-primary mx-auto rounded-full"></div>
+            </div>
+
+            <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Service 1 -->
+                <div class="service-card bg-white p-8 rounded-2xl flex flex-col items-start cursor-default">
+                    <div
+                        class="w-14 h-14 bg-primary/10 text-primary rounded-xl flex items-center justify-center text-xl mb-6">
+                        <i class="fas fa-car-battery"></i>
+                    </div>
+                    <h3 class="font-display font-bold text-xl text-slate-900 mb-3">Akü Kontrol & Değişim</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed">Aracınızın akü ölçümünü yapıyor, sorunsuz
+                        çalışması için gerekli onarım ve değişimini sağlıyoruz.</p>
+                </div>
+
+                <!-- Service 2 -->
+                <div class="service-card bg-white p-8 rounded-2xl flex flex-col items-start cursor-default">
+                    <div
+                        class="w-14 h-14 bg-primary/10 text-primary rounded-xl flex items-center justify-center text-xl mb-6">
+                        <i class="fas fa-bolt"></i>
+                    </div>
+                    <h3 class="font-display font-bold text-xl text-slate-900 mb-3">Oto Elektrik Arızaları</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed">Şarj dinamosu, marş motoru, aydınlatma ve tesisat
+                        arızalarını garantili olarak gideriyoruz.</p>
+                </div>
+
+                <!-- Service 3 -->
+                <div class="service-card bg-white p-8 rounded-2xl flex flex-col items-start cursor-default">
+                    <div
+                        class="w-14 h-14 bg-primary/10 text-primary rounded-xl flex items-center justify-center text-2xl mb-6">
+                        <i class="fas fa-laptop-code"></i>
+                    </div>
+                    <h3 class="font-display font-bold text-xl text-slate-900 mb-3">Bilgisayarlı Arıza Tespiti</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed">Gelişmiş cihazlarımızla aracınızın beynine
+                        bağlanarak nokta atışı hata tespiti yapıyoruz.</p>
+                </div>
+
+                <!-- Service 4 -->
+                <div class="service-card bg-white p-8 rounded-2xl flex flex-col items-start cursor-default">
+                    <div
+                        class="w-14 h-14 bg-primary/10 text-primary rounded-xl flex items-center justify-center text-xl mb-6">
+                        <i class="fas fa-snowflake"></i>
+                    </div>
+                    <h3 class="font-display font-bold text-xl text-slate-900 mb-3">Oto Klima Bakımı</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed">Klima gazı dolumu, kaçak testi ve klima kompresör
+                        tamir bakım hizmetleri sunuyoruz.</p>
+                </div>
+
+                <!-- Service 5 -->
+                <div class="service-card bg-white p-8 rounded-2xl flex flex-col items-start cursor-default">
+                    <div
+                        class="w-14 h-14 bg-primary/10 text-primary rounded-xl flex items-center justify-center text-xl mb-6">
+                        <i class="fas fa-lightbulb"></i>
+                    </div>
+                    <h3 class="font-display font-bold text-xl text-slate-900 mb-3">Aydınlatma Sistemleri</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed">Far ayarı, ampul değişimi, zenon montajı ve sinyal
+                        sistemi onarımlarını titizlikle yapıyoruz.</p>
+                </div>
+
+                <!-- Service 6 -->
+                <div class="service-card bg-white p-8 rounded-2xl flex flex-col items-start cursor-default">
+                    <div
+                        class="w-14 h-14 bg-primary/10 text-primary rounded-xl flex items-center justify-center text-xl mb-6">
+                        <i class="fas fa-cogs"></i>
+                    </div>
+                    <h3 class="font-display font-bold text-xl text-slate-900 mb-3">Elektronik Beyin Tamiri</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed">Aracınızın kontrol üniteleri (ECU) onarımları ve
+                        yazılım kontrollerini gerçekleştiriyoruz.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 🌟 HAKKIMIZDA & ÇALIŞMA SAATLERİ -->
+    <section id="hakkimizda" class="py-20 lg:py-28 bg-white fade-in">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+
+                <!-- Hakkımızda Metni -->
+                <div>
+                    <span class="text-primary font-bold tracking-widest text-sm uppercase mb-2 block">Biz Kimiz?</span>
+                    <h2 class="text-3xl md:text-5xl font-display font-black text-slate-900 mb-6">Tecrübe ve Güvenin
+                        Kastamonu'daki Adresi</h2>
+                    <div class="w-20 h-1 bg-primary mb-8"></div>
+
+                    <p class="text-slate-600 text-lg leading-relaxed mb-6">
+                        Kaymakcioglu Oto Elektrik olarak, Kastamonu Sanayi Sitesi'nde uzun yıllara dayanan tecrübemizle
+                        sizlere hizmet veriyoruz. Aracınızdaki tüm elektriksel ve elektronik donanımların tamiri, bakımı
+                        ve yenilenmesi konularında uzmanlaşmış ekibimizle yanınızdayız.
+                    </p>
+                    <p class="text-slate-600 text-lg leading-relaxed mb-8">
+                        Teknolojiyi yakından takip eden teknik altyapımız ve orijinal/yan sanayi kaliteli yedek parça
+                        seçeneklerimizle, sorunu sadece geçici olarak değil kalıcı olarak çözüyoruz. Aracınız yolda
+                        kalmasın, güvenliğiniz tehlikeye girmesin diye çalışıyoruz.
+                    </p>
+
+                    <div class="bg-blue-50 border-l-4 border-primary p-6 rounded-r-lg">
+                        <p class="text-slate-800 font-medium italic">"Müşterilerimizin memnuniyeti, bizim en büyük
+                            referansımızdır."</p>
+                    </div>
+                </div>
+
+                <!-- Çalışma Saatleri -->
+                <div class="bg-slate-50 border border-slate-100 rounded-3xl p-8 shadow-lg">
+                    <h3 class="font-display font-bold text-2xl text-slate-900 mb-6 flex items-center gap-3">
+                        <i class="fas fa-clock text-primary"></i> Çalışma Saatleri
+                    </h3>
+
+                    <ul class="space-y-4">
+                        <li class="flex justify-between items-center pb-4 border-b border-slate-200">
+                            <span class="text-slate-700 font-medium">Pazartesi</span>
+                            <span class="bg-primary/10 text-primary font-bold px-3 py-1 rounded-lg text-sm">09:00 -
+                                20:00</span>
+                        </li>
+                        <li class="flex justify-between items-center pb-4 border-b border-slate-200">
+                            <span class="text-slate-700 font-medium">Salı</span>
+                            <span class="bg-primary/10 text-primary font-bold px-3 py-1 rounded-lg text-sm">09:00 -
+                                20:00</span>
+                        </li>
+                        <li class="flex justify-between items-center pb-4 border-b border-slate-200">
+                            <span class="text-slate-700 font-medium">Çarşamba - Cuma</span>
+                            <span class="bg-primary/10 text-primary font-bold px-3 py-1 rounded-lg text-sm">09:00 -
+                                20:00</span>
+                        </li>
+                        <li class="flex justify-between items-center pb-4 border-b border-slate-200">
+                            <span class="text-slate-700 font-medium">Cumartesi</span>
+                            <span class="bg-primary/10 text-primary font-bold px-3 py-1 rounded-lg text-sm">09:00 -
+                                19:00</span>
+                        </li>
+                        <li class="flex justify-between items-center pt-2">
+                            <span class="text-slate-700 font-medium">Pazar</span>
+                            <span
+                                class="bg-red-100 text-red-600 font-bold px-3 py-1 rounded-lg text-sm flex items-center gap-1"><i
+                                    class="fas fa-times-circle"></i> Kapalı</span>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- 🌟 SIKÇA SORULAN SORULAR (SSS) -->
+    <section id="sss" class="py-20 lg:py-28 bg-slate-50 fade-in">
+        <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <span class="text-primary font-bold tracking-widest text-sm uppercase mb-2 block">Merak Edilenler</span>
+                <h2 class="text-3xl md:text-5xl font-display font-black text-slate-900 mb-6">Sıkça Sorulan Sorular</h2>
+                <div class="w-20 h-1 bg-primary mx-auto rounded-full"></div>
+            </div>
+
+            <div class="space-y-4">
+                <!-- SSS 1 -->
+                <div class="faq-item bg-white border border-slate-200 rounded-xl overflow-hidden cursor-pointer shadow-sm hover:shadow-md transition-shadow"
+                    onclick="this.classList.toggle('active')">
+                    <div class="px-6 py-5 flex justify-between items-center">
+                        <h4 class="font-bold text-slate-800 text-lg">Hizmet alabilmek için randevu almam gerekiyor mu?
+                        </h4>
+                        <i class="fas fa-chevron-down faq-icon text-primary transition-transform"></i>
+                    </div>
+                    <div class="faq-content bg-slate-50 px-6">
+                        <p class="text-slate-600 pb-5 text-sm leading-relaxed">Genellikle direkt sanayi sitemize gelerek
+                            hizmet alabilirsiniz. Ancak yoğun günlerde beklememeniz adına gelmeden önce bizi aramanız
+                            veya WhatsApp üzerinden haber vermeniz sizin için daha hızlı olacaktır.</p>
+                    </div>
+                </div>
+
+                <!-- SSS 2 -->
+                <div class="faq-item bg-white border border-slate-200 rounded-xl overflow-hidden cursor-pointer shadow-sm hover:shadow-md transition-shadow"
+                    onclick="this.classList.toggle('active')">
+                    <div class="px-6 py-5 flex justify-between items-center">
+                        <h4 class="font-bold text-slate-800 text-lg">Arıza tespit işlemi bilgisayarlı olarak mı
+                            yapılıyor?</h4>
+                        <i class="fas fa-chevron-down faq-icon text-primary transition-transform"></i>
+                    </div>
+                    <div class="faq-content bg-slate-50 px-6">
+                        <p class="text-slate-600 pb-5 text-sm leading-relaxed">Evet, işletmemizde gelişmiş lisanslı
+                            arıza tespit cihazları bulunmaktadır. Aracınızın OBD soketine bağlanarak beyindeki
+                            elektriksel arızaları anında ve nokta atışı buluyoruz.</p>
+                    </div>
+                </div>
+
+                <!-- SSS 3 -->
+                <div class="faq-item bg-white border border-slate-200 rounded-xl overflow-hidden cursor-pointer shadow-sm hover:shadow-md transition-shadow"
+                    onclick="this.classList.toggle('active')">
+                    <div class="px-6 py-5 flex justify-between items-center">
+                        <h4 class="font-bold text-slate-800 text-lg">Yaptığınız değişim ve tamirlere garanti veriyor
+                            musunuz?</h4>
+                        <i class="fas fa-chevron-down faq-icon text-primary transition-transform"></i>
+                    </div>
+                    <div class="faq-content bg-slate-50 px-6">
+                        <p class="text-slate-600 pb-5 text-sm leading-relaxed">Elbette. İşletmemiz tarafından yapılan
+                            elektrik/elektronik onarımı ve parça değişimleri garantilidir. Taktığımız sıfır yedek
+                            parçalar markanın kendi garantisi kapsamındadır.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 🌟 GOOGLE MAPS & İLETİŞİM -->
+    <section id="iletisim" class="fade-in">
+        <div class="w-full h-80 lg:h-96 relative">
+            <iframe src="https://maps.google.com/maps?q=41.4198655,33.7776023&t=&z=16&ie=UTF8&iwloc=&output=embed"
+                class="absolute inset-0 w-full h-full border-0" allowfullscreen="" loading="lazy"></iframe>
+        </div>
+
+        <div class="bg-slate-900 text-white pt-16 pb-24 md:pb-16 -mt-2 relative z-10 border-t border-primary">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid md:grid-cols-3 gap-12">
+                    <!-- Brand -->
+                    <div class="col-span-1">
+                        <div class="flex items-center gap-3 mb-6">
+                            <div class="w-12 h-12 rounded-full bg-primary flex items-center justify-center">
+                                <i class="fas fa-car-battery text-xl"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-display font-bold text-xl">KAYMAKCIOGLU</h3>
+                                <p class="text-xs text-blue-400 font-semibold tracking-widest uppercase">Oto Elektrik
+                                </p>
+                            </div>
+                        </div>
+                        <p class="text-slate-400 text-sm leading-relaxed mb-6">Kastamonu'da güvenilir ve garantili oto
+                            elektrik, arıza tespit ve onarım merkezi.</p>
+
+                        <div class="flex gap-4">
+                            <a href="https://wa.me/905462185407"
+                                class="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center text-[#25D366] hover:bg-[#25D366] hover:text-white transition-colors">
+                                <i class="fab fa-whatsapp text-lg"></i>
+                            </a>
+                            <a href="tel:905462185407"
+                                class="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center text-primary hover:bg-primary hover:text-white transition-colors">
+                                <i class="fas fa-phone-alt"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Contact Info -->
+                    <div class="col-span-1 md:col-span-2 grid sm:grid-cols-2 gap-8">
+                        <div>
+                            <h4 class="font-display font-semibold text-lg text-white mb-6 uppercase tracking-wider">
+                                İletişim Bilgileri</h4>
+                            <ul class="space-y-4">
+                                <li>
+                                    <a href="tel:905462185407" class="flex items-center gap-4 group">
+                                        <div
+                                            class="w-10 h-10 rounded-lg bg-slate-800 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-colors">
+                                            <i class="fas fa-phone-alt"></i>
+                                        </div>
+                                        <span
+                                            class="text-slate-300 group-hover:text-white transition-colors font-medium">0546
+                                            218 54 07</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://wa.me/905462185407?text=Merhaba" target="_blank"
+                                        class="flex items-center gap-4 group">
+                                        <div
+                                            class="w-10 h-10 rounded-lg bg-slate-800 flex items-center justify-center text-[#25D366] group-hover:bg-[#25D366] group-hover:text-white transition-colors">
+                                            <i class="fab fa-whatsapp text-lg"></i>
+                                        </div>
+                                        <span
+                                            class="text-slate-300 group-hover:text-white transition-colors font-medium">WhatsApp
+                                            Destek Hattı</span>
+                                    </a>
+                                </li>
+                                <li class="flex items-start gap-4">
+                                    <div
+                                        class="w-10 h-10 rounded-lg bg-slate-800 flex items-center justify-center text-primary shrink-0">
+                                        <i class="fas fa-map-marker-alt"></i>
+                                    </div>
+                                    <span class="text-slate-300 text-sm mt-1 leading-relaxed">Kuzeykent, Kastamonu
+                                        Sanayi Sitesi No:66, 37150 Kastamonu Merkez</span>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <!-- Quick Links -->
+                        <div>
+                            <h4 class="font-display font-semibold text-lg text-white mb-6 uppercase tracking-wider">
+                                Hızlı Erişim</h4>
+                            <ul class="space-y-3">
+                                <li><a href="#hero"
+                                        class="text-slate-400 hover:text-primary transition-colors flex items-center gap-2"><i
+                                            class="fas fa-angle-right text-xs"></i> Ana Sayfa</a></li>
+                                <li><a href="#hizmetler"
+                                        class="text-slate-400 hover:text-primary transition-colors flex items-center gap-2"><i
+                                            class="fas fa-angle-right text-xs"></i> Hizmetlerimiz</a></li>
+                                <li><a href="#hakkimizda"
+                                        class="text-slate-400 hover:text-primary transition-colors flex items-center gap-2"><i
+                                            class="fas fa-angle-right text-xs"></i> Hakkımızda</a></li>
+                                <li><a href="#sss"
+                                        class="text-slate-400 hover:text-primary transition-colors flex items-center gap-2"><i
+                                            class="fas fa-angle-right text-xs"></i> Sıkça Sorulan Sorular</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mt-12 pt-8 border-t border-slate-800 text-center">
+                    <p class="text-slate-500 text-sm">© 2026 Kaymakcioglu Oto Elektrik. Tüm Hakları Saklıdır.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 🌟 FLOATING WHATSAPP -->
+    <a href="https://wa.me/905462185407?text=Merhaba%20bilgi%20almak%20istiyorum." target="_blank"
+        class="fixed right-4 bottom-24 md:bottom-6 z-40 bg-[#25D366] text-white w-14 h-14 rounded-full flex items-center justify-center text-3xl shadow-lg pulse-ring hover:scale-110 transition-transform">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- 🌟 MOBILE BOTTOM APP BAR (Sadece mobilde görünür) -->
+    <div class="md:hidden glass-dark fixed bottom-0 left-0 w-full z-50 border-t border-slate-700 pb-safe">
+        <div class="flex justify-around items-center h-16 px-2">
+            <a href="#hero"
+                class="flex flex-col items-center justify-center w-full text-slate-400 hover:text-primary active:text-primary transition-colors">
+                <i class="fas fa-home text-lg mb-1"></i>
+                <span class="text-[10px] font-medium">Burası</span>
+            </a>
+            <a href="#hizmetler"
+                class="flex flex-col items-center justify-center w-full text-slate-400 hover:text-primary active:text-primary transition-colors">
+                <i class="fas fa-tools text-lg mb-1"></i>
+                <span class="text-[10px] font-medium">Hizmetler</span>
+            </a>
+            <a href="tel:905462185407" class="relative -top-5 flex flex-col items-center justify-center w-full">
+                <div
+                    class="w-14 h-14 rounded-full bg-primary text-white flex items-center justify-center text-2xl shadow-[0_4px_15px_rgba(30,64,175,0.5)] border-4 border-slate-900">
+                    <i class="fas fa-phone-alt"></i>
+                </div>
+            </a>
+            <a href="#hakkimizda"
+                class="flex flex-col items-center justify-center w-full text-slate-400 hover:text-primary active:text-primary transition-colors">
+                <i class="fas fa-clock text-lg mb-1"></i>
+                <span class="text-[10px] font-medium">Saatler</span>
+            </a>
+            <a href="https://wa.me/905462185407?text=Merhaba" target="_blank"
+                class="flex flex-col items-center justify-center w-full text-slate-400 hover:text-[#25D366] active:text-[#25D366] transition-colors">
+                <i class="fab fa-whatsapp text-lg mb-1"></i>
+                <span class="text-[10px] font-medium">Yazın</span>
+            </a>
+        </div>
+    </div>
+
+    <!-- 🌟 JAVASCRIPT ANIMASYONLARI -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Animasyon Gözlemcisi (Scroll ile beliren elementler)
+            const observerOptions = { root: null, rootMargin: '0px', threshold: 0.1 };
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('is-visible');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, observerOptions);
+
+            document.querySelectorAll('.fade-in').forEach((el) => {
+                observer.observe(el);
+            });
+        });
+    </script>
+</body>
+
+</html>

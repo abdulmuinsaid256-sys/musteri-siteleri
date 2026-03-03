@@ -1,0 +1,817 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>PAYİDAR DÖNER | Restoran Kastamonu</title>
+    <meta name="description"
+        content="PAYİDAR DÖNER — Kastamonu Kuzeykent'in en lezzetli döneri. Hemen arayın: (0366) 502 04 44">
+    <meta name="theme-color" content="#dc2626">
+
+    <!-- Open Graph & Schema -->
+    <meta property="og:title" content="PAYİDAR DÖNER">
+    <meta property="og:description" content="Kastamonu Kuzeykent'in en lezzetli döneri. Lezzetin adresi.">
+    <meta property="og:type" content="restaurant">
+    <meta property="og:locale" content="tr_TR">
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Restaurant",
+      "name": "PAYİDAR DÖNER",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Kuzeykent, Kamil Demircioğlu Cd. No.: 7 D:B",
+        "addressLocality": "Kastamonu Merkez",
+        "addressRegion": "Kastamonu",
+        "postalCode": "37150",
+        "addressCountry": "TR"
+      },
+      "telephone": "+903665020444",
+      "openingHours": ["Mo-Su 10:00-01:00"],
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "5.0",
+        "reviewCount": "7"
+      }
+    }
+    </script>
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: { primary: "#dc2626" },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        display: ['Outfit', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Font Awesome & Google Fonts -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;600;800;900&display=swap"
+        rel="stylesheet">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            overflow-x: hidden;
+            background-color: #fafafa;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4 {
+            font-family: 'Outfit', sans-serif;
+        }
+
+        /* Glassmorphism */
+        .glass {
+            background: rgba(255, 255, 255, 0.90);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border-bottom: 1px solid rgba(220, 38, 38, 0.1);
+        }
+
+        .glass-dark {
+            background: rgba(24, 24, 27, 0.90);
+            backdrop-filter: blur(16px);
+            border-top: 1px solid rgba(220, 38, 38, 0.2);
+        }
+
+        /* Animations */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .fade-in.is-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .glow-button {
+            transition: all 0.3s ease;
+            box-shadow: 0 0 15px rgba(220, 38, 38, 0.5);
+        }
+
+        .glow-button:hover {
+            box-shadow: 0 0 25px rgba(220, 38, 38, 0.7);
+            transform: translateY(-2px);
+        }
+
+        .whatsapp-glow {
+            box-shadow: 0 0 15px rgba(37, 211, 102, 0.4);
+        }
+
+        .whatsapp-glow:hover {
+            box-shadow: 0 0 25px rgba(37, 211, 102, 0.6);
+            transform: translateY(-2px);
+        }
+
+        .pulse-ring {
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% {
+                box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7);
+            }
+
+            70% {
+                box-shadow: 0 0 0 15px rgba(37, 211, 102, 0);
+            }
+
+            100% {
+                box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
+            }
+        }
+
+        /* Logo Glow */
+        .svg-glow {
+            filter: drop-shadow(0 0 15px rgba(220, 38, 38, 0.7));
+        }
+
+        /* Service Cards */
+        .service-card {
+            transition: all 0.3s ease;
+            border: 1px solid #fee2e2;
+        }
+
+        .service-card:hover {
+            transform: translateY(-8px);
+            border-color: #dc2626;
+            box-shadow: 0 10px 30px rgba(220, 38, 38, 0.15);
+        }
+
+        /* FAQ Accordion */
+        .faq-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+        }
+
+        .faq-item.active .faq-content {
+            max-height: 200px;
+        }
+
+        .faq-item.active .faq-icon {
+            transform: rotate(180deg);
+        }
+
+        /* Reviews Scroll */
+        .reviews-scroll {
+            display: flex;
+            overflow-x: auto;
+            scroll-snap-type: x mandatory;
+            -webkit-overflow-scrolling: touch;
+            gap: 16px;
+            padding-bottom: 20px;
+        }
+
+        .reviews-scroll::-webkit-scrollbar {
+            display: none;
+        }
+
+        .review-card {
+            min-width: 300px;
+            max-width: 350px;
+            scroll-snap-align: start;
+            flex-shrink: 0;
+        }
+
+        /* Mobile padding adjustment for bottom bar */
+        @media (max-width: 768px) {
+            body {
+                padding-bottom: 70px;
+            }
+        }
+    </style>
+</head>
+
+<body class="text-zinc-800 antialiased selection:bg-primary selection:text-white">
+
+    <!-- 🌟 NAVBAR -->
+    <nav class="glass fixed w-full z-50 top-0 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <a href="#" class="flex items-center gap-3 group">
+                    <div
+                        class="w-12 h-12 rounded-full bg-gradient-to-br from-primary to-orange-500 flex items-center justify-center svg-glow transition-transform group-hover:scale-105">
+                        <i class="fas fa-utensils text-white text-lg"></i>
+                    </div>
+                    <div class="flex flex-col">
+                        <span
+                            class="font-display font-black text-zinc-900 text-xl leading-tight group-hover:text-primary transition-colors">PAYİDAR
+                            DÖNER</span>
+                        <span class="text-[11px] font-bold text-primary tracking-widest uppercase">Lezzetin
+                            Adresi</span>
+                    </div>
+                </a>
+
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex items-center gap-8">
+                    <a href="#farkimiz"
+                        class="text-sm font-semibold text-zinc-600 hover:text-primary transition-colors">Neden Biz?</a>
+                    <a href="#hizmetler"
+                        class="text-sm font-semibold text-zinc-600 hover:text-primary transition-colors">Menü &
+                        Lezzetler</a>
+                    <a href="#yorumlar"
+                        class="text-sm font-semibold text-zinc-600 hover:text-primary transition-colors">Yorumlar</a>
+                    <a href="#sss"
+                        class="text-sm font-semibold text-zinc-600 hover:text-primary transition-colors">SSS</a>
+                    <a href="tel:903665020444"
+                        class="glow-button bg-primary text-white px-6 py-2.5 rounded-full text-sm font-bold flex items-center gap-2">
+                        <i class="fas fa-phone-alt"></i> (0366) 502 04 44
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 🌟 HERO SECTION -->
+    <section class="relative h-[90vh] min-h-[600px] flex items-center justify-center overflow-hidden">
+        <!-- Background Image with Overlay. High Quality Doner/Meat/Restaurant background -->
+        <div class="absolute inset-0 z-0">
+            <img src="https://images.unsplash.com/photo-1555939594-58d7cb561ad1?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80"
+                alt="Payidar Döner Restaurant" class="w-full h-full object-cover">
+            <div class="absolute inset-0 bg-gradient-to-t from-zinc-950 via-zinc-900/80 to-zinc-900/50"></div>
+        </div>
+
+        <div class="relative z-10 text-center px-4 max-w-4xl mx-auto mt-16 fade-in">
+            <div
+                class="inline-flex items-center gap-2 bg-primary/20 backdrop-blur-md text-white border border-primary/50 px-5 py-2 rounded-full text-xs font-bold tracking-widest uppercase mb-6 mx-auto">
+                <i class="fas fa-fire text-yellow-500"></i> Kastamonu'nun Efsane Lezzeti
+            </div>
+
+            <h1
+                class="text-5xl md:text-7xl lg:text-8xl font-display font-black text-white leading-tight mb-6 drop-shadow-2xl">
+                PAYİDAR <span class="text-primary italic">DÖNER</span>
+            </h1>
+
+            <p class="text-lg md:text-2xl text-zinc-200 mb-8 max-w-2xl mx-auto font-light leading-relaxed">
+                Taptaze lavaş, özenle seçilmiş etler ve dumanı tüten efsane döner. <strong
+                    class="text-white font-semibold">Lezzetin tek adresi.</strong>
+            </p>
+
+            <!-- Trust Badge Stars -->
+            <div class="flex items-center justify-center gap-3 mb-10">
+                <div class="flex text-yellow-400 text-xl drop-shadow-md">
+                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                        class="fas fa-star"></i><i class="fas fa-star"></i>
+                </div>
+                <span
+                    class="text-white font-semibold text-md bg-zinc-800/60 px-3 py-1 rounded-full backdrop-blur-sm border border-zinc-700/50">Google'da
+                    5.0 Değerlendirme</span>
+            </div>
+
+            <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+                <a href="tel:903665020444"
+                    class="glow-button w-full sm:w-auto bg-primary text-white px-8 py-4 rounded-xl font-bold text-lg flex items-center justify-center gap-3">
+                    <i class="fas fa-phone-alt"></i> Hemen Sipariş Ver
+                </a>
+                <a href="https://wa.me/903665020444?text=Merhaba%20bilgi%20almak%20istiyorum." target="_blank"
+                    class="whatsapp-glow w-full sm:w-auto bg-[#25D366] text-white px-8 py-4 rounded-xl font-bold text-lg flex items-center justify-center gap-3">
+                    <i class="fab fa-whatsapp text-xl"></i> WhatsApp'tan Yaz
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- 🌟 NEDEN BİZ? (TRUST BAND) -->
+    <section id="farkimiz" class="relative -mt-10 z-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 fade-in">
+        <div class="bg-white rounded-2xl shadow-2xl p-8 md:p-12 border border-zinc-100">
+            <div class="grid md:grid-cols-3 gap-8 divide-y md:divide-y-0 md:divide-x divide-zinc-100">
+                <div class="flex flex-col items-center text-center px-4 pt-4 md:pt-0">
+                    <div
+                        class="w-16 h-16 rounded-full bg-red-50 text-primary flex items-center justify-center text-3xl mb-4">
+                        <i class="fas fa-fire"></i>
+                    </div>
+                    <h3 class="font-display font-bold text-zinc-900 text-lg mb-2">Odun Ateşinde Gerçek Lezzet</h3>
+                    <p class="text-zinc-500 text-sm">Geleneksel yöntemlerle, odun ateşinde ağır ağır pişen eşsiz döner
+                        deneyimi.</p>
+                </div>
+                <div class="flex flex-col items-center text-center px-4 pt-8 md:pt-0">
+                    <div
+                        class="w-16 h-16 rounded-full bg-red-50 text-primary flex items-center justify-center text-3xl mb-4">
+                        <i class="fas fa-motorcycle"></i>
+                    </div>
+                    <h3 class="font-display font-bold text-zinc-900 text-lg mb-2">Hızlı Paket Servis</h3>
+                    <p class="text-zinc-500 text-sm">Kuzeykent ve çevresine döneriniz sıcacık ve dumanı tüterken hızla
+                        ulaştırılır.</p>
+                </div>
+                <div class="flex flex-col items-center text-center px-4 pt-8 md:pt-0">
+                    <div
+                        class="w-16 h-16 rounded-full bg-red-50 text-primary flex items-center justify-center text-3xl mb-4">
+                        <i class="fas fa-medal"></i>
+                    </div>
+                    <h3 class="font-display font-bold text-zinc-900 text-lg mb-2">%100 Müşteri Memnuniyeti</h3>
+                    <p class="text-zinc-500 text-sm">Tertemiz mutfağımız ve kaliteli hizmetimizle Google'da 5 tam
+                        yıldızlı güven.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 🌟 HAKKIMIZDA -->
+    <section class="py-20 lg:py-28 bg-zinc-50 fade-in">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+                <!-- Image/Visual -->
+                <div class="relative rounded-3xl overflow-hidden shadow-2xl h-80 lg:h-full">
+                    <img src="https://images.unsplash.com/photo-1529148482759-b35b25c5f217?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80"
+                        alt="Usta ve Döner" class="w-full h-full object-cover">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end p-8">
+                        <blockquote
+                            class="text-white font-display text-xl leading-relaxed italic border-l-4 border-primary pl-4 drop-shadow-md">
+                            "Çankırı'dan bilindik bir lezzet, Kuzeykent'e yeni bir soluk kattınız." <br><span
+                                class="text-sm text-zinc-300 font-sans not-italic block mt-2">— Müşteri Yorumu</span>
+                        </blockquote>
+                    </div>
+                </div>
+
+                <!-- Text Content -->
+                <div>
+                    <span class="text-primary font-bold tracking-widest text-sm uppercase mb-2 block">Biz Kimiz?</span>
+                    <h2 class="text-3xl md:text-5xl font-display font-black text-zinc-900 mb-6">Dönerde "İmza" Lezzet
+                    </h2>
+                    <div class="w-20 h-1 bg-primary mb-8"></div>
+
+                    <p class="text-zinc-600 text-lg leading-relaxed mb-6">
+                        Payidar Döner olarak Kastamonu Kuzeykent'te misafirlerimize unutulmaz bir lezzet şöleni yaşatmak
+                        için yola çıktık. Özenle terbiye edilmiş etimiz, taptaze el yapımı lavaşımız ve özel
+                        soslarımızla sadece midenizi değil, kalbinizi de fethetmeyi amaçlıyoruz.
+                    </p>
+                    <p class="text-zinc-600 text-lg leading-relaxed">
+                        Nezih ve aileye uygun ferah mekanımızda sizleri ağırlamaktan mutluluk duyarken, dileyen
+                        müşterilerimiz için kapıya kadar sıcacık ulaştırdığımız paket servisimizle "lezzetin adresi"
+                        olmaya devam ediyoruz. Porsiyon da, dürüm de, iskender de Payidar ustalarının maharetli
+                        ellerinden çıkar.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 🌟 LEZZETLERİMİZ / HİZMETLER -->
+    <section id="hizmetler" class="py-20 lg:py-28 bg-white fade-in">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-2xl mx-auto mb-16">
+                <span class="text-primary font-bold tracking-widest text-sm uppercase mb-2 block">Menümüzde Neler
+                    Var?</span>
+                <h2 class="text-3xl md:text-5xl font-display font-black text-zinc-900 mb-6">Damak Çatlatan Lezzetler
+                </h2>
+                <div class="w-20 h-1 bg-primary mx-auto rounded-full"></div>
+            </div>
+
+            <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Service 1 -->
+                <div class="service-card bg-zinc-50 p-8 rounded-2xl flex flex-col items-start cursor-default">
+                    <div
+                        class="w-14 h-14 bg-red-100 text-primary rounded-xl flex items-center justify-center text-xl mb-6">
+                        <i class="fas fa-drumstick-bite"></i>
+                    </div>
+                    <h3 class="font-display font-bold text-xl text-zinc-900 mb-3">Porsiyon Döner</h3>
+                    <p class="text-zinc-600 text-sm leading-relaxed">Etin en lezzetli halini, tereyağlı pilav ve
+                        kızarmış biber eşliğinde tabakta doyasıya yaşayın.</p>
+                </div>
+
+                <!-- Service 2 -->
+                <div class="service-card bg-zinc-50 p-8 rounded-2xl flex flex-col items-start cursor-default">
+                    <div
+                        class="w-14 h-14 bg-red-100 text-primary rounded-xl flex items-center justify-center text-xl mb-6">
+                        <i class="fas fa-bread-slice"></i>
+                    </div>
+                    <h3 class="font-display font-bold text-xl text-zinc-900 mb-3">Lavaş Dürüm</h3>
+                    <p class="text-zinc-600 text-sm leading-relaxed">İncecik, sıcacık lavaşa sarılı; bol malzemeli ve
+                        soslu efsane dürüm döner lezzeti.</p>
+                </div>
+
+                <!-- Service 3 -->
+                <div class="service-card bg-zinc-50 p-8 rounded-2xl flex flex-col items-start cursor-default">
+                    <div
+                        class="w-14 h-14 bg-red-100 text-primary rounded-xl flex items-center justify-center text-2xl mb-6">
+                        <i class="fas fa-utensils"></i>
+                    </div>
+                    <h3 class="font-display font-bold text-xl text-zinc-900 mb-3">İskender Kebap</h3>
+                    <p class="text-zinc-600 text-sm leading-relaxed">Özel sosumuz, yoğurt ve üzerine cızırdayan şahane
+                        tereyağı ile gerçek iskender deneyimi.</p>
+                </div>
+
+                <!-- Service 4 -->
+                <div class="service-card bg-zinc-50 p-8 rounded-2xl flex flex-col items-start cursor-default">
+                    <div
+                        class="w-14 h-14 bg-red-100 text-primary rounded-xl flex items-center justify-center text-xl mb-6">
+                        <i class="fas fa-hamburger"></i>
+                    </div>
+                    <h3 class="font-display font-bold text-xl text-zinc-900 mb-3">Tombik Döner</h3>
+                    <p class="text-zinc-600 text-sm leading-relaxed">Fırından yeni çıkmış sıcacık tombik ekmek arası,
+                        sulu sulu döner ziyafeti.</p>
+                </div>
+
+                <!-- Service 5 -->
+                <div class="service-card bg-zinc-50 p-8 rounded-2xl flex flex-col items-start cursor-default">
+                    <div
+                        class="w-14 h-14 bg-red-100 text-primary rounded-xl flex items-center justify-center text-xl mb-6">
+                        <i class="fas fa-motorcycle"></i>
+                    </div>
+                    <h3 class="font-display font-bold text-xl text-zinc-900 mb-3">Hızlı Paket Servis</h3>
+                    <p class="text-zinc-600 text-sm leading-relaxed">Evde veya işte, nerede acıktıysanız... Siparişiniz
+                        özel paketlemeyle sıcacık kapınızda.</p>
+                </div>
+
+                <!-- Service 6 -->
+                <div class="service-card bg-zinc-50 p-8 rounded-2xl flex flex-col items-start cursor-default">
+                    <div
+                        class="w-14 h-14 bg-red-100 text-primary rounded-xl flex items-center justify-center text-xl mb-6">
+                        <i class="fas fa-glass-cheers"></i>
+                    </div>
+                    <h3 class="font-display font-bold text-xl text-zinc-900 mb-3">Toplu Sipariş</h3>
+                    <p class="text-zinc-600 text-sm leading-relaxed">İş yerleri, organizasyonlar ve özel günleriniz için
+                        önceden haber vererek toplu sipariş verebilirsiniz.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 🌟 MÜŞTERİ YORUMLARI -->
+    <section id="yorumlar" class="py-20 bg-zinc-900 fade-in">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-2xl mx-auto mb-16">
+                <span class="text-primary font-bold tracking-widest text-sm uppercase mb-2 block">Google
+                    Yorumları</span>
+                <h2 class="text-3xl md:text-5xl font-display font-black text-white mb-6">Bizi Müşterilerimizden Dinleyin
+                </h2>
+                <div class="w-20 h-1 bg-primary mx-auto rounded-full"></div>
+            </div>
+
+            <div class="reviews-scroll">
+                <!-- Review 1 -->
+                <div class="review-card bg-zinc-800 p-8 rounded-2xl border border-zinc-700">
+                    <div class="flex text-yellow-500 mb-4 text-sm"><i class="fas fa-star"></i><i
+                            class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                            class="fas fa-star"></i></div>
+                    <p class="text-zinc-300 mb-6 italic text-sm leading-relaxed">"Gayet güzel bir mekan ve döneri
+                        mükemmel. Fiyatlar da kuzeykente göre gayet makul."</p>
+                    <div class="flex items-center gap-3">
+                        <div
+                            class="w-10 h-10 rounded-full bg-primary text-white flex justify-center items-center font-bold">
+                            U</div>
+                        <div>
+                            <h4 class="text-white font-bold text-sm">Umut Furkan Kaş</h4><span
+                                class="text-zinc-500 text-xs">Müşteri</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- Review 2 -->
+                <div class="review-card bg-zinc-800 p-8 rounded-2xl border border-zinc-700">
+                    <div class="flex text-yellow-500 mb-4 text-sm"><i class="fas fa-star"></i><i
+                            class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                            class="fas fa-star"></i></div>
+                    <p class="text-zinc-300 mb-6 italic text-sm leading-relaxed">"Başka yerde böyle Durna zürüm
+                        bulamazsın on numara."</p>
+                    <div class="flex items-center gap-3">
+                        <div
+                            class="w-10 h-10 rounded-full bg-primary text-white flex justify-center items-center font-bold">
+                            A</div>
+                        <div>
+                            <h4 class="text-white font-bold text-sm">Ali İbadlı</h4><span
+                                class="text-zinc-500 text-xs">Müşteri</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- Review 3 -->
+                <div class="review-card bg-zinc-800 p-8 rounded-2xl border border-zinc-700">
+                    <div class="flex text-yellow-500 mb-4 text-sm"><i class="fas fa-star"></i><i
+                            class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                            class="fas fa-star"></i></div>
+                    <p class="text-zinc-300 mb-6 italic text-sm leading-relaxed">"Çankırıdan bilindik bir lezzet
+                        kuzeykente yeni bir soluk kattınız."</p>
+                    <div class="flex items-center gap-3">
+                        <div
+                            class="w-10 h-10 rounded-full bg-primary text-white flex justify-center items-center font-bold">
+                            A</div>
+                        <div>
+                            <h4 class="text-white font-bold text-sm">Akın Marşap</h4><span
+                                class="text-zinc-500 text-xs">Müşteri</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- Review 4 -->
+                <div class="review-card bg-zinc-800 p-8 rounded-2xl border border-zinc-700">
+                    <div class="flex text-yellow-500 mb-4 text-sm"><i class="fas fa-star"></i><i
+                            class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                            class="fas fa-star"></i></div>
+                    <p class="text-zinc-300 mb-6 italic text-sm leading-relaxed">"Gerçekden çok güzel bi yer ve
+                        dönerleri 10 numara herkesın gelmesi gereken bi yer."</p>
+                    <div class="flex items-center gap-3">
+                        <div
+                            class="w-10 h-10 rounded-full bg-primary text-white flex justify-center items-center font-bold">
+                            Y</div>
+                        <div>
+                            <h4 class="text-white font-bold text-sm">Yasemin Kükner</h4><span
+                                class="text-zinc-500 text-xs">Müşteri</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- Review 5 -->
+                <div class="review-card bg-zinc-800 p-8 rounded-2xl border border-zinc-700">
+                    <div class="flex text-yellow-500 mb-4 text-sm"><i class="fas fa-star"></i><i
+                            class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                            class="fas fa-star"></i></div>
+                    <p class="text-zinc-300 mb-6 italic text-sm leading-relaxed">"Gerçekten çok lezzetliydi mutlaka
+                        uğramalısınız."</p>
+                    <div class="flex items-center gap-3">
+                        <div
+                            class="w-10 h-10 rounded-full bg-primary text-white flex justify-center items-center font-bold">
+                            G</div>
+                        <div>
+                            <h4 class="text-white font-bold text-sm">Gani Kaya</h4><span
+                                class="text-zinc-500 text-xs">Müşteri</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- Review 6 -->
+                <div class="review-card bg-zinc-800 p-8 rounded-2xl border border-zinc-700">
+                    <div class="flex text-yellow-500 mb-4 text-sm"><i class="fas fa-star"></i><i
+                            class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                            class="fas fa-star"></i></div>
+                    <p class="text-zinc-300 mb-6 italic text-sm leading-relaxed">"Harika lezzetli durumleri var."</p>
+                    <div class="flex items-center gap-3">
+                        <div
+                            class="w-10 h-10 rounded-full bg-primary text-white flex justify-center items-center font-bold">
+                            T</div>
+                        <div>
+                            <h4 class="text-white font-bold text-sm">Tofiq Quliyev</h4><span
+                                class="text-zinc-500 text-xs">Müşteri</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 🌟 SIKÇA SORULAN SORULAR (SSS) -->
+    <section id="sss" class="py-20 lg:py-28 bg-zinc-50 fade-in">
+        <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <span class="text-primary font-bold tracking-widest text-sm uppercase mb-2 block">Merak Edilenler</span>
+                <h2 class="text-3xl md:text-5xl font-display font-black text-zinc-900 mb-6">Sıkça Sorulan Sorular</h2>
+                <div class="w-20 h-1 bg-primary mx-auto rounded-full"></div>
+            </div>
+
+            <div class="space-y-4">
+                <!-- SSS 1 -->
+                <div class="faq-item bg-white border border-zinc-200 rounded-xl overflow-hidden cursor-pointer shadow-sm hover:shadow-md transition-shadow"
+                    onclick="this.classList.toggle('active')">
+                    <div class="px-6 py-5 flex justify-between items-center">
+                        <h4 class="font-bold text-zinc-800 text-lg">Paket servisiniz var mı, hangi bölgelere gönderim
+                            yapıyorsunuz?</h4>
+                        <i class="fas fa-chevron-down faq-icon text-primary transition-transform"></i>
+                    </div>
+                    <div class="faq-content bg-zinc-50 px-6">
+                        <p class="text-zinc-600 pb-5 text-sm leading-relaxed">Evet, hızlı paket servisimiz
+                            bulunmaktadır. Başta Kuzeykent bölgesi olmak üzere yakın çevrelere sıcak ve hızlı teslimat
+                            yapıyoruz. Siparişlerinizi WhatsApp veya telefon hattımızdan verebilirsiniz.</p>
+                    </div>
+                </div>
+
+                <!-- SSS 2 -->
+                <div class="faq-item bg-white border border-zinc-200 rounded-xl overflow-hidden cursor-pointer shadow-sm hover:shadow-md transition-shadow"
+                    onclick="this.classList.toggle('active')">
+                    <div class="px-6 py-5 flex justify-between items-center">
+                        <h4 class="font-bold text-zinc-800 text-lg">Yemek kartları veya kredi kartı geçerli mi?</h4>
+                        <i class="fas fa-chevron-down faq-icon text-primary transition-transform"></i>
+                    </div>
+                    <div class="faq-content bg-zinc-50 px-6">
+                        <p class="text-zinc-600 pb-5 text-sm leading-relaxed">Restoranımızda ve paket servislerimizde
+                            tüm kredi kartları geçerlidir. Popüler öğle yemeği ve restoran yemek kartlarının (Ticket,
+                            Multinet, Sodexo vb.) geçerlilik durumu için lütfen güncel bilgi almak üzere bizi arayın.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- SSS 3 -->
+                <div class="faq-item bg-white border border-zinc-200 rounded-xl overflow-hidden cursor-pointer shadow-sm hover:shadow-md transition-shadow"
+                    onclick="this.classList.toggle('active')">
+                    <div class="px-6 py-5 flex justify-between items-center">
+                        <h4 class="font-bold text-zinc-800 text-lg">Döneriniz hangi etten yapılıyor ve saat kaça kadar
+                            sürüyor?</h4>
+                        <i class="fas fa-chevron-down faq-icon text-primary transition-transform"></i>
+                    </div>
+                    <div class="faq-content bg-zinc-50 px-6">
+                        <p class="text-zinc-600 pb-5 text-sm leading-relaxed">Dönerimiz, tamamen kalite standartlarına
+                            uygun, güvenilir çiftliklerden seçilmiş helal kesim, sinirleri temizlenmiş yaprak et ile
+                            hazırlanır. Hizmetimiz sabah 10:00'dan gece 01:00'e kadar kesintisiz devam etmektedir.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 🌟 GOOGLE MAPS & İLETİŞİM -->
+    <section id="iletisim" class="fade-in">
+        <div class="w-full h-80 lg:h-96 relative">
+            <iframe src="https://maps.google.com/maps?q=41.4281346,33.775884&t=&z=16&ie=UTF8&iwloc=&output=embed"
+                class="absolute inset-0 w-full h-full border-0" allowfullscreen="" loading="lazy"></iframe>
+        </div>
+
+        <div class="bg-zinc-950 text-white pt-16 pb-24 md:pb-16 -mt-2 relative z-10 border-t border-primary">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid md:grid-cols-3 gap-12">
+                    <!-- Brand -->
+                    <div class="col-span-1">
+                        <div class="flex items-center gap-3 mb-6">
+                            <div class="w-12 h-12 rounded-full bg-primary flex items-center justify-center">
+                                <i class="fas fa-fire text-xl text-yellow-500"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-display font-black text-xl tracking-tight">PAYİDAR DÖNER</h3>
+                                <p class="text-xs text-red-500 font-bold tracking-widest uppercase mt-1">Lezzetin Adresi
+                                </p>
+                            </div>
+                        </div>
+                        <p class="text-zinc-400 text-sm leading-relaxed mb-6">Odun ateşinde özenle pişen, Kastamonu'nun
+                            en sevilen gerçek döner lezzeti.</p>
+
+                        <!-- Çalışma Saatleri Info -->
+                        <div class="bg-zinc-900 border border-zinc-800 rounded-lg p-4 mb-6">
+                            <h4 class="text-white text-sm font-bold mb-2 flex items-center gap-2"><i
+                                    class="fas fa-clock text-primary"></i> Çalışma Saatleri</h4>
+                            <p class="text-zinc-400 text-xs">Pazartesi - Pazar <br><strong
+                                    class="text-white mt-1 block">10:00 - 01:00</strong></p>
+                        </div>
+
+                        <div class="flex gap-4">
+                            <a href="https://wa.me/903665020444"
+                                class="w-10 h-10 rounded-full bg-zinc-900 flex items-center justify-center text-[#25D366] hover:bg-[#25D366] hover:text-white transition-colors">
+                                <i class="fab fa-whatsapp text-lg"></i>
+                            </a>
+                            <a href="tel:903665020444"
+                                class="w-10 h-10 rounded-full bg-zinc-900 flex items-center justify-center text-primary hover:bg-primary hover:text-white transition-colors">
+                                <i class="fas fa-phone-alt"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Contact Info -->
+                    <div class="col-span-1 md:col-span-2 grid sm:grid-cols-2 gap-8">
+                        <div>
+                            <h4 class="font-display font-semibold text-lg text-white mb-6 uppercase tracking-wider">
+                                Sipariş Hatları</h4>
+                            <ul class="space-y-4">
+                                <li>
+                                    <a href="tel:903665020444" class="flex items-center gap-4 group">
+                                        <div
+                                            class="w-10 h-10 rounded-full bg-zinc-900 border border-zinc-800 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-colors">
+                                            <i class="fas fa-phone-alt"></i>
+                                        </div>
+                                        <div>
+                                            <span
+                                                class="text-xs text-zinc-500 block uppercase font-bold tracking-wider mb-0.5">Telefon
+                                                SİPARİŞ</span>
+                                            <span
+                                                class="text-zinc-300 group-hover:text-white transition-colors font-medium">(0366)
+                                                502 04 44</span>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://wa.me/903665020444?text=Merhaba,%20sipariş%20vermek%20istiyorum."
+                                        target="_blank" class="flex items-center gap-4 group">
+                                        <div
+                                            class="w-10 h-10 rounded-full bg-zinc-900 border border-zinc-800 flex items-center justify-center text-[#25D366] group-hover:bg-[#25D366] group-hover:text-white transition-colors">
+                                            <i class="fab fa-whatsapp text-lg"></i>
+                                        </div>
+                                        <div>
+                                            <span
+                                                class="text-xs text-zinc-500 block uppercase font-bold tracking-wider mb-0.5">WHATSAPP
+                                                SİPARİŞ</span>
+                                            <span
+                                                class="text-zinc-300 group-hover:text-white transition-colors font-medium">Hemen
+                                                Yazın</span>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li class="flex items-start gap-4">
+                                    <div
+                                        class="w-10 h-10 rounded-full bg-zinc-900 border border-zinc-800 flex items-center justify-center text-primary shrink-0">
+                                        <i class="fas fa-map-marker-alt"></i>
+                                    </div>
+                                    <span class="text-zinc-400 text-sm mt-1 leading-relaxed">Kuzeykent, Kamil
+                                        Demircioğlu Cd. No.: 7 D:B, <br>37150 Kastamonu Merkez</span>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <!-- Quick Links -->
+                        <div>
+                            <h4 class="font-display font-semibold text-lg text-white mb-6 uppercase tracking-wider">
+                                Keşfedin</h4>
+                            <ul class="space-y-3">
+                                <li><a href="#hero"
+                                        class="text-zinc-400 hover:text-primary transition-colors flex items-center gap-2"><i
+                                            class="fas fa-angle-right text-xs"></i> Ana Sayfa</a></li>
+                                <li><a href="#hizmetler"
+                                        class="text-zinc-400 hover:text-primary transition-colors flex items-center gap-2"><i
+                                            class="fas fa-angle-right text-xs"></i> Menümüz</a></li>
+                                <li><a href="#farkimiz"
+                                        class="text-zinc-400 hover:text-primary transition-colors flex items-center gap-2"><i
+                                            class="fas fa-angle-right text-xs"></i> Neden Biz?</a></li>
+                                <li><a href="#yorumlar"
+                                        class="text-zinc-400 hover:text-primary transition-colors flex items-center gap-2"><i
+                                            class="fas fa-angle-right text-xs"></i> Google Yorumları</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mt-12 pt-8 border-t border-zinc-800/50 text-center">
+                    <p class="text-zinc-600 text-sm">© 2026 Payidar Döner. Tüm Hakları Saklıdır.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 🌟 FLOATING WHATSAPP -->
+    <a href="https://wa.me/903665020444?text=Merhaba,%20döner%20siparişi%20vermek%20istiyorum." target="_blank"
+        class="fixed right-4 bottom-24 md:bottom-6 z-40 bg-[#25D366] text-white w-14 h-14 rounded-full flex items-center justify-center text-3xl shadow-2xl pulse-ring hover:scale-110 transition-transform border-4 border-white/20">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- 🌟 MOBILE BOTTOM APP BAR (Sadece mobilde görünür) -->
+    <div
+        class="md:hidden glass-dark fixed bottom-0 left-0 w-full z-50 border-t border-zinc-800 pb-safe shadow-[0_-10px_20px_rgba(0,0,0,0.3)]">
+        <div class="flex justify-around items-center h-16 px-2">
+            <a href="#hero"
+                class="flex flex-col items-center justify-center w-full text-zinc-400 hover:text-primary active:text-primary transition-colors">
+                <i class="fas fa-home text-lg mb-1"></i>
+                <span class="text-[10px] font-medium">Ana Sayfa</span>
+            </a>
+            <a href="#hizmetler"
+                class="flex flex-col items-center justify-center w-full text-zinc-400 hover:text-primary active:text-primary transition-colors">
+                <i class="fas fa-utensils text-lg mb-1"></i>
+                <span class="text-[10px] font-medium">Menü</span>
+            </a>
+            <a href="tel:903665020444" class="relative -top-6 flex flex-col items-center justify-center w-full group">
+                <div
+                    class="w-16 h-16 rounded-full bg-gradient-to-tr from-red-600 to-red-500 text-white flex items-center justify-center text-2xl shadow-[0_10px_25px_rgba(220,38,38,0.5)] border-4 border-zinc-900 group-active:scale-95 transition-transform">
+                    <i class="fas fa-phone-alt"></i>
+                </div>
+            </a>
+            <a href="#yorumlar"
+                class="flex flex-col items-center justify-center w-full text-zinc-400 hover:text-primary active:text-primary transition-colors">
+                <i class="fas fa-star text-lg mb-1"></i>
+                <span class="text-[10px] font-medium">Yorumlar</span>
+            </a>
+            <a href="https://wa.me/903665020444?text=Merhaba,%20sipariş%20vermek%20istiyorum." target="_blank"
+                class="flex flex-col items-center justify-center w-full text-zinc-400 hover:text-[#25D366] active:text-[#25D366] transition-colors">
+                <i class="fab fa-whatsapp text-lg mb-1"></i>
+                <span class="text-[10px] font-medium">Sipariş</span>
+            </a>
+        </div>
+    </div>
+
+    <!-- 🌟 JAVASCRIPT ANIMASYONLARI -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Intersection Observer
+            const observerOptions = { root: null, rootMargin: '0px', threshold: 0.1 };
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('is-visible');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, observerOptions);
+
+            document.querySelectorAll('.fade-in').forEach((el) => {
+                observer.observe(el);
+            });
+        });
+    </script>
+</body>
+
+</html>

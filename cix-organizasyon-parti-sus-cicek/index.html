@@ -1,0 +1,994 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Cix Organizasyon | Parti Süs & Çiçek Kastamonu</title>
+    <meta name="description"
+        content="Cix Organizasyon — Kastamonu'da unutulmaz sürprizler, en taze çiçekler ve kaliteli parti süsleri. (0366) 214 45 40">
+    <meta name="theme-color" content="#e11d48">
+
+    <!-- Open Graph & Schema -->
+    <meta property="og:title" content="Cix Organizasyon & Çiçekçilik">
+    <meta property="og:description"
+        content="Kastamonu'da enfes çiçek tanzimleri ve kusursuz parti organizasyonlarının tek adresi.">
+    <meta property="og:type" content="local_business">
+    <meta property="og:image"
+        content="https://lh3.googleusercontent.com/p/AF1QipMD9QsSVPJk85HOZf1APBEn1gka2R6bjLsEG4fn=s0">
+    <meta property="og:locale" content="tr_TR">
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Florist",
+      "name": "Cix Organizasyon-Parti Süs-Çiçek",
+      "image": "https://lh3.googleusercontent.com/p/AF1QipMD9QsSVPJk85HOZf1APBEn1gka2R6bjLsEG4fn=s0",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Kuzeykent, Kamil Demircioğlu Cd. Fatih yapı kooperatifi D:1/L",
+        "addressLocality": "Kastamonu Merkez",
+        "addressRegion": "Kastamonu",
+        "postalCode": "37200",
+        "addressCountry": "TR"
+      },
+      "telephone": "+903662144540",
+      "openingHours": ["Mo-Sa 09:00-22:00", "Su 10:30-22:00"],
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "5.0",
+        "reviewCount": "10"
+      }
+    }
+    </script>
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: { primary: "#e11d48" },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        display: ['Outfit', 'sans-serif'],
+                        script: ['"Great Vibes"', 'cursive']
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Font Awesome & Google Fonts -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;700;900&display=swap"
+        rel="stylesheet">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            overflow-x: hidden;
+            background-color: #fdf2f8;
+        }
+
+        /* Very light pink background */
+        h1,
+        h2,
+        h3,
+        h4 {
+            font-family: 'Outfit', sans-serif;
+        }
+
+        /* Glassmorphism */
+        .glass {
+            background: rgba(255, 255, 255, 0.90);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(225, 29, 72, 0.1);
+        }
+
+        .glass-dark {
+            background: rgba(24, 24, 27, 0.92);
+            backdrop-filter: blur(12px);
+            border-top: 1px solid rgba(225, 29, 72, 0.2);
+        }
+
+        /* Animations */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .fade-in.is-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .scale-in {
+            opacity: 0;
+            transform: scale(0.9);
+            transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .scale-in.is-visible {
+            opacity: 1;
+            transform: scale(1);
+        }
+
+        .glow-button {
+            transition: all 0.3s ease;
+            box-shadow: 0 0 15px rgba(225, 29, 72, 0.4);
+        }
+
+        .glow-button:hover {
+            box-shadow: 0 0 25px rgba(225, 29, 72, 0.6);
+            transform: translateY(-2px);
+        }
+
+        .pulse-ring {
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% {
+                box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7);
+            }
+
+            70% {
+                box-shadow: 0 0 0 15px rgba(37, 211, 102, 0);
+            }
+
+            100% {
+                box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
+            }
+        }
+
+        /* Custom Hover Effects */
+        .svg-glow {
+            filter: drop-shadow(0 0 12px rgba(225, 29, 72, 0.6));
+        }
+
+        .service-card {
+            transition: all 0.3s ease;
+            border: 1px solid #ffe4e6;
+        }
+
+        .service-card:hover {
+            transform: translateY(-8px);
+            border-color: #e11d48;
+            box-shadow: 0 15px 35px rgba(225, 29, 72, 0.15);
+        }
+
+        .gallery-item {
+            overflow: hidden;
+            position: relative;
+            border-radius: 1rem;
+        }
+
+        .gallery-item img {
+            transition: transform 0.7s ease, filter 0.5s ease;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            aspect-ratio: 1/1;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.1);
+            filter: brightness(0.85);
+        }
+
+        .gallery-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to top, rgba(225, 29, 72, 0.6), transparent);
+            opacity: 0;
+            transition: opacity 0.4s ease;
+            display: flex;
+            align-items: flex-end;
+            justify-content: center;
+            padding: 1.5rem;
+        }
+
+        .gallery-item:hover .gallery-overlay {
+            opacity: 1;
+        }
+
+        /* FAQ Accordion */
+        .faq-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+        }
+
+        .faq-item.active .faq-content {
+            max-height: 200px;
+        }
+
+        .faq-item.active .faq-icon {
+            transform: rotate(180deg);
+            color: #e11d48;
+        }
+
+        .faq-item.active .faq-header {
+            color: #e11d48;
+        }
+
+        /* Reviews Custom Scroll */
+        .reviews-scroll {
+            display: flex;
+            overflow-x: auto;
+            scroll-snap-type: x mandatory;
+            gap: 1rem;
+            padding-bottom: 1.5rem;
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+
+        .reviews-scroll::-webkit-scrollbar {
+            display: none;
+        }
+
+        .review-card {
+            min-width: 320px;
+            max-width: 380px;
+            scroll-snap-align: center;
+            flex-shrink: 0;
+        }
+
+        /* Floating shapes */
+        .blob {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(60px);
+            opacity: 0.15;
+            z-index: 0;
+            animation: float 10s ease-in-out infinite alternate;
+        }
+
+        @keyframes float {
+            0% {
+                transform: translateY(0) scale(1);
+            }
+
+            100% {
+                transform: translateY(-30px) scale(1.1);
+            }
+        }
+
+        @media (max-width: 768px) {
+            body {
+                padding-bottom: 70px;
+            }
+        }
+    </style>
+</head>
+
+<body class="text-zinc-800 antialiased selection:bg-primary selection:text-white">
+
+    <!-- Ambient Blobs -->
+    <div class="blob bg-rose-400 w-96 h-96 top-0 left-0 -translate-x-1/2 -translate-y-1/2"></div>
+    <div class="blob bg-pink-400 w-[500px] h-[500px] top-[20%] right-0 translate-x-1/3"
+        style="animation-duration: 15s; animation-delay: 2s;"></div>
+
+    <!-- 🌟 NAVBAR -->
+    <nav class="glass fixed w-full z-50 top-0 transition-all duration-300 shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <a href="#" class="flex items-center gap-3 group">
+                    <div
+                        class="w-12 h-12 rounded-full bg-gradient-to-tr from-primary to-pink-500 flex items-center justify-center svg-glow transition-transform group-hover:scale-105">
+                        <i class="fas fa-seedling text-white text-lg relative"><i
+                                class="fas fa-heart absolute -top-1 -right-2 text-[10px] text-pink-200"></i></i>
+                    </div>
+                    <div class="flex flex-col">
+                        <span
+                            class="font-display font-black text-zinc-900 text-xl leading-tight tracking-tight group-hover:text-primary transition-colors">CİX
+                            ORGANİZASYON</span>
+                        <span class="text-[10px] font-bold text-primary tracking-widest uppercase">Çiçek & Parti &
+                            Süs</span>
+                    </div>
+                </a>
+
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex items-center gap-8">
+                    <a href="#farkimiz"
+                        class="text-sm font-semibold text-zinc-600 hover:text-primary transition-colors">Neden Biz?</a>
+                    <a href="#hizmetler"
+                        class="text-sm font-semibold text-zinc-600 hover:text-primary transition-colors">Hizmetler</a>
+                    <a href="#galeri"
+                        class="text-sm font-semibold text-zinc-600 hover:text-primary transition-colors">Galeri</a>
+                    <a href="#yorumlar"
+                        class="text-sm font-semibold text-zinc-600 hover:text-primary transition-colors">Müşteri
+                        Yorumları</a>
+                    <a href="tel:903662144540"
+                        class="glow-button bg-primary text-white px-6 py-2.5 rounded-full text-sm font-bold flex items-center gap-2">
+                        <i class="fas fa-phone-alt"></i> (0366) 214 45 40
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 🌟 HERO SECTION -->
+    <section class="relative h-[95vh] min-h-[650px] flex items-center justify-center overflow-hidden">
+        <!-- Background Image with romantic overlay -->
+        <div class="absolute inset-0 z-0 scale-in is-visible bg-zinc-950 overflow-hidden">
+            <!-- Blurred Ambient Background -->
+            <img src="https://lh3.googleusercontent.com/p/AF1QipO8maPXUqeHHxR5KExbE4Qv4wjDp8OyAliLF91i=s1360-w1360-h1020-rw"
+                alt="Background effect"
+                class="absolute inset-0 w-full h-full object-cover blur-[50px] opacity-40 scale-125">
+
+            <!-- Focused Image Container (No crop) -->
+            <div class="absolute inset-0 flex items-center justify-end md:justify-center px-4 sm:p-12">
+                <img src="https://lh3.googleusercontent.com/p/AF1QipO8maPXUqeHHxR5KExbE4Qv4wjDp8OyAliLF91i=s1360-w1360-h1020-rw"
+                    alt="Cix Organizasyon Kutlama" class="w-full h-full object-contain md:object-right opacity-95">
+            </div>
+
+            <!-- Gradient Overlay for Text Readability -->
+            <div class="absolute inset-0 bg-gradient-to-r from-zinc-950/95 via-zinc-900/70 to-zinc-900/30"></div>
+        </div>
+
+        <div class="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-16 fade-in text-left">
+            <div class="max-w-2xl">
+                <div
+                    class="inline-flex items-center gap-2 bg-white/10 backdrop-blur-md text-white border border-white/20 px-5 py-2 rounded-full text-xs font-bold tracking-widest uppercase mb-6 shadow-xl">
+                    <i class="fas fa-heart text-primary"></i> Hayallerinizi Süsleyen Detaylar
+                </div>
+
+                <h1 class="text-5xl md:text-7xl font-display font-black text-white leading-[1.1] mb-4 drop-shadow-2xl">
+                    Sevdiklerinize <span class="block text-primary italic font-serif">En Güzel Hediye</span>
+                </h1>
+
+                <p class="text-lg md:text-xl text-zinc-200 mb-10 font-light leading-relaxed max-w-xl">
+                    Kastamonu'nun en yenilikçi çiçekçisi ve organizasyon firması. Bir buket çiçekten rüya gibi düğün
+                    organizasyonlarına kadar her detayı aşkla tasarlıyoruz.
+                </p>
+
+                <!-- Trust Badge -->
+                <div
+                    class="flex items-center gap-3 mb-10 bg-zinc-900/50 w-max px-4 py-2.5 rounded-2xl backdrop-blur-md border border-zinc-700/50">
+                    <div class="flex text-yellow-400 text-lg">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                            class="fas fa-star"></i><i class="fas fa-star"></i>
+                    </div>
+                    <div class="h-5 w-px bg-white/20"></div>
+                    <span class="text-white font-semibold text-sm">Onlarca Mutlu Çift & Müşteri</span>
+                </div>
+
+                <div class="flex flex-col sm:flex-row gap-4">
+                    <a href="tel:903662144540"
+                        class="glow-button justify-center sm:justify-start bg-primary text-white border border-rose-500 px-8 py-4 rounded-xl font-bold text-lg flex items-center gap-3">
+                        <i class="fas fa-phone-alt"></i> Hemen Ara
+                    </a>
+                    <a href="https://wa.me/903662144540?text=Merhaba%20çiçek%20siparişi%20vermek%20istiyorum."
+                        target="_blank"
+                        class="whatsapp-glow justify-center sm:justify-start bg-white text-zinc-900 border border-zinc-200 px-8 py-4 rounded-xl font-bold text-lg flex items-center gap-3 hover:bg-zinc-50 transition-colors">
+                        <i class="fab fa-whatsapp text-green-500 text-2xl"></i> Fiyat Bilgisi Al
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 🌟 NEDEN BİZ? (TRUST BAND) -->
+    <section id="farkimiz" class="relative z-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-4 sm:mt-8 fade-in">
+        <div class="bg-white/95 backdrop-blur-xl rounded-3xl shadow-2xl p-6 md:p-10 border border-white">
+            <div class="grid md:grid-cols-3 gap-6 md:gap-8 divide-y md:divide-y-0 md:divide-x divide-zinc-100">
+                <div class="flex items-start gap-4 px-2 pt-2 md:pt-0">
+                    <div
+                        class="w-14 h-14 shrink-0 rounded-full bg-rose-50 text-primary flex items-center justify-center text-2xl">
+                        <i class="fas fa-gem"></i>
+                    </div>
+                    <div>
+                        <h3 class="font-display font-bold text-zinc-900 text-lg mb-1">Premium Kalite</h3>
+                        <p class="text-zinc-500 text-sm leading-relaxed">Özel seralardan özenle seçilmiş, en taze, 1.
+                            sınıf kalite tasarım çiçekler.</p>
+                    </div>
+                </div>
+                <div class="flex items-start gap-4 px-2 pt-6 md:pt-0">
+                    <div
+                        class="w-14 h-14 shrink-0 rounded-full bg-rose-50 text-primary flex items-center justify-center text-2xl">
+                        <i class="fas fa-truck-fast"></i>
+                    </div>
+                    <div>
+                        <h3 class="font-display font-bold text-zinc-900 text-lg mb-1">Zamanında Teslimat</h3>
+                        <p class="text-zinc-500 text-sm leading-relaxed">Kastamonu merkeze aynı gün, sipariş verdiğiniz
+                            saatte güvenle kapıya teslim.</p>
+                    </div>
+                </div>
+                <div class="flex items-start gap-4 px-2 pt-6 md:pt-0">
+                    <div
+                        class="w-14 h-14 shrink-0 rounded-full bg-rose-50 text-primary flex items-center justify-center text-2xl">
+                        <i class="fas fa-glass-cheers"></i>
+                    </div>
+                    <div>
+                        <h3 class="font-display font-bold text-zinc-900 text-lg mb-1">Kusursuz Organizasyon</h3>
+                        <p class="text-zinc-500 text-sm leading-relaxed">Nişan, söz, doğum günü ve tüm özel anlarınızda
+                            A'dan Z'ye planlama.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 🌟 HAKKIMIZDA & FOTOĞRAF -->
+    <section class="py-20 lg:py-32 fade-in relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-2 gap-16 lg:gap-24 items-center">
+                <!-- Text Content -->
+                <div class="order-2 lg:order-1">
+                    <span
+                        class="text-primary font-bold tracking-widest text-sm uppercase mb-3 block flex items-center gap-2">
+                        <i class="fas fa-leaf text-green-500"></i> Biz Kimiz?
+                    </span>
+                    <h2 class="text-3xl md:text-5xl font-display font-black text-zinc-900 mb-6 leading-tight">En Özel
+                        Anlarınızda Hep Yanınızdayız</h2>
+                    <div class="w-20 h-1.5 bg-gradient-to-r from-primary to-pink-300 mb-8 rounded-full"></div>
+
+                    <p class="text-zinc-600 text-lg leading-relaxed mb-6">
+                        Kastamonu Kuzeykent'te yer alan <strong>Cix Organizasyon</strong> olarak bizler, sıradan bir
+                        çiçekçiden çok daha fazlasıyız. Amacımız insanların sevinçlerine, heyecanlarına, özel anlarına
+                        estetik ve unutulmaz bir dokunuş yapmaktır.
+                    </p>
+                    <p class="text-zinc-600 text-lg leading-relaxed mb-8">
+                        Sevgililer gününde kapıyı çalan şık bir buketten, kız isteme merasimlerindeki tasarım çikolata
+                        tepsilerine, düğün araç süslemelerinden doğum günü konsept masalarına kadar hayalinizdeki her
+                        organizasyonu büyük bir titizlikle ve güler yüzle gerçeğe dönüştürüyoruz.
+                    </p>
+
+                    <div
+                        class="flex flex-col sm:flex-row gap-6 mt-8 p-6 bg-white rounded-2xl shadow-sm border border-rose-50">
+                        <div class="flex-1">
+                            <h4 class="font-bold text-zinc-900 mb-1">Sürekli Memnuniyet</h4>
+                            <p class="text-sm text-zinc-500">Müşterilerimizin yazdığı "rüya gibi bir gün geçirdik"
+                                yorumları en büyük motivasyonumuz.</p>
+                        </div>
+                        <div class="w-px bg-zinc-100 hidden sm:block"></div>
+                        <div class="flex-1">
+                            <h4 class="font-bold text-zinc-900 mb-1">Modern & Klasik Sentezi</h4>
+                            <p class="text-sm text-zinc-500">Zevkinize ister modern kutu güller, ister gösterişli
+                                buketler tasarlıyoruz.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Featured Image -->
+                <div class="order-1 lg:order-2 relative">
+                    <div class="absolute inset-0 bg-primary/10 rounded-[2rem] transform rotate-3 scale-105 z-0"></div>
+                    <img src="https://lh3.googleusercontent.com/p/AF1QipM2h-8q3aAua6Aczw3O5W4AsyMV_QvIxO0OJAgI=s0"
+                        alt="Organizasyon ve Çiçek"
+                        class="relative z-10 w-full rounded-[2rem] shadow-2xl object-cover aspect-[4/5] hover:-translate-y-2 transition-transform duration-500">
+
+                    <div class="absolute -bottom-6 -left-6 z-20 bg-white p-5 rounded-2xl shadow-xl border border-zinc-100 animate-bounce"
+                        style="animation-duration: 3s;">
+                        <div class="flex gap-1 text-primary mb-1 text-lg">
+                            <i class="fas fa-heart"></i><i class="fas fa-heart"></i><i class="fas fa-heart"></i>
+                        </div>
+                        <p class="font-display font-bold text-sm">Aşkla Tasarlandı</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 🌟 HİZMETLERİMİZ -->
+    <section id="hizmetler" class="py-20 lg:py-28 bg-white relative z-10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-2xl mx-auto mb-16 fade-in">
+                <span class="text-primary font-bold tracking-widest text-sm uppercase mb-2 block">Size Özel
+                    Tasarımlar</span>
+                <h2 class="text-3xl md:text-5xl font-display font-black text-zinc-900 mb-6">Neler Yapıyoruz?</h2>
+                <div class="w-20 h-1.5 bg-gradient-to-r from-primary to-pink-300 mx-auto rounded-full"></div>
+            </div>
+
+            <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Service 1 -->
+                <div
+                    class="service-card bg-white p-8 rounded-3xl flex flex-col items-center text-center fade-in cursor-default group">
+                    <div
+                        class="w-20 h-20 bg-rose-50 text-primary rounded-full flex items-center justify-center text-3xl mb-6 group-hover:scale-110 transition-transform">
+                        <i class="fas fa-bouquet"></i>
+                    </div>
+                    <h3 class="font-display font-bold text-xl text-zinc-900 mb-3">Özel Tasarım Buketler</h3>
+                    <p class="text-zinc-600 text-sm leading-relaxed">Canlı veya yapay, mevsimin en güzel çiçekleriyle
+                        hazırlanmış sevgiliye, anneye veya tebriğe özel buketler.</p>
+                </div>
+
+                <!-- Service 2 -->
+                <div class="service-card bg-white p-8 rounded-3xl flex flex-col items-center text-center fade-in cursor-default group"
+                    style="transition-delay: 100ms;">
+                    <div
+                        class="w-20 h-20 bg-rose-50 text-primary rounded-full flex items-center justify-center text-3xl mb-6 group-hover:scale-110 transition-transform">
+                        <i class="fas fa-ring"></i>
+                    </div>
+                    <h3 class="font-display font-bold text-xl text-zinc-900 mb-3">Söz & Nişan Masası</h3>
+                    <p class="text-zinc-600 text-sm leading-relaxed">Kız isteme konseptleri, şık arka plan kurdeleleri,
+                        masa süslemeleri, damat kahvesi ve özel isimlik tasarımları.</p>
+                </div>
+
+                <!-- Service 3 -->
+                <div class="service-card bg-white p-8 rounded-3xl flex flex-col items-center text-center fade-in cursor-default group"
+                    style="transition-delay: 200ms;">
+                    <div
+                        class="w-20 h-20 bg-rose-50 text-primary rounded-full flex items-center justify-center text-3xl mb-6 group-hover:scale-110 transition-transform">
+                        <i class="fas fa-cake-candles"></i>
+                    </div>
+                    <h3 class="font-display font-bold text-xl text-zinc-900 mb-3">Sürpriz & Doğum Günü</h3>
+                    <p class="text-zinc-600 text-sm leading-relaxed">Evde, kafede veya dış mekanda; balon süslemeleri,
+                        uçan balon konsepti, pasta masası ile rüya gibi kutlamalar.</p>
+                </div>
+
+                <!-- Service 4 -->
+                <div
+                    class="service-card bg-white p-8 rounded-3xl flex flex-col items-center text-center fade-in cursor-default group">
+                    <div
+                        class="w-20 h-20 bg-rose-50 text-primary rounded-full flex items-center justify-center text-3xl mb-6 group-hover:scale-110 transition-transform">
+                        <i class="fas fa-car-side"></i>
+                    </div>
+                    <h3 class="font-display font-bold text-xl text-zinc-900 mb-3">Gelin Arabası Süsleme</h3>
+                    <p class="text-zinc-600 text-sm leading-relaxed">Düğününüzün en havalı aracı için modern, sade veya
+                        gösterişli çiçek aranjmanlarıyla gelin arabası süslemesi.</p>
+                </div>
+
+                <!-- Service 5 -->
+                <div class="service-card bg-white p-8 rounded-3xl flex flex-col items-center text-center fade-in cursor-default group"
+                    style="transition-delay: 100ms;">
+                    <div
+                        class="w-20 h-20 bg-rose-50 text-primary rounded-full flex items-center justify-center text-4xl mb-6 group-hover:scale-110 transition-transform">
+                        <i class="fas fa-gift"></i>
+                    </div>
+                    <h3 class="font-display font-bold text-xl text-zinc-900 mb-3">Kutu Güller & Çikolata</h3>
+                    <p class="text-zinc-600 text-sm leading-relaxed">Özel kutusunda ithal güller, pelüş ayıcık
+                        sürprizleri ve markalı, özel dizayn şık hediye çikolata tepsileri.</p>
+                </div>
+
+                <!-- Service 6 -->
+                <div class="service-card bg-white p-8 rounded-3xl flex flex-col items-center text-center fade-in cursor-default group"
+                    style="transition-delay: 200ms;">
+                    <div
+                        class="w-20 h-20 bg-rose-50 text-primary rounded-full flex items-center justify-center text-3xl mb-6 group-hover:scale-110 transition-transform">
+                        <i class="fas fa-spa"></i>
+                    </div>
+                    <h3 class="font-display font-bold text-xl text-zinc-900 mb-3">Gelin Buketleri</h3>
+                    <p class="text-zinc-600 text-sm leading-relaxed">Gelinin zarafetini tamamlayan, ıslak lale veya
+                        şoklanmış kuru çiçeklerden tasarlanan kalıcı gelin çiçeği ve tacı.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 🌟 FOTOĞRAF GALERİSİ -->
+    <section id="galeri" class="py-20 lg:py-32 bg-zinc-950 relative overflow-hidden fade-in">
+        <div class="absolute inset-0 opacity-20">
+            <svg class="h-full w-full" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                    <pattern id="dots" width="20" height="20" patternUnits="userSpaceOnUse">
+                        <circle fill="#e11d48" cx="2" cy="2" r="2"></circle>
+                    </pattern>
+                </defs>
+                <rect width="100%" height="100%" fill="url(#dots)"></rect>
+            </svg>
+        </div>
+
+        <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-2xl mx-auto mb-16">
+                <span
+                    class="text-rose-400 font-bold tracking-widest text-sm uppercase mb-2 block">Referanslarımız</span>
+                <h2 class="text-3xl md:text-5xl font-display font-black text-white mb-6">Mutluluk Kareleri</h2>
+                <div class="w-20 h-1.5 bg-gradient-to-r from-primary to-rose-400 mx-auto rounded-full"></div>
+            </div>
+
+            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-6">
+                <div class="gallery-item group">
+                    <img src="https://lh3.googleusercontent.com/p/AF1QipMD9QsSVPJk85HOZf1APBEn1gka2R6bjLsEG4fn=s0"
+                        alt="Çiçek Aranjmanı">
+                    <div class="gallery-overlay"><i class="fas fa-heart text-white text-2xl drop-shadow-md"></i></div>
+                </div>
+
+                <div class="gallery-item group">
+                    <img src="https://lh3.googleusercontent.com/p/AF1QipPy3VQIQRU4QeI3eebMm1OwpAgYZK2V3IGF1r1B=s0"
+                        alt="Organizasyon Detayı">
+                    <div class="gallery-overlay"><i class="fas fa-heart text-white text-2xl drop-shadow-md"></i></div>
+                </div>
+                <div class="gallery-item group">
+                    <img src="https://lh3.googleusercontent.com/p/AF1QipM3qooclhTf2mh9OUH-daDFhaXWXV9Ujr4kCuvV=s0"
+                        alt="Konsept Süsleme">
+                    <div class="gallery-overlay"><i class="fas fa-heart text-white text-2xl drop-shadow-md"></i></div>
+                </div>
+                <div class="gallery-item group">
+                    <img src="https://lh3.googleusercontent.com/p/AF1QipNN55JC9bH1sO2CsWdihPFeTVC7r5TS77WkO2MA=s0"
+                        alt="Nişan Masası">
+                    <div class="gallery-overlay"><i class="fas fa-heart text-white text-2xl drop-shadow-md"></i></div>
+                </div>
+            </div>
+
+            <div class="text-center mt-12">
+                <a href="https://wa.me/903662144540?text=Katalogunuzu%20görebilir%20miyim?" target="_blank"
+                    class="inline-flex items-center gap-2 text-rose-300 hover:text-white font-semibold transition-colors">
+                    Daha Fazla Örnek Görmek İçin Bize Ulaşın <i class="fas fa-arrow-right text-sm"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- 🌟 MÜŞTERİ YORUMLARI -->
+    <section id="yorumlar" class="py-20 lg:py-28 bg-[#fdf2f8] fade-in relative overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
+                <div>
+                    <span class="text-primary font-bold tracking-widest text-sm uppercase mb-2 block">Deyimiyle Aşk
+                        Markası</span>
+                    <h2 class="text-3xl md:text-5xl font-display font-black text-zinc-900 mb-4">Sizden Gelenler</h2>
+                    <div class="w-20 h-1.5 bg-gradient-to-r from-primary to-rose-400 rounded-full"></div>
+                </div>
+                <div
+                    class="flex items-center gap-3 bg-white px-5 py-3 rounded-2xl shadow-sm border border-rose-100 w-max">
+                    <span class="text-4xl font-black text-zinc-900 font-display">5.0</span>
+                    <div>
+                        <div class="flex text-yellow-500 text-sm mb-0.5"><i class="fas fa-star"></i><i
+                                class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                                class="fas fa-star"></i></div>
+                        <span class="text-xs text-zinc-500 font-semibold">10 Mükemmel Yorum</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="relative">
+                <!-- Şık Scroll Mask -->
+                <div
+                    class="absolute right-0 top-0 w-24 h-full bg-gradient-to-l from-[#fdf2f8] to-transparent z-10 pointer-events-none hidden md:block">
+                </div>
+
+                <div class="reviews-scroll pb-8 pt-4">
+                    <!-- Review 1 -->
+                    <div
+                        class="review-card bg-white p-8 rounded-3xl border border-zinc-100 shadow-[0_8px_30px_rgb(0,0,0,0.04)] relative hover:-translate-y-2 transition-transform">
+                        <i class="fas fa-quote-right absolute top-6 right-8 text-rose-100 text-5xl"></i>
+                        <p class="text-zinc-700 mb-8 italic text-[15px] leading-relaxed relative z-10">"Yılbaşını çok
+                            güzel geçirdik sevgililer günü için çok güzel hediyeler almışlar heycanla bekliyorum
+                            çiçekler de çok kaliteliydi aşırı memnun kaldım her zaman cix organizasyonu tercih edeceğim
+                            ❤️"</p>
+                        <div class="flex items-center gap-4">
+                            <div
+                                class="w-12 h-12 rounded-full bg-rose-50 text-primary flex justify-center items-center font-bold text-lg">
+                                E</div>
+                            <div>
+                                <h4 class="text-zinc-900 font-bold text-sm">Eren Kabasakal</h4><span
+                                    class="text-zinc-500 text-xs flex gap-1 text-yellow-400"><i
+                                        class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                                        class="fas fa-star"></i><i class="fas fa-star"></i></span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Review 2 -->
+                    <div
+                        class="review-card bg-white p-8 rounded-3xl border border-zinc-100 shadow-[0_8px_30px_rgb(0,0,0,0.04)] relative hover:-translate-y-2 transition-transform">
+                        <i class="fas fa-quote-right absolute top-6 right-8 text-rose-100 text-5xl"></i>
+                        <p class="text-zinc-700 mb-8 italic text-[15px] leading-relaxed relative z-10">"Mükemmel. En iyi
+                            ve kaliteli organizasyon. İsteklerinizi eksiksiz ve büyük bir özenle önemsiyorlar. Herşey
+                            için teşekkürler."</p>
+                        <div class="flex items-center gap-4">
+                            <div
+                                class="w-12 h-12 rounded-full bg-rose-50 text-primary flex justify-center items-center font-bold text-lg">
+                                P</div>
+                            <div>
+                                <h4 class="text-zinc-900 font-bold text-sm">Pınar Ahşak</h4><span
+                                    class="text-zinc-500 text-xs flex gap-1 text-yellow-400"><i
+                                        class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                                        class="fas fa-star"></i><i class="fas fa-star"></i></span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Review 3 -->
+                    <div
+                        class="review-card bg-white p-8 rounded-3xl border border-zinc-100 shadow-[0_8px_30px_rgb(0,0,0,0.04)] relative hover:-translate-y-2 transition-transform">
+                        <i class="fas fa-quote-right absolute top-6 right-8 text-rose-100 text-5xl"></i>
+                        <p class="text-zinc-700 mb-8 italic text-[15px] leading-relaxed relative z-10">"Aldığımız
+                            ürünler çok kaliteliydi güler yüz deseniz yine öyle herkese gönül rahatlığıyla
+                            önerebileceğim bir yer 👍…"</p>
+                        <div class="flex items-center gap-4">
+                            <div
+                                class="w-12 h-12 rounded-full bg-rose-50 text-primary flex justify-center items-center font-bold text-lg">
+                                B</div>
+                            <div>
+                                <h4 class="text-zinc-900 font-bold text-sm">Berat Yıldız</h4><span
+                                    class="text-zinc-500 text-xs flex gap-1 text-yellow-400"><i
+                                        class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                                        class="fas fa-star"></i><i class="fas fa-star"></i></span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Review 4 -->
+                    <div
+                        class="review-card bg-white p-8 rounded-3xl border border-zinc-100 shadow-[0_8px_30px_rgb(0,0,0,0.04)] relative hover:-translate-y-2 transition-transform">
+                        <i class="fas fa-quote-right absolute top-6 right-8 text-rose-100 text-5xl"></i>
+                        <p class="text-zinc-700 mb-8 italic text-[15px] leading-relaxed relative z-10">"Kesinlikle
+                            tavsiye ediyorum kaliteli ve özel ürünlerin tek adresi"</p>
+                        <div class="flex items-center gap-4">
+                            <div
+                                class="w-12 h-12 rounded-full bg-rose-50 text-primary flex justify-center items-center font-bold text-lg">
+                                A</div>
+                            <div>
+                                <h4 class="text-zinc-900 font-bold text-sm">Alptuğ Yapan</h4><span
+                                    class="text-zinc-500 text-xs flex gap-1 text-yellow-400"><i
+                                        class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                                        class="fas fa-star"></i><i class="fas fa-star"></i></span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Review 5 -->
+                    <div
+                        class="review-card bg-white p-8 rounded-3xl border border-zinc-100 shadow-[0_8px_30px_rgb(0,0,0,0.04)] relative hover:-translate-y-2 transition-transform">
+                        <i class="fas fa-quote-right absolute top-6 right-8 text-rose-100 text-5xl"></i>
+                        <p class="text-zinc-700 mb-8 italic text-[15px] leading-relaxed relative z-10">"cidden çok
+                            kaliteli bir organizasyon sevgilimle beraber yıl başını rüya gibi geçirdik bütün
+                            problemlerimizi çözmemiz için her şekilde yardımda bulundular teşekkürler..."</p>
+                        <div class="flex items-center gap-4">
+                            <div
+                                class="w-12 h-12 rounded-full bg-rose-50 text-primary flex justify-center items-center font-bold text-lg">
+                                A</div>
+                            <div>
+                                <h4 class="text-zinc-900 font-bold text-sm">Ata Genc</h4><span
+                                    class="text-zinc-500 text-xs flex gap-1 text-yellow-400"><i
+                                        class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                                        class="fas fa-star"></i><i class="fas fa-star"></i></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="flex justify-center mt-6 hidden md:flex gap-2 text-zinc-300">
+                <i class="fas fa-circle text-[8px] text-primary"></i>
+                <i class="fas fa-circle text-[8px]"></i>
+                <i class="fas fa-circle text-[8px]"></i>
+                <i class="fas fa-arrow-right-long ml-2 animate-pulse text-primary"></i> <span
+                    class="text-xs text-primary font-semibold">Kaydırarak inceleyin</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- 🌟 SIKÇA SORULAN SORULAR (SSS) -->
+    <section class="py-20 lg:py-28 bg-white fade-in">
+        <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <span class="text-primary font-bold tracking-widest text-sm uppercase mb-2 block">Merak Edilenler</span>
+                <h2 class="text-3xl md:text-5xl font-display font-black text-zinc-900 mb-6">Sıkça Sorulan Sorular</h2>
+                <div class="w-20 h-1.5 bg-gradient-to-r from-primary to-pink-300 mx-auto rounded-full"></div>
+            </div>
+
+            <div class="space-y-4">
+                <!-- SSS 1 -->
+                <div class="faq-item bg-white border border-rose-100 rounded-2xl overflow-hidden cursor-pointer shadow-sm hover:shadow-md transition-shadow"
+                    onclick="this.classList.toggle('active')">
+                    <div class="px-6 py-6 flex justify-between items-center bg-rose-50/30">
+                        <h4 class="faq-header font-bold text-zinc-900 text-lg transition-colors">Aynı gün çiçek siparişi
+                            ve teslimatı yapıyor musunuz?</h4>
+                        <i class="fas fa-chevron-down faq-icon text-zinc-400 transition-transform"></i>
+                    </div>
+                    <div class="faq-content bg-white px-6">
+                        <p class="text-zinc-600 pb-6 pt-2 text-sm leading-relaxed border-t border-rose-50">Evet,
+                            Kastamonu merkez içine hafta sonu dahil aynı gün taze çiçek teslimatımız bulunmaktadır. Özel
+                            siparişler ve özel tasarım yoğunlukları için arayıp teyit almanız faydalı olacaktır.</p>
+                    </div>
+                </div>
+
+                <!-- SSS 2 -->
+                <div class="faq-item bg-white border border-rose-100 rounded-2xl overflow-hidden cursor-pointer shadow-sm hover:shadow-md transition-shadow"
+                    onclick="this.classList.toggle('active')">
+                    <div class="px-6 py-6 flex justify-between items-center bg-rose-50/30">
+                        <h4 class="faq-header font-bold text-zinc-900 text-lg transition-colors">Kız isteme, Söz veya
+                            Nişan organizasyonu için ne kadar önceden haber vermeliyiz?</h4>
+                        <i class="fas fa-chevron-down faq-icon text-zinc-400 transition-transform"></i>
+                    </div>
+                    <div class="faq-content bg-white px-6">
+                        <p class="text-zinc-600 pb-6 pt-2 text-sm leading-relaxed border-t border-rose-50">Söz, nişan
+                            veya büyük çaplı sürpriz organizasyonlarında dilediğiniz konseptin eksiksiz hazırlanabilmesi
+                            için ortalama 1-2 hafta önceden bizimle iletişime geçmenizi öneriyoruz. Böylece tüm
+                            detayları zevkinize göre çalışabiliriz.</p>
+                    </div>
+                </div>
+
+                <!-- SSS 3 -->
+                <div class="faq-item bg-white border border-rose-100 rounded-2xl overflow-hidden cursor-pointer shadow-sm hover:shadow-md transition-shadow"
+                    onclick="this.classList.toggle('active')">
+                    <div class="px-6 py-6 flex justify-between items-center bg-rose-50/30">
+                        <h4 class="faq-header font-bold text-zinc-900 text-lg transition-colors">Tasarım çikolata ve
+                            balon organizasyonu hizmetiniz var mı?</h4>
+                        <i class="fas fa-chevron-down faq-icon text-zinc-400 transition-transform"></i>
+                    </div>
+                    <div class="faq-content bg-white px-6">
+                        <p class="text-zinc-600 pb-6 pt-2 text-sm leading-relaxed border-t border-rose-50">Sadece canlı
+                            çiçek veya buket değil, mağazamızda isim yazılı markalı tepsili çikolatalar, pelüş
+                            ayıcıklar, doğum günleri veya açılışlar için uçan balon / konsept balon süslemeleri de
+                            ustalıkla yapılmaktadır.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 🌟 GOOGLE MAPS & İLETİŞİM -->
+    <section id="iletisim" class="fade-in relative z-10">
+        <div class="w-full h-80 lg:h-96 relative">
+            <iframe src="https://maps.google.com/maps?q=41.4272519,33.7737242&t=&z=16&ie=UTF8&iwloc=&output=embed"
+                class="absolute inset-0 w-full h-full border-0" allowfullscreen="" loading="lazy"></iframe>
+
+            <!-- Floating Address Card Over Map -->
+            <div
+                class="absolute left-4 sm:left-10 top-1/2 -translate-y-1/2 bg-white/95 backdrop-blur-md p-6 rounded-2xl shadow-2xl border border-white max-w-sm hidden md:block">
+                <div
+                    class="w-12 h-12 bg-rose-100 rounded-full flex items-center justify-center text-primary mb-4 text-xl">
+                    <i class="fas fa-map-pin"></i>
+                </div>
+                <h4 class="font-display font-bold text-zinc-900 text-lg mb-2">Mağazamıza Bekliyoruz!</h4>
+                <p class="text-zinc-600 text-sm mb-4 leading-relaxed">Kuzeykent, Kamil Demircioğlu Cd. Fatih yapı
+                    kooperatifi D:1/L, 37200 Kastamonu Merkez</p>
+                <a href="https://maps.google.com/?q=41.4272519,33.7737242" target="_blank"
+                    class="text-primary font-bold text-sm flex items-center gap-2 hover:gap-3 transition-all">Yol Tarifi
+                    Al <i class="fas fa-arrow-right"></i></a>
+            </div>
+        </div>
+
+        <div class="bg-zinc-950 text-white pt-16 pb-24 md:pb-16 relative z-10 border-t-4 border-primary">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid md:grid-cols-4 gap-12 text-center md:text-left">
+                    <!-- Brand -->
+                    <div class="md:col-span-2">
+                        <div class="flex items-center justify-center md:justify-start gap-3 mb-6">
+                            <div
+                                class="w-12 h-12 rounded-full bg-gradient-to-tr from-primary to-rose-400 flex items-center justify-center">
+                                <i class="fas fa-leaf text-xl text-white"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-display font-black text-2xl tracking-tight">CİX ORGANİZASYON</h3>
+                                <p class="text-xs text-rose-300 font-bold tracking-widest uppercase mt-0.5">Parti Süs
+                                    Çiçek</p>
+                            </div>
+                        </div>
+                        <p class="text-zinc-400 text-sm leading-relaxed mb-6 max-w-sm mx-auto md:mx-0">Kastamonu'nun en
+                            özel anlarında, estetik ve kusursuzluğun buluştuğu nokta. Sevdiklerinize en güzel hediye
+                            bizde!</p>
+
+                        <!-- Socials -->
+                        <div class="flex gap-4 justify-center md:justify-start">
+                            <a href="#"
+                                class="w-10 h-10 rounded-full bg-zinc-900 border border-zinc-800 flex items-center justify-center hover:bg-rose-600 hover:border-rose-600 transition-colors">
+                                <i class="fab fa-instagram text-lg"></i>
+                            </a>
+                            <a href="https://wa.me/903662144540" target="_blank"
+                                class="w-10 h-10 rounded-full bg-zinc-900 border border-zinc-800 flex items-center justify-center hover:bg-[#25D366] hover:border-[#25D366] transition-colors">
+                                <i class="fab fa-whatsapp text-lg"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Contact Info -->
+                    <div>
+                        <h4 class="font-display font-semibold text-lg text-white mb-6 uppercase tracking-wider">İletişim
+                        </h4>
+                        <ul class="space-y-4 text-sm">
+                            <li>
+                                <a href="tel:903662144540" class="flex flex-col md:items-start items-center group">
+                                    <span class="text-xs text-zinc-500 uppercase font-bold tracking-wider mb-1">Müşteri
+                                        Hizmetleri</span>
+                                    <span
+                                        class="text-zinc-300 group-hover:text-rose-400 transition-colors font-medium flex items-center gap-2"><i
+                                            class="fas fa-phone-alt opacity-70"></i> (0366) 214 45 40</span>
+                                </a>
+                            </li>
+                            <li class="pt-2">
+                                <span
+                                    class="text-xs text-zinc-500 uppercase font-bold tracking-wider mb-1 block">Çalışma
+                                    Saatleri</span>
+                                <span class="text-zinc-300 font-medium leading-relaxed block">Pzt-Cmt: 09:00 -
+                                    22:00</span>
+                                <span class="text-zinc-400">Pazar: 10:30 - 22:00</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Mobile Address (Only visible on mobile) -->
+                    <div class="md:hidden">
+                        <h4 class="font-display font-semibold text-lg text-white mb-6 uppercase tracking-wider">Adres
+                        </h4>
+                        <p class="text-zinc-400 text-sm leading-relaxed">Kuzeykent, Kamil Demircioğlu Cd. Fatih yapı
+                            kooperatifi D:1/L<br>37200 Kastamonu Merkez</p>
+                    </div>
+                </div>
+
+                <div class="mt-12 pt-8 border-t border-zinc-900 text-center flex flex-col items-center">
+                    <i class="fas fa-heart text-primary mb-3 text-xl animate-pulse"></i>
+                    <p class="text-zinc-600 text-sm">© 2026 Cix Organizasyon - Parti, Süs & Çiçek. Aşkla Kastamonu'da
+                        Tasarlandı.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 🌟 FLOATING WHATSAPP -->
+    <a href="https://wa.me/903662144540?text=Merhaba,%20çiçek%20ve%20organizasyon%20fiyatları%20hakkında%20bilgi%20alabilir%20miyim?"
+        target="_blank"
+        class="fixed right-4 bottom-24 md:bottom-6 z-40 bg-[#25D366] text-white w-14 h-14 rounded-full flex items-center justify-center text-3xl shadow-[0_4px_20px_rgba(37,211,102,0.4)] pulse-ring hover:scale-110 transition-transform">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- 🌟 MOBILE BOTTOM APP BAR (Sadece mobilde görünür) -->
+    <div
+        class="md:hidden glass-dark fixed bottom-0 left-0 w-full z-50 border-t border-zinc-800 pb-safe shadow-[0_-10px_30px_rgba(0,0,0,0.5)]">
+        <div class="flex justify-around items-center h-[72px] px-2 position-relative">
+            <a href="#hero"
+                class="flex flex-col items-center justify-center w-full text-zinc-400 hover:text-rose-400 active:text-rose-400 transition-colors">
+                <i class="fas fa-home text-xl mb-1 mt-1"></i>
+                <span class="text-[10px] font-medium">Burası</span>
+            </a>
+            <a href="#hizmetler"
+                class="flex flex-col items-center justify-center w-full text-zinc-400 hover:text-rose-400 active:text-rose-400 transition-colors pr-2">
+                <i class="fas fa-gift text-xl mb-1 mt-1"></i>
+                <span class="text-[10px] font-medium">Hizmetler</span>
+            </a>
+
+            <!-- Magic Call Button in the middle -->
+            <a href="tel:903662144540"
+                class="absolute left-1/2 -top-6 -translate-x-1/2 flex flex-col items-center justify-center z-50 group">
+                <div class="w-16 h-16 rounded-full bg-gradient-to-tr from-primary to-rose-400 text-white flex items-center justify-center text-2xl shadow-[0_10px_25px_rgba(225,29,72,0.5)] border-4 border-zinc-900 group-active:scale-95 transition-transform animate-bounce"
+                    style="animation-duration: 4s;">
+                    <i class="fas fa-phone-alt"></i>
+                </div>
+            </a>
+            <!-- Padding for absolute center button -->
+            <div class="w-16 shrink-0"></div>
+
+            <a href="#galeri"
+                class="flex flex-col items-center justify-center w-full text-zinc-400 hover:text-rose-400 active:text-rose-400 transition-colors pl-2">
+                <i class="fas fa-image text-xl mb-1 mt-1"></i>
+                <span class="text-[10px] font-medium">Galeri</span>
+            </a>
+            <a href="https://wa.me/903662144540?text=Merhaba" target="_blank"
+                class="flex flex-col items-center justify-center w-full text-zinc-400 hover:text-[#25D366] active:text-[#25D366] transition-colors">
+                <i class="fab fa-whatsapp text-xl mb-1 mt-1"></i>
+                <span class="text-[10px] font-medium">WhatsApp</span>
+            </a>
+        </div>
+    </div>
+
+    <!-- 🌟 JAVASCRIPT ANIMASYONLARI -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Intersection Observer
+            const observerOptions = { root: null, rootMargin: '0px', threshold: 0.15 };
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('is-visible');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, observerOptions);
+
+            document.querySelectorAll('.fade-in, .scale-in').forEach((el) => {
+                observer.observe(el);
+            });
+        });
+    </script>
+</body>
+
+</html>
