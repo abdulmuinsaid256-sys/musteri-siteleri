@@ -65,11 +65,9 @@
 
 <body class="font-sans text-gray-800 bg-brand-light antialiased selection:bg-brand-accent selection:text-white">
 
-    <!-- Navbar -->
     <nav class="fixed w-full z-50 glass-nav transition-all duration-300" id="navbar">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-24">
-                <!-- Logo -->
                 <div class="flex-shrink-0 flex items-center gap-3 cursor-pointer" onclick="window.scrollTo(0,0)">
                     <div class="bg-white p-1 rounded-lg border-2 border-brand-primary/10">
                         <img class="h-14 w-auto object-contain" src="assets/img/logo.jpg" alt="BozSolar Enerji Logo">
@@ -81,7 +79,6 @@
                     </div>
                 </div>
 
-                <!-- Desktop Menu -->
                 <div class="hidden md:flex items-center space-x-8">
                     <a href="#kurumsal"
                         class="text-brand-dark hover:text-brand-accent transition-colors font-extrabold text-sm uppercase tracking-wider drop-shadow-sm">Kurumsal</a>
@@ -97,7 +94,6 @@
                     </a>
                 </div>
 
-                <!-- Mobile menu button -->
                 <div class="md:hidden flex items-center">
                     <button id="mobile-menu-button"
                         class="bg-brand-primary text-white p-2.5 rounded-lg hover:bg-brand-accent focus:outline-none shadow-md transition-colors">
@@ -107,7 +103,6 @@
             </div>
         </div>
 
-        <!-- Mobile Menu Panel -->
         <div id="mobile-menu" class="hidden md:hidden bg-white/95 backdrop-blur-xl border-t border-gray-100 shadow-xl">
             <div class="px-4 pt-2 pb-6 space-y-1">
                 <a href="#kurumsal"
@@ -122,7 +117,6 @@
         </div>
     </nav>
 
-    <!-- Hero Section -->
     <section
         class="relative min-h-[100vh] pt-32 pb-32 flex items-center justify-center bg-gradient-to-br from-white via-blue-50/50 to-white">
 
@@ -160,14 +154,12 @@
             </div>
         </div>
 
-        <!-- Scroll Down Indicator -->
         <a href="#kurumsal"
             class="absolute bottom-6 left-1/2 transform -translate-x-1/2 text-brand-primary/50 hover:text-brand-accent animate-bounce transition-colors pb-safe">
             <i class="fas fa-chevron-down text-3xl"></i>
         </a>
     </section>
 
-    <!-- CW Enerji Güvence Bandı -->
     <section class="bg-brand-primary py-4 relative overflow-hidden">
         <div class="absolute inset-0 bg-gradient-to-r from-brand-primary via-blue-800 to-brand-primary"></div>
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
@@ -190,7 +182,6 @@
         </div>
     </section>
 
-    <!-- Kurumsal / Hakkımızda -->
     <section id="kurumsal" class="py-24 bg-white relative overflow-hidden">
 
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
@@ -265,7 +256,6 @@
         </div>
     </section>
 
-    <!-- Hizmetlerimiz -->
     <section id="hizmetler" class="py-24 bg-brand-light relative">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center max-w-3xl mx-auto mb-16">
@@ -277,7 +267,6 @@
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- Service 1 -->
                 <div
                     class="service-card bg-white rounded-2xl p-8 border border-gray-100 relative overflow-hidden group">
                     <div
@@ -297,7 +286,6 @@
                     </a>
                 </div>
 
-                <!-- Service 2 -->
                 <div
                     class="service-card bg-white rounded-2xl p-8 border border-gray-100 relative overflow-hidden group">
                     <div
@@ -317,7 +305,6 @@
                     </a>
                 </div>
 
-                <!-- Service 3 -->
                 <div
                     class="service-card bg-white rounded-2xl p-8 border border-gray-100 relative overflow-hidden group relative">
                     <div
@@ -340,7 +327,6 @@
                     </a>
                 </div>
 
-                <!-- Service 4 -->
                 <div
                     class="service-card bg-white rounded-2xl p-8 border border-gray-100 relative overflow-hidden group">
                     <div
@@ -360,7 +346,6 @@
                     </a>
                 </div>
 
-                <!-- Service 5 -->
                 <div
                     class="service-card bg-white rounded-2xl p-8 border border-gray-100 relative overflow-hidden group">
                     <div
@@ -380,7 +365,6 @@
                     </a>
                 </div>
 
-                <!-- Service 6 -->
                 <div
                     class="service-card bg-white rounded-2xl p-8 border border-gray-100 relative overflow-hidden group">
                     <div
@@ -403,7 +387,6 @@
         </div>
     </section>
 
-    <!-- Projelerimiz -->
     <section id="projeler" class="py-24 bg-gray-50 text-brand-dark relative border-t border-gray-100">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16">
@@ -415,281 +398,269 @@
                     yüksek verimli projelerden bazıları.</p>
             </div>
 
-            <!-- İlk 6 Proje (Her zaman görünür) -->
-<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8" id="proje-grid">
-<div class="group bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 border border-gray-100">
-                        <div class="relative aspect-[4/3] overflow-hidden"><img src="assets/img/ig_proje_1.jpg"
-                                onerror="this.src='assets/img/hero-bg.jpg'" alt="bozsolar_enerji_muhendislik"
-                                class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
-                        </div>
-                        <div class="p-5">
-                            <h3 class="font-bold text-brand-dark text-lg" title="bozsolar_enerji_muhendislik">bozsolar_enerji_muhendislik</h3>
-                            <p class="text-gray-500 text-sm mt-1 line-clamp-2" title="bozsolar_enerji_muhendislik
-
-☀️☀️Yenifakılı dan Murat Gürcan abimin 7,5 hp tarımsal sulama sistemini teslim ettik. Allah suyunu ve güneşini bol etsin inşallah. Allah bol bereketli mahsuller versin.☀️☀️
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8" id="proje-grid">
+                <div
+                    class="group bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 border border-gray-100">
+                    <div class="relative aspect-[4/3] overflow-hidden"><img src="assets/img/ig_proje_1.jpg"
+                            onerror="this.src='assets/img/hero-bg.jpg'" alt="Yenifakılı 7.5 HP Tarımsal Sulama"
+                            class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                    </div>
+                    <div class="p-5">
+                        <h3 class="font-bold text-brand-dark text-lg" title="Yenifakılı 7.5 HP Tarımsal Sulama">
+                            Yenifakılı 7.5 HP Tarımsal Sulama</h3>
+                        <p class="text-gray-500 text-sm mt-1 " title="☀️☀️Yenifakılı dan Murat Gürcan abimin 7,5 hp tarımsal sulama sistemini teslim ettik. Allah suyunu ve güneşini bol etsin inşallah. Allah bol bereketli mahsuller versin.☀️☀️
 
 ⚡️⚡️⚡️Bedava elektriğin tek adresi⚡️⚡️⚡️ ☀️☀️BozSolar Enerji ve Mühendislik☀️☀️
 Elektrik Mühendisi Kadir Bozlar
 
 Adres: Karakoç yolu üzeri Rise aprt. Boğazlıyan
-İletişim 0541 770 51 21">bozsolar_enerji_muhendislik
+İletişim 0541 770 51 21">                            ☀️☀️Yenifakılı dan Murat Gürcan abimin 7,5 hp tarımsal sulama sistemini teslim ettik. Allah
+                            suyunu ve güneşini bol etsin inşallah. Allah bol bereketli mahsuller versin.☀️☀️
 
-☀️☀️Yenifakılı dan Murat Gürcan abimin 7,5 hp tarımsal sulama sistemini teslim ettik. Allah suyunu ve güneşini bol etsin inşallah. Allah bol bereketli mahsuller versin.☀️☀️
+                            ⚡️⚡️⚡️Bedava elektriğin tek adresi⚡️⚡️⚡️ ☀️☀️BozSolar Enerji ve Mühendislik☀️☀️
+                            Elektrik Mühendisi Kadir Bozlar
 
-⚡️⚡️⚡️Bedava elektriğin tek adresi⚡️⚡️⚡️ ☀️☀️BozSolar Enerji ve Mühendislik☀️☀️
-Elektrik Mühendisi Kadir Bozlar
-
-Adres: Karakoç yolu üzeri Rise aprt. Boğazlıyan
-İletişim 0541 770 51 21</p>
-                        </div>
+                            Adres: Karakoç yolu üzeri Rise aprt. Boğazlıyan
+                            İletişim 0541 770 51 21</p>
                     </div>
+                </div>
 
-                    <div class="group bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 border border-gray-100">
-                        <div class="relative aspect-[4/3] overflow-hidden"><img src="assets/img/ig_proje_2.jpg"
-                                onerror="this.src='assets/img/hero-bg.jpg'" alt="bozsolar_enerji_muhendislik"
-                                class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
-                        </div>
-                        <div class="p-5">
-                            <h3 class="font-bold text-brand-dark text-lg" title="bozsolar_enerji_muhendislik">bozsolar_enerji_muhendislik</h3>
-                            <p class="text-gray-500 text-sm mt-1 line-clamp-2" title="bozsolar_enerji_muhendislik
-
-Yenipazar'dan Nihat muhtarıma 5.5 hp 4 kw sistemi hayırlı uğurlu olsun inşallah.">bozsolar_enerji_muhendislik
-
-Yenipazar'dan Nihat muhtarıma 5.5 hp 4 kw sistemi hayırlı uğurlu olsun inşallah.</p>
-                        </div>
+                <div
+                    class="group bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 border border-gray-100">
+                    <div class="relative aspect-[4/3] overflow-hidden"><img src="assets/img/ig_proje_2.jpg"
+                            onerror="this.src='assets/img/hero-bg.jpg'" alt="Yenipazar 5.5 HP 4 kW GES"
+                            class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
                     </div>
-
-                    <div class="group bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 border border-gray-100">
-                        <div class="relative aspect-[4/3] overflow-hidden"><img src="assets/img/ig_proje_3.jpg"
-                                onerror="this.src='assets/img/hero-bg.jpg'" alt="bozsolar_enerji_muhendislik"
-                                class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
-                        </div>
-                        <div class="p-5">
-                            <h3 class="font-bold text-brand-dark text-lg" title="bozsolar_enerji_muhendislik">bozsolar_enerji_muhendislik</h3>
-                            <p class="text-gray-500 text-sm mt-1 line-clamp-2" title="bozsolar_enerji_muhendislik
-
-Kuruhüyük köyünden Emre Can gardaşıma 40 hp tarımsal sulama sistemini teslim ettik. Allah suyunu ve güneşini bol etsin inşallah. Allah bol bereketli mahsuller versin.
-
-Bedava elektriğin tek adresi BozSolar Enerji ve Mühendislik
-Elektrik Mühendisi Kadir Bozlar
-
-Adres Karakoç yolu üzeri Ergül mobilya yanı Boğazlıyan
-İletişim 0541 770 51 21">bozsolar_enerji_muhendislik
-
-Kuruhüyük köyünden Emre Can gardaşıma 40 hp tarımsal sulama sistemini teslim ettik. Allah suyunu ve güneşini bol etsin inşallah. Allah bol bereketli mahsuller versin.
-
-Bedava elektriğin tek adresi BozSolar Enerji ve Mühendislik
-Elektrik Mühendisi Kadir Bozlar
-
-Adres Karakoç yolu üzeri Ergül mobilya yanı Boğazlıyan
-İletişim 0541 770 51 21</p>
-                        </div>
+                    <div class="p-5">
+                        <h3 class="font-bold text-brand-dark text-lg" title="Yenipazar 5.5 HP 4 kW GES">Yenipazar 5.5 HP
+                            4 kW GES</h3>
+                        <p class="text-gray-500 text-sm mt-1 " title="Yenipazar'dan Nihat muhtarıma 5.5 hp 4 kw sistemi hayırlı uğurlu olsun inşallah.">                            Yenipazar'dan Nihat muhtarıma 5.5 hp 4 kw sistemi hayırlı uğurlu olsun inşallah.</p>
                     </div>
+                </div>
 
-                    <div class="group bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 border border-gray-100">
-                        <div class="relative aspect-[4/3] overflow-hidden"><img src="assets/img/ig_proje_4.jpg"
-                                onerror="this.src='assets/img/hero-bg.jpg'" alt="bozsolar_enerji_muhendislik"
-                                class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
-                        </div>
-                        <div class="p-5">
-                            <h3 class="font-bold text-brand-dark text-lg" title="bozsolar_enerji_muhendislik">bozsolar_enerji_muhendislik</h3>
-                            <p class="text-gray-500 text-sm mt-1 line-clamp-2" title="bozsolar_enerji_muhendislik
-
-Yenipazar kasabasından Yasin özlü abimin 5.5 HP tarımsal sulama sistemini teslim ettik. Allah suyunu ve güneşini bol etsin inşallah. Allah bol bereketli mahsuller versin.
-
-Bedava elektriğin tek adresi BozSolar Enerji ve Mühendislik
-Elektrik Mühendisi Kadir Bozlar
-
-Adres Karakoç yolu üzeri Ergül mobilya yanı Boğazlıyan
-İletişim 0541 770 51 21">bozsolar_enerji_muhendislik
-
-Yenipazar kasabasından Yasin özlü abimin 5.5 HP tarımsal sulama sistemini teslim ettik. Allah suyunu ve güneşini bol etsin inşallah. Allah bol bereketli mahsuller versin.
-
-Bedava elektriğin tek adresi BozSolar Enerji ve Mühendislik
-Elektrik Mühendisi Kadir Bozlar
-
-Adres Karakoç yolu üzeri Ergül mobilya yanı Boğazlıyan
-İletişim 0541 770 51 21</p>
-                        </div>
+                <div
+                    class="group bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 border border-gray-100">
+                    <div class="relative aspect-[4/3] overflow-hidden"><img src="assets/img/ig_proje_3.jpg"
+                            onerror="this.src='assets/img/hero-bg.jpg'" alt="Kuruhüyük 40 HP Tarımsal Sulama"
+                            class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
                     </div>
-
-                    <div class="group bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 border border-gray-100">
-                        <div class="relative aspect-[4/3] overflow-hidden"><img src="assets/img/ig_proje_5.jpg"
-                                onerror="this.src='assets/img/hero-bg.jpg'" alt="bozsolar_enerji_muhendislik"
-                                class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
-                        </div>
-                        <div class="p-5">
-                            <h3 class="font-bold text-brand-dark text-lg" title="bozsolar_enerji_muhendislik">bozsolar_enerji_muhendislik</h3>
-                            <p class="text-gray-500 text-sm mt-1 line-clamp-2" title="bozsolar_enerji_muhendislik
-
-Yenifakılı Başpınar köyünden Yaşar turan Emmime 15 HP tarımsal sulama sistemini teslim ettik. Allah suyunu ve güneşini bol etsin inşallah. Allah bol bereketli mahsuller versin.
+                    <div class="p-5">
+                        <h3 class="font-bold text-brand-dark text-lg" title="Kuruhüyük 40 HP Tarımsal Sulama">Kuruhüyük
+                            40 HP Tarımsal Sulama</h3>
+                        <p class="text-gray-500 text-sm mt-1 " title="Kuruhüyük köyünden Emre Can gardaşıma 40 hp tarımsal sulama sistemini teslim ettik. Allah suyunu ve güneşini bol etsin inşallah. Allah bol bereketli mahsuller versin.
 
 Bedava elektriğin tek adresi BozSolar Enerji ve Mühendislik
 Elektrik Mühendisi Kadir Bozlar
 
 Adres Karakoç yolu üzeri Ergül mobilya yanı Boğazlıyan
-İletişim 0541 770 51 21">bozsolar_enerji_muhendislik
+İletişim 0541 770 51 21">                            Kuruhüyük köyünden Emre Can gardaşıma 40 hp tarımsal sulama sistemini teslim ettik. Allah
+                            suyunu ve güneşini bol etsin inşallah. Allah bol bereketli mahsuller versin.
 
-Yenifakılı Başpınar köyünden Yaşar turan Emmime 15 HP tarımsal sulama sistemini teslim ettik. Allah suyunu ve güneşini bol etsin inşallah. Allah bol bereketli mahsuller versin.
+                            Bedava elektriğin tek adresi BozSolar Enerji ve Mühendislik
+                            Elektrik Mühendisi Kadir Bozlar
 
-Bedava elektriğin tek adresi BozSolar Enerji ve Mühendislik
-Elektrik Mühendisi Kadir Bozlar
-
-Adres Karakoç yolu üzeri Ergül mobilya yanı Boğazlıyan
-İletişim 0541 770 51 21</p>
-                        </div>
+                            Adres Karakoç yolu üzeri Ergül mobilya yanı Boğazlıyan
+                            İletişim 0541 770 51 21</p>
                     </div>
+                </div>
 
-                    <div class="group bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 border border-gray-100">
-                        <div class="relative aspect-[4/3] overflow-hidden"><img src="assets/img/ig_proje_6.jpg"
-                                onerror="this.src='assets/img/hero-bg.jpg'" alt="bozsolar_enerji_muhendislik"
-                                class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
-                        </div>
-                        <div class="p-5">
-                            <h3 class="font-bold text-brand-dark text-lg" title="bozsolar_enerji_muhendislik">bozsolar_enerji_muhendislik</h3>
-                            <p class="text-gray-500 text-sm mt-1 line-clamp-2" title="bozsolar_enerji_muhendislik
-
-Yamaçlı kasabasından patyon emmime 7.5 HP tarımsal sulama sistemini teslim ettik. Allah suyunu ve güneşini bol etsin inşallah. Allah bol bereketli mahsuller versin.
-
-Bedava elektriğin tek adresi BozSolar Enerji ve Mühendislik
-Elektrik Mühendisi Kadir Bozlar
-
-Adres Karakoç yolu üzeri Ergül mobilya yanı Boğazlıyan
-İletişim 0541 770 51 21">bozsolar_enerji_muhendislik
-
-Yamaçlı kasabasından patyon emmime 7.5 HP tarımsal sulama sistemini teslim ettik. Allah suyunu ve güneşini bol etsin inşallah. Allah bol bereketli mahsuller versin.
-
-Bedava elektriğin tek adresi BozSolar Enerji ve Mühendislik
-Elektrik Mühendisi Kadir Bozlar
-
-Adres Karakoç yolu üzeri Ergül mobilya yanı Boğazlıyan
-İletişim 0541 770 51 21</p>
-                        </div>
+                <div
+                    class="group bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 border border-gray-100">
+                    <div class="relative aspect-[4/3] overflow-hidden"><img src="assets/img/ig_proje_4.jpg"
+                            onerror="this.src='assets/img/hero-bg.jpg'" alt="Yenipazar 5.5 HP Tarımsal Sulama"
+                            class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
                     </div>
-
-                    
-</div>
-
-<!-- Kademe 1 -->
-<div class="hidden grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 mt-8" id="proje-kademe-1">
-<div class="group bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 border border-gray-100">
-                        <div class="relative aspect-[4/3] overflow-hidden"><img src="assets/img/ig_proje_7.jpg"
-                                onerror="this.src='assets/img/hero-bg.jpg'" alt="bozsolar_enerji_muhendislik"
-                                class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
-                        </div>
-                        <div class="p-5">
-                            <h3 class="font-bold text-brand-dark text-lg" title="bozsolar_enerji_muhendislik">bozsolar_enerji_muhendislik</h3>
-                            <p class="text-gray-500 text-sm mt-1 line-clamp-2" title="bozsolar_enerji_muhendislik
-
-Aşağısarıkaya köyünden haşim emmimin 7.5 HP tarımsal sulama sistemini teslim ettik. Allah suyunu ve güneşini bol etsin inşallah. Allah bol bereketli mahsuller versin.
+                    <div class="p-5">
+                        <h3 class="font-bold text-brand-dark text-lg" title="Yenipazar 5.5 HP Tarımsal Sulama">Yenipazar
+                            5.5 HP Tarımsal Sulama</h3>
+                        <p class="text-gray-500 text-sm mt-1 " title="Yenipazar kasabasından Yasin özlü abimin 5.5 HP tarımsal sulama sistemini teslim ettik. Allah suyunu ve güneşini bol etsin inşallah. Allah bol bereketli mahsuller versin.
 
 Bedava elektriğin tek adresi BozSolar Enerji ve Mühendislik
 Elektrik Mühendisi Kadir Bozlar
 
 Adres Karakoç yolu üzeri Ergül mobilya yanı Boğazlıyan
-İletişim 0541 770 51 21">bozsolar_enerji_muhendislik
+İletişim 0541 770 51 21">                            Yenipazar kasabasından Yasin özlü abimin 5.5 HP tarımsal sulama sistemini teslim ettik.
+                            Allah suyunu ve güneşini bol etsin inşallah. Allah bol bereketli mahsuller versin.
 
-Aşağısarıkaya köyünden haşim emmimin 7.5 HP tarımsal sulama sistemini teslim ettik. Allah suyunu ve güneşini bol etsin inşallah. Allah bol bereketli mahsuller versin.
+                            Bedava elektriğin tek adresi BozSolar Enerji ve Mühendislik
+                            Elektrik Mühendisi Kadir Bozlar
 
-Bedava elektriğin tek adresi BozSolar Enerji ve Mühendislik
-Elektrik Mühendisi Kadir Bozlar
-
-Adres Karakoç yolu üzeri Ergül mobilya yanı Boğazlıyan
-İletişim 0541 770 51 21</p>
-                        </div>
+                            Adres Karakoç yolu üzeri Ergül mobilya yanı Boğazlıyan
+                            İletişim 0541 770 51 21</p>
                     </div>
+                </div>
 
-                    <div class="group bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 border border-gray-100">
-                        <div class="relative aspect-[4/3] overflow-hidden"><img src="assets/img/ig_proje_8.jpg"
-                                onerror="this.src='assets/img/hero-bg.jpg'" alt="bozsolar_enerji_muhendislik"
-                                class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
-                        </div>
-                        <div class="p-5">
-                            <h3 class="font-bold text-brand-dark text-lg" title="bozsolar_enerji_muhendislik">bozsolar_enerji_muhendislik</h3>
-                            <p class="text-gray-500 text-sm mt-1 line-clamp-2" title="bozsolar_enerji_muhendislik
-
-Yamaçlı kasabasından Mahmut emmime ve şeref abime 5.5 HP tarımsal sulama sistemini teslim ettik. Allah suyunu ve güneşini bol etsin inşallah. Allah bol bereketli mahsuller versin.
-
-Bedava elektriğin tek adresi BozSolar Enerji ve Mühendislik
-Elektrik Mühendisi Kadir Bozlar
-
-Adres Karakoç yolu üzeri Ergül mobilya yanı Boğazlıyan
-İletişim 0541 770 51 21">bozsolar_enerji_muhendislik
-
-Yamaçlı kasabasından Mahmut emmime ve şeref abime 5.5 HP tarımsal sulama sistemini teslim ettik. Allah suyunu ve güneşini bol etsin inşallah. Allah bol bereketli mahsuller versin.
-
-Bedava elektriğin tek adresi BozSolar Enerji ve Mühendislik
-Elektrik Mühendisi Kadir Bozlar
-
-Adres Karakoç yolu üzeri Ergül mobilya yanı Boğazlıyan
-İletişim 0541 770 51 21</p>
-                        </div>
+                <div
+                    class="group bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 border border-gray-100">
+                    <div class="relative aspect-[4/3] overflow-hidden"><img src="assets/img/ig_proje_5.jpg"
+                            onerror="this.src='assets/img/hero-bg.jpg'" alt="Yenifakılı Başpınar 15 HP Tarımsal Sulama"
+                            class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
                     </div>
-
-                    <div class="group bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 border border-gray-100">
-                        <div class="relative aspect-[4/3] overflow-hidden"><img src="assets/img/ig_proje_9.jpg"
-                                onerror="this.src='assets/img/hero-bg.jpg'" alt="bozsolar_enerji_muhendislik"
-                                class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
-                        </div>
-                        <div class="p-5">
-                            <h3 class="font-bold text-brand-dark text-lg" title="bozsolar_enerji_muhendislik">bozsolar_enerji_muhendislik</h3>
-                            <p class="text-gray-500 text-sm mt-1 line-clamp-2" title="bozsolar_enerji_muhendislik
-
-Uzunlu beldesinden Ercan Bilir abimin 15 HP tarımsal sulama sistemini teslim ettik. Allah suyunu ve güneşini bol etsin inşallah. Allah bol bereketli mahsuller versin.
+                    <div class="p-5">
+                        <h3 class="font-bold text-brand-dark text-lg" title="Yenifakılı Başpınar 15 HP Tarımsal Sulama">
+                            Yenifakılı Başpınar 15 HP Tarımsal Sulama</h3>
+                        <p class="text-gray-500 text-sm mt-1 " title="Yenifakılı Başpınar köyünden Yaşar turan Emmime 15 HP tarımsal sulama sistemini teslim ettik. Allah suyunu ve güneşini bol etsin inşallah. Allah bol bereketli mahsuller versin.
 
 Bedava elektriğin tek adresi BozSolar Enerji ve Mühendislik
 Elektrik Mühendisi Kadir Bozlar
 
 Adres Karakoç yolu üzeri Ergül mobilya yanı Boğazlıyan
-İletişim 0541 770 51 21">bozsolar_enerji_muhendislik
+İletişim 0541 770 51 21">                            Yenifakılı Başpınar köyünden Yaşar turan Emmime 15 HP tarımsal sulama sistemini teslim
+                            ettik. Allah suyunu ve güneşini bol etsin inşallah. Allah bol bereketli mahsuller versin.
 
-Uzunlu beldesinden Ercan Bilir abimin 15 HP tarımsal sulama sistemini teslim ettik. Allah suyunu ve güneşini bol etsin inşallah. Allah bol bereketli mahsuller versin.
+                            Bedava elektriğin tek adresi BozSolar Enerji ve Mühendislik
+                            Elektrik Mühendisi Kadir Bozlar
 
-Bedava elektriğin tek adresi BozSolar Enerji ve Mühendislik
-Elektrik Mühendisi Kadir Bozlar
-
-Adres Karakoç yolu üzeri Ergül mobilya yanı Boğazlıyan
-İletişim 0541 770 51 21</p>
-                        </div>
+                            Adres Karakoç yolu üzeri Ergül mobilya yanı Boğazlıyan
+                            İletişim 0541 770 51 21</p>
                     </div>
+                </div>
 
-                    <div class="group bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 border border-gray-100">
-                        <div class="relative aspect-[4/3] overflow-hidden"><img src="assets/img/ig_proje_10.jpg"
-                                onerror="this.src='assets/img/hero-bg.jpg'" alt="bozsolar_enerji_muhendislik"
-                                class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
-                        </div>
-                        <div class="p-5">
-                            <h3 class="font-bold text-brand-dark text-lg" title="bozsolar_enerji_muhendislik">bozsolar_enerji_muhendislik</h3>
-                            <p class="text-gray-500 text-sm mt-1 line-clamp-2" title="bozsolar_enerji_muhendislik
-
-Nevşehir Kozaklı Çağsak köyü İrfan Carı abimin 5.5 HP tarımsal sulama sistemini teslim ettik. Allah suyunu ve güneşini bol etsin inşallah. Allah bol bereketli mahsuller versin.
-
-Bedava elektriğin tek adresi BozSolar Enerji ve Mühendislik
-Elektrik Mühendisi Kadir Bozlar
-
-Adres Karakoç yolu üzeri Ergül mobilya yanı Boğazlıyan
-İletişim 0541 770 51 21">bozsolar_enerji_muhendislik
-
-Nevşehir Kozaklı Çağsak köyü İrfan Carı abimin 5.5 HP tarımsal sulama sistemini teslim ettik. Allah suyunu ve güneşini bol etsin inşallah. Allah bol bereketli mahsuller versin.
-
-Bedava elektriğin tek adresi BozSolar Enerji ve Mühendislik
-Elektrik Mühendisi Kadir Bozlar
-
-Adres Karakoç yolu üzeri Ergül mobilya yanı Boğazlıyan
-İletişim 0541 770 51 21</p>
-                        </div>
+                <div
+                    class="group bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 border border-gray-100">
+                    <div class="relative aspect-[4/3] overflow-hidden"><img src="assets/img/ig_proje_6.jpg"
+                            onerror="this.src='assets/img/hero-bg.jpg'" alt="Yamaçlı 7.5 HP Tarımsal Sulama"
+                            class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
                     </div>
+                    <div class="p-5">
+                        <h3 class="font-bold text-brand-dark text-lg" title="Yamaçlı 7.5 HP Tarımsal Sulama">Yamaçlı 7.5
+                            HP Tarımsal Sulama</h3>
+                        <p class="text-gray-500 text-sm mt-1 " title="Yamaçlı kasabasından patyon emmime 7.5 HP tarımsal sulama sistemini teslim ettik. Allah suyunu ve güneşini bol etsin inşallah. Allah bol bereketli mahsuller versin.
 
-                    <div class="group bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 border border-gray-100">
-                        <div class="relative aspect-[4/3] overflow-hidden"><img src="assets/img/ig_proje_11.jpg"
-                                onerror="this.src='assets/img/hero-bg.jpg'" alt="bozsolar_enerji_muhendislik"
-                                class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
-                        </div>
-                        <div class="p-5">
-                            <h3 class="font-bold text-brand-dark text-lg" title="bozsolar_enerji_muhendislik">bozsolar_enerji_muhendislik</h3>
-                            <p class="text-gray-500 text-sm mt-1 line-clamp-2" title="bozsolar_enerji_muhendislik
+Bedava elektriğin tek adresi BozSolar Enerji ve Mühendislik
+Elektrik Mühendisi Kadir Bozlar
 
-Nevşehir Kozaklıdan Yasin Ünal abimin 5.5 HP tarımsal sulama sistemini teslim ettik. Allah suyunu ve güneşini bol etsin inşallah. Allah bol bereketli mahsuller versin.
+Adres Karakoç yolu üzeri Ergül mobilya yanı Boğazlıyan
+İletişim 0541 770 51 21">                            Yamaçlı kasabasından patyon emmime 7.5 HP tarımsal sulama sistemini teslim ettik. Allah
+                            suyunu ve güneşini bol etsin inşallah. Allah bol bereketli mahsuller versin.
+
+                            Bedava elektriğin tek adresi BozSolar Enerji ve Mühendislik
+                            Elektrik Mühendisi Kadir Bozlar
+
+                            Adres Karakoç yolu üzeri Ergül mobilya yanı Boğazlıyan
+                            İletişim 0541 770 51 21</p>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="hidden grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 mt-8" id="proje-kademe-1">
+                <div
+                    class="group bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 border border-gray-100">
+                    <div class="relative aspect-[4/3] overflow-hidden"><img src="assets/img/ig_proje_7.jpg"
+                            onerror="this.src='assets/img/hero-bg.jpg'" alt="Aşağısarıkaya 7.5 HP Tarımsal Sulama"
+                            class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                    </div>
+                    <div class="p-5">
+                        <h3 class="font-bold text-brand-dark text-lg" title="Aşağısarıkaya 7.5 HP Tarımsal Sulama">
+                            Aşağısarıkaya 7.5 HP Tarımsal Sulama</h3>
+                        <p class="text-gray-500 text-sm mt-1 " title="Aşağısarıkaya köyünden haşim emmimin 7.5 HP tarımsal sulama sistemini teslim ettik. Allah suyunu ve güneşini bol etsin inşallah. Allah bol bereketli mahsuller versin.
+
+Bedava elektriğin tek adresi BozSolar Enerji ve Mühendislik
+Elektrik Mühendisi Kadir Bozlar
+
+Adres Karakoç yolu üzeri Ergül mobilya yanı Boğazlıyan
+İletişim 0541 770 51 21">                            Aşağısarıkaya köyünden haşim emmimin 7.5 HP tarımsal sulama sistemini teslim ettik. Allah
+                            suyunu ve güneşini bol etsin inşallah. Allah bol bereketli mahsuller versin.
+
+                            Bedava elektriğin tek adresi BozSolar Enerji ve Mühendislik
+                            Elektrik Mühendisi Kadir Bozlar
+
+                            Adres Karakoç yolu üzeri Ergül mobilya yanı Boğazlıyan
+                            İletişim 0541 770 51 21</p>
+                    </div>
+                </div>
+
+                <div
+                    class="group bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 border border-gray-100">
+                    <div class="relative aspect-[4/3] overflow-hidden"><img src="assets/img/ig_proje_8.jpg"
+                            onerror="this.src='assets/img/hero-bg.jpg'" alt="Yamaçlı 5.5 HP Tarımsal Sulama"
+                            class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                    </div>
+                    <div class="p-5">
+                        <h3 class="font-bold text-brand-dark text-lg" title="Yamaçlı 5.5 HP Tarımsal Sulama">Yamaçlı 5.5
+                            HP Tarımsal Sulama</h3>
+                        <p class="text-gray-500 text-sm mt-1 " title="Yamaçlı kasabasından Mahmut emmime ve şeref abime 5.5 HP tarımsal sulama sistemini teslim ettik. Allah suyunu ve güneşini bol etsin inşallah. Allah bol bereketli mahsuller versin.
+
+Bedava elektriğin tek adresi BozSolar Enerji ve Mühendislik
+Elektrik Mühendisi Kadir Bozlar
+
+Adres Karakoç yolu üzeri Ergül mobilya yanı Boğazlıyan
+İletişim 0541 770 51 21">                            Yamaçlı kasabasından Mahmut emmime ve şeref abime 5.5 HP tarımsal sulama sistemini teslim
+                            ettik. Allah suyunu ve güneşini bol etsin inşallah. Allah bol bereketli mahsuller versin.
+
+                            Bedava elektriğin tek adresi BozSolar Enerji ve Mühendislik
+                            Elektrik Mühendisi Kadir Bozlar
+
+                            Adres Karakoç yolu üzeri Ergül mobilya yanı Boğazlıyan
+                            İletişim 0541 770 51 21</p>
+                    </div>
+                </div>
+
+                <div
+                    class="group bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 border border-gray-100">
+                    <div class="relative aspect-[4/3] overflow-hidden"><img src="assets/img/ig_proje_9.jpg"
+                            onerror="this.src='assets/img/hero-bg.jpg'" alt="Uzunlu 15 HP Tarımsal Sulama"
+                            class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                    </div>
+                    <div class="p-5">
+                        <h3 class="font-bold text-brand-dark text-lg" title="Uzunlu 15 HP Tarımsal Sulama">Uzunlu 15 HP
+                            Tarımsal Sulama</h3>
+                        <p class="text-gray-500 text-sm mt-1 " title="Uzunlu beldesinden Ercan Bilir abimin 15 HP tarımsal sulama sistemini teslim ettik. Allah suyunu ve güneşini bol etsin inşallah. Allah bol bereketli mahsuller versin.
+
+Bedava elektriğin tek adresi BozSolar Enerji ve Mühendislik
+Elektrik Mühendisi Kadir Bozlar
+
+Adres Karakoç yolu üzeri Ergül mobilya yanı Boğazlıyan
+İletişim 0541 770 51 21">                            Uzunlu beldesinden Ercan Bilir abimin 15 HP tarımsal sulama sistemini teslim ettik. Allah
+                            suyunu ve güneşini bol etsin inşallah. Allah bol bereketli mahsuller versin.
+
+                            Bedava elektriğin tek adresi BozSolar Enerji ve Mühendislik
+                            Elektrik Mühendisi Kadir Bozlar
+
+                            Adres Karakoç yolu üzeri Ergül mobilya yanı Boğazlıyan
+                            İletişim 0541 770 51 21</p>
+                    </div>
+                </div>
+
+                <div
+                    class="group bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 border border-gray-100">
+                    <div class="relative aspect-[4/3] overflow-hidden"><img src="assets/img/ig_proje_10.jpg"
+                            onerror="this.src='assets/img/hero-bg.jpg'"
+                            alt="Nevşehir Kozaklı Çağsak 5.5 HP Tarımsal Sulama"
+                            class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                    </div>
+                    <div class="p-5">
+                        <h3 class="font-bold text-brand-dark text-lg"
+                            title="Nevşehir Kozaklı Çağsak 5.5 HP Tarımsal Sulama">Nevşehir Kozaklı Çağsak 5.5 HP
+                            Tarımsal Sulama</h3>
+                        <p class="text-gray-500 text-sm mt-1 " title="Nevşehir Kozaklı Çağsak köyü İrfan Carı abimin 5.5 HP tarımsal sulama sistemini teslim ettik. Allah suyunu ve güneşini bol etsin inşallah. Allah bol bereketli mahsuller versin.
+
+Bedava elektriğin tek adresi BozSolar Enerji ve Mühendislik
+Elektrik Mühendisi Kadir Bozlar
+
+Adres Karakoç yolu üzeri Ergül mobilya yanı Boğazlıyan
+İletişim 0541 770 51 21">                            Nevşehir Kozaklı Çağsak köyü İrfan Carı abimin 5.5 HP tarımsal sulama sistemini teslim
+                            ettik. Allah suyunu ve güneşini bol etsin inşallah. Allah bol bereketli mahsuller versin.
+
+                            Bedava elektriğin tek adresi BozSolar Enerji ve Mühendislik
+                            Elektrik Mühendisi Kadir Bozlar
+
+                            Adres Karakoç yolu üzeri Ergül mobilya yanı Boğazlıyan
+                            İletişim 0541 770 51 21</p>
+                    </div>
+                </div>
+
+                <div
+                    class="group bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 border border-gray-100">
+                    <div class="relative aspect-[4/3] overflow-hidden"><img src="assets/img/ig_proje_11.jpg"
+                            onerror="this.src='assets/img/hero-bg.jpg'" alt="Nevşehir Kozaklı 5.5 HP Tarımsal Sulama"
+                            class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                    </div>
+                    <div class="p-5">
+                        <h3 class="font-bold text-brand-dark text-lg" title="Nevşehir Kozaklı 5.5 HP Tarımsal Sulama">
+                            Nevşehir Kozaklı 5.5 HP Tarımsal Sulama</h3>
+                        <p class="text-gray-500 text-sm mt-1 " title="Nevşehir Kozaklıdan Yasin Ünal abimin 5.5 HP tarımsal sulama sistemini teslim ettik. Allah suyunu ve güneşini bol etsin inşallah. Allah bol bereketli mahsuller versin.
 
 Bedava elektriğin tek adresi BozSolar Enerji ve Mühendislik
 Elektrik Mühendisi Kadir Bozlar
@@ -699,469 +670,467 @@ Adres Karakoç yolu üzeri Ergül mobilya yanı Boğazlıyan
 @ahmet.onen.395
 @lidertarim66
 @behlul.onen
-Tüm yorumları gör">bozsolar_enerji_muhendislik
+Tüm yorumları gör">                            Nevşehir Kozaklıdan Yasin Ünal abimin 5.5 HP tarımsal sulama sistemini teslim ettik. Allah
+                            suyunu ve güneşini bol etsin inşallah. Allah bol bereketli mahsuller versin.
 
-Nevşehir Kozaklıdan Yasin Ünal abimin 5.5 HP tarımsal sulama sistemini teslim ettik. Allah suyunu ve güneşini bol etsin inşallah. Allah bol bereketli mahsuller versin.
+                            Bedava elektriğin tek adresi BozSolar Enerji ve Mühendislik
+                            Elektrik Mühendisi Kadir Bozlar
 
-Bedava elektriğin tek adresi BozSolar Enerji ve Mühendislik
-Elektrik Mühendisi Kadir Bozlar
-
-Adres Karakoç yolu üzeri Ergül mobilya yanı Boğazlıyan
-İletişim 0541 770 51 21
-@ahmet.onen.395
-@lidertarim66
-@behlul.onen
-Tüm yorumları gör</p>
-                        </div>
+                            Adres Karakoç yolu üzeri Ergül mobilya yanı Boğazlıyan
+                            İletişim 0541 770 51 21
+                            @ahmet.onen.395
+                            @lidertarim66
+                            @behlul.onen
+                            Tüm yorumları gör</p>
                     </div>
+                </div>
 
-                    <div class="group bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 border border-gray-100">
-                        <div class="relative aspect-[4/3] overflow-hidden"><img src="assets/img/ig_proje_12.jpg"
-                                onerror="this.src='assets/img/hero-bg.jpg'" alt="bozsolar_enerji_muhendislik"
-                                class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
-                        </div>
-                        <div class="p-5">
-                            <h3 class="font-bold text-brand-dark text-lg" title="bozsolar_enerji_muhendislik">bozsolar_enerji_muhendislik</h3>
-                            <p class="text-gray-500 text-sm mt-1 line-clamp-2" title="bozsolar_enerji_muhendislik
-
-Nevşehir Kozaklı Doyduk köyünden Yasin Ünal abimin ikinci 3 HP tarımsal sulama sistemini teslim ettik. Allah suyunu ve güneşini bol etsin inşallah. Allah bol bereketli mahsuller versin.
-
-Bedava elektriğin tek adresi BozSolar Enerji ve Mühendislik
-Elektrik Mühendisi Kadir Bozlar
-
-Adres Karakoç yolu üzeri Ergül mobilya yanı Boğazlıyan
-İletişim 0541 770 51 21">bozsolar_enerji_muhendislik
-
-Nevşehir Kozaklı Doyduk köyünden Yasin Ünal abimin ikinci 3 HP tarımsal sulama sistemini teslim ettik. Allah suyunu ve güneşini bol etsin inşallah. Allah bol bereketli mahsuller versin.
-
-Bedava elektriğin tek adresi BozSolar Enerji ve Mühendislik
-Elektrik Mühendisi Kadir Bozlar
-
-Adres Karakoç yolu üzeri Ergül mobilya yanı Boğazlıyan
-İletişim 0541 770 51 21</p>
-                        </div>
+                <div
+                    class="group bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 border border-gray-100">
+                    <div class="relative aspect-[4/3] overflow-hidden"><img src="assets/img/ig_proje_12.jpg"
+                            onerror="this.src='assets/img/hero-bg.jpg'"
+                            alt="Nevşehir Kozaklı Doyduk 3 HP Tarımsal Sulama"
+                            class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
                     </div>
-
-                    
-</div>
-
-<!-- Kademe 2 -->
-<div class="hidden grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 mt-8" id="proje-kademe-2">
-<div class="group bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 border border-gray-100">
-                        <div class="relative aspect-[4/3] overflow-hidden"><img src="assets/img/ig_proje_13.jpg"
-                                onerror="this.src='assets/img/hero-bg.jpg'" alt="bozsolar_enerji_muhendislik"
-                                class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
-                        </div>
-                        <div class="p-5">
-                            <h3 class="font-bold text-brand-dark text-lg" title="bozsolar_enerji_muhendislik">bozsolar_enerji_muhendislik</h3>
-                            <p class="text-gray-500 text-sm mt-1 line-clamp-2" title="bozsolar_enerji_muhendislik
-
-Nevşehir Kozaklı Belekli köyünden Yılmaz Öztürk abimin ikinci 7,5 HP tarımsal sulama sistemini teslim ettik. Allah suyunu ve güneşini bol etsin inşallah. Allah bol bereketli mahsuller versin.
+                    <div class="p-5">
+                        <h3 class="font-bold text-brand-dark text-lg"
+                            title="Nevşehir Kozaklı Doyduk 3 HP Tarımsal Sulama">Nevşehir Kozaklı Doyduk 3 HP Tarımsal
+                            Sulama</h3>
+                        <p class="text-gray-500 text-sm mt-1 " title="Nevşehir Kozaklı Doyduk köyünden Yasin Ünal abimin ikinci 3 HP tarımsal sulama sistemini teslim ettik. Allah suyunu ve güneşini bol etsin inşallah. Allah bol bereketli mahsuller versin.
 
 Bedava elektriğin tek adresi BozSolar Enerji ve Mühendislik
 Elektrik Mühendisi Kadir Bozlar
 
 Adres Karakoç yolu üzeri Ergül mobilya yanı Boğazlıyan
-İletişim 0541 770 51 21">bozsolar_enerji_muhendislik
+İletişim 0541 770 51 21">                            Nevşehir Kozaklı Doyduk köyünden Yasin Ünal abimin ikinci 3 HP tarımsal sulama sistemini
+                            teslim ettik. Allah suyunu ve güneşini bol etsin inşallah. Allah bol bereketli mahsuller
+                            versin.
 
-Nevşehir Kozaklı Belekli köyünden Yılmaz Öztürk abimin ikinci 7,5 HP tarımsal sulama sistemini teslim ettik. Allah suyunu ve güneşini bol etsin inşallah. Allah bol bereketli mahsuller versin.
+                            Bedava elektriğin tek adresi BozSolar Enerji ve Mühendislik
+                            Elektrik Mühendisi Kadir Bozlar
 
-Bedava elektriğin tek adresi BozSolar Enerji ve Mühendislik
-Elektrik Mühendisi Kadir Bozlar
-
-Adres Karakoç yolu üzeri Ergül mobilya yanı Boğazlıyan
-İletişim 0541 770 51 21</p>
-                        </div>
+                            Adres Karakoç yolu üzeri Ergül mobilya yanı Boğazlıyan
+                            İletişim 0541 770 51 21</p>
                     </div>
+                </div>
 
-                    <div class="group bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 border border-gray-100">
-                        <div class="relative aspect-[4/3] overflow-hidden"><img src="assets/img/ig_proje_14.jpg"
-                                onerror="this.src='assets/img/hero-bg.jpg'" alt="bozsolar_enerji_muhendislik"
-                                class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
-                        </div>
-                        <div class="p-5">
-                            <h3 class="font-bold text-brand-dark text-lg" title="bozsolar_enerji_muhendislik">bozsolar_enerji_muhendislik</h3>
-                            <p class="text-gray-500 text-sm mt-1 line-clamp-2" title="bozsolar_enerji_muhendislik
+            </div>
 
-Boğazlıyan Başhoroz köyünden Sadık Sedef abimin 10 HP tarımsal sulama sistemini teslim ettik. Allah suyunu ve güneşini bol etsin inşallah. Allah bol bereketli mahsuller versin.
-
-Bedava elektriğin tek adresi BozSolar Enerji ve Mühendislik
-Elektrik Mühendisi Kadir Bozlar
-
-Adres Karakoç yolu üzeri Ergül mobilya yanı Boğazlıyan
-İletişim 0541 770 51 21">bozsolar_enerji_muhendislik
-
-Boğazlıyan Başhoroz köyünden Sadık Sedef abimin 10 HP tarımsal sulama sistemini teslim ettik. Allah suyunu ve güneşini bol etsin inşallah. Allah bol bereketli mahsuller versin.
-
-Bedava elektriğin tek adresi BozSolar Enerji ve Mühendislik
-Elektrik Mühendisi Kadir Bozlar
-
-Adres Karakoç yolu üzeri Ergül mobilya yanı Boğazlıyan
-İletişim 0541 770 51 21</p>
-                        </div>
+            <div class="hidden grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 mt-8" id="proje-kademe-2">
+                <div
+                    class="group bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 border border-gray-100">
+                    <div class="relative aspect-[4/3] overflow-hidden"><img src="assets/img/ig_proje_13.jpg"
+                            onerror="this.src='assets/img/hero-bg.jpg'"
+                            alt="Nevşehir Kozaklı Belekli 7.5 HP Tarımsal Sulama"
+                            class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
                     </div>
-
-                    <div class="group bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 border border-gray-100">
-                        <div class="relative aspect-[4/3] overflow-hidden"><img src="assets/img/ig_proje_15.jpg"
-                                onerror="this.src='assets/img/hero-bg.jpg'" alt="bozsolar_enerji_muhendislik"
-                                class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
-                        </div>
-                        <div class="p-5">
-                            <h3 class="font-bold text-brand-dark text-lg" title="bozsolar_enerji_muhendislik">bozsolar_enerji_muhendislik</h3>
-                            <p class="text-gray-500 text-sm mt-1 line-clamp-2" title="bozsolar_enerji_muhendislik
-
-Yamaçlı kasabasından Necmettin Moğol abimin 5,5 Hp tarımsal sulama sistemini teslim ettik. Allah suyunu ve güneşini bol etsin inşallah. Allah bol bereketli mahsuller versin.
+                    <div class="p-5">
+                        <h3 class="font-bold text-brand-dark text-lg"
+                            title="Nevşehir Kozaklı Belekli 7.5 HP Tarımsal Sulama">Nevşehir Kozaklı Belekli 7.5 HP
+                            Tarımsal Sulama</h3>
+                        <p class="text-gray-500 text-sm mt-1 " title="Nevşehir Kozaklı Belekli köyünden Yılmaz Öztürk abimin ikinci 7,5 HP tarımsal sulama sistemini teslim ettik. Allah suyunu ve güneşini bol etsin inşallah. Allah bol bereketli mahsuller versin.
 
 Bedava elektriğin tek adresi BozSolar Enerji ve Mühendislik
 Elektrik Mühendisi Kadir Bozlar
 
 Adres Karakoç yolu üzeri Ergül mobilya yanı Boğazlıyan
-İletişim 0541 770 51 21">bozsolar_enerji_muhendislik
+İletişim 0541 770 51 21">                            Nevşehir Kozaklı Belekli köyünden Yılmaz Öztürk abimin ikinci 7,5 HP tarımsal sulama
+                            sistemini teslim ettik. Allah suyunu ve güneşini bol etsin inşallah. Allah bol bereketli
+                            mahsuller versin.
 
-Yamaçlı kasabasından Necmettin Moğol abimin 5,5 Hp tarımsal sulama sistemini teslim ettik. Allah suyunu ve güneşini bol etsin inşallah. Allah bol bereketli mahsuller versin.
+                            Bedava elektriğin tek adresi BozSolar Enerji ve Mühendislik
+                            Elektrik Mühendisi Kadir Bozlar
 
-Bedava elektriğin tek adresi BozSolar Enerji ve Mühendislik
-Elektrik Mühendisi Kadir Bozlar
-
-Adres Karakoç yolu üzeri Ergül mobilya yanı Boğazlıyan
-İletişim 0541 770 51 21</p>
-                        </div>
+                            Adres Karakoç yolu üzeri Ergül mobilya yanı Boğazlıyan
+                            İletişim 0541 770 51 21</p>
                     </div>
+                </div>
 
-                    <div class="group bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 border border-gray-100">
-                        <div class="relative aspect-[4/3] overflow-hidden"><img src="assets/img/ig_proje_16.jpg"
-                                onerror="this.src='assets/img/hero-bg.jpg'" alt="bozsolar_enerji_muhendislik"
-                                class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
-                        </div>
-                        <div class="p-5">
-                            <h3 class="font-bold text-brand-dark text-lg" title="bozsolar_enerji_muhendislik">bozsolar_enerji_muhendislik</h3>
-                            <p class="text-gray-500 text-sm mt-1 line-clamp-2" title="bozsolar_enerji_muhendislik
-
-Boğazlıyan Çakmak köyünden Ömer ve Mehmet Emin Çelik abimin 15 Hp tarımsal sulama sistemini teslim ettik. Allah suyunu ve güneşini bol etsin inşallah. Allah bol bereketli mahsuller versin.
-
-Bedava elektriğin tek adresi BozSolar Enerji ve Mühendislik
-Elektrik Mühendisi Kadir Bozlar
-
-Adres Karakoç yolu üzeri Ergül mobilya yanı Boğazlıyan
-İletişim 0541 770 51 21">bozsolar_enerji_muhendislik
-
-Boğazlıyan Çakmak köyünden Ömer ve Mehmet Emin Çelik abimin 15 Hp tarımsal sulama sistemini teslim ettik. Allah suyunu ve güneşini bol etsin inşallah. Allah bol bereketli mahsuller versin.
-
-Bedava elektriğin tek adresi BozSolar Enerji ve Mühendislik
-Elektrik Mühendisi Kadir Bozlar
-
-Adres Karakoç yolu üzeri Ergül mobilya yanı Boğazlıyan
-İletişim 0541 770 51 21</p>
-                        </div>
+                <div
+                    class="group bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 border border-gray-100">
+                    <div class="relative aspect-[4/3] overflow-hidden"><img src="assets/img/ig_proje_14.jpg"
+                            onerror="this.src='assets/img/hero-bg.jpg'" alt="Boğazlıyan Başhoroz 10 HP Tarımsal Sulama"
+                            class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
                     </div>
-
-                    <div class="group bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 border border-gray-100">
-                        <div class="relative aspect-[4/3] overflow-hidden"><img src="assets/img/ig_proje_17.jpg"
-                                onerror="this.src='assets/img/hero-bg.jpg'" alt="bozsolar_enerji_muhendislik"
-                                class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
-                        </div>
-                        <div class="p-5">
-                            <h3 class="font-bold text-brand-dark text-lg" title="bozsolar_enerji_muhendislik">bozsolar_enerji_muhendislik</h3>
-                            <p class="text-gray-500 text-sm mt-1 line-clamp-2" title="bozsolar_enerji_muhendislik
-
-Yenipazardan Gürcan ve İbrahim Öner abimin 7,5 Hp tarımsal sulama sistemini teslim ettik. Allah suyunu ve güneşini bol etsin inşallah. Allah bol bereketli mahsuller versin.
+                    <div class="p-5">
+                        <h3 class="font-bold text-brand-dark text-lg" title="Boğazlıyan Başhoroz 10 HP Tarımsal Sulama">
+                            Boğazlıyan Başhoroz 10 HP Tarımsal Sulama</h3>
+                        <p class="text-gray-500 text-sm mt-1 " title="Boğazlıyan Başhoroz köyünden Sadık Sedef abimin 10 HP tarımsal sulama sistemini teslim ettik. Allah suyunu ve güneşini bol etsin inşallah. Allah bol bereketli mahsuller versin.
 
 Bedava elektriğin tek adresi BozSolar Enerji ve Mühendislik
 Elektrik Mühendisi Kadir Bozlar
 
 Adres Karakoç yolu üzeri Ergül mobilya yanı Boğazlıyan
-İletişim 0541 770 51 21">bozsolar_enerji_muhendislik
+İletişim 0541 770 51 21">                            Boğazlıyan Başhoroz köyünden Sadık Sedef abimin 10 HP tarımsal sulama sistemini teslim
+                            ettik. Allah suyunu ve güneşini bol etsin inşallah. Allah bol bereketli mahsuller versin.
 
-Yenipazardan Gürcan ve İbrahim Öner abimin 7,5 Hp tarımsal sulama sistemini teslim ettik. Allah suyunu ve güneşini bol etsin inşallah. Allah bol bereketli mahsuller versin.
+                            Bedava elektriğin tek adresi BozSolar Enerji ve Mühendislik
+                            Elektrik Mühendisi Kadir Bozlar
 
-Bedava elektriğin tek adresi BozSolar Enerji ve Mühendislik
-Elektrik Mühendisi Kadir Bozlar
-
-Adres Karakoç yolu üzeri Ergül mobilya yanı Boğazlıyan
-İletişim 0541 770 51 21</p>
-                        </div>
+                            Adres Karakoç yolu üzeri Ergül mobilya yanı Boğazlıyan
+                            İletişim 0541 770 51 21</p>
                     </div>
+                </div>
 
-                    <div class="group bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 border border-gray-100">
-                        <div class="relative aspect-[4/3] overflow-hidden"><img src="assets/img/ig_proje_18.jpg"
-                                onerror="this.src='assets/img/hero-bg.jpg'" alt="bozsolar_enerji_muhendislik"
-                                class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
-                        </div>
-                        <div class="p-5">
-                            <h3 class="font-bold text-brand-dark text-lg" title="bozsolar_enerji_muhendislik">bozsolar_enerji_muhendislik</h3>
-                            <p class="text-gray-500 text-sm mt-1 line-clamp-2" title="bozsolar_enerji_muhendislik
-
-Akdağmadeni Yasin Bey’in 8 kw/8,8 kwp On Grid satışlı sistemini teslim ettik. Allah güneşini bol etsin inşallah.
-
-Bedava elektriğin tek adresi BozSolar Enerji ve Mühendislik
-Elektrik Mühendisi Kadir Bozlar
-
-Adres Karakoç yolu üzeri Ergül mobilya yanı Boğazlıyan
-İletişim 0541 770 51 21">bozsolar_enerji_muhendislik
-
-Akdağmadeni Yasin Bey’in 8 kw/8,8 kwp On Grid satışlı sistemini teslim ettik. Allah güneşini bol etsin inşallah.
-
-Bedava elektriğin tek adresi BozSolar Enerji ve Mühendislik
-Elektrik Mühendisi Kadir Bozlar
-
-Adres Karakoç yolu üzeri Ergül mobilya yanı Boğazlıyan
-İletişim 0541 770 51 21</p>
-                        </div>
+                <div
+                    class="group bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 border border-gray-100">
+                    <div class="relative aspect-[4/3] overflow-hidden"><img src="assets/img/ig_proje_15.jpg"
+                            onerror="this.src='assets/img/hero-bg.jpg'" alt="Yamaçlı 5.5 HP Tarımsal Sulama"
+                            class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
                     </div>
-
-                    
-</div>
-
-<!-- Kademe 3 -->
-<div class="hidden grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 mt-8" id="proje-kademe-3">
-<div class="group bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 border border-gray-100">
-                        <div class="relative aspect-[4/3] overflow-hidden"><img src="assets/img/ig_proje_19.jpg"
-                                onerror="this.src='assets/img/hero-bg.jpg'" alt="bozsolar_enerji_muhendislik"
-                                class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
-                        </div>
-                        <div class="p-5">
-                            <h3 class="font-bold text-brand-dark text-lg" title="bozsolar_enerji_muhendislik">bozsolar_enerji_muhendislik</h3>
-                            <p class="text-gray-500 text-sm mt-1 line-clamp-2" title="bozsolar_enerji_muhendislik
-
-Yamaçlı Kasabasından Irmak Moğul abimin 12,5 Hp tarımsal sulama sistemini teslim ettik. Allah suyunu ve güneşini bol etsin inşallah. Allah bol bereketli mahsuller versin.
+                    <div class="p-5">
+                        <h3 class="font-bold text-brand-dark text-lg" title="Yamaçlı 5.5 HP Tarımsal Sulama">Yamaçlı 5.5
+                            HP Tarımsal Sulama</h3>
+                        <p class="text-gray-500 text-sm mt-1 " title="Yamaçlı kasabasından Necmettin Moğol abimin 5,5 Hp tarımsal sulama sistemini teslim ettik. Allah suyunu ve güneşini bol etsin inşallah. Allah bol bereketli mahsuller versin.
 
 Bedava elektriğin tek adresi BozSolar Enerji ve Mühendislik
 Elektrik Mühendisi Kadir Bozlar
 
 Adres Karakoç yolu üzeri Ergül mobilya yanı Boğazlıyan
-İletişim 0541 770 51 21">bozsolar_enerji_muhendislik
+İletişim 0541 770 51 21">                            Yamaçlı kasabasından Necmettin Moğol abimin 5,5 Hp tarımsal sulama sistemini teslim ettik.
+                            Allah suyunu ve güneşini bol etsin inşallah. Allah bol bereketli mahsuller versin.
 
-Yamaçlı Kasabasından Irmak Moğul abimin 12,5 Hp tarımsal sulama sistemini teslim ettik. Allah suyunu ve güneşini bol etsin inşallah. Allah bol bereketli mahsuller versin.
+                            Bedava elektriğin tek adresi BozSolar Enerji ve Mühendislik
+                            Elektrik Mühendisi Kadir Bozlar
 
-Bedava elektriğin tek adresi BozSolar Enerji ve Mühendislik
-Elektrik Mühendisi Kadir Bozlar
-
-Adres Karakoç yolu üzeri Ergül mobilya yanı Boğazlıyan
-İletişim 0541 770 51 21</p>
-                        </div>
+                            Adres Karakoç yolu üzeri Ergül mobilya yanı Boğazlıyan
+                            İletişim 0541 770 51 21</p>
                     </div>
+                </div>
 
-                    <div class="group bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 border border-gray-100">
-                        <div class="relative aspect-[4/3] overflow-hidden"><img src="assets/img/ig_proje_20.jpg"
-                                onerror="this.src='assets/img/hero-bg.jpg'" alt="bozsolar_enerji_muhendislik"
-                                class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
-                        </div>
-                        <div class="p-5">
-                            <h3 class="font-bold text-brand-dark text-lg" title="bozsolar_enerji_muhendislik">bozsolar_enerji_muhendislik</h3>
-                            <p class="text-gray-500 text-sm mt-1 line-clamp-2" title="bozsolar_enerji_muhendislik
-
-Özler Köyünden Mustafa ve Faruk Ganioğlu abimin 15 Hp tarımsal sulama sistemini teslim ettik. Allah suyunu ve güneşini bol etsin inşallah. Allah bol bereketli mahsuller versin.
-
-Bedava elektriğin tek adresi BozSolar Enerji ve Mühendislik
-Elektrik Mühendisi Kadir Bozlar
-
-Adres Karakoç yolu üzeri Ergül mobilya yanı Boğazlıyan
-İletişim 0541 770 51 21">bozsolar_enerji_muhendislik
-
-Özler Köyünden Mustafa ve Faruk Ganioğlu abimin 15 Hp tarımsal sulama sistemini teslim ettik. Allah suyunu ve güneşini bol etsin inşallah. Allah bol bereketli mahsuller versin.
-
-Bedava elektriğin tek adresi BozSolar Enerji ve Mühendislik
-Elektrik Mühendisi Kadir Bozlar
-
-Adres Karakoç yolu üzeri Ergül mobilya yanı Boğazlıyan
-İletişim 0541 770 51 21</p>
-                        </div>
+                <div
+                    class="group bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 border border-gray-100">
+                    <div class="relative aspect-[4/3] overflow-hidden"><img src="assets/img/ig_proje_16.jpg"
+                            onerror="this.src='assets/img/hero-bg.jpg'" alt="Boğazlıyan Çakmak 15 HP Tarımsal Sulama"
+                            class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
                     </div>
+                    <div class="p-5">
+                        <h3 class="font-bold text-brand-dark text-lg" title="Boğazlıyan Çakmak 15 HP Tarımsal Sulama">
+                            Boğazlıyan Çakmak 15 HP Tarımsal Sulama</h3>
+                        <p class="text-gray-500 text-sm mt-1 " title="Boğazlıyan Çakmak köyünden Ömer ve Mehmet Emin Çelik abimin 15 Hp tarımsal sulama sistemini teslim ettik. Allah suyunu ve güneşini bol etsin inşallah. Allah bol bereketli mahsuller versin.
 
-                    <div class="group bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 border border-gray-100">
-                        <div class="relative aspect-[4/3] overflow-hidden"><img src="assets/img/ig_proje_21.jpg"
-                                onerror="this.src='assets/img/hero-bg.jpg'" alt="bozsolar_enerji_muhendislik"
-                                class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
-                        </div>
-                        <div class="p-5">
-                            <h3 class="font-bold text-brand-dark text-lg" title="bozsolar_enerji_muhendislik">bozsolar_enerji_muhendislik</h3>
-                            <p class="text-gray-500 text-sm mt-1 line-clamp-2" title="bozsolar_enerji_muhendislik
+Bedava elektriğin tek adresi BozSolar Enerji ve Mühendislik
+Elektrik Mühendisi Kadir Bozlar
 
-Yazıçepni köyümüzün içme suyuna ilave panelimiz hayırlı uğurlu olsun inşallah. Susuz köyümüz kalmasın. Emeği geçen muhtarıma teşekkür ederiz.">bozsolar_enerji_muhendislik
+Adres Karakoç yolu üzeri Ergül mobilya yanı Boğazlıyan
+İletişim 0541 770 51 21">                            Boğazlıyan Çakmak köyünden Ömer ve Mehmet Emin Çelik abimin 15 Hp tarımsal sulama sistemini
+                            teslim ettik. Allah suyunu ve güneşini bol etsin inşallah. Allah bol bereketli mahsuller
+                            versin.
 
-Yazıçepni köyümüzün içme suyuna ilave panelimiz hayırlı uğurlu olsun inşallah. Susuz köyümüz kalmasın. Emeği geçen muhtarıma teşekkür ederiz.</p>
-                        </div>
+                            Bedava elektriğin tek adresi BozSolar Enerji ve Mühendislik
+                            Elektrik Mühendisi Kadir Bozlar
+
+                            Adres Karakoç yolu üzeri Ergül mobilya yanı Boğazlıyan
+                            İletişim 0541 770 51 21</p>
                     </div>
+                </div>
 
-                    <div class="group bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 border border-gray-100">
-                        <div class="relative aspect-[4/3] overflow-hidden"><img src="assets/img/ig_proje_22.jpg"
-                                onerror="this.src='assets/img/hero-bg.jpg'" alt="bozsolar_enerji_muhendislik"
-                                class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
-                        </div>
-                        <div class="p-5">
-                            <h3 class="font-bold text-brand-dark text-lg" title="bozsolar_enerji_muhendislik">bozsolar_enerji_muhendislik</h3>
-                            <p class="text-gray-500 text-sm mt-1 line-clamp-2" title="bozsolar_enerji_muhendislik
-
-Yamaçlı Kasabasından Duran Moğul abimin 5,5 Hp tarımsal sulama sistemini teslim ettik. Allah suyunu ve güneşini bol etsin inşallah. Allah bol bereketli mahsuller versin.
-
-Bedava elektriğin tek adresi BozSolar Enerji ve Mühendislik
-Elektrik Mühendisi Kadir Bozlar
-
-Adres Karakoç yolu üzeri Ergül mobilya yanı Boğazlıyan
-İletişim 0541 770 51 21">bozsolar_enerji_muhendislik
-
-Yamaçlı Kasabasından Duran Moğul abimin 5,5 Hp tarımsal sulama sistemini teslim ettik. Allah suyunu ve güneşini bol etsin inşallah. Allah bol bereketli mahsuller versin.
-
-Bedava elektriğin tek adresi BozSolar Enerji ve Mühendislik
-Elektrik Mühendisi Kadir Bozlar
-
-Adres Karakoç yolu üzeri Ergül mobilya yanı Boğazlıyan
-İletişim 0541 770 51 21</p>
-                        </div>
+                <div
+                    class="group bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 border border-gray-100">
+                    <div class="relative aspect-[4/3] overflow-hidden"><img src="assets/img/ig_proje_17.jpg"
+                            onerror="this.src='assets/img/hero-bg.jpg'" alt="Yenipazar 7.5 HP Tarımsal Sulama"
+                            class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
                     </div>
-
-                    <div class="group bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 border border-gray-100">
-                        <div class="relative aspect-[4/3] overflow-hidden"><img src="assets/img/ig_proje_23.jpg"
-                                onerror="this.src='assets/img/hero-bg.jpg'" alt="bozsolar_enerji_muhendislik"
-                                class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
-                        </div>
-                        <div class="p-5">
-                            <h3 class="font-bold text-brand-dark text-lg" title="bozsolar_enerji_muhendislik">bozsolar_enerji_muhendislik</h3>
-                            <p class="text-gray-500 text-sm mt-1 line-clamp-2" title="bozsolar_enerji_muhendislik
-
-Kozaklı Kanlıca köyünden Alican Hökelekli abimin 7,5 Hp tarımsal sulama sistemini teslim ettik. Allah suyunu ve güneşini bol etsin inşallah. Allah bol bereketli mahsuller versin.
+                    <div class="p-5">
+                        <h3 class="font-bold text-brand-dark text-lg" title="Yenipazar 7.5 HP Tarımsal Sulama">Yenipazar
+                            7.5 HP Tarımsal Sulama</h3>
+                        <p class="text-gray-500 text-sm mt-1 " title="Yenipazardan Gürcan ve İbrahim Öner abimin 7,5 Hp tarımsal sulama sistemini teslim ettik. Allah suyunu ve güneşini bol etsin inşallah. Allah bol bereketli mahsuller versin.
 
 Bedava elektriğin tek adresi BozSolar Enerji ve Mühendislik
 Elektrik Mühendisi Kadir Bozlar
 
 Adres Karakoç yolu üzeri Ergül mobilya yanı Boğazlıyan
-İletişim 0541 770 51 21">bozsolar_enerji_muhendislik
+İletişim 0541 770 51 21">                            Yenipazardan Gürcan ve İbrahim Öner abimin 7,5 Hp tarımsal sulama sistemini teslim ettik.
+                            Allah suyunu ve güneşini bol etsin inşallah. Allah bol bereketli mahsuller versin.
 
-Kozaklı Kanlıca köyünden Alican Hökelekli abimin 7,5 Hp tarımsal sulama sistemini teslim ettik. Allah suyunu ve güneşini bol etsin inşallah. Allah bol bereketli mahsuller versin.
+                            Bedava elektriğin tek adresi BozSolar Enerji ve Mühendislik
+                            Elektrik Mühendisi Kadir Bozlar
 
-Bedava elektriğin tek adresi BozSolar Enerji ve Mühendislik
-Elektrik Mühendisi Kadir Bozlar
-
-Adres Karakoç yolu üzeri Ergül mobilya yanı Boğazlıyan
-İletişim 0541 770 51 21</p>
-                        </div>
+                            Adres Karakoç yolu üzeri Ergül mobilya yanı Boğazlıyan
+                            İletişim 0541 770 51 21</p>
                     </div>
+                </div>
 
-                    <div class="group bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 border border-gray-100">
-                        <div class="relative aspect-[4/3] overflow-hidden"><img src="assets/img/ig_proje_24.jpg"
-                                onerror="this.src='assets/img/hero-bg.jpg'" alt="bozsolar_enerji_muhendislik"
-                                class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
-                        </div>
-                        <div class="p-5">
-                            <h3 class="font-bold text-brand-dark text-lg" title="bozsolar_enerji_muhendislik">bozsolar_enerji_muhendislik</h3>
-                            <p class="text-gray-500 text-sm mt-1 line-clamp-2" title="bozsolar_enerji_muhendislik
-
-Kozaklı kuruağıl köyünden Erdoğan abimin 3 kw off grid sistemini teslim ettik hayırlı uğurlu olsun.">bozsolar_enerji_muhendislik
-
-Kozaklı kuruağıl köyünden Erdoğan abimin 3 kw off grid sistemini teslim ettik hayırlı uğurlu olsun.</p>
-                        </div>
+                <div
+                    class="group bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 border border-gray-100">
+                    <div class="relative aspect-[4/3] overflow-hidden"><img src="assets/img/ig_proje_18.jpg"
+                            onerror="this.src='assets/img/hero-bg.jpg'" alt="Akdağmadeni 8 kW On Grid GES"
+                            class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
                     </div>
-
-                    
-</div>
-
-<!-- Kademe 4 -->
-<div class="hidden grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 mt-8" id="proje-kademe-4">
-<div class="group bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 border border-gray-100">
-                        <div class="relative aspect-[4/3] overflow-hidden"><img src="assets/img/ig_proje_25.jpg"
-                                onerror="this.src='assets/img/hero-bg.jpg'" alt="bozsolar_enerji_muhendislik"
-                                class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
-                        </div>
-                        <div class="p-5">
-                            <h3 class="font-bold text-brand-dark text-lg" title="bozsolar_enerji_muhendislik">bozsolar_enerji_muhendislik</h3>
-                            <p class="text-gray-500 text-sm mt-1 line-clamp-2" title="bozsolar_enerji_muhendislik
-
-Boğazlıyan Bahariye köyü 25 hp içme suyu sistemini teslim ettik. Allah suyunu ve güneşini bol etsin inşallah. Allah bol bereketli mahsuller versin.
+                    <div class="p-5">
+                        <h3 class="font-bold text-brand-dark text-lg" title="Akdağmadeni 8 kW On Grid GES">Akdağmadeni 8
+                            kW On Grid GES</h3>
+                        <p class="text-gray-500 text-sm mt-1 " title="Akdağmadeni Yasin Bey’in 8 kw/8,8 kwp On Grid satışlı sistemini teslim ettik. Allah güneşini bol etsin inşallah.
 
 Bedava elektriğin tek adresi BozSolar Enerji ve Mühendislik
 Elektrik Mühendisi Kadir Bozlar
 
 Adres Karakoç yolu üzeri Ergül mobilya yanı Boğazlıyan
-İletişim 0541 770 51 21">bozsolar_enerji_muhendislik
+İletişim 0541 770 51 21">                            Akdağmadeni Yasin Bey’in 8 kw/8,8 kwp On Grid satışlı sistemini teslim ettik. Allah güneşini
+                            bol etsin inşallah.
 
-Boğazlıyan Bahariye köyü 25 hp içme suyu sistemini teslim ettik. Allah suyunu ve güneşini bol etsin inşallah. Allah bol bereketli mahsuller versin.
+                            Bedava elektriğin tek adresi BozSolar Enerji ve Mühendislik
+                            Elektrik Mühendisi Kadir Bozlar
+
+                            Adres Karakoç yolu üzeri Ergül mobilya yanı Boğazlıyan
+                            İletişim 0541 770 51 21</p>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="hidden grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 mt-8" id="proje-kademe-3">
+                <div
+                    class="group bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 border border-gray-100">
+                    <div class="relative aspect-[4/3] overflow-hidden"><img src="assets/img/ig_proje_19.jpg"
+                            onerror="this.src='assets/img/hero-bg.jpg'" alt="Yamaçlı 12.5 HP Tarımsal Sulama"
+                            class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                    </div>
+                    <div class="p-5">
+                        <h3 class="font-bold text-brand-dark text-lg" title="Yamaçlı 12.5 HP Tarımsal Sulama">Yamaçlı
+                            12.5 HP Tarımsal Sulama</h3>
+                        <p class="text-gray-500 text-sm mt-1 " title="Yamaçlı Kasabasından Irmak Moğul abimin 12,5 Hp tarımsal sulama sistemini teslim ettik. Allah suyunu ve güneşini bol etsin inşallah. Allah bol bereketli mahsuller versin.
 
 Bedava elektriğin tek adresi BozSolar Enerji ve Mühendislik
 Elektrik Mühendisi Kadir Bozlar
 
 Adres Karakoç yolu üzeri Ergül mobilya yanı Boğazlıyan
-İletişim 0541 770 51 21</p>
-                        </div>
+İletişim 0541 770 51 21">                            Yamaçlı Kasabasından Irmak Moğul abimin 12,5 Hp tarımsal sulama sistemini teslim ettik.
+                            Allah suyunu ve güneşini bol etsin inşallah. Allah bol bereketli mahsuller versin.
+
+                            Bedava elektriğin tek adresi BozSolar Enerji ve Mühendislik
+                            Elektrik Mühendisi Kadir Bozlar
+
+                            Adres Karakoç yolu üzeri Ergül mobilya yanı Boğazlıyan
+                            İletişim 0541 770 51 21</p>
                     </div>
+                </div>
 
-                    <div class="group bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 border border-gray-100">
-                        <div class="relative aspect-[4/3] overflow-hidden"><img src="assets/img/ig_proje_26.jpg"
-                                onerror="this.src='assets/img/hero-bg.jpg'" alt="bozsolar_enerji_muhendislik"
-                                class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
-                        </div>
-                        <div class="p-5">
-                            <h3 class="font-bold text-brand-dark text-lg" title="bozsolar_enerji_muhendislik">bozsolar_enerji_muhendislik</h3>
-                            <p class="text-gray-500 text-sm mt-1 line-clamp-2" title="bozsolar_enerji_muhendislik
-
-Hacıbektaş, Sadık köyü 15 hp İsmet abimin tarımsal sulama sistemini teslim ettik. Allah suyunu ve güneşini bol etsin inşallah. Allah bol bereketli mahsuller versin.
+                <div
+                    class="group bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 border border-gray-100">
+                    <div class="relative aspect-[4/3] overflow-hidden"><img src="assets/img/ig_proje_20.jpg"
+                            onerror="this.src='assets/img/hero-bg.jpg'" alt="Özler 15 HP Tarımsal Sulama"
+                            class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                    </div>
+                    <div class="p-5">
+                        <h3 class="font-bold text-brand-dark text-lg" title="Özler 15 HP Tarımsal Sulama">Özler 15 HP
+                            Tarımsal Sulama</h3>
+                        <p class="text-gray-500 text-sm mt-1 " title="Özler Köyünden Mustafa ve Faruk Ganioğlu abimin 15 Hp tarımsal sulama sistemini teslim ettik. Allah suyunu ve güneşini bol etsin inşallah. Allah bol bereketli mahsuller versin.
 
 Bedava elektriğin tek adresi BozSolar Enerji ve Mühendislik
 Elektrik Mühendisi Kadir Bozlar
 
 Adres Karakoç yolu üzeri Ergül mobilya yanı Boğazlıyan
-İletişim 0541 770 51 21">bozsolar_enerji_muhendislik
+İletişim 0541 770 51 21">                            Özler Köyünden Mustafa ve Faruk Ganioğlu abimin 15 Hp tarımsal sulama sistemini teslim
+                            ettik. Allah suyunu ve güneşini bol etsin inşallah. Allah bol bereketli mahsuller versin.
 
-Hacıbektaş, Sadık köyü 15 hp İsmet abimin tarımsal sulama sistemini teslim ettik. Allah suyunu ve güneşini bol etsin inşallah. Allah bol bereketli mahsuller versin.
+                            Bedava elektriğin tek adresi BozSolar Enerji ve Mühendislik
+                            Elektrik Mühendisi Kadir Bozlar
+
+                            Adres Karakoç yolu üzeri Ergül mobilya yanı Boğazlıyan
+                            İletişim 0541 770 51 21</p>
+                    </div>
+                </div>
+
+                <div
+                    class="group bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 border border-gray-100">
+                    <div class="relative aspect-[4/3] overflow-hidden"><img src="assets/img/ig_proje_21.jpg"
+                            onerror="this.src='assets/img/hero-bg.jpg'" alt="Yazıçepni İçme Suyu Güneş Enerjisi Sistemi"
+                            class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                    </div>
+                    <div class="p-5">
+                        <h3 class="font-bold text-brand-dark text-lg"
+                            title="Yazıçepni İçme Suyu Güneş Enerjisi Sistemi">Yazıçepni İçme Suyu Güneş Enerjisi
+                            Sistemi</h3>
+                        <p class="text-gray-500 text-sm mt-1 "
+                            title="Yazıçepni köyümüzün içme suyuna ilave panelimiz hayırlı uğurlu olsun inşallah. Susuz köyümüz kalmasın. Emeği geçen muhtarıma teşekkür ederiz.">
+                                                        Yazıçepni köyümüzün içme suyuna ilave panelimiz hayırlı uğurlu olsun inşallah. Susuz köyümüz
+                            kalmasın. Emeği geçen muhtarıma teşekkür ederiz.</p>
+                    </div>
+                </div>
+
+                <div
+                    class="group bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 border border-gray-100">
+                    <div class="relative aspect-[4/3] overflow-hidden"><img src="assets/img/ig_proje_22.jpg"
+                            onerror="this.src='assets/img/hero-bg.jpg'" alt="Yamaçlı 5.5 HP Tarımsal Sulama"
+                            class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                    </div>
+                    <div class="p-5">
+                        <h3 class="font-bold text-brand-dark text-lg" title="Yamaçlı 5.5 HP Tarımsal Sulama">Yamaçlı 5.5
+                            HP Tarımsal Sulama</h3>
+                        <p class="text-gray-500 text-sm mt-1 " title="Yamaçlı Kasabasından Duran Moğul abimin 5,5 Hp tarımsal sulama sistemini teslim ettik. Allah suyunu ve güneşini bol etsin inşallah. Allah bol bereketli mahsuller versin.
 
 Bedava elektriğin tek adresi BozSolar Enerji ve Mühendislik
 Elektrik Mühendisi Kadir Bozlar
 
 Adres Karakoç yolu üzeri Ergül mobilya yanı Boğazlıyan
-İletişim 0541 770 51 21</p>
-                        </div>
+İletişim 0541 770 51 21">                            Yamaçlı Kasabasından Duran Moğul abimin 5,5 Hp tarımsal sulama sistemini teslim ettik. Allah
+                            suyunu ve güneşini bol etsin inşallah. Allah bol bereketli mahsuller versin.
+
+                            Bedava elektriğin tek adresi BozSolar Enerji ve Mühendislik
+                            Elektrik Mühendisi Kadir Bozlar
+
+                            Adres Karakoç yolu üzeri Ergül mobilya yanı Boğazlıyan
+                            İletişim 0541 770 51 21</p>
                     </div>
+                </div>
 
-                    <div class="group bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 border border-gray-100">
-                        <div class="relative aspect-[4/3] overflow-hidden"><img src="assets/img/ig_proje_27.jpg"
-                                onerror="this.src='assets/img/hero-bg.jpg'" alt="bozsolar_enerji_muhendislik"
-                                class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
-                        </div>
-                        <div class="p-5">
-                            <h3 class="font-bold text-brand-dark text-lg" title="bozsolar_enerji_muhendislik">bozsolar_enerji_muhendislik</h3>
-                            <p class="text-gray-500 text-sm mt-1 line-clamp-2" title="bozsolar_enerji_muhendislik
-
-Amasya Merzifon Karşıyaka köyünün 10 hp içme suyu sistemini teslim ettik. Allah suyunu ve güneşini bol etsin inşallah.
+                <div
+                    class="group bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 border border-gray-100">
+                    <div class="relative aspect-[4/3] overflow-hidden"><img src="assets/img/ig_proje_23.jpg"
+                            onerror="this.src='assets/img/hero-bg.jpg'" alt="Kozaklı Kanlıca 7.5 HP Tarımsal Sulama"
+                            class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                    </div>
+                    <div class="p-5">
+                        <h3 class="font-bold text-brand-dark text-lg" title="Kozaklı Kanlıca 7.5 HP Tarımsal Sulama">
+                            Kozaklı Kanlıca 7.5 HP Tarımsal Sulama</h3>
+                        <p class="text-gray-500 text-sm mt-1 " title="Kozaklı Kanlıca köyünden Alican Hökelekli abimin 7,5 Hp tarımsal sulama sistemini teslim ettik. Allah suyunu ve güneşini bol etsin inşallah. Allah bol bereketli mahsuller versin.
 
 Bedava elektriğin tek adresi BozSolar Enerji ve Mühendislik
 Elektrik Mühendisi Kadir Bozlar
 
 Adres Karakoç yolu üzeri Ergül mobilya yanı Boğazlıyan
-İletişim 0541 770 51 21">bozsolar_enerji_muhendislik
+İletişim 0541 770 51 21">                          Kozaklı Kanlıca köyünden Alican Hökelekli abimin 7,5 Hp tarımsal sulama sistemini teslim
+                            ettik. Allah suyunu ve güneşini bol etsin inşallah. Allah bol bereketli mahsuller versin.
 
-Amasya Merzifon Karşıyaka köyünün 10 hp içme suyu sistemini teslim ettik. Allah suyunu ve güneşini bol etsin inşallah.
+                            Bedava elektriğin tek adresi BozSolar Enerji ve Mühendislik
+                            Elektrik Mühendisi Kadir Bozlar
+
+                            Adres Karakoç yolu üzeri Ergül mobilya yanı Boğazlıyan
+                            İletişim 0541 770 51 21</p>
+                    </div>
+                </div>
+
+                <div
+                    class="group bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 border border-gray-100">
+                    <div class="relative aspect-[4/3] overflow-hidden"><img src="assets/img/ig_proje_24.jpg"
+                            onerror="this.src='assets/img/hero-bg.jpg'" alt="Kozaklı Kuruağıl 3 kW Off Grid GES"
+                            class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                    </div>
+                    <div class="p-5">
+                        <h3 class="font-bold text-brand-dark text-lg" title="Kozaklı Kuruağıl 3 kW Off Grid GES">Kozaklı
+                            Kuruağıl 3 kW Off Grid GES</h3>
+                        <p class="text-gray-500 text-sm mt-1 " title="Kozaklı kuruağıl köyünden Erdoğan abimin 3 kw off grid sistemini teslim ettik hayırlı uğurlu olsun.">
+                                                        Kozaklı kuruağıl köyünden Erdoğan abimin 3 kw off grid sistemini teslim ettik hayırlı uğurlu
+                            olsun.</p>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="hidden grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 mt-8" id="proje-kademe-4">
+                <div
+                    class="group bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 border border-gray-100">
+                    <div class="relative aspect-[4/3] overflow-hidden"><img src="assets/img/ig_proje_25.jpg"
+                            onerror="this.src='assets/img/hero-bg.jpg'" alt="Boğazlıyan Bahariye 25 HP İçme Suyu GES"
+                            class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                    </div>
+                    <div class="p-5">
+                        <h3 class="font-bold text-brand-dark text-lg" title="Boğazlıyan Bahariye 25 HP İçme Suyu GES">
+                            Boğazlıyan Bahariye 25 HP İçme Suyu GES</h3>
+                        <p class="text-gray-500 text-sm mt-1 " title="Boğazlıyan Bahariye köyü 25 hp içme suyu sistemini teslim ettik. Allah suyunu ve güneşini bol etsin inşallah. Allah bol bereketli mahsuller versin.
 
 Bedava elektriğin tek adresi BozSolar Enerji ve Mühendislik
 Elektrik Mühendisi Kadir Bozlar
 
 Adres Karakoç yolu üzeri Ergül mobilya yanı Boğazlıyan
-İletişim 0541 770 51 21</p>
-                        </div>
-                    </div>
+İletişim 0541 770 51 21">                            Boğazlıyan Bahariye köyü 25 hp içme suyu sistemini teslim ettik. Allah suyunu ve güneşini
+                            bol etsin inşallah. Allah bol bereketli mahsuller versin.
 
-                    <div class="group bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 border border-gray-100">
-                        <div class="relative aspect-[4/3] overflow-hidden"><img src="assets/img/ig_proje_28.jpg"
-                                onerror="this.src='assets/img/hero-bg.jpg'" alt="BozSolar Enerji Projesi"
-                                class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
-                        </div>
-                        <div class="p-5">
-                            <h3 class="font-bold text-brand-dark text-lg" title="BozSolar Enerji Projesi">BozSolar Enerji Projesi</h3>
-                            <p class="text-gray-500 text-sm mt-1 line-clamp-2" title="BozSolar Enerji Projesi">BozSolar Enerji Projesi</p>
-                        </div>
-                    </div>
+                            Bedava elektriğin tek adresi BozSolar Enerji ve Mühendislik
+                            Elektrik Mühendisi Kadir Bozlar
 
-                    <div class="group bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 border border-gray-100">
-                        <div class="relative aspect-[4/3] overflow-hidden"><img src="assets/img/ig_proje_29.jpg"
-                                onerror="this.src='assets/img/hero-bg.jpg'" alt="BozSolar Enerji Projesi"
-                                class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
-                        </div>
-                        <div class="p-5">
-                            <h3 class="font-bold text-brand-dark text-lg" title="BozSolar Enerji Projesi">BozSolar Enerji Projesi</h3>
-                            <p class="text-gray-500 text-sm mt-1 line-clamp-2" title="BozSolar Enerji Projesi">BozSolar Enerji Projesi</p>
-                        </div>
+                            Adres Karakoç yolu üzeri Ergül mobilya yanı Boğazlıyan
+                            İletişim 0541 770 51 21</p>
                     </div>
-</div>
+                </div>
 
-            <!-- Daha Fazla Proje Göster Butonu -->
+                <div
+                    class="group bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 border border-gray-100">
+                    <div class="relative aspect-[4/3] overflow-hidden"><img src="assets/img/ig_proje_26.jpg"
+                            onerror="this.src='assets/img/hero-bg.jpg'"
+                            alt="Hacıbektaş Sadık Köyü 15 HP Tarımsal Sulama"
+                            class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                    </div>
+                    <div class="p-5">
+                        <h3 class="font-bold text-brand-dark text-lg"
+                            title="Hacıbektaş Sadık Köyü 15 HP Tarımsal Sulama">Hacıbektaş Sadık Köyü 15 HP Tarımsal
+                            Sulama</h3>
+                        <p class="text-gray-500 text-sm mt-1 " title="Hacıbektaş, Sadık köyü 15 hp İsmet abimin tarımsal sulama sistemini teslim ettik. Allah suyunu ve güneşini bol etsin inşallah. Allah bol bereketli mahsuller versin.
+
+Bedava elektriğin tek adresi BozSolar Enerji ve Mühendislik
+Elektrik Mühendisi Kadir Bozlar
+
+Adres Karakoç yolu üzeri Ergül mobilya yanı Boğazlıyan
+İletişim 0541 770 51 21">                            Hacıbektaş, Sadık köyü 15 hp İsmet abimin tarımsal sulama sistemini teslim ettik. Allah
+                            suyunu ve güneşini bol etsin inşallah. Allah bol bereketli mahsuller versin.
+
+                            Bedava elektriğin tek adresi BozSolar Enerji ve Mühendislik
+                            Elektrik Mühendisi Kadir Bozlar
+
+                            Adres Karakoç yolu üzeri Ergül mobilya yanı Boğazlıyan
+                            İletişim 0541 770 51 21</p>
+                    </div>
+                </div>
+
+                <div
+                    class="group bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 border border-gray-100">
+                    <div class="relative aspect-[4/3] overflow-hidden"><img src="assets/img/ig_proje_27.jpg"
+                            onerror="this.src='assets/img/hero-bg.jpg'"
+                            alt="Amasya Merzifon Karşıyaka 10 HP İçme Suyu GES"
+                            class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                    </div>
+                    <div class="p-5">
+                        <h3 class="font-bold text-brand-dark text-lg"
+                            title="Amasya Merzifon Karşıyaka 10 HP İçme Suyu GES">Amasya Merzifon Karşıyaka 10 HP İçme
+                            Suyu GES</h3>
+                        <p class="text-gray-500 text-sm mt-1 " title="Amasya Merzifon Karşıyaka köyünün 10 hp içme suyu sistemini teslim ettik. Allah suyunu ve güneşini bol etsin inşallah.
+
+Bedava elektriğin tek adresi BozSolar Enerji ve Mühendislik
+Elektrik Mühendisi Kadir Bozlar
+
+Adres Karakoç yolu üzeri Ergül mobilya yanı Boğazlıyan
+İletişim 0541 770 51 21">
+                            Amasya Merzifon Karşıyaka köyünün 10 hp içme suyu sistemini teslim ettik. Allah suyunu ve
+                            güneşini bol etsin inşallah.
+
+                            Bedava elektriğin tek adresi BozSolar Enerji ve Mühendislik
+                            Elektrik Mühendisi Kadir Bozlar
+
+                            Adres Karakoç yolu üzeri Ergül mobilya yanı Boğazlıyan
+                            İletişim 0541 770 51 21</p>
+                    </div>
+                </div>
+
+                <div
+                    class="group bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 border border-gray-100">
+                    <div class="relative aspect-[4/3] overflow-hidden"><img src="assets/img/ig_proje_28.jpg"
+                            onerror="this.src='assets/img/hero-bg.jpg'" alt="BozSolar Güneş Enerjisi Projesi"
+                            class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                    </div>
+                    <div class="p-5">
+                        <h3 class="font-bold text-brand-dark text-lg" title="BozSolar Güneş Enerjisi Projesi">BozSolar
+                            Güneş Enerjisi Projesi</h3>
+                        <p class="text-gray-500 text-sm mt-1 " title="BozSolar Enerji Projesi">BozSolar
+                            Enerji Projesi</p>
+                    </div>
+                </div>
+
+                <div
+                    class="group bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 border border-gray-100">
+                    <div class="relative aspect-[4/3] overflow-hidden"><img src="assets/img/ig_proje_29.jpg"
+                            onerror="this.src='assets/img/hero-bg.jpg'" alt="BozSolar Güneş Enerjisi Projesi"
+                            class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                    </div>
+                    <div class="p-5">
+                        <h3 class="font-bold text-brand-dark text-lg" title="BozSolar Güneş Enerjisi Projesi">BozSolar
+                            Güneş Enerjisi Projesi</h3>
+                        <p class="text-gray-500 text-sm mt-1 " title="BozSolar Enerji Projesi">BozSolar
+                            Enerji Projesi</p>
+                    </div>
+                </div>
+            </div>
+
             <div class="text-center mt-12" id="btn-container">
                 <button id="btn-tum-projeler" onclick="dahaProjelerGoster()"
                     class="bg-brand-primary hover:bg-brand-dark text-white px-10 py-4 rounded-full font-bold text-lg transition-all transform hover:scale-105 shadow-lg shadow-brand-primary/20 inline-flex items-center gap-3">
@@ -1172,7 +1141,6 @@ Adres Karakoç yolu üzeri Ergül mobilya yanı Boğazlıyan
                 <p class="text-gray-400 text-sm mt-3" id="proje-sayac">6 / 5 proje gösteriliyor</p>
             </div>
 
-            <!-- CTA Banner -->
             <div
                 class="mt-16 bg-blue-50 border border-brand-primary/10 rounded-2xl p-8 md:p-12 text-center relative overflow-hidden shadow-lg">
                 <div class="absolute top-0 right-0 w-64 h-64 bg-brand-accent/5 rounded-full blur-3xl -z-10"></div>
@@ -1184,15 +1152,13 @@ Adres Karakoç yolu üzeri Ergül mobilya yanı Boğazlıyan
                 </p>
                 <a href="https://wa.me/905417705121" target="_blank"
                     class="inline-flex bg-brand-primary hover:bg-brand-dark text-white px-8 py-4 rounded-full font-bold text-lg transition-all transform hover:scale-105 shadow-xl shadow-brand-primary/20 items-center gap-3">
-                    <i class="fab fa-whatsapp text-2xl text-green-400"></i> Mühendislik &amp; Keşif İstek
+                    <i class="fab fa-whatsapp text-2xl text-green-400"></i> Mühendislik & Keşif İstek
                 </a>
             </div>
         </div>
     </section>
 
-    <!-- Footer / İletişim -->
     <footer id="iletisim" class="bg-gray-900 pt-0 border-t border-brand-accent/20 relative">
-        <!-- Harita Alanı -->
         <div class="w-full h-[350px] bg-gray-900 grayscale hover:grayscale-0 transition-all duration-700">
             <iframe
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2798.4782519155297!2d35.24298317542001!3d39.18792402951049!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x152b2b23d7e7e65d%3A0x64677ee97b59d245!2zQk9aU09MQVIgRU5FUkrEsCBWRSBNw5xIRU5ExLBTTMSwSw!5e1!3m2!1str!2str!4v1772716549806!5m2!1str!2str"
@@ -1203,7 +1169,6 @@ Adres Karakoç yolu üzeri Ergül mobilya yanı Boğazlıyan
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
 
-                <!-- Logo & About -->
                 <div class="lg:col-span-1">
                     <div class="bg-white p-3 rounded-xl border border-white/10 shadow-lg inline-block mb-6">
                         <img src="assets/img/logo.jpg" alt="BozSolar Enerji" class="h-14 w-auto object-contain">
@@ -1236,7 +1201,6 @@ Adres Karakoç yolu üzeri Ergül mobilya yanı Boğazlıyan
                     </div>
                 </div>
 
-                <!-- İletişim -->
                 <div class="lg:col-span-1">
                     <h4 class="text-white font-bold text-lg mb-6 uppercase tracking-wider relative inline-block">
                         İletişim
@@ -1261,7 +1225,6 @@ Adres Karakoç yolu üzeri Ergül mobilya yanı Boğazlıyan
                     </ul>
                 </div>
 
-                <!-- Hızlı Menü -->
                 <div class="lg:col-span-1">
                     <h4 class="text-white font-bold text-lg mb-6 uppercase tracking-wider relative inline-block">
                         Hızlı Menü
@@ -1280,7 +1243,6 @@ Adres Karakoç yolu üzeri Ergül mobilya yanı Boğazlıyan
                     </ul>
                 </div>
 
-                <!-- Partner -->
                 <div class="lg:col-span-1">
                     <h4 class="text-white font-bold text-lg mb-6 uppercase tracking-wider relative inline-block">
                         Çözüm Ortağımız
@@ -1297,12 +1259,11 @@ Adres Karakoç yolu üzeri Ergül mobilya yanı Boğazlıyan
             </div>
         </div>
 
-        <!-- Copyright -->
         <div class="border-t border-white/10 py-6 bg-black/50">
             <div
                 class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center gap-4">
                 <p class="text-gray-500 text-sm">
-                    &copy;
+                    ©
                     <script>document.write(new Date().getFullYear())</script> BozSolar Enerji ve Mühendislik. Tüm
                     Hakları Saklıdır.
                 </p>
@@ -1311,7 +1272,6 @@ Adres Karakoç yolu üzeri Ergül mobilya yanı Boğazlıyan
         </div>
     </footer>
 
-    <!-- Scripts -->
     <script>
         // Navbar Scroll Effect (Açık Tema)
         window.addEventListener('scroll', function () {
@@ -1335,7 +1295,7 @@ Adres Karakoç yolu üzeri Ergül mobilya yanı Boğazlıyan
                 // Grid'i aç
                 document.getElementById(kademeler[projeKademe]).classList.remove('hidden');
                 document.getElementById(kademeler[projeKademe]).classList.add('grid');
-                
+
                 projeKademe++;
                 document.getElementById('proje-sayac').textContent = sayilar[projeKademe - 1] + ' / 29 proje gösteriliyor';
 
