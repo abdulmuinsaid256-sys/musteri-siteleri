@@ -84,13 +84,13 @@
                 <!-- Desktop Menu -->
                 <div class="hidden md:flex items-center space-x-8">
                     <a href="#kurumsal"
-                        class="text-gray-700 hover:text-brand-accent transition-colors font-bold text-sm uppercase tracking-wider">Kurumsal</a>
+                        class="text-brand-dark hover:text-brand-accent transition-colors font-extrabold text-sm uppercase tracking-wider drop-shadow-sm">Kurumsal</a>
                     <a href="#hizmetler"
-                        class="text-gray-700 hover:text-brand-accent transition-colors font-bold text-sm uppercase tracking-wider">Hizmetlerimiz</a>
+                        class="text-brand-dark hover:text-brand-accent transition-colors font-extrabold text-sm uppercase tracking-wider drop-shadow-sm">Hizmetlerimiz</a>
                     <a href="#projeler"
-                        class="text-gray-700 hover:text-brand-accent transition-colors font-bold text-sm uppercase tracking-wider">Projeler</a>
+                        class="text-brand-dark hover:text-brand-accent transition-colors font-extrabold text-sm uppercase tracking-wider drop-shadow-sm">Projeler</a>
                     <a href="#iletisim"
-                        class="text-gray-700 hover:text-brand-accent transition-colors font-bold text-sm uppercase tracking-wider">İletişim</a>
+                        class="text-brand-dark hover:text-brand-accent transition-colors font-extrabold text-sm uppercase tracking-wider drop-shadow-sm">İletişim</a>
                     <a href="https://wa.me/905417705121" target="_blank"
                         class="bg-brand-accent hover:bg-yellow-500 text-white px-6 py-2.5 rounded-full font-bold transition-all transform hover:scale-105 shadow-md flex items-center gap-2">
                         <i class="fab fa-whatsapp text-lg"></i> Teklif Al
@@ -99,8 +99,9 @@
 
                 <!-- Mobile menu button -->
                 <div class="md:hidden flex items-center">
-                    <button id="mobile-menu-button" class="text-gray-800 hover:text-brand-accent focus:outline-none">
-                        <i class="fas fa-bars text-2xl"></i>
+                    <button id="mobile-menu-button"
+                        class="bg-brand-primary text-white p-2.5 rounded-lg hover:bg-brand-accent focus:outline-none shadow-md transition-colors">
+                        <i class="fas fa-bars text-xl"></i>
                     </button>
                 </div>
             </div>
@@ -123,11 +124,7 @@
 
     <!-- Hero Section -->
     <section
-        class="relative h-screen flex items-center justify-center bg-hero-pattern bg-cover bg-center bg-no-repeat bg-fixed">
-
-        <!-- Yarı saydam beyaz overlay -->
-        <div class="absolute inset-0 bg-white/70"></div>
-        <div class="absolute inset-0 bg-gradient-to-t from-gray-50 via-transparent to-white/40"></div>
+        class="relative min-h-[90vh] pt-32 pb-16 flex items-center justify-center bg-gradient-to-br from-white via-blue-50/50 to-white">
 
         <div class="relative z-10 text-center px-4 max-w-5xl mx-auto mt-16">
             <div class="inline-flex flex-col items-center mb-6">
@@ -145,10 +142,24 @@
                 <span class="text-gradient">Her Yerdeyiz</span>
             </h1>
             <p
-                class="text-xl md:text-2xl text-gray-700 mb-10 max-w-3xl mx-auto font-medium leading-relaxed bg-white/40 py-2 sm:px-4 rounded-lg backdrop-blur-sm inline-block">
+                class="text-xl md:text-2xl text-gray-700 mb-6 max-w-3xl mx-auto font-medium leading-relaxed bg-white/40 py-2 sm:px-4 rounded-lg backdrop-blur-sm inline-block">
                 Mühendislik güvencesi ile bedava elektriğin tek adresi. Konutunuzdan dev arazilere kadar güneş enerjisi
                 uzmanlığı.
             </p>
+
+            <div
+                class="mb-10 mx-auto max-w-2xl bg-white/80 p-6 rounded-2xl border border-brand-accent/30 shadow-lg shadow-brand-accent/5">
+                <div class="flex items-start gap-4 text-left">
+                    <i class="fas fa-info-circle text-brand-accent text-3xl mt-1"></i>
+                    <div>
+                        <h4 class="font-extrabold text-brand-dark text-lg mb-1">Bilgilendirme</h4>
+                        <p class="text-gray-700 font-medium leading-relaxed">Fiyatlarımız <strong
+                                class="text-brand-primary">A Kalite</strong> güneş paneli fiyatlarıdır, B kalite panel
+                            fiyatları ile kıyaslama yapmayınız.<br> A kalite panellerimiz <strong>12 yıl garanti, 30 yıl
+                                performans garantilidir</strong>.</p>
+                    </div>
+                </div>
+            </div>
             <div class="flex flex-col sm:flex-row gap-4 justify-center">
                 <a href="#hizmetler"
                     class="bg-brand-accent hover:bg-yellow-500 text-white px-8 py-4 rounded-full font-bold text-lg transition-all transform hover:-translate-y-1 shadow-lg shadow-brand-accent/30 flex items-center justify-center gap-3">
@@ -200,7 +211,7 @@
                     <div
                         class="absolute -inset-4 bg-gradient-to-tr from-brand-accent/30 to-brand-primary/20 rounded-2xl transform rotate-3 opacity-50 blur-lg">
                     </div>
-                    <img src="assets/img/fuar.jpg" alt="BozSolar Fuar Alanı"
+                    <img src="assets/img/kadir_bozlar_profil.jpg" alt="BozSolar Kadir Bozlar"
                         class="relative rounded-2xl shadow-xl object-cover w-full h-[500px]">
 
                     <div
