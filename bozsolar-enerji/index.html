@@ -20,14 +20,15 @@
                     },
                     colors: {
                         brand: {
-                            dark: '#0f172a',    // Lacivert/Koyu
+                            dark: '#0f172a',    // Lacivert (Sadece vurgu ve footer için)
                             primary: '#1e3a8a', // Ana Mavi
                             accent: '#f59e0b',  // Enerji Sarısı/Turuncu
-                            light: '#f8fafc'    // Açık Gri
+                            light: '#f8fafc',   // Açık Gri/Beyaz (Ana background)
+                            surface: '#ffffff'  // Kart arkaplanları
                         }
                     },
                     backgroundImage: {
-                        'hero-pattern': "linear-gradient(to right bottom, rgba(15, 23, 42, 0.8), rgba(30, 58, 138, 0.7)), url('assets/img/hero-bg.jpg')",
+                        'hero-pattern': "linear-gradient(to right bottom, rgba(255, 255, 255, 0.9), rgba(248, 250, 252, 0.7)), url('assets/img/hero-bg.jpg')",
                     }
                 }
             }
@@ -67,12 +68,12 @@
             <div class="flex justify-between items-center h-24">
                 <!-- Logo -->
                 <div class="flex-shrink-0 flex items-center gap-3 cursor-pointer" onclick="window.scrollTo(0,0)">
-                    <div class="bg-white p-1 rounded-lg">
+                    <div class="bg-white p-1 rounded-lg border-2 border-brand-primary/10">
                         <img class="h-14 w-auto object-contain" src="assets/img/logo.jpg" alt="BozSolar Enerji Logo">
                     </div>
                     <div class="hidden sm:block">
-                        <span class="text-white font-bold text-xl tracking-wide block">BOZSOLAR</span>
-                        <span class="text-brand-accent text-xs font-semibold tracking-widest uppercase">Enerji &
+                        <span class="text-brand-dark font-extrabold text-xl tracking-wide block">BOZSOLAR</span>
+                        <span class="text-brand-accent text-xs font-bold tracking-widest uppercase">Enerji &
                             Mühendislik</span>
                     </div>
                 </div>
@@ -80,22 +81,22 @@
                 <!-- Desktop Menu -->
                 <div class="hidden md:flex items-center space-x-8">
                     <a href="#kurumsal"
-                        class="text-gray-200 hover:text-brand-accent transition-colors font-medium text-sm uppercase tracking-wider">Kurumsal</a>
+                        class="text-gray-700 hover:text-brand-accent transition-colors font-bold text-sm uppercase tracking-wider">Kurumsal</a>
                     <a href="#hizmetler"
-                        class="text-gray-200 hover:text-brand-accent transition-colors font-medium text-sm uppercase tracking-wider">Hizmetlerimiz</a>
+                        class="text-gray-700 hover:text-brand-accent transition-colors font-bold text-sm uppercase tracking-wider">Hizmetlerimiz</a>
                     <a href="#projeler"
-                        class="text-gray-200 hover:text-brand-accent transition-colors font-medium text-sm uppercase tracking-wider">Projeler</a>
+                        class="text-gray-700 hover:text-brand-accent transition-colors font-bold text-sm uppercase tracking-wider">Projeler</a>
                     <a href="#iletisim"
-                        class="text-gray-200 hover:text-brand-accent transition-colors font-medium text-sm uppercase tracking-wider">İletişim</a>
+                        class="text-gray-700 hover:text-brand-accent transition-colors font-bold text-sm uppercase tracking-wider">İletişim</a>
                     <a href="https://wa.me/905417705121" target="_blank"
-                        class="bg-brand-accent hover:bg-yellow-500 text-white px-6 py-2.5 rounded-full font-semibold transition-all transform hover:scale-105 shadow-lg shadow-brand-accent/30 flex items-center gap-2">
+                        class="bg-brand-accent hover:bg-yellow-500 text-white px-6 py-2.5 rounded-full font-bold transition-all transform hover:scale-105 shadow-md flex items-center gap-2">
                         <i class="fab fa-whatsapp text-lg"></i> Teklif Al
                     </a>
                 </div>
 
                 <!-- Mobile menu button -->
                 <div class="md:hidden flex items-center">
-                    <button id="mobile-menu-button" class="text-gray-200 hover:text-white focus:outline-none">
+                    <button id="mobile-menu-button" class="text-gray-800 hover:text-brand-accent focus:outline-none">
                         <i class="fas fa-bars text-2xl"></i>
                     </button>
                 </div>
@@ -103,16 +104,16 @@
         </div>
 
         <!-- Mobile Menu Panel -->
-        <div id="mobile-menu" class="hidden md:hidden bg-brand-dark/95 backdrop-blur-xl border-t border-white/10">
+        <div id="mobile-menu" class="hidden md:hidden bg-white/95 backdrop-blur-xl border-t border-gray-100 shadow-xl">
             <div class="px-4 pt-2 pb-6 space-y-1">
                 <a href="#kurumsal"
-                    class="block px-3 py-3 text-base font-medium text-gray-200 hover:text-brand-accent hover:bg-white/5 rounded-md">Kurumsal</a>
+                    class="block px-3 py-3 text-base font-bold text-gray-800 hover:text-brand-accent hover:bg-gray-50 rounded-md">Kurumsal</a>
                 <a href="#hizmetler"
-                    class="block px-3 py-3 text-base font-medium text-gray-200 hover:text-brand-accent hover:bg-white/5 rounded-md">Hizmetlerimiz</a>
+                    class="block px-3 py-3 text-base font-bold text-gray-800 hover:text-brand-accent hover:bg-gray-50 rounded-md">Hizmetlerimiz</a>
                 <a href="#projeler"
-                    class="block px-3 py-3 text-base font-medium text-gray-200 hover:text-brand-accent hover:bg-white/5 rounded-md">Projeler</a>
+                    class="block px-3 py-3 text-base font-bold text-gray-800 hover:text-brand-accent hover:bg-gray-50 rounded-md">Projeler</a>
                 <a href="#iletisim"
-                    class="block px-3 py-3 text-base font-medium text-gray-200 hover:text-brand-accent hover:bg-white/5 rounded-md">İletişim</a>
+                    class="block px-3 py-3 text-base font-bold text-gray-800 hover:text-brand-accent hover:bg-gray-50 rounded-md">İletişim</a>
             </div>
         </div>
     </nav>
@@ -120,57 +121,67 @@
     <!-- Hero Section -->
     <section
         class="relative h-screen flex items-center justify-center bg-hero-pattern bg-cover bg-center bg-no-repeat bg-fixed">
-        <div class="absolute inset-0 bg-gradient-to-b from-brand-dark/80 via-brand-dark/60 to-brand-dark"></div>
+
+        <!-- Yarı saydam beyaz overlay -->
+        <div class="absolute inset-0 bg-white/70"></div>
+        <div class="absolute inset-0 bg-gradient-to-t from-gray-50 via-transparent to-white/40"></div>
 
         <div class="relative z-10 text-center px-4 max-w-5xl mx-auto mt-16">
-            <span
-                class="inline-block py-1 px-3 rounded-full bg-brand-accent/20 border border-brand-accent/50 text-brand-accent text-sm font-semibold tracking-wider uppercase mb-6 backdrop-blur-sm">
-                <i class="fas fa-bolt mr-2"></i> CW Enerji Yozgat Bayisi
-            </span>
-            <h1 class="text-5xl md:text-7xl font-extrabold text-white mb-6 leading-tight">
+            <div class="inline-flex flex-col items-center mb-6">
+                <span
+                    class="inline-block py-1 px-4 rounded-full bg-blue-50 border border-brand-primary/20 text-brand-primary text-sm font-bold tracking-wider uppercase mb-3 shadow-sm backdrop-blur-sm">
+                    <i class="fas fa-bolt mr-2 text-brand-accent"></i> CW Enerji Boğazlıyan Bayisi
+                </span>
+                <span
+                    class="inline-block text-brand-dark text-sm font-bold tracking-widest uppercase bg-white/80 px-4 py-1 rounded-full border border-gray-200 shadow-sm backdrop-blur-sm">Elektrik
+                    Mühendisi <span class="text-brand-accent mx-1">|</span> Kadir Bozlar</span>
+            </div>
+
+            <h1 class="text-5xl md:text-7xl font-extrabold text-brand-dark mb-6 leading-tight drop-shadow-sm">
                 Güneşin Olduğu <br />
                 <span class="text-gradient">Her Yerdeyiz</span>
             </h1>
-            <p class="text-xl md:text-2xl text-gray-300 mb-10 max-w-3xl mx-auto font-light leading-relaxed">
-                Bedava elektriğin tek adresi. Arazi tasarımlarından bireysel konutlara kadar profesyonel güneş enerjisi
-                mühendisliği.
+            <p
+                class="text-xl md:text-2xl text-gray-700 mb-10 max-w-3xl mx-auto font-medium leading-relaxed bg-white/40 py-2 sm:px-4 rounded-lg backdrop-blur-sm inline-block">
+                Mühendislik güvencesi ile bedava elektriğin tek adresi. Konutunuzdan dev arazilere kadar güneş enerjisi
+                uzmanlığı.
             </p>
             <div class="flex flex-col sm:flex-row gap-4 justify-center">
                 <a href="#hizmetler"
-                    class="bg-brand-accent hover:bg-yellow-500 text-white px-8 py-4 rounded-full font-bold text-lg transition-all transform hover:-translate-y-1 shadow-xl shadow-brand-accent/20 flex items-center justify-center gap-3">
-                    Hizmetlerimizi İnceleyin <i class="fas fa-arrow-right"></i>
+                    class="bg-brand-accent hover:bg-yellow-500 text-white px-8 py-4 rounded-full font-bold text-lg transition-all transform hover:-translate-y-1 shadow-lg shadow-brand-accent/30 flex items-center justify-center gap-3">
+                    Hizmetleri İncele <i class="fas fa-arrow-right"></i>
                 </a>
                 <a href="https://wa.me/905417705121" target="_blank"
-                    class="bg-white/10 hover:bg-white/20 backdrop-blur-md border border-white/20 text-white px-8 py-4 rounded-full font-bold text-lg transition-all flex items-center justify-center gap-3">
-                    <i class="fab fa-whatsapp text-2xl text-green-400"></i> Keşif Talebi Oluştur
+                    class="bg-white hover:bg-gray-50 bg-opacity-90 backdrop-blur-md border border-gray-300 text-brand-dark px-8 py-4 rounded-full font-bold text-lg transition-all flex items-center justify-center gap-3 shadow-md hover:border-brand-accent">
+                    <i class="fab fa-whatsapp text-2xl text-green-500"></i> Keşif Talebi Oluştur
                 </a>
             </div>
         </div>
 
         <!-- Scroll Down Indicator -->
         <a href="#kurumsal"
-            class="absolute bottom-10 left-1/2 transform -translate-x-1/2 text-white/50 hover:text-white animate-bounce transition-colors">
+            class="absolute bottom-10 left-1/2 transform -translate-x-1/2 text-brand-primary/50 hover:text-brand-accent animate-bounce transition-colors">
             <i class="fas fa-chevron-down text-3xl"></i>
         </a>
     </section>
 
     <!-- Kurumsal / Hakkımızda -->
     <section id="kurumsal" class="py-24 bg-white relative overflow-hidden">
-        <div class="absolute top-0 right-0 w-1/3 h-full bg-brand-light transform skew-x-12 translate-x-32 -z-10"></div>
 
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
                 <div class="relative">
                     <div
-                        class="absolute -inset-4 bg-gradient-to-tr from-brand-accent to-brand-primary rounded-2xl transform rotate-3 opacity-20 blur-lg">
+                        class="absolute -inset-4 bg-gradient-to-tr from-brand-accent/30 to-brand-primary/20 rounded-2xl transform rotate-3 opacity-50 blur-lg">
                     </div>
                     <img src="assets/img/fuar.jpg" alt="BozSolar Fuar Alanı"
-                        class="relative rounded-2xl shadow-2xl object-cover w-full h-[500px]">
+                        class="relative rounded-2xl shadow-xl object-cover w-full h-[500px]">
 
                     <div
-                        class="absolute -bottom-8 -right-8 bg-brand-dark text-white p-8 rounded-xl shadow-2xl border border-white/10">
-                        <div class="text-4xl font-bold text-brand-accent mb-2">10+</div>
-                        <div class="text-sm tracking-wider uppercase opacity-80">Yıllık Mühendislik<br>Tecrübesi</div>
+                        class="absolute -bottom-8 -right-8 bg-brand-primary text-white p-8 rounded-xl shadow-2xl border-4 border-white">
+                        <div class="text-3xl font-extrabold text-brand-accent mb-1 border-b border-white/20 pb-2">Kadir
+                            Bozlar</div>
+                        <div class="text-sm tracking-wider uppercase opacity-90 font-bold mt-2">Elektrik Mühendisi</div>
                     </div>
                 </div>
 
@@ -179,28 +190,33 @@
                         <div class="w-12 h-1 bg-brand-accent"></div>
                         <span class="text-brand-primary font-bold tracking-widest uppercase text-sm">Hakkımızda</span>
                     </div>
-                    <h2 class="text-4xl md:text-5xl font-extrabold text-brand-dark mb-6 leading-tight">Yenilenebilir
-                        Enerjide <br>Güvenilir Çözüm Ortağınız</h2>
+                    <h2 class="text-4xl md:text-5xl font-extrabold text-brand-dark mb-6 leading-tight">Mühendis
+                        Güvencesiyle <br><span class="text-brand-accent">Güvenilir Çözüm</span></h2>
 
-                    <div class="prose prose-lg text-gray-600 mb-8">
+                    <div class="prose prose-lg text-gray-600 mb-8 max-w-none">
                         <p class="mb-4">
                             <strong>BozSolar Enerji ve Mühendislik</strong> olarak, güneş enerjisi sektöründe kaliteli,
                             verimli ve sürdürülebilir projelere imza atıyoruz. Kurucumuz <strong>Elektrik Mühendisi
                                 Kadir BOZLAR</strong> liderliğinde hazırlanan her projede, 'bedava elektriğin tek
                             adresi' olma misyonuyla yola çıkıyoruz.
                         </p>
-                        <p>
+                        <p class="mb-4">
                             Dünyanın ve ülkemizin lider üreticilerinden <strong>CW Enerji</strong>'nin resmi
                             Yozgat/Boğazlıyan bölge bayisi olarak hizmet veriyor; endüstriyel tesislerden tarımsal
                             sulamaya, villa çatılarından boş arazilere kadar güneşin olduğu her yeri enerjiye
                             dönüştürüyoruz.
                         </p>
+                        <blockquote
+                            class="border-l-4 border-brand-accent pl-4 italic bg-gray-50 py-3 pr-3 text-gray-700 rounded-r-lg font-medium border-y border-r border-gray-100 shadow-sm mt-6">
+                            "Bizim için her proje, geleceğe ve ülkemizin enerji bağımsızlığına atılan güven dolu bir
+                            imzadır."
+                        </blockquote>
                     </div>
 
-                    <div class="grid grid-cols-2 gap-6 mt-10 border-t border-gray-100 pt-10">
+                    <div class="grid grid-cols-2 gap-6 mt-10 border-t border-gray-200 pt-10">
                         <div class="flex items-start gap-4">
                             <div
-                                class="w-12 h-12 rounded-full bg-brand-light flex items-center justify-center flex-shrink-0 text-brand-primary">
+                                class="w-12 h-12 rounded-full bg-blue-50 flex items-center justify-center flex-shrink-0 text-brand-primary shadow-sm">
                                 <i class="fas fa-check-circle text-xl"></i>
                             </div>
                             <div>
@@ -210,7 +226,7 @@
                         </div>
                         <div class="flex items-start gap-4">
                             <div
-                                class="w-12 h-12 rounded-full bg-brand-light flex items-center justify-center flex-shrink-0 text-brand-primary">
+                                class="w-12 h-12 rounded-full bg-blue-50 flex items-center justify-center flex-shrink-0 text-brand-primary shadow-sm">
                                 <i class="fas fa-shield-alt text-xl"></i>
                             </div>
                             <div>
@@ -362,11 +378,11 @@
         </div>
     </section>
 
-    <!-- Projelerimiz (Galeri) -->
-    <section id="projeler" class="py-24 bg-brand-dark text-white relative">
+    <!-- Projelerimiz (Galeri: 15 Proje) -->
+    <section id="projeler" class="py-24 bg-white text-brand-dark relative border-t border-gray-100">
         <!-- Decoration -->
         <div
-            class="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-brand-accent/50 to-transparent">
+            class="absolute top-0 right-0 w-1/2 h-px bg-gradient-to-r from-transparent via-brand-accent/30 to-transparent">
         </div>
 
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -374,104 +390,186 @@
                 <div class="max-w-2xl">
                     <span
                         class="text-brand-accent font-bold tracking-widest uppercase text-sm block mb-2">PORTFÖYÜMÜZ</span>
-                    <h2 class="text-4xl md:text-5xl font-extrabold mb-4">Tamamlanan Projeler</h2>
-                    <p class="text-gray-400 text-lg">Müşterilerimiz için sıfırdan tasarlayıp devreye aldığımız, yüksek
-                        verimli güneş enerjisi tesislerimizden bazıları.</p>
+                    <h2 class="text-4xl md:text-5xl font-extrabold mb-4 text-brand-dark drop-shadow-sm">Mühendis İmzası
+                        Taşıyan Projeler</h2>
+                    <p class="text-gray-600 text-lg font-medium">BozSolar güvencesiyle devreye aldığımız yüksek verimli
+                        yüzlerce projeden bazıları.</p>
                 </div>
                 <!-- Instagram Link -->
                 <a href="https://www.instagram.com/bozsolar_enerji_muhendislik/" target="_blank"
-                    class="flex-shrink-0 bg-white/5 hover:bg-white/10 px-6 py-3 rounded-full border border-white/10 transition-all flex items-center gap-3">
+                    class="flex-shrink-0 bg-white hover:bg-gray-50 px-6 py-3 rounded-full border border-gray-200 transition-all shadow-sm flex items-center gap-3 font-bold">
                     <i class="fab fa-instagram text-2xl text-pink-500"></i>
-                    <span class="font-medium">Tümünü İncele</span>
+                    <span>Tümünü Instagram'da Gör</span>
                 </a>
             </div>
 
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- Proje 1 -->
-                <div class="group relative rounded-2xl overflow-hidden aspect-[4/3] bg-brand-primary">
-                    <img src="assets/img/proje1.jpg" alt="Tarımsal Sulama GES"
-                        class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 opacity-90 group-hover:opacity-100">
+            <!-- CSS Grid for 15 Items -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+
+                <!-- Item 1 (Özel Vurgu) -->
+                <div
+                    class="group relative rounded-2xl overflow-hidden aspect-square bg-brand-light shadow-sm sm:col-span-2 sm:row-span-2 aspect-auto border border-gray-100 min-h-[400px]">
+                    <img src="assets/img/proje1.jpg" onerror="this.src='assets/img/hero-bg.jpg'"
+                        alt="Tarımsal Sulama GES"
+                        class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
                     <div
-                        class="absolute inset-0 bg-gradient-to-t from-brand-dark via-brand-dark/40 to-transparent opacity-80">
+                        class="absolute inset-x-0 bottom-0 h-2/3 bg-gradient-to-t from-black/90 via-black/40 to-transparent opacity-90 transition-opacity">
                     </div>
                     <div
-                        class="absolute bottom-0 left-0 w-full p-8 transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
-                        <div class="text-brand-accent text-sm font-bold mb-2 uppercase tracking-wider">Tarımsal Sulama
-                            Sistemi</div>
-                        <h3 class="text-2xl font-bold text-white mb-2">Yenifakılı - 7.5 HP Sistem</h3>
-                        <p
-                            class="text-gray-300 text-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300 delay-100">
-                            Murat Gürcan için tek panelli DC pompa tabanlı tarımsal sulama sistemi başarıyla devreye
-                            alındı.
-                        </p>
+                        class="absolute bottom-0 left-0 w-full p-6 lg:p-8 transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
+                        <div
+                            class="text-brand-accent text-xs font-bold mb-2 uppercase tracking-wider bg-black/50 inline-block px-3 py-1 rounded-full backdrop-blur-md border border-white/10">
+                            Tarımsal Sulama</div>
+                        <h3 class="text-2xl lg:text-3xl font-bold text-white mb-2 drop-shadow-md">Yenifakılı - 7.5 HP
+                            Sistem</h3>
                     </div>
                 </div>
 
-                <!-- Proje 2 -->
-                <div class="group relative rounded-2xl overflow-hidden aspect-[4/3] bg-brand-primary">
-                    <img src="assets/img/proje2.jpg" alt="Off-Grid Bağ Evi GES"
-                        class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 opacity-90 group-hover:opacity-100">
+                <!-- Item 2 -->
+                <div
+                    class="group relative rounded-2xl overflow-hidden aspect-square border border-gray-200 shadow-sm bg-gray-100">
+                    <img src="assets/img/proje2.jpg" onerror="this.src='assets/img/hero-bg.jpg'" alt="Off-Grid GES"
+                        class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
                     <div
-                        class="absolute inset-0 bg-gradient-to-t from-brand-dark via-brand-dark/40 to-transparent opacity-80">
+                        class="absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-t from-black/90 to-transparent opacity-80">
                     </div>
-                    <div
-                        class="absolute bottom-0 left-0 w-full p-8 transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
-                        <div class="text-brand-accent text-sm font-bold mb-2 uppercase tracking-wider">Off-Grid
-                            (Şebekeden Bağımsız)</div>
-                        <h3 class="text-2xl font-bold text-white mb-2">Ankara Keçiören - 6 kW</h3>
-                        <p
-                            class="text-gray-300 text-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300 delay-100">
-                            İlker Bey'in bağ evi için tasarlanan şebekeden bağımsız 6kW Off-grid sistem kurulumu
-                            tamamlandı.
-                        </p>
+                    <div class="absolute bottom-0 left-0 w-full p-5 flex flex-col justify-end">
+                        <h3 class="text-lg font-bold text-white mb-1 shadow-sm leading-tight">Ankara Keçiören</h3>
+                        <span class="text-brand-accent text-xs font-bold tracking-wider">6kW Off-Grid</span>
                     </div>
                 </div>
 
-                <!-- Proje 3 -->
-                <div class="group relative rounded-2xl overflow-hidden aspect-[4/3] bg-brand-primary">
-                    <img src="assets/img/proje3.jpg" alt="Arazi Tipi GES"
-                        class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 opacity-90 group-hover:opacity-100">
+                <!-- Item 3 -->
+                <div
+                    class="group relative rounded-2xl overflow-hidden aspect-square border border-gray-200 shadow-sm bg-gray-100">
+                    <img src="assets/img/proje3.jpg" onerror="this.src='assets/img/hero-bg.jpg'" alt="Endüstriyel GES"
+                        class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
                     <div
-                        class="absolute inset-0 bg-gradient-to-t from-brand-dark via-brand-dark/40 to-transparent opacity-80">
+                        class="absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-t from-black/90 to-transparent opacity-80">
                     </div>
-                    <div
-                        class="absolute bottom-0 left-0 w-full p-8 transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
-                        <div class="text-brand-accent text-sm font-bold mb-2 uppercase tracking-wider">Çatı / Arazi GES
-                        </div>
-                        <h3 class="text-2xl font-bold text-white mb-2">Yüksek Kapasiteli Kurulum</h3>
-                        <p
-                            class="text-gray-300 text-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300 delay-100">
-                            Fabrika ve üretim tesisleri için optimize edilmiş, panel bazlı yüksek verimli endüstriyel
-                            çözüm.
-                        </p>
+                    <div class="absolute bottom-0 left-0 w-full p-5 flex flex-col justify-end">
+                        <h3 class="text-lg font-bold text-white mb-1 shadow-sm leading-tight">Yüksek Verimli GES</h3>
+                        <span class="text-brand-accent text-xs font-bold tracking-wider">Mühendis Tasarımı</span>
                     </div>
                 </div>
+
+                <!-- Item 4 -->
+                <div
+                    class="group relative rounded-2xl overflow-hidden aspect-square border border-gray-200 shadow-sm bg-gray-100">
+                    <img src="assets/img/proje4.jpg" onerror="this.src='assets/img/hero-bg.jpg'" alt="Proje"
+                        class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                    <div
+                        class="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-opacity duration-300">
+                    </div>
+                </div>
+
+                <!-- Item 5 -->
+                <div
+                    class="group relative rounded-2xl overflow-hidden aspect-square border border-gray-200 shadow-sm bg-gray-100">
+                    <img src="assets/img/proje5.jpg" onerror="this.src='assets/img/hero-bg.jpg'" alt="Proje"
+                        class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                    <div
+                        class="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-opacity duration-300">
+                    </div>
+                </div>
+
+                <!-- Item 6 (Geniş Vurgu) -->
+                <div
+                    class="group relative rounded-2xl overflow-hidden aspect-square sm:col-span-2 sm:aspect-[2/1] border border-gray-200 shadow-sm bg-gray-100">
+                    <img src="assets/img/proje6.jpg" onerror="this.src='assets/img/logo.jpg'" alt="Proje"
+                        class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                    <div
+                        class="absolute inset-x-0 bottom-0 h-2/3 bg-gradient-to-t from-black/90 to-transparent opacity-90">
+                    </div>
+                    <div class="absolute bottom-0 left-0 w-full p-6">
+                        <h3 class="text-xl lg:text-2xl font-bold text-white mb-1 drop-shadow-md">CW Enerji Panelleriyle
+                            Sıfır Maliyet</h3>
+                        <span class="text-brand-accent text-sm font-bold tracking-wider">Boğazlıyan / Yozgat</span>
+                    </div>
+                </div>
+
+                <!-- Item 7 to 15 -->
+                <div
+                    class="group relative rounded-2xl overflow-hidden aspect-square border border-gray-200 shadow-sm bg-gray-100">
+                    <img src="assets/img/proje7.jpg" onerror="this.src='assets/img/hero-bg.jpg'" alt="Proje"
+                        class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-opacity"></div>
+                </div>
+                <div
+                    class="group relative rounded-2xl overflow-hidden aspect-square border border-gray-200 shadow-sm bg-gray-100">
+                    <img src="assets/img/proje8.jpg" onerror="this.src='assets/img/hero-bg.jpg'" alt="Proje"
+                        class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-opacity"></div>
+                </div>
+                <div
+                    class="group relative rounded-2xl overflow-hidden aspect-square border border-gray-200 shadow-sm bg-gray-100">
+                    <img src="assets/img/proje9.jpg" onerror="this.src='assets/img/hero-bg.jpg'" alt="Proje"
+                        class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-opacity"></div>
+                </div>
+                <div
+                    class="group relative rounded-2xl overflow-hidden aspect-square border border-gray-200 shadow-sm bg-gray-100">
+                    <img src="assets/img/proje10.jpg" onerror="this.src='assets/img/hero-bg.jpg'" alt="Proje"
+                        class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-opacity"></div>
+                </div>
+                <div
+                    class="group relative rounded-2xl overflow-hidden aspect-square border border-gray-200 shadow-sm bg-gray-100">
+                    <img src="assets/img/proje11.jpg" onerror="this.src='assets/img/hero-bg.jpg'" alt="Proje"
+                        class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-opacity"></div>
+                </div>
+                <div
+                    class="group relative rounded-2xl overflow-hidden aspect-square border border-gray-200 shadow-sm bg-gray-100">
+                    <img src="assets/img/proje12.jpg" onerror="this.src='assets/img/hero-bg.jpg'" alt="Proje"
+                        class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-opacity"></div>
+                </div>
+                <div
+                    class="group relative rounded-2xl overflow-hidden aspect-square border border-gray-200 shadow-sm bg-gray-100">
+                    <img src="assets/img/proje13.jpg" onerror="this.src='assets/img/hero-bg.jpg'" alt="Proje"
+                        class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-opacity"></div>
+                </div>
+                <div
+                    class="group relative rounded-2xl overflow-hidden aspect-square border border-gray-200 shadow-sm bg-gray-100">
+                    <img src="assets/img/proje14.jpg" onerror="this.src='assets/img/hero-bg.jpg'" alt="Proje"
+                        class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-opacity"></div>
+                </div>
+                <div
+                    class="group relative rounded-2xl overflow-hidden aspect-square border border-gray-200 shadow-sm bg-gray-100 sm:col-span-2 lg:col-span-1">
+                    <img src="assets/img/proje15.jpg" onerror="this.src='assets/img/hero-bg.jpg'" alt="Proje"
+                        class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-opacity"></div>
+                </div>
+
             </div>
 
             <div
-                class="mt-16 bg-white/5 border border-white/10 rounded-2xl p-8 md:p-12 text-center relative overflow-hidden">
-                <div class="absolute top-0 right-0 w-64 h-64 bg-brand-accent/10 rounded-full blur-3xl -z-10"></div>
-                <div class="absolute bottom-0 left-0 w-64 h-64 bg-brand-primary/20 rounded-full blur-3xl -z-10"></div>
+                class="mt-16 bg-blue-50 border border-brand-primary/10 rounded-2xl p-8 md:p-12 text-center relative overflow-hidden shadow-lg">
+                <div class="absolute top-0 right-0 w-64 h-64 bg-brand-accent/5 rounded-full blur-3xl -z-10"></div>
+                <div class="absolute bottom-0 left-0 w-64 h-64 bg-brand-primary/5 rounded-full blur-3xl -z-10"></div>
 
-                <h3 class="text-3xl font-bold mb-4">Elektrik Faturanızı Sıfırlamak İster misiniz?</h3>
-                <p class="text-gray-400 max-w-2xl mx-auto mb-8 text-lg">
-                    Uzman mühendis kadromuzla çatınızı veya arazinizi inceleyelim, size en uygun maliyetli sistemi
-                    projelendirelim.
+                <h3 class="text-3xl font-bold mb-4 text-brand-dark">Sizin Projenizin Maliyetini Hesaplayalım mı?</h3>
+                <p class="text-gray-600 max-w-2xl mx-auto mb-8 text-lg">
+                    <strong>Elektrik Mühendisi Kadir Bozlar</strong> güvencesiyle alanınızı inceleyelim, en efektif ve
+                    hızlı kendini amorti eden sistemi tasarlayalım.
                 </p>
                 <a href="https://wa.me/905417705121" target="_blank"
-                    class="inline-flex bg-brand-accent hover:bg-yellow-500 text-brand-dark px-8 py-4 rounded-full font-bold text-lg transition-all transform hover:scale-105 shadow-xl shadow-brand-accent/20 items-center gap-3">
-                    <i class="fab fa-whatsapp text-2xl"></i> Ücretsiz Keşif Talebi
+                    class="inline-flex bg-brand-primary hover:bg-brand-dark text-white px-8 py-4 rounded-full font-bold text-lg transition-all transform hover:scale-105 shadow-xl shadow-brand-primary/20 items-center gap-3">
+                    <i class="fab fa-whatsapp text-2xl text-green-400"></i> Mühendislik & Keşif İstek
                 </a>
             </div>
         </div>
     </section>
 
     <!-- Footer / İletişim -->
-    <footer id="iletisim" class="bg-brand-dark pt-0 border-t border-white/5 relative">
+    <footer id="iletisim" class="bg-gray-900 pt-0 border-t border-brand-accent/20 relative">
         <!-- Harita Alanı -->
-        <div class="w-full h-[400px] bg-gray-900 grayscale hover:grayscale-0 transition-all duration-700">
+        <div class="w-full h-[350px] bg-gray-900 grayscale hover:grayscale-0 transition-all duration-700">
             <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3056.77241289139!2d35.2494541!3d39.3776!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMznCsDIyJzM5LjQiTiAzNcKwMTUnMDguMCJF!5e0!3m2!1str!2str!4v1655555555555!5m2!1str!2str"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d12227.124503023275!2d35.242200388432314!3d39.38799986326164!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x407ef275bcde2ac5%3A0xedc9fbcbed1fa23!2zQm_En2F6bMSxeWFuLCBZb3pnYXQ!5e0!3m2!1str!2str!4v1700000000000!5m2!1str!2str"
                 width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"
                 referrerpolicy="no-referrer-when-downgrade"></iframe>
         </div>
@@ -481,8 +579,8 @@
 
                 <!-- Logo & About -->
                 <div class="lg:col-span-1">
-                    <div class="bg-white p-2 rounded-lg inline-block mb-6">
-                        <img src="assets/img/logo.jpg" alt="BozSolar Enerji" class="h-12 w-auto">
+                    <div class="bg-white p-3 rounded-xl border border-white/10 shadow-lg inline-block mb-6">
+                        <img src="assets/img/logo.jpg" alt="BozSolar Enerji" class="h-14 w-auto object-contain">
                     </div>
                     <p class="text-gray-400 text-sm mb-6 leading-relaxed">
                         Elektrik Mühendisi Kadir Bozlar yönetiminde, enerji sektöründe öncü proje taahhüt, danışmanlık
@@ -490,11 +588,11 @@
                     </p>
                     <div class="flex space-x-4">
                         <a href="https://www.instagram.com/bozsolar_enerji_muhendislik/" target="_blank"
-                            class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-gray-300 hover:bg-brand-accent hover:text-white transition-all">
+                            class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-gray-300 hover:bg-brand-accent hover:text-white transition-all shadow-sm">
                             <i class="fab fa-instagram"></i>
                         </a>
                         <a href="https://www.facebook.com/profile.php?id=61562447805314" target="_blank"
-                            class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-gray-300 hover:bg-brand-accent hover:text-white transition-all">
+                            class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-gray-300 hover:bg-brand-accent hover:text-white transition-all shadow-sm">
                             <i class="fab fa-facebook-f"></i>
                         </a>
                     </div>
