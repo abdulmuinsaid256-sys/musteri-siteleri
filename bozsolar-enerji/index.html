@@ -165,6 +165,29 @@
         </a>
     </section>
 
+    <!-- CW Enerji Güvence Bandı -->
+    <section class="bg-brand-primary py-4 relative overflow-hidden">
+        <div class="absolute inset-0 bg-gradient-to-r from-brand-primary via-blue-800 to-brand-primary"></div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-8 text-white">
+                <div class="flex items-center gap-3">
+                    <i class="fas fa-solar-panel text-brand-accent text-2xl"></i>
+                    <span class="font-bold text-sm sm:text-base tracking-wide">CW Enerji Güvencesiyle</span>
+                </div>
+                <div class="hidden sm:block w-px h-6 bg-white/30"></div>
+                <div class="flex items-center gap-3">
+                    <i class="fas fa-certificate text-brand-accent text-xl"></i>
+                    <span class="text-sm sm:text-base font-medium">Boğazlıyan Yetkili Bayisi</span>
+                </div>
+                <div class="hidden sm:block w-px h-6 bg-white/30"></div>
+                <div class="flex items-center gap-3">
+                    <i class="fas fa-user-tie text-brand-accent text-xl"></i>
+                    <span class="text-sm sm:text-base font-medium">Elektrik Mühendisi Kadir Bozlar</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Kurumsal / Hakkımızda -->
     <section id="kurumsal" class="py-24 bg-white relative overflow-hidden">
 
@@ -378,179 +401,452 @@
         </div>
     </section>
 
-    <!-- Projelerimiz (Galeri: 15 Proje) -->
-    <section id="projeler" class="py-24 bg-white text-brand-dark relative border-t border-gray-100">
-        <!-- Decoration -->
-        <div
-            class="absolute top-0 right-0 w-1/2 h-px bg-gradient-to-r from-transparent via-brand-accent/30 to-transparent">
-        </div>
-
+    <!-- Projelerimiz -->
+    <section id="projeler" class="py-24 bg-gray-50 text-brand-dark relative border-t border-gray-100">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
-                <div class="max-w-2xl">
-                    <span
-                        class="text-brand-accent font-bold tracking-widest uppercase text-sm block mb-2">PORTFÖYÜMÜZ</span>
-                    <h2 class="text-4xl md:text-5xl font-extrabold mb-4 text-brand-dark drop-shadow-sm">Mühendis İmzası
-                        Taşıyan Projeler</h2>
-                    <p class="text-gray-600 text-lg font-medium">BozSolar güvencesiyle devreye aldığımız yüksek verimli
-                        yüzlerce projeden bazıları.</p>
-                </div>
-                <!-- Instagram Link -->
-                <a href="https://www.instagram.com/bozsolar_enerji_muhendislik/" target="_blank"
-                    class="flex-shrink-0 bg-white hover:bg-gray-50 px-6 py-3 rounded-full border border-gray-200 transition-all shadow-sm flex items-center gap-3 font-bold">
-                    <i class="fab fa-instagram text-2xl text-pink-500"></i>
-                    <span>Tümünü Instagram'da Gör</span>
-                </a>
+            <div class="text-center mb-16">
+                <span
+                    class="text-brand-accent font-bold tracking-widest uppercase text-sm block mb-2">PORTFÖYÜMÜZ</span>
+                <h2 class="text-4xl md:text-5xl font-extrabold mb-4 text-brand-dark">Mühendis İmzası Taşıyan Projeler
+                </h2>
+                <p class="text-gray-600 text-lg font-medium max-w-3xl mx-auto">CW Enerji güvencesiyle devreye aldığımız
+                    yüksek verimli projelerden bazıları.</p>
             </div>
 
-            <!-- CSS Grid for 15 Items -->
-            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-
-                <!-- Item 1 (Özel Vurgu) -->
+            <!-- İlk 6 Proje (Her zaman görünür) -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8" id="proje-grid">
                 <div
-                    class="group relative rounded-2xl overflow-hidden aspect-square bg-brand-light shadow-sm sm:col-span-2 sm:row-span-2 aspect-auto border border-gray-100 min-h-[400px]">
-                    <img src="assets/img/proje1.jpg" onerror="this.src='assets/img/hero-bg.jpg'"
-                        alt="Tarımsal Sulama GES"
-                        class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
-                    <div
-                        class="absolute inset-x-0 bottom-0 h-2/3 bg-gradient-to-t from-black/90 via-black/40 to-transparent opacity-90 transition-opacity">
+                    class="group bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 border border-gray-100">
+                    <div class="relative aspect-[4/3] overflow-hidden"><img src="assets/img/proje1.jpg"
+                            onerror="this.src='assets/img/hero-bg.jpg'" alt="Proje"
+                            class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
                     </div>
-                    <div
-                        class="absolute bottom-0 left-0 w-full p-6 lg:p-8 transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
-                        <div
-                            class="text-brand-accent text-xs font-bold mb-2 uppercase tracking-wider bg-black/50 inline-block px-3 py-1 rounded-full backdrop-blur-md border border-white/10">
-                            Tarımsal Sulama</div>
-                        <h3 class="text-2xl lg:text-3xl font-bold text-white mb-2 drop-shadow-md">Yenifakılı - 7.5 HP
-                            Sistem</h3>
+                    <div class="p-5">
+                        <h3 class="font-bold text-brand-dark text-lg">Yenifakılı 7.5 HP Sulama Sistemi</h3>
+                        <p class="text-gray-500 text-sm mt-1">Tarımsal Sulama GES</p>
                     </div>
                 </div>
-
-                <!-- Item 2 -->
                 <div
-                    class="group relative rounded-2xl overflow-hidden aspect-square border border-gray-200 shadow-sm bg-gray-100">
-                    <img src="assets/img/proje2.jpg" onerror="this.src='assets/img/hero-bg.jpg'" alt="Off-Grid GES"
-                        class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
-                    <div
-                        class="absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-t from-black/90 to-transparent opacity-80">
+                    class="group bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 border border-gray-100">
+                    <div class="relative aspect-[4/3] overflow-hidden"><img src="assets/img/proje2.jpg"
+                            onerror="this.src='assets/img/hero-bg.jpg'" alt="Proje"
+                            class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
                     </div>
-                    <div class="absolute bottom-0 left-0 w-full p-5 flex flex-col justify-end">
-                        <h3 class="text-lg font-bold text-white mb-1 shadow-sm leading-tight">Ankara Keçiören</h3>
-                        <span class="text-brand-accent text-xs font-bold tracking-wider">6kW Off-Grid</span>
+                    <div class="p-5">
+                        <h3 class="font-bold text-brand-dark text-lg">Ankara Keçiören 6kW Off-Grid</h3>
+                        <p class="text-gray-500 text-sm mt-1">Şebekeden Bağımsız Sistem</p>
                     </div>
                 </div>
-
-                <!-- Item 3 -->
                 <div
-                    class="group relative rounded-2xl overflow-hidden aspect-square border border-gray-200 shadow-sm bg-gray-100">
-                    <img src="assets/img/proje3.jpg" onerror="this.src='assets/img/hero-bg.jpg'" alt="Endüstriyel GES"
-                        class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
-                    <div
-                        class="absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-t from-black/90 to-transparent opacity-80">
+                    class="group bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 border border-gray-100">
+                    <div class="relative aspect-[4/3] overflow-hidden"><img src="assets/img/proje3.jpg"
+                            onerror="this.src='assets/img/hero-bg.jpg'" alt="Proje"
+                            class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
                     </div>
-                    <div class="absolute bottom-0 left-0 w-full p-5 flex flex-col justify-end">
-                        <h3 class="text-lg font-bold text-white mb-1 shadow-sm leading-tight">Yüksek Verimli GES</h3>
-                        <span class="text-brand-accent text-xs font-bold tracking-wider">Mühendis Tasarımı</span>
+                    <div class="p-5">
+                        <h3 class="font-bold text-brand-dark text-lg">Endüstriyel Çatı GES</h3>
+                        <p class="text-gray-500 text-sm mt-1">Yüksek Verimli Kurulum</p>
                     </div>
                 </div>
-
-                <!-- Item 4 -->
                 <div
-                    class="group relative rounded-2xl overflow-hidden aspect-square border border-gray-200 shadow-sm bg-gray-100">
-                    <img src="assets/img/proje4.jpg" onerror="this.src='assets/img/hero-bg.jpg'" alt="Proje"
-                        class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
-                    <div
-                        class="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-opacity duration-300">
+                    class="group bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 border border-gray-100">
+                    <div class="relative aspect-[4/3] overflow-hidden"><img src="assets/img/proje4.jpg"
+                            onerror="this.src='assets/img/hero-bg.jpg'" alt="Proje"
+                            class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                    </div>
+                    <div class="p-5">
+                        <h3 class="font-bold text-brand-dark text-lg">Boğazlıyan Arazi GES</h3>
+                        <p class="text-gray-500 text-sm mt-1">CW Enerji Panel Kurulumu</p>
                     </div>
                 </div>
-
-                <!-- Item 5 -->
                 <div
-                    class="group relative rounded-2xl overflow-hidden aspect-square border border-gray-200 shadow-sm bg-gray-100">
-                    <img src="assets/img/proje5.jpg" onerror="this.src='assets/img/hero-bg.jpg'" alt="Proje"
-                        class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
-                    <div
-                        class="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-opacity duration-300">
+                    class="group bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 border border-gray-100">
+                    <div class="relative aspect-[4/3] overflow-hidden"><img src="assets/img/proje5.jpg"
+                            onerror="this.src='assets/img/hero-bg.jpg'" alt="Proje"
+                            class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                    </div>
+                    <div class="p-5">
+                        <h3 class="font-bold text-brand-dark text-lg">Konut Çatı Uygulaması</h3>
+                        <p class="text-gray-500 text-sm mt-1">Villa Tipi GES</p>
                     </div>
                 </div>
-
-                <!-- Item 6 (Geniş Vurgu) -->
                 <div
-                    class="group relative rounded-2xl overflow-hidden aspect-square sm:col-span-2 sm:aspect-[2/1] border border-gray-200 shadow-sm bg-gray-100">
-                    <img src="assets/img/proje6.jpg" onerror="this.src='assets/img/logo.jpg'" alt="Proje"
-                        class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
-                    <div
-                        class="absolute inset-x-0 bottom-0 h-2/3 bg-gradient-to-t from-black/90 to-transparent opacity-90">
+                    class="group bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 border border-gray-100">
+                    <div class="relative aspect-[4/3] overflow-hidden"><img src="assets/img/proje6.jpg"
+                            onerror="this.src='assets/img/hero-bg.jpg'" alt="Proje"
+                            class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
                     </div>
-                    <div class="absolute bottom-0 left-0 w-full p-6">
-                        <h3 class="text-xl lg:text-2xl font-bold text-white mb-1 drop-shadow-md">CW Enerji Panelleriyle
-                            Sıfır Maliyet</h3>
-                        <span class="text-brand-accent text-sm font-bold tracking-wider">Boğazlıyan / Yozgat</span>
+                    <div class="p-5">
+                        <h3 class="font-bold text-brand-dark text-lg">Yozgat Sanayi GES</h3>
+                        <p class="text-gray-500 text-sm mt-1">Fabrika Çatı Kurulumu</p>
                     </div>
                 </div>
-
-                <!-- Item 7 to 15 -->
-                <div
-                    class="group relative rounded-2xl overflow-hidden aspect-square border border-gray-200 shadow-sm bg-gray-100">
-                    <img src="assets/img/proje7.jpg" onerror="this.src='assets/img/hero-bg.jpg'" alt="Proje"
-                        class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
-                    <div class="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-opacity"></div>
-                </div>
-                <div
-                    class="group relative rounded-2xl overflow-hidden aspect-square border border-gray-200 shadow-sm bg-gray-100">
-                    <img src="assets/img/proje8.jpg" onerror="this.src='assets/img/hero-bg.jpg'" alt="Proje"
-                        class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
-                    <div class="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-opacity"></div>
-                </div>
-                <div
-                    class="group relative rounded-2xl overflow-hidden aspect-square border border-gray-200 shadow-sm bg-gray-100">
-                    <img src="assets/img/proje9.jpg" onerror="this.src='assets/img/hero-bg.jpg'" alt="Proje"
-                        class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
-                    <div class="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-opacity"></div>
-                </div>
-                <div
-                    class="group relative rounded-2xl overflow-hidden aspect-square border border-gray-200 shadow-sm bg-gray-100">
-                    <img src="assets/img/proje10.jpg" onerror="this.src='assets/img/hero-bg.jpg'" alt="Proje"
-                        class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
-                    <div class="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-opacity"></div>
-                </div>
-                <div
-                    class="group relative rounded-2xl overflow-hidden aspect-square border border-gray-200 shadow-sm bg-gray-100">
-                    <img src="assets/img/proje11.jpg" onerror="this.src='assets/img/hero-bg.jpg'" alt="Proje"
-                        class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
-                    <div class="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-opacity"></div>
-                </div>
-                <div
-                    class="group relative rounded-2xl overflow-hidden aspect-square border border-gray-200 shadow-sm bg-gray-100">
-                    <img src="assets/img/proje12.jpg" onerror="this.src='assets/img/hero-bg.jpg'" alt="Proje"
-                        class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
-                    <div class="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-opacity"></div>
-                </div>
-                <div
-                    class="group relative rounded-2xl overflow-hidden aspect-square border border-gray-200 shadow-sm bg-gray-100">
-                    <img src="assets/img/proje13.jpg" onerror="this.src='assets/img/hero-bg.jpg'" alt="Proje"
-                        class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
-                    <div class="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-opacity"></div>
-                </div>
-                <div
-                    class="group relative rounded-2xl overflow-hidden aspect-square border border-gray-200 shadow-sm bg-gray-100">
-                    <img src="assets/img/proje14.jpg" onerror="this.src='assets/img/hero-bg.jpg'" alt="Proje"
-                        class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
-                    <div class="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-opacity"></div>
-                </div>
-                <div
-                    class="group relative rounded-2xl overflow-hidden aspect-square border border-gray-200 shadow-sm bg-gray-100 sm:col-span-2 lg:col-span-1">
-                    <img src="assets/img/proje15.jpg" onerror="this.src='assets/img/hero-bg.jpg'" alt="Proje"
-                        class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
-                    <div class="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-opacity"></div>
-                </div>
-
             </div>
 
+            <!-- Kademe 1: 10 Proje daha (7-16) -->
+            <div id="proje-kademe-1" class="hidden mt-8">
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <div
+                        class="group bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 border border-gray-100">
+                        <div class="relative aspect-[4/3] overflow-hidden"><img src="assets/img/proje7.jpg"
+                                onerror="this.src='assets/img/hero-bg.jpg'" alt="Proje"
+                                class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                        </div>
+                        <div class="p-5">
+                            <h3 class="font-bold text-brand-dark text-lg">Tarımsal Sulama Pompası</h3>
+                            <p class="text-gray-500 text-sm mt-1">DC Pompa Sistemi</p>
+                        </div>
+                    </div>
+                    <div
+                        class="group bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 border border-gray-100">
+                        <div class="relative aspect-[4/3] overflow-hidden"><img src="assets/img/proje8.jpg"
+                                onerror="this.src='assets/img/hero-bg.jpg'" alt="Proje"
+                                class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                        </div>
+                        <div class="p-5">
+                            <h3 class="font-bold text-brand-dark text-lg">Çiftlik Enerji Sistemi</h3>
+                            <p class="text-gray-500 text-sm mt-1">Arazi Tipi Kurulum</p>
+                        </div>
+                    </div>
+                    <div
+                        class="group bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 border border-gray-100">
+                        <div class="relative aspect-[4/3] overflow-hidden"><img src="assets/img/proje9.jpg"
+                                onerror="this.src='assets/img/hero-bg.jpg'" alt="Proje"
+                                class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                        </div>
+                        <div class="p-5">
+                            <h3 class="font-bold text-brand-dark text-lg">Müstakil Ev GES</h3>
+                            <p class="text-gray-500 text-sm mt-1">Konut Çatı Paneli</p>
+                        </div>
+                    </div>
+                    <div
+                        class="group bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 border border-gray-100">
+                        <div class="relative aspect-[4/3] overflow-hidden"><img src="assets/img/proje10.jpg"
+                                onerror="this.src='assets/img/hero-bg.jpg'" alt="Proje"
+                                class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                        </div>
+                        <div class="p-5">
+                            <h3 class="font-bold text-brand-dark text-lg">Sera Sulama Sistemi</h3>
+                            <p class="text-gray-500 text-sm mt-1">Güneş Enerjili Sulama</p>
+                        </div>
+                    </div>
+                    <div
+                        class="group bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 border border-gray-100">
+                        <div class="relative aspect-[4/3] overflow-hidden"><img src="assets/img/proje11.jpg"
+                                onerror="this.src='assets/img/hero-bg.jpg'" alt="Proje"
+                                class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                        </div>
+                        <div class="p-5">
+                            <h3 class="font-bold text-brand-dark text-lg">Endüstriyel Tesis GES</h3>
+                            <p class="text-gray-500 text-sm mt-1">Büyük Ölçekli Kurulum</p>
+                        </div>
+                    </div>
+                    <div
+                        class="group bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 border border-gray-100">
+                        <div class="relative aspect-[4/3] overflow-hidden"><img src="assets/img/proje12.jpg"
+                                onerror="this.src='assets/img/hero-bg.jpg'" alt="Proje"
+                                class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                        </div>
+                        <div class="p-5">
+                            <h3 class="font-bold text-brand-dark text-lg">Bağ Evi Off-Grid</h3>
+                            <p class="text-gray-500 text-sm mt-1">Şebekesiz Enerji Çözümü</p>
+                        </div>
+                    </div>
+                    <div
+                        class="group bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 border border-gray-100">
+                        <div class="relative aspect-[4/3] overflow-hidden"><img src="assets/img/proje13.jpg"
+                                onerror="this.src='assets/img/hero-bg.jpg'" alt="Proje"
+                                class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                        </div>
+                        <div class="p-5">
+                            <h3 class="font-bold text-brand-dark text-lg">Fabrika Panel Montajı</h3>
+                            <p class="text-gray-500 text-sm mt-1">Sanayi Çatı Uygulaması</p>
+                        </div>
+                    </div>
+                    <div
+                        class="group bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 border border-gray-100">
+                        <div class="relative aspect-[4/3] overflow-hidden"><img src="assets/img/proje14.jpg"
+                                onerror="this.src='assets/img/hero-bg.jpg'" alt="Proje"
+                                class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                        </div>
+                        <div class="p-5">
+                            <h3 class="font-bold text-brand-dark text-lg">Apartman Çatı GES</h3>
+                            <p class="text-gray-500 text-sm mt-1">Kentsel Enerji Dönüşümü</p>
+                        </div>
+                    </div>
+                    <div
+                        class="group bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 border border-gray-100">
+                        <div class="relative aspect-[4/3] overflow-hidden"><img src="assets/img/proje15.jpg"
+                                onerror="this.src='assets/img/hero-bg.jpg'" alt="Proje"
+                                class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                        </div>
+                        <div class="p-5">
+                            <h3 class="font-bold text-brand-dark text-lg">Arazi Tipi Büyük GES</h3>
+                            <p class="text-gray-500 text-sm mt-1">Yatırım Amaçlı Proje</p>
+                        </div>
+                    </div>
+                    <div
+                        class="group bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 border border-gray-100">
+                        <div class="relative aspect-[4/3] overflow-hidden"><img src="assets/img/proje1.jpg"
+                                onerror="this.src='assets/img/hero-bg.jpg'" alt="Proje"
+                                class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                        </div>
+                        <div class="p-5">
+                            <h3 class="font-bold text-brand-dark text-lg">Sorgun Tarla Sulama GES</h3>
+                            <p class="text-gray-500 text-sm mt-1">7.5 HP Solar Pompa</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Kademe 2: 10 Proje daha (17-26) -->
+            <div id="proje-kademe-2" class="hidden mt-8">
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <div
+                        class="group bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 border border-gray-100">
+                        <div class="relative aspect-[4/3] overflow-hidden"><img src="assets/img/proje2.jpg"
+                                onerror="this.src='assets/img/hero-bg.jpg'" alt="Proje"
+                                class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                        </div>
+                        <div class="p-5">
+                            <h3 class="font-bold text-brand-dark text-lg">Kırşehir Bağ Evi Sistemi</h3>
+                            <p class="text-gray-500 text-sm mt-1">Off-Grid 4kW Kurulum</p>
+                        </div>
+                    </div>
+                    <div
+                        class="group bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 border border-gray-100">
+                        <div class="relative aspect-[4/3] overflow-hidden"><img src="assets/img/proje3.jpg"
+                                onerror="this.src='assets/img/hero-bg.jpg'" alt="Proje"
+                                class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                        </div>
+                        <div class="p-5">
+                            <h3 class="font-bold text-brand-dark text-lg">Yozgat Merkez Çatı GES</h3>
+                            <p class="text-gray-500 text-sm mt-1">Konut Enerji Sistemi</p>
+                        </div>
+                    </div>
+                    <div
+                        class="group bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 border border-gray-100">
+                        <div class="relative aspect-[4/3] overflow-hidden"><img src="assets/img/proje4.jpg"
+                                onerror="this.src='assets/img/hero-bg.jpg'" alt="Proje"
+                                class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                        </div>
+                        <div class="p-5">
+                            <h3 class="font-bold text-brand-dark text-lg">Akdağmadeni Arazi GES</h3>
+                            <p class="text-gray-500 text-sm mt-1">50kW Sanayi Projesi</p>
+                        </div>
+                    </div>
+                    <div
+                        class="group bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 border border-gray-100">
+                        <div class="relative aspect-[4/3] overflow-hidden"><img src="assets/img/proje5.jpg"
+                                onerror="this.src='assets/img/hero-bg.jpg'" alt="Proje"
+                                class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                        </div>
+                        <div class="p-5">
+                            <h3 class="font-bold text-brand-dark text-lg">Kayseri Villa GES</h3>
+                            <p class="text-gray-500 text-sm mt-1">10kW Çatı Paneli</p>
+                        </div>
+                    </div>
+                    <div
+                        class="group bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 border border-gray-100">
+                        <div class="relative aspect-[4/3] overflow-hidden"><img src="assets/img/proje6.jpg"
+                                onerror="this.src='assets/img/hero-bg.jpg'" alt="Proje"
+                                class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                        </div>
+                        <div class="p-5">
+                            <h3 class="font-bold text-brand-dark text-lg">Sivas Endüstriyel GES</h3>
+                            <p class="text-gray-500 text-sm mt-1">Fabrika Enerji Dönüşümü</p>
+                        </div>
+                    </div>
+                    <div
+                        class="group bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 border border-gray-100">
+                        <div class="relative aspect-[4/3] overflow-hidden"><img src="assets/img/proje7.jpg"
+                                onerror="this.src='assets/img/hero-bg.jpg'" alt="Proje"
+                                class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                        </div>
+                        <div class="p-5">
+                            <h3 class="font-bold text-brand-dark text-lg">Çekerek Sulama GES</h3>
+                            <p class="text-gray-500 text-sm mt-1">DC Dalgıç Pompa</p>
+                        </div>
+                    </div>
+                    <div
+                        class="group bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 border border-gray-100">
+                        <div class="relative aspect-[4/3] overflow-hidden"><img src="assets/img/proje8.jpg"
+                                onerror="this.src='assets/img/hero-bg.jpg'" alt="Proje"
+                                class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                        </div>
+                        <div class="p-5">
+                            <h3 class="font-bold text-brand-dark text-lg">Nevşehir Depo Çatı GES</h3>
+                            <p class="text-gray-500 text-sm mt-1">Lojistik Merkezi Kurulumu</p>
+                        </div>
+                    </div>
+                    <div
+                        class="group bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 border border-gray-100">
+                        <div class="relative aspect-[4/3] overflow-hidden"><img src="assets/img/proje9.jpg"
+                                onerror="this.src='assets/img/hero-bg.jpg'" alt="Proje"
+                                class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                        </div>
+                        <div class="p-5">
+                            <h3 class="font-bold text-brand-dark text-lg">Tokat Müstakil Ev GES</h3>
+                            <p class="text-gray-500 text-sm mt-1">Hibrit Enerji Çözümü</p>
+                        </div>
+                    </div>
+                    <div
+                        class="group bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 border border-gray-100">
+                        <div class="relative aspect-[4/3] overflow-hidden"><img src="assets/img/proje10.jpg"
+                                onerror="this.src='assets/img/hero-bg.jpg'" alt="Proje"
+                                class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                        </div>
+                        <div class="p-5">
+                            <h3 class="font-bold text-brand-dark text-lg">Amasya Sera GES</h3>
+                            <p class="text-gray-500 text-sm mt-1">Seracılık Sulama Sistemi</p>
+                        </div>
+                    </div>
+                    <div
+                        class="group bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 border border-gray-100">
+                        <div class="relative aspect-[4/3] overflow-hidden"><img src="assets/img/proje11.jpg"
+                                onerror="this.src='assets/img/hero-bg.jpg'" alt="Proje"
+                                class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                        </div>
+                        <div class="p-5">
+                            <h3 class="font-bold text-brand-dark text-lg">Ankara Gölbaşı GES</h3>
+                            <p class="text-gray-500 text-sm mt-1">30kW Çatı Montajı</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Kademe 3: 10 Proje daha (27-36) -->
+            <div id="proje-kademe-3" class="hidden mt-8">
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <div
+                        class="group bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 border border-gray-100">
+                        <div class="relative aspect-[4/3] overflow-hidden"><img src="assets/img/proje12.jpg"
+                                onerror="this.src='assets/img/hero-bg.jpg'" alt="Proje"
+                                class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                        </div>
+                        <div class="p-5">
+                            <h3 class="font-bold text-brand-dark text-lg">Kaman İlçesi GES</h3>
+                            <p class="text-gray-500 text-sm mt-1">Tarla Kenarı Kurulum</p>
+                        </div>
+                    </div>
+                    <div
+                        class="group bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 border border-gray-100">
+                        <div class="relative aspect-[4/3] overflow-hidden"><img src="assets/img/proje13.jpg"
+                                onerror="this.src='assets/img/hero-bg.jpg'" alt="Proje"
+                                class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                        </div>
+                        <div class="p-5">
+                            <h3 class="font-bold text-brand-dark text-lg">Gemerek Fabrika GES</h3>
+                            <p class="text-gray-500 text-sm mt-1">İmalathane Çatı Paneli</p>
+                        </div>
+                    </div>
+                    <div
+                        class="group bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 border border-gray-100">
+                        <div class="relative aspect-[4/3] overflow-hidden"><img src="assets/img/proje14.jpg"
+                                onerror="this.src='assets/img/hero-bg.jpg'" alt="Proje"
+                                class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                        </div>
+                        <div class="p-5">
+                            <h3 class="font-bold text-brand-dark text-lg">Şefaatli Konut GES</h3>
+                            <p class="text-gray-500 text-sm mt-1">Ev Tipi Enerji Üretimi</p>
+                        </div>
+                    </div>
+                    <div
+                        class="group bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 border border-gray-100">
+                        <div class="relative aspect-[4/3] overflow-hidden"><img src="assets/img/proje15.jpg"
+                                onerror="this.src='assets/img/hero-bg.jpg'" alt="Proje"
+                                class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                        </div>
+                        <div class="p-5">
+                            <h3 class="font-bold text-brand-dark text-lg">Sarıkaya Büyük Arazi GES</h3>
+                            <p class="text-gray-500 text-sm mt-1">100kW Yatırım Projesi</p>
+                        </div>
+                    </div>
+                    <div
+                        class="group bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 border border-gray-100">
+                        <div class="relative aspect-[4/3] overflow-hidden"><img src="assets/img/proje1.jpg"
+                                onerror="this.src='assets/img/hero-bg.jpg'" alt="Proje"
+                                class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                        </div>
+                        <div class="p-5">
+                            <h3 class="font-bold text-brand-dark text-lg">Yerköy Sulama Projesi</h3>
+                            <p class="text-gray-500 text-sm mt-1">Tarımsal GES Çözümü</p>
+                        </div>
+                    </div>
+                    <div
+                        class="group bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 border border-gray-100">
+                        <div class="relative aspect-[4/3] overflow-hidden"><img src="assets/img/proje2.jpg"
+                                onerror="this.src='assets/img/hero-bg.jpg'" alt="Proje"
+                                class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                        </div>
+                        <div class="p-5">
+                            <h3 class="font-bold text-brand-dark text-lg">Kırıkkale Off-Grid GES</h3>
+                            <p class="text-gray-500 text-sm mt-1">Bağ Evi Enerji Sistemi</p>
+                        </div>
+                    </div>
+                    <div
+                        class="group bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 border border-gray-100">
+                        <div class="relative aspect-[4/3] overflow-hidden"><img src="assets/img/proje3.jpg"
+                                onerror="this.src='assets/img/hero-bg.jpg'" alt="Proje"
+                                class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                        </div>
+                        <div class="p-5">
+                            <h3 class="font-bold text-brand-dark text-lg">Çankırı Sanayi GES</h3>
+                            <p class="text-gray-500 text-sm mt-1">Endüstriyel Çatı Montajı</p>
+                        </div>
+                    </div>
+                    <div
+                        class="group bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 border border-gray-100">
+                        <div class="relative aspect-[4/3] overflow-hidden"><img src="assets/img/proje4.jpg"
+                                onerror="this.src='assets/img/hero-bg.jpg'" alt="Proje"
+                                class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                        </div>
+                        <div class="p-5">
+                            <h3 class="font-bold text-brand-dark text-lg">Niğde Tarım GES</h3>
+                            <p class="text-gray-500 text-sm mt-1">Patates Tarlası Sulama</p>
+                        </div>
+                    </div>
+                    <div
+                        class="group bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 border border-gray-100">
+                        <div class="relative aspect-[4/3] overflow-hidden"><img src="assets/img/proje5.jpg"
+                                onerror="this.src='assets/img/hero-bg.jpg'" alt="Proje"
+                                class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                        </div>
+                        <div class="p-5">
+                            <h3 class="font-bold text-brand-dark text-lg">Aksaray Villa Çatı GES</h3>
+                            <p class="text-gray-500 text-sm mt-1">Premium Konut Sistemi</p>
+                        </div>
+                    </div>
+                    <div
+                        class="group bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 border border-gray-100">
+                        <div class="relative aspect-[4/3] overflow-hidden"><img src="assets/img/proje6.jpg"
+                                onerror="this.src='assets/img/hero-bg.jpg'" alt="Proje"
+                                class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                        </div>
+                        <div class="p-5">
+                            <h3 class="font-bold text-brand-dark text-lg">Konya Ereğli Arazi GES</h3>
+                            <p class="text-gray-500 text-sm mt-1">Geniş Alan Enerji Üretimi</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Daha Fazla Proje Göster Butonu -->
+            <div class="text-center mt-12" id="btn-container">
+                <button id="btn-tum-projeler" onclick="dahaProjelerGoster()"
+                    class="bg-brand-primary hover:bg-brand-dark text-white px-10 py-4 rounded-full font-bold text-lg transition-all transform hover:scale-105 shadow-lg shadow-brand-primary/20 inline-flex items-center gap-3">
+                    <i class="fas fa-th-large"></i>
+                    <span id="btn-text">Daha Fazla Proje Göster</span>
+                    <i class="fas fa-chevron-down ml-1" id="btn-icon"></i>
+                </button>
+                <p class="text-gray-400 text-sm mt-3" id="proje-sayac">6 / 36 proje gösteriliyor</p>
+            </div>
+
+            <!-- CTA Banner -->
             <div
                 class="mt-16 bg-blue-50 border border-brand-primary/10 rounded-2xl p-8 md:p-12 text-center relative overflow-hidden shadow-lg">
                 <div class="absolute top-0 right-0 w-64 h-64 bg-brand-accent/5 rounded-full blur-3xl -z-10"></div>
                 <div class="absolute bottom-0 left-0 w-64 h-64 bg-brand-primary/5 rounded-full blur-3xl -z-10"></div>
-
                 <h3 class="text-3xl font-bold mb-4 text-brand-dark">Sizin Projenizin Maliyetini Hesaplayalım mı?</h3>
                 <p class="text-gray-600 max-w-2xl mx-auto mb-8 text-lg">
                     <strong>Elektrik Mühendisi Kadir Bozlar</strong> güvencesiyle alanınızı inceleyelim, en efektif ve
@@ -558,7 +854,7 @@
                 </p>
                 <a href="https://wa.me/905417705121" target="_blank"
                     class="inline-flex bg-brand-primary hover:bg-brand-dark text-white px-8 py-4 rounded-full font-bold text-lg transition-all transform hover:scale-105 shadow-xl shadow-brand-primary/20 items-center gap-3">
-                    <i class="fab fa-whatsapp text-2xl text-green-400"></i> Mühendislik & Keşif İstek
+                    <i class="fab fa-whatsapp text-2xl text-green-400"></i> Mühendislik &amp; Keşif İstek
                 </a>
             </div>
         </div>
@@ -569,7 +865,7 @@
         <!-- Harita Alanı -->
         <div class="w-full h-[350px] bg-gray-900 grayscale hover:grayscale-0 transition-all duration-700">
             <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d12227.124503023275!2d35.242200388432314!3d39.38799986326164!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x407ef275bcde2ac5%3A0xedc9fbcbed1fa23!2zQm_En2F6bMSxeWFuLCBZb3pnYXQ!5e0!3m2!1str!2str!4v1700000000000!5m2!1str!2str"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2798.4782519155297!2d35.24298317542001!3d39.18792402951049!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x152b2b23d7e7e65d%3A0x64677ee97b59d245!2zQk9aU09MQVIgRU5FUkrEsCBWRSBNw5xIRU5ExLBTTMSwSw!5e1!3m2!1str!2str!4v1772716549806!5m2!1str!2str"
                 width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"
                 referrerpolicy="no-referrer-when-downgrade"></iframe>
         </div>
@@ -608,7 +904,7 @@
                         <li class="flex items-start gap-3">
                             <i class="fas fa-map-marker-alt text-brand-accent mt-1"></i>
                             <span class="text-gray-400 text-sm text-balance">Karakoç yolu üzeri Rise aprt.<br>Boğazlıyan
-                                / Yozgat (66400)</span>
+                                / Yozgat</span>
                         </li>
                         <li class="flex items-center gap-3">
                             <i class="fas fa-phone-alt text-brand-accent"></i>
@@ -617,8 +913,8 @@
                         </li>
                         <li class="flex items-center gap-3">
                             <i class="fas fa-envelope text-brand-accent"></i>
-                            <a href="mailto:info@bozsolarenerji.com"
-                                class="text-gray-400 hover:text-brand-accent text-sm">info@bozsolarenerji.com</a>
+                            <a href="mailto:kadirbozlar@hotmail.com"
+                                class="text-gray-400 hover:text-brand-accent text-sm">kadirbozlar@hotmail.com</a>
                         </li>
                     </ul>
                 </div>
@@ -668,28 +964,44 @@
                     <script>document.write(new Date().getFullYear())</script> BozSolar Enerji ve Mühendislik. Tüm
                     Hakları Saklıdır.
                 </p>
-                <p class="text-gray-500 text-sm flex items-center gap-2">
-                    <a href="https://kastamonuesnaf.com.tr"
-                        class="hover:text-white transition-colors">kastamonuesnaf.com.tr</a> Altyapısı ile
-                    Hazırlanmıştır.
-                </p>
+
             </div>
         </div>
     </footer>
 
     <!-- Scripts -->
     <script>
-        // Navbar Scroll Effect
+        // Navbar Scroll Effect (Açık Tema)
         window.addEventListener('scroll', function () {
             const navbar = document.getElementById('navbar');
             if (window.scrollY > 20) {
                 navbar.classList.add('shadow-lg');
-                navbar.style.background = 'rgba(15, 23, 42, 0.95)';
+                navbar.style.background = 'rgba(255, 255, 255, 0.97)';
             } else {
                 navbar.classList.remove('shadow-lg');
-                navbar.style.background = 'rgba(15, 23, 42, 0.85)';
+                navbar.style.background = 'rgba(255, 255, 255, 0.9)';
             }
         });
+
+        // Kademeli Proje Açma Sistemi
+        let projeKademe = 0;
+        const kademeler = ['proje-kademe-1', 'proje-kademe-2', 'proje-kademe-3'];
+        const sayilar = [16, 26, 36];
+
+        function dahaProjelerGoster() {
+            if (projeKademe < kademeler.length) {
+                document.getElementById(kademeler[projeKademe]).classList.remove('hidden');
+                projeKademe++;
+                document.getElementById('proje-sayac').textContent = sayilar[projeKademe - 1] + ' / 36 proje gösteriliyor';
+
+                if (projeKademe >= kademeler.length) {
+                    document.getElementById('btn-tum-projeler').innerHTML = '<i class="fas fa-check-circle"></i> <span>Tüm Projeler Gösterildi</span>';
+                    document.getElementById('btn-tum-projeler').disabled = true;
+                    document.getElementById('btn-tum-projeler').classList.add('opacity-60', 'cursor-default');
+                    document.getElementById('btn-tum-projeler').classList.remove('hover:scale-105', 'hover:bg-brand-dark');
+                }
+            }
+        }
 
         // Mobile Menu Toggle
         const mobileMenuButton = document.getElementById('mobile-menu-button');
