@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
     <title>Kastamonu Esnaf — Admin Panel</title>
-    <meta name="description" content="Kastamonu Esnaf Admin Panel — Tüm işletme verilerini yönetin.">
+    <meta name="description" content="Kastamonu Esnaf Admin Panel">
     <meta name="robots" content="noindex,nofollow">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
@@ -30,6 +30,8 @@
             --green: #22c55e;
             --red: #ef4444;
             --orange: #f59e0b;
+            --yellow: #eab308;
+            --cyan: #06b6d4;
             --radius: 16px
         }
 
@@ -63,7 +65,6 @@
             border-radius: 3px
         }
 
-        /* HEADER */
         .header {
             background: linear-gradient(135deg, rgba(99, 102, 241, .15), rgba(139, 92, 246, .1));
             border-bottom: 1px solid var(--border);
@@ -71,8 +72,7 @@
             position: sticky;
             top: 0;
             z-index: 100;
-            backdrop-filter: blur(20px);
-            -webkit-backdrop-filter: blur(20px)
+            backdrop-filter: blur(20px)
         }
 
         .header-inner {
@@ -116,6 +116,12 @@
             font-weight: 600
         }
 
+        .header-right {
+            display: flex;
+            align-items: center;
+            gap: 10px
+        }
+
         .header-badge {
             font-size: 11px;
             color: var(--text2);
@@ -125,13 +131,60 @@
             font-weight: 500
         }
 
-        /* STATS */
+        .api-status {
+            font-size: 11px;
+            padding: 4px 10px;
+            border-radius: 20px;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 4px
+        }
+
+        .api-status.online {
+            background: rgba(34, 197, 94, .15);
+            color: var(--green)
+        }
+
+        .api-status.offline {
+            background: rgba(239, 68, 68, .1);
+            color: var(--red)
+        }
+
+        .tab-btns {
+            display: flex;
+            gap: 4px
+        }
+
+        .tab-btn {
+            padding: 8px 16px;
+            background: var(--surface2);
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            color: var(--text2);
+            cursor: pointer;
+            font-size: 12px;
+            font-weight: 600;
+            font-family: inherit;
+            transition: all .2s;
+            display: flex;
+            align-items: center;
+            gap: 6px
+        }
+
+        .tab-btn.active,
+        .tab-btn:hover {
+            background: var(--accent);
+            color: #fff;
+            border-color: var(--accent)
+        }
+
         .stats {
             max-width: 1440px;
             margin: 0 auto;
             padding: 24px;
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
             gap: 12px
         }
 
@@ -139,7 +192,7 @@
             background: var(--surface);
             border: 1px solid var(--border);
             border-radius: var(--radius);
-            padding: 20px;
+            padding: 16px;
             text-align: center;
             transition: all .3s ease
         }
@@ -151,7 +204,7 @@
         }
 
         .stat-value {
-            font-size: 28px;
+            font-size: 24px;
             font-weight: 900;
             background: linear-gradient(135deg, var(--accent2), #c084fc);
             -webkit-background-clip: text;
@@ -177,8 +230,14 @@
             background-clip: text
         }
 
+        .stat-card.cyan .stat-value {
+            background: linear-gradient(135deg, var(--cyan), #22d3ee);
+            -webkit-background-clip: text;
+            background-clip: text
+        }
+
         .stat-label {
-            font-size: 12px;
+            font-size: 11px;
             color: var(--text2);
             margin-top: 4px;
             font-weight: 500;
@@ -186,7 +245,6 @@
             letter-spacing: .5px
         }
 
-        /* TOOLBAR */
         .toolbar {
             max-width: 1440px;
             margin: 0 auto;
@@ -243,7 +301,7 @@
             font-size: 13px;
             font-family: inherit;
             cursor: pointer;
-            min-width: 180px
+            min-width: 160px
         }
 
         .filter-select:focus {
@@ -283,7 +341,6 @@
             white-space: nowrap
         }
 
-        /* GRID */
         .main {
             max-width: 1440px;
             margin: 0 auto;
@@ -300,7 +357,6 @@
             grid-template-columns: 1fr
         }
 
-        /* CARD */
         .card {
             background: var(--surface);
             border: 1px solid var(--border);
@@ -316,6 +372,15 @@
             transform: translateY(-3px);
             border-color: var(--accent);
             box-shadow: 0 12px 40px rgba(99, 102, 241, .12)
+        }
+
+        .card.satildi {
+            border-color: rgba(34, 197, 94, .3);
+            background: linear-gradient(135deg, var(--surface), rgba(34, 197, 94, .05))
+        }
+
+        .card.takipte {
+            border-color: rgba(234, 179, 8, .2)
         }
 
         .card-header {
@@ -413,6 +478,24 @@
             border: 1px solid rgba(245, 158, 11, .15)
         }
 
+        .badge.sold {
+            background: rgba(34, 197, 94, .15);
+            color: var(--green);
+            border: 1px solid rgba(34, 197, 94, .3)
+        }
+
+        .badge.tracking {
+            background: rgba(234, 179, 8, .12);
+            color: var(--yellow);
+            border: 1px solid rgba(234, 179, 8, .2)
+        }
+
+        .badge.asked {
+            background: rgba(6, 182, 212, .12);
+            color: var(--cyan);
+            border: 1px solid rgba(6, 182, 212, .2)
+        }
+
         .card-meta {
             display: flex;
             gap: 12px;
@@ -435,7 +518,6 @@
             text-overflow: ellipsis
         }
 
-        /* LIST VIEW CARD */
         .grid.list-view .card {
             display: flex;
             align-items: center;
@@ -456,7 +538,6 @@
             display: none
         }
 
-        /* MODAL */
         .modal-overlay {
             position: fixed;
             inset: 0;
@@ -478,7 +559,7 @@
             border: 1px solid var(--border);
             border-radius: 20px;
             width: 100%;
-            max-width: 720px;
+            max-width: 760px;
             max-height: 85vh;
             overflow-y: auto;
             position: relative;
@@ -681,7 +762,8 @@
             align-items: center;
             gap: 6px;
             transition: all .2s;
-            font-family: inherit
+            font-family: inherit;
+            text-decoration: none
         }
 
         .modal-btn.primary {
@@ -711,7 +793,165 @@
             background: var(--border)
         }
 
-        /* LOADING */
+        .modal-btn.save {
+            background: var(--green);
+            color: #fff
+        }
+
+        .modal-btn.save:hover {
+            background: #16a34a
+        }
+
+        /* EDIT FORM */
+        .edit-form {
+            background: linear-gradient(135deg, rgba(99, 102, 241, .08), rgba(139, 92, 246, .05));
+            border: 1px solid rgba(99, 102, 241, .2);
+            border-radius: 14px;
+            padding: 18px;
+            margin-bottom: 20px
+        }
+
+        .edit-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+            margin-bottom: 10px
+        }
+
+        .edit-field label {
+            font-size: 10px;
+            text-transform: uppercase;
+            letter-spacing: .5px;
+            color: var(--text2);
+            font-weight: 600;
+            display: block;
+            margin-bottom: 4px
+        }
+
+        .edit-field select,
+        .edit-field input,
+        .edit-field textarea {
+            width: 100%;
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 8px 12px;
+            color: var(--text);
+            font-size: 13px;
+            font-family: inherit
+        }
+
+        .edit-field select:focus,
+        .edit-field input:focus,
+        .edit-field textarea:focus {
+            outline: none;
+            border-color: var(--accent)
+        }
+
+        .edit-field textarea {
+            resize: vertical;
+            min-height: 60px
+        }
+
+        .save-indicator {
+            font-size: 12px;
+            color: var(--green);
+            display: none;
+            align-items: center;
+            gap: 4px;
+            margin-left: 8px
+        }
+
+        .save-indicator.show {
+            display: inline-flex
+        }
+
+        /* LOG PANEL */
+        .log-panel {
+            display: none
+        }
+
+        .log-panel.active {
+            display: block
+        }
+
+        .isletme-panel {
+            display: block
+        }
+
+        .isletme-panel.hidden {
+            display: none
+        }
+
+        .log-list {
+            max-width: 1440px;
+            margin: 0 auto;
+            padding: 0 24px 40px
+        }
+
+        .log-item {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 14px 18px;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            transition: all .2s
+        }
+
+        .log-item:hover {
+            border-color: var(--accent)
+        }
+
+        .log-icon {
+            width: 36px;
+            height: 36px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            font-size: 14px
+        }
+
+        .log-icon.update {
+            background: rgba(99, 102, 241, .15);
+            color: var(--accent2)
+        }
+
+        .log-info {
+            flex: 1;
+            min-width: 0
+        }
+
+        .log-title {
+            font-size: 13px;
+            font-weight: 600
+        }
+
+        .log-detail {
+            font-size: 11px;
+            color: var(--text2);
+            margin-top: 2px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis
+        }
+
+        .log-time {
+            font-size: 11px;
+            color: var(--text2);
+            white-space: nowrap
+        }
+
+        .log-empty {
+            text-align: center;
+            padding: 60px;
+            color: var(--text2)
+        }
+
         .loading {
             text-align: center;
             padding: 60px 20px;
@@ -732,7 +972,6 @@
             }
         }
 
-        /* EMPTY */
         .empty {
             text-align: center;
             padding: 60px 20px;
@@ -746,7 +985,6 @@
             display: block
         }
 
-        /* IMAGE VIEWER */
         .img-viewer {
             position: fixed;
             inset: 0;
@@ -769,7 +1007,44 @@
             object-fit: contain
         }
 
-        /* RESPONSIVE */
+        .toast {
+            position: fixed;
+            bottom: 24px;
+            right: 24px;
+            background: var(--green);
+            color: #fff;
+            padding: 12px 20px;
+            border-radius: 12px;
+            font-size: 13px;
+            font-weight: 600;
+            z-index: 400;
+            display: none;
+            align-items: center;
+            gap: 8px;
+            animation: slideUp .3s ease;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, .3)
+        }
+
+        .toast.show {
+            display: flex
+        }
+
+        .toast.error {
+            background: var(--red)
+        }
+
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px)
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0)
+            }
+        }
+
         @media(max-width:768px) {
             .header-inner {
                 flex-direction: column;
@@ -802,9 +1077,8 @@
                 grid-template-columns: 1fr
             }
 
-            .modal {
-                max-height: 90vh;
-                border-radius: 16px
+            .edit-row {
+                grid-template-columns: 1fr
             }
         }
     </style>
@@ -812,57 +1086,71 @@
 
 <body>
 
-    <!-- HEADER -->
     <header class="header">
         <div class="header-inner">
             <div class="logo">
                 <div class="logo-icon"><i class="fas fa-store"></i></div>
                 <div>
-                    <h1>Kastamonu Esnaf <span>Admin</span></h1>
-                    <span class="header-badge" id="updateTime">Yükleniyor...</span>
+                    <h1>Kastamonu Esnaf <span>Admin</span></h1><span class="header-badge"
+                        id="updateTime">Yükleniyor...</span>
+                </div>
+            </div>
+            <div class="header-right">
+                <span class="api-status" id="apiStatus"><i class="fas fa-circle" style="font-size:8px"></i> Kontrol
+                    ediliyor...</span>
+                <div class="tab-btns">
+                    <button class="tab-btn active" data-tab="isletme"><i class="fas fa-store"></i> İşletmeler</button>
+                    <button class="tab-btn" data-tab="log"><i class="fas fa-history"></i> Log</button>
                 </div>
             </div>
         </div>
     </header>
 
-    <!-- STATS -->
     <section class="stats" id="statsGrid"></section>
 
-    <!-- TOOLBAR -->
-    <section class="toolbar">
-        <div class="search-box">
-            <i class="fas fa-search"></i>
-            <input type="text" id="searchInput" placeholder="İşletme adı veya adres ara...">
-        </div>
-        <select class="filter-select" id="categoryFilter">
-            <option value="">Tüm Kategoriler</option>
-        </select>
-        <select class="filter-select" id="statusFilter">
-            <option value="">Tüm Durumlar</option>
-            <option value="ready">✅ Site Hazır</option>
-            <option value="not-ready">❌ Site Hazır Değil</option>
-            <option value="has-phone">📞 Telefon Var</option>
-            <option value="has-photo">📷 Fotoğraf Var</option>
-            <option value="has-web">🌐 Web Sitesi Var</option>
-        </select>
-        <div class="view-btns">
-            <button class="view-btn active" data-view="grid" title="Kart Görünümü"><i
-                    class="fas fa-th-large"></i></button>
-            <button class="view-btn" data-view="list" title="Liste Görünümü"><i class="fas fa-list"></i></button>
-        </div>
-        <span class="result-count" id="resultCount"></span>
-    </section>
+    <!-- ISLETMELER TAB -->
+    <div class="isletme-panel" id="isletmePanel">
+        <section class="toolbar">
+            <div class="search-box"><i class="fas fa-search"></i><input type="text" id="searchInput"
+                    placeholder="İşletme adı veya adres ara..."></div>
+            <select class="filter-select" id="categoryFilter">
+                <option value="">Tüm Kategoriler</option>
+            </select>
+            <select class="filter-select" id="statusFilter">
+                <option value="">Tüm Durumlar</option>
+                <option value="ready">✅ Site Hazır</option>
+                <option value="not-ready">❌ Site Hazır Değil</option>
+                <option value="satildi">💰 Satıldı</option>
+                <option value="takipte">📋 Takipte</option>
+                <option value="fiyat-soruldu">💬 Fiyat Soruldu</option>
+                <option value="has-phone">📞 Telefon Var</option>
+                <option value="has-photo">📷 Fotoğraf Var</option>
+            </select>
+            <div class="view-btns">
+                <button class="view-btn active" data-view="grid" title="Kart"><i class="fas fa-th-large"></i></button>
+                <button class="view-btn" data-view="list" title="Liste"><i class="fas fa-list"></i></button>
+            </div>
+            <span class="result-count" id="resultCount"></span>
+        </section>
+        <main class="main">
+            <div class="loading" id="loading"><i class="fas fa-spinner"></i>Veriler yükleniyor...</div>
+            <div class="grid" id="grid"></div>
+            <div class="empty" id="empty" style="display:none"><i class="fas fa-search"></i>
+                <p>Sonuç bulunamadı.</p>
+            </div>
+        </main>
+    </div>
 
-    <!-- MAIN GRID -->
-    <main class="main">
-        <div class="loading" id="loading"><i class="fas fa-spinner"></i>İşletmeler yükleniyor...</div>
-        <div class="grid" id="grid"></div>
-        <div class="empty" id="empty" style="display:none"><i class="fas fa-search"></i>
-            <p>Aramanızla eşleşen işletme bulunamadı.</p>
+    <!-- LOG TAB -->
+    <div class="log-panel" id="logPanel">
+        <div class="log-list" id="logList">
+            <div class="log-empty" id="logEmpty"><i class="fas fa-history"
+                    style="font-size:48px;margin-bottom:16px;display:block;color:var(--surface2)"></i>Henüz log kaydı
+                yok.</div>
         </div>
-    </main>
+    </div>
 
-    <!-- DETAIL MODAL -->
+    <!-- MODAL -->
     <div class="modal-overlay" id="modalOverlay">
         <div class="modal" id="modal">
             <button class="modal-close" id="modalClose"><i class="fas fa-times"></i></button>
@@ -871,135 +1159,168 @@
         </div>
     </div>
 
-    <!-- IMAGE VIEWER -->
     <div class="img-viewer" id="imgViewer"><img id="imgViewerImg" src="" alt=""></div>
+    <div class="toast" id="toast"></div>
 
     <script>
-        let DATA = null, filteredData = [], currentView = 'grid';
+        let DATA = null, filteredData = [], currentView = 'grid', API_URL = '', API_ACTIVE = false, currentModalId = null;
         const $ = id => document.getElementById(id);
 
-        // LOAD DATA
-        async function loadData() {
-            try {
-                const r = await fetch('data.json');
-                if (!r.ok) throw new Error('data.json bulunamadı');
-                DATA = await r.json();
-                renderStats(); renderCategories(); filterAndRender();
-                $('loading').style.display = 'none';
-                $('updateTime').textContent = 'Son güncelleme: ' + DATA.istatistikler.guncelleme_tarihi;
-            } catch (e) {
-                $('loading').innerHTML = '<i class="fas fa-exclamation-triangle" style="color:var(--red);animation:none"></i><p>data.json yüklenemedi!<br><small>Önce <code>python admin_veri_uretici.py</code> çalıştırın.</small></p>';
+        // ============ API DETECTION ============
+        async function detectAPI() {
+            const urls = ['http://localhost:5000', 'http://127.0.0.1:5000'];
+            // Check if custom API URL is set
+            const saved = localStorage.getItem('api_url');
+            if (saved) urls.unshift(saved);
+
+            for (const url of urls) {
+                try {
+                    const r = await fetch(url + '/api/health', { signal: AbortSignal.timeout(2000) });
+                    if (r.ok) { API_URL = url; API_ACTIVE = true; break; }
+                } catch (e) { }
+            }
+            updateAPIStatus();
+        }
+
+        function updateAPIStatus() {
+            const el = $('apiStatus');
+            if (API_ACTIVE) {
+                el.className = 'api-status online';
+                el.innerHTML = '<i class="fas fa-circle" style="font-size:8px"></i> API Aktif';
+            } else {
+                el.className = 'api-status offline';
+                el.innerHTML = '<i class="fas fa-circle" style="font-size:8px"></i> Sadece Okunur';
             }
         }
 
+        // ============ DATA LOADING ============
+        async function loadData() {
+            try {
+                let r;
+                if (API_ACTIVE) {
+                    r = await fetch(API_URL + '/api/data');
+                } else {
+                    r = await fetch('data.json');
+                }
+                if (!r.ok) throw new Error('Veri yuklenemedi');
+                DATA = await r.json();
+                renderStats(); renderCategories(); filterAndRender();
+                $('loading').style.display = 'none';
+                $('updateTime').textContent = 'Son: ' + DATA.istatistikler.guncelleme_tarihi;
+                if (API_ACTIVE) loadLogs();
+            } catch (e) {
+                $('loading').innerHTML = '<i class="fas fa-exclamation-triangle" style="color:var(--red);animation:none"></i><p>Veri yuklenemedi!<br><small>python admin_veri_uretici.py calistirin veya API sunucuyu baslattin.</small></p>';
+            }
+        }
+
+        // ============ STATS ============
         function renderStats() {
             const s = DATA.istatistikler;
             const cards = [
-                { v: s.toplam_isletme, l: 'Toplam İşletme', c: '' },
+                { v: s.toplam_isletme, l: 'Toplam', c: '' },
                 { v: s.toplam_kategori, l: 'Kategori', c: '' },
                 { v: s.site_hazir, l: 'Site Hazır', c: 'green' },
-                { v: s.site_hazir_degil, l: 'Site Hazır Değil', c: 'red' },
+                { v: s.site_hazir_degil, l: 'Hazır Değil', c: 'red' },
+                { v: s.satilan || 0, l: 'Satıldı', c: 'green' },
+                { v: s.takipte || 0, l: 'Takipte', c: 'cyan' },
                 { v: s.telefon_var, l: 'Telefon Var', c: 'orange' },
-                { v: s.toplam_fotograf, l: 'Toplam Fotoğraf', c: '' },
-                { v: s.toplam_yorum, l: 'Toplam Yorum', c: '' },
-                { v: s.web_sitesi_var, l: 'Web Sitesi Olan', c: 'orange' }
+                { v: s.toplam_fotograf, l: 'Fotoğraf', c: '' },
+                { v: s.toplam_yorum, l: 'Yorum', c: '' },
+                { v: s.web_sitesi_var, l: 'Web Sitesi', c: 'orange' }
             ];
-            $('statsGrid').innerHTML = cards.map(c => `<div class="stat-card ${c.c}"><div class="stat-value">${c.v.toLocaleString('tr-TR')}</div><div class="stat-label">${c.l}</div></div>`).join('');
+            $('statsGrid').innerHTML = cards.map(c => `<div class="stat-card ${c.c}"><div class="stat-value">${(c.v || 0).toLocaleString('tr-TR')}</div><div class="stat-label">${c.l}</div></div>`).join('');
         }
 
         function renderCategories() {
             const sel = $('categoryFilter');
-            DATA.kategoriler.forEach(k => {
-                const o = document.createElement('option');
-                o.value = k.ad; o.textContent = `${k.ad} (${k.sayi})`;
-                sel.appendChild(o);
-            });
+            DATA.kategoriler.forEach(k => { const o = document.createElement('option'); o.value = k.ad; o.textContent = `${k.ad} (${k.sayi})`; sel.appendChild(o); });
         }
 
+        // ============ FILTER ============
         function filterAndRender() {
             const q = $('searchInput').value.toLowerCase().trim();
             const cat = $('categoryFilter').value;
             const status = $('statusFilter').value;
-
             filteredData = DATA.isletmeler.filter(i => {
                 if (q && !i.isletme_adi.toLowerCase().includes(q) && !(i.adres || '').toLowerCase().includes(q)) return false;
                 if (cat && i.kategori !== cat) return false;
                 if (status === 'ready' && !i.site_hazir) return false;
                 if (status === 'not-ready' && i.site_hazir) return false;
+                if (status === 'satildi' && !i.satildi) return false;
+                if (status === 'takipte' && i.durum !== 'Takipte') return false;
+                if (status === 'fiyat-soruldu' && i.durum !== 'Fiyat Soruldu') return false;
                 if (status === 'has-phone' && (!i.telefon || i.telefon === '-')) return false;
                 if (status === 'has-photo' && i.fotograf_sayisi === 0) return false;
-                if (status === 'has-web' && !i.web_sitesi_var_mi) return false;
                 return true;
             });
-
-            $('resultCount').textContent = filteredData.length + ' / ' + DATA.isletmeler.length + ' işletme';
+            $('resultCount').textContent = filteredData.length + ' / ' + DATA.isletmeler.length + ' isletme';
             renderGrid();
         }
 
-        function getInitials(name) {
-            return name.split(/\s+/).slice(0, 2).map(w => w[0]).join('').toUpperCase();
+        function getInitials(n) { return n.split(/\s+/).slice(0, 2).map(w => w[0]).join('').toUpperCase(); }
+
+        function getDurumBadge(i) {
+            if (i.satildi) return '<span class="badge sold"><i class="fas fa-check-double"></i>Satıldı</span>';
+            if (i.durum === 'Takipte') return '<span class="badge tracking"><i class="fas fa-clock"></i>Takipte</span>';
+            if (i.durum === 'Fiyat Soruldu') return '<span class="badge asked"><i class="fas fa-comment-dollar"></i>Fiyat Soruldu</span>';
+            return '';
         }
 
         function renderGrid() {
             const grid = $('grid');
-            if (filteredData.length === 0) {
-                grid.innerHTML = ''; $('empty').style.display = 'block'; return;
-            }
+            if (filteredData.length === 0) { grid.innerHTML = ''; $('empty').style.display = 'block'; return; }
             $('empty').style.display = 'none';
-
-            // Render first 200 for performance
             const items = filteredData.slice(0, 200);
             grid.innerHTML = items.map(i => {
                 const avatar = i.fotograflar && i.fotograflar.length > 0
                     ? `<div class="card-avatar"><img src="${i.fotograflar[0]}" alt="" loading="lazy" onerror="this.parentElement.className='card-avatar no-img';this.parentElement.innerHTML='${getInitials(i.isletme_adi)}'"></div>`
                     : `<div class="card-avatar no-img">${getInitials(i.isletme_adi)}</div>`;
-
-                return `<div class="card" data-id="${i.id}">
-      <div class="card-header">
-        ${avatar}
-        <div class="card-info">
-          <div class="card-name" title="${i.isletme_adi}">${i.isletme_adi}</div>
-          <div class="card-category"><i class="fas fa-tag"></i>${i.kategori}</div>
-        </div>
-      </div>
+                const cardClass = i.satildi ? 'card satildi' : i.durum === 'Takipte' ? 'card takipte' : 'card';
+                return `<div class="${cardClass}" data-id="${i.id}">
+      <div class="card-header">${avatar}<div class="card-info"><div class="card-name" title="${i.isletme_adi}">${i.isletme_adi}</div><div class="card-category"><i class="fas fa-tag"></i>${i.kategori}</div></div></div>
       <div class="card-badges">
         ${i.site_hazir ? '<span class="badge ready"><i class="fas fa-check"></i>Site Hazır</span>' : '<span class="badge not-ready"><i class="fas fa-times"></i>Hazır Değil</span>'}
+        ${getDurumBadge(i)}
         ${i.telefon && i.telefon !== '-' ? '<span class="badge has-phone"><i class="fas fa-phone"></i>Telefon</span>' : ''}
-        ${i.web_sitesi_var_mi ? '<span class="badge has-web"><i class="fas fa-globe"></i>Web</span>' : ''}
       </div>
-      <div class="card-meta">
-        <span><i class="fas fa-camera"></i>${i.fotograf_sayisi} foto</span>
-        <span><i class="fas fa-star"></i>${i.yorum_sayisi} yorum</span>
-      </div>
+      <div class="card-meta"><span><i class="fas fa-camera"></i>${i.fotograf_sayisi} foto</span><span><i class="fas fa-star"></i>${i.yorum_sayisi} yorum</span>${i.fiyat ? `<span><i class="fas fa-lira-sign"></i>${i.fiyat}</span>` : ''}</div>
       ${i.adres ? `<div class="card-addr"><i class="fas fa-map-marker-alt"></i> ${i.adres}</div>` : ''}
     </div>`;
             }).join('');
-
-            if (filteredData.length > 200) {
-                grid.innerHTML += `<div style="grid-column:1/-1;text-align:center;padding:20px;color:var(--text2);font-size:13px">
-      <i class="fas fa-info-circle"></i> ${filteredData.length - 200} işletme daha var. Aramayı daraltarak daha fazla sonuç görebilirsiniz.
-    </div>`;
-            }
+            if (filteredData.length > 200) grid.innerHTML += `<div style="grid-column:1/-1;text-align:center;padding:20px;color:var(--text2);font-size:13px"><i class="fas fa-info-circle"></i> ${filteredData.length - 200} isletme daha var.</div>`;
         }
 
-        // MODAL
+        // ============ MODAL ============
         function openModal(id) {
             const i = DATA.isletmeler.find(x => x.id === id);
             if (!i) return;
+            currentModalId = id;
 
-            // Gallery
             $('modalGallery').innerHTML = i.fotograflar.length > 0
                 ? i.fotograflar.map(f => `<img src="${f}" alt="" loading="lazy" onclick="openImage('${f}')" onerror="this.style.display='none'">`).join('')
-                : '<div style="padding:20px;text-align:center;color:var(--text2);grid-column:1/-1"><i class="fas fa-image" style="font-size:32px;margin-bottom:8px;display:block"></i>Fotoğraf bulunamadı</div>';
+                : '<div style="padding:20px;text-align:center;color:var(--text2);grid-column:1/-1"><i class="fas fa-image" style="font-size:32px;margin-bottom:8px;display:block"></i>Fotograf yok</div>';
 
-            // Build body
-            let html = `<h2 class="modal-title">${i.isletme_adi}</h2>
-    <div class="modal-cat"><i class="fas fa-tag"></i>${i.kategori}</div>`;
+            let html = `<h2 class="modal-title">${i.isletme_adi}</h2><div class="modal-cat"><i class="fas fa-tag"></i>${i.kategori}</div>`;
 
-            // Badges
-            html += `<div class="card-badges" style="margin-bottom:16px">
-    ${i.site_hazir ? `<span class="badge ready"><i class="fas fa-check"></i>Site Hazır — ${i.deploy_slug}</span>` : '<span class="badge not-ready"><i class="fas fa-times"></i>Site Hazır Değil</span>'}
-    ${i.web_sitesi_var_mi ? '<span class="badge has-web"><i class="fas fa-globe"></i>Web Sitesi Var</span>' : ''}
+            // EDIT FORM (only if API active)
+            html += `<div class="edit-form">
+    <div class="modal-section" style="margin-bottom:0"><h3><i class="fas fa-edit"></i>Yonetim${API_ACTIVE ? '' : ' <span style="color:var(--red);font-size:10px">(API gerekli)</span>'}</h3></div>
+    <div class="edit-row">
+      <div class="edit-field"><label>Durum</label>
+        <select id="editDurum" ${API_ACTIVE ? '' : 'disabled'}><option value="">-- Sec --</option><option value="Takipte"${i.durum === 'Takipte' ? ' selected' : ''}>Takipte</option><option value="Fiyat Soruldu"${i.durum === 'Fiyat Soruldu' ? ' selected' : ''}>Fiyat Soruldu</option><option value="Ilgisiz"${i.durum === 'Ilgisiz' ? ' selected' : ''}>Ilgisiz</option><option value="Satildi"${i.durum === 'Satildi' ? ' selected' : ''}>Satildi</option></select></div>
+      <div class="edit-field"><label>Fiyat (TL)</label><input type="text" id="editFiyat" value="${i.fiyat || ''}" placeholder="Ornegin: 2500" ${API_ACTIVE ? '' : 'disabled'}></div>
+    </div>
+    <div class="edit-row">
+      <div class="edit-field"><label>Mesaj Durumu</label>
+        <select id="editMesaj" ${API_ACTIVE ? '' : 'disabled'}><option value="">-- Sec --</option><option value="Gonderildi"${i.mesaj_durumu === 'Gonderildi' ? ' selected' : ''}>Gonderildi</option><option value="Bekleniyor"${i.mesaj_durumu === 'Bekleniyor' ? ' selected' : ''}>Bekleniyor</option><option value="Cevap Geldi"${i.mesaj_durumu === 'Cevap Geldi' ? ' selected' : ''}>Cevap Geldi</option></select></div>
+      <div class="edit-field"><label>Oncelik</label>
+        <select id="editOncelik" ${API_ACTIVE ? '' : 'disabled'}><option value="normal"${(i.oncelik || 'normal') === 'normal' ? ' selected' : ''}>Normal</option><option value="yuksek"${i.oncelik === 'yuksek' ? ' selected' : ''}>Yuksek</option><option value="dusuk"${i.oncelik === 'dusuk' ? ' selected' : ''}>Dusuk</option></select></div>
+    </div>
+    <div class="edit-field" style="margin-bottom:10px"><label>Notlar</label><textarea id="editNotlar" placeholder="Notlarinizi yazin..." ${API_ACTIVE ? '' : 'disabled'}>${i.notlar || ''}</textarea></div>
+    <div style="display:flex;align-items:center">
+      <label style="display:flex;align-items:center;gap:6px;font-size:13px;cursor:pointer"><input type="checkbox" id="editSatildi" ${i.satildi ? 'checked' : ''} ${API_ACTIVE ? '' : 'disabled'}> Satildi olarak isaretle</label>
+    </div>
+    ${API_ACTIVE ? `<div style="margin-top:12px"><button class="modal-btn save" onclick="saveChanges(${id})"><i class="fas fa-save"></i>Kaydet</button><span class="save-indicator" id="saveIndicator"><i class="fas fa-check"></i>Kaydedildi!</span></div>` : ''}
   </div>`;
 
             // Info grid
@@ -1007,36 +1328,27 @@
     <div class="modal-info-grid">
       <div class="modal-info-item"><label>Telefon</label>${i.telefon || '—'}</div>
       <div class="modal-info-item"><label>Adres</label>${i.adres || '—'}</div>
-      ${i.web_sitesi_linki ? `<div class="modal-info-item"><label>Web Sitesi</label><a href="${i.web_sitesi_linki}" target="_blank">${i.web_sitesi_linki}</a></div>` : ''}
-      <div class="modal-info-item"><label>Fotoğraf</label>${i.fotograf_sayisi} adet</div>
-      <div class="modal-info-item"><label>Yorum</label>${i.yorum_sayisi} adet</div>
-      <div class="modal-info-item"><label>Klasör</label><span style="font-size:11px;word-break:break-all">${i.klasor_yolu || ''}</span></div>
+      ${i.web_sitesi_linki ? `<div class="modal-info-item"><label>Web</label><a href="${i.web_sitesi_linki}" target="_blank">${i.web_sitesi_linki}</a></div>` : ''}
+      <div class="modal-info-item"><label>Foto/Yorum</label>${i.fotograf_sayisi} foto, ${i.yorum_sayisi} yorum</div>
+      <div class="modal-info-item"><label>Site Durumu</label>${i.site_hazir ? '<span style="color:var(--green)">Hazir (' + i.deploy_slug + ')</span>' : '<span style="color:var(--red)">Hazir Degil</span>'}</div>
+      <div class="modal-info-item"><label>Klasor</label><span style="font-size:11px;word-break:break-all">${i.klasor_yolu || ''}</span></div>
     </div></div>`;
 
             // Hours
             if (i.calisma_saatleri && i.calisma_saatleri.length > 0) {
-                html += `<div class="modal-section"><h3><i class="fas fa-clock"></i>Çalışma Saatleri</h3><div class="hours-grid">
-      ${i.calisma_saatleri.map(s => `<div class="hour-row"><span class="day">${s.gun}</span><span class="${s.saat === 'Kapalı' ? 'closed' : 'time'}">${s.saat}</span></div>`).join('')}
-    </div></div>`;
+                html += `<div class="modal-section"><h3><i class="fas fa-clock"></i>Calisma Saatleri</h3><div class="hours-grid">${i.calisma_saatleri.map(s => `<div class="hour-row"><span class="day">${s.gun}</span><span class="${s.saat === 'Kapalı' ? 'closed' : 'time'}">${s.saat}</span></div>`).join('')}</div></div>`;
             }
 
             // Reviews
             if (i.yorumlar && i.yorumlar.length > 0) {
-                html += `<div class="modal-section"><h3><i class="fas fa-star"></i>Yorumlar</h3>
-      ${i.yorumlar.map(y => `<div class="review-card">
-        <div class="review-header"><span class="review-author">${y.yazar || 'Anonim'}</span><span class="review-stars">${'★'.repeat(y.yildiz || 5)}</span></div>
-        <div class="review-text">${(y.metin || '').substring(0, 200)}${(y.metin || '').length > 200 ? '...' : ''}</div>
-      </div>`).join('')}
-    </div>`;
+                html += `<div class="modal-section"><h3><i class="fas fa-star"></i>Yorumlar</h3>${i.yorumlar.map(y => `<div class="review-card"><div class="review-header"><span class="review-author">${y.yazar || 'Anonim'}</span><span class="review-stars">${'★'.repeat(y.yildiz || 5)}</span></div><div class="review-text">${(y.metin || '').substring(0, 200)}</div></div>`).join('')}</div>`;
             }
 
-            // Action buttons
+            // Actions
             const tel = (i.telefon || '').replace(/\D/g, '');
             html += `<div class="modal-actions">
-    ${tel ? `<a class="modal-btn whatsapp" href="https://wa.me/90${tel.startsWith('0') ? tel.slice(1) : tel}" target="_blank"><i class="fab fa-whatsapp"></i>WhatsApp</a>
-    <a class="modal-btn primary" href="tel:${i.telefon}"><i class="fas fa-phone"></i>Ara</a>` : ''}
-    ${i.google_maps_url ? `<a class="modal-btn maps" href="${i.google_maps_url}" target="_blank"><i class="fas fa-map-marker-alt"></i>Haritada Aç</a>` : ''}
-    ${i.site_hazir ? `<a class="modal-btn primary" href="https://${i.deploy_slug}.vercel.app" target="_blank"><i class="fas fa-external-link-alt"></i>Siteyi Gör</a>` : ''}
+    ${tel ? `<a class="modal-btn whatsapp" href="https://wa.me/90${tel.startsWith('0') ? tel.slice(1) : tel}" target="_blank"><i class="fab fa-whatsapp"></i>WhatsApp</a><a class="modal-btn primary" href="tel:${i.telefon}"><i class="fas fa-phone"></i>Ara</a>` : ''}
+    ${i.google_maps_url ? `<a class="modal-btn maps" href="${i.google_maps_url}" target="_blank"><i class="fas fa-map-marker-alt"></i>Harita</a>` : ''}
   </div>`;
 
             $('modalBody').innerHTML = html;
@@ -1044,49 +1356,79 @@
             document.body.style.overflow = 'hidden';
         }
 
-        function closeModal() {
-            $('modalOverlay').classList.remove('open');
-            document.body.style.overflow = '';
+        // ============ SAVE CHANGES ============
+        async function saveChanges(id) {
+            if (!API_ACTIVE) { showToast('API sunucu bagli degil!', true); return; }
+            const payload = {
+                durum: $('editDurum').value,
+                fiyat: $('editFiyat').value,
+                mesaj_durumu: $('editMesaj').value,
+                oncelik: $('editOncelik').value,
+                notlar: $('editNotlar').value,
+                satildi: $('editSatildi').checked
+            };
+            try {
+                const r = await fetch(API_URL + '/api/isletme/' + id, { method: 'PUT', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(payload) });
+                const res = await r.json();
+                if (res.basarili) {
+                    showToast(res.mesaj || 'Kaydedildi!');
+                    $('saveIndicator').classList.add('show');
+                    setTimeout(() => $('saveIndicator').classList.remove('show'), 3000);
+                    // Update local data
+                    const item = DATA.isletmeler.find(x => x.id === id);
+                    if (item) { Object.assign(item, payload); filterAndRender(); }
+                    loadLogs();
+                } else { showToast(res.hata || 'Hata!', true); }
+            } catch (e) { showToast('Baglanti hatasi!', true); }
         }
 
-        function openImage(src) {
-            $('imgViewerImg').src = src;
-            $('imgViewer').classList.add('open');
+        // ============ LOGS ============
+        async function loadLogs() {
+            if (!API_ACTIVE) return;
+            try {
+                const r = await fetch(API_URL + '/api/log');
+                const logs = await r.json();
+                if (logs.length === 0) { $('logEmpty').style.display = 'block'; return; }
+                $('logEmpty').style.display = 'none';
+                $('logList').innerHTML = logs.map(l => `<div class="log-item">
+      <div class="log-icon update"><i class="fas fa-pen"></i></div>
+      <div class="log-info"><div class="log-title">${l.isletme} — ${l.islem}</div><div class="log-detail">${l.detay || ''}</div></div>
+      <div class="log-time">${l.tarih}</div>
+    </div>`).join('');
+            } catch (e) { }
         }
 
-        // EVENT LISTENERS
+        // ============ HELPERS ============
+        function showToast(msg, isError) {
+            const t = $('toast'); t.textContent = msg; t.className = isError ? 'toast show error' : 'toast show';
+            setTimeout(() => t.className = 'toast', 3000);
+        }
+        function closeModal() { $('modalOverlay').classList.remove('open'); document.body.style.overflow = ''; currentModalId = null; }
+        function openImage(src) { $('imgViewerImg').src = src; $('imgViewer').classList.add('open'); }
+        function debounce(fn, ms) { let t; return (...a) => { clearTimeout(t); t = setTimeout(() => fn(...a), ms) }; }
+
+        // ============ EVENTS ============
         $('searchInput').addEventListener('input', debounce(filterAndRender, 250));
         $('categoryFilter').addEventListener('change', filterAndRender);
         $('statusFilter').addEventListener('change', filterAndRender);
-
-        document.querySelectorAll('.view-btn').forEach(btn => {
-            btn.addEventListener('click', () => {
-                document.querySelectorAll('.view-btn').forEach(b => b.classList.remove('active'));
-                btn.classList.add('active');
-                currentView = btn.dataset.view;
-                $('grid').className = currentView === 'list' ? 'grid list-view' : 'grid';
-            });
-        });
-
-        $('grid').addEventListener('click', e => {
-            const card = e.target.closest('.card');
-            if (card) openModal(parseInt(card.dataset.id));
-        });
-
-        $('modalOverlay').addEventListener('click', e => {
-            if (e.target === $('modalOverlay')) closeModal();
-        });
+        document.querySelectorAll('.view-btn').forEach(b => b.addEventListener('click', () => { document.querySelectorAll('.view-btn').forEach(x => x.classList.remove('active')); b.classList.add('active'); $('grid').className = b.dataset.view === 'list' ? 'grid list-view' : 'grid'; }));
+        $('grid').addEventListener('click', e => { const c = e.target.closest('.card'); if (c) openModal(parseInt(c.dataset.id)); });
+        $('modalOverlay').addEventListener('click', e => { if (e.target === $('modalOverlay')) closeModal(); });
         $('modalClose').addEventListener('click', closeModal);
-        document.addEventListener('keydown', e => {
-            if (e.key === 'Escape') { closeModal(); $('imgViewer').classList.remove('open') }
-        });
-
+        document.addEventListener('keydown', e => { if (e.key === 'Escape') { closeModal(); $('imgViewer').classList.remove('open'); } });
         $('imgViewer').addEventListener('click', () => $('imgViewer').classList.remove('open'));
 
-        function debounce(fn, ms) { let t; return (...a) => { clearTimeout(t); t = setTimeout(() => fn(...a), ms) } }
+        // TAB SWITCHING
+        document.querySelectorAll('.tab-btn').forEach(b => b.addEventListener('click', () => {
+            document.querySelectorAll('.tab-btn').forEach(x => x.classList.remove('active')); b.classList.add('active');
+            const tab = b.dataset.tab;
+            $('isletmePanel').className = tab === 'isletme' ? 'isletme-panel' : 'isletme-panel hidden';
+            $('logPanel').className = tab === 'log' ? 'log-panel active' : 'log-panel';
+            if (tab === 'log') loadLogs();
+        }));
 
-        // INIT
-        loadData();
+        // ============ INIT ============
+        (async () => { await detectAPI(); await loadData(); })();
     </script>
 </body>
 
