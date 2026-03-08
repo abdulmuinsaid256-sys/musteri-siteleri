@@ -1,0 +1,1093 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>Kastamonu Esnaf — Admin Panel</title>
+    <meta name="description" content="Kastamonu Esnaf Admin Panel — Tüm işletme verilerini yönetin.">
+    <meta name="robots" content="noindex,nofollow">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box
+        }
+
+        :root {
+            --bg: #0a0e1a;
+            --surface: #111827;
+            --surface2: #1e293b;
+            --border: #1e293b;
+            --text: #e2e8f0;
+            --text2: #94a3b8;
+            --accent: #6366f1;
+            --accent2: #818cf8;
+            --green: #22c55e;
+            --red: #ef4444;
+            --orange: #f59e0b;
+            --radius: 16px
+        }
+
+        html {
+            scroll-behavior: smooth
+        }
+
+        body {
+            font-family: 'Inter', system-ui, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            min-height: 100vh;
+            overflow-x: hidden
+        }
+
+        ::selection {
+            background: var(--accent);
+            color: #fff
+        }
+
+        ::-webkit-scrollbar {
+            width: 6px
+        }
+
+        ::-webkit-scrollbar-track {
+            background: var(--bg)
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: var(--surface2);
+            border-radius: 3px
+        }
+
+        /* HEADER */
+        .header {
+            background: linear-gradient(135deg, rgba(99, 102, 241, .15), rgba(139, 92, 246, .1));
+            border-bottom: 1px solid var(--border);
+            padding: 20px 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px)
+        }
+
+        .header-inner {
+            max-width: 1440px;
+            margin: 0 auto;
+            padding: 0 24px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 16px;
+            flex-wrap: wrap
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px
+        }
+
+        .logo-icon {
+            width: 44px;
+            height: 44px;
+            background: linear-gradient(135deg, var(--accent), #a855f7);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+            color: #fff;
+            font-weight: 900
+        }
+
+        .logo h1 {
+            font-size: 18px;
+            font-weight: 800;
+            letter-spacing: -.5px
+        }
+
+        .logo h1 span {
+            color: var(--accent2);
+            font-weight: 600
+        }
+
+        .header-badge {
+            font-size: 11px;
+            color: var(--text2);
+            background: var(--surface2);
+            padding: 4px 10px;
+            border-radius: 20px;
+            font-weight: 500
+        }
+
+        /* STATS */
+        .stats {
+            max-width: 1440px;
+            margin: 0 auto;
+            padding: 24px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+            gap: 12px
+        }
+
+        .stat-card {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 20px;
+            text-align: center;
+            transition: all .3s ease
+        }
+
+        .stat-card:hover {
+            transform: translateY(-2px);
+            border-color: var(--accent);
+            box-shadow: 0 8px 30px rgba(99, 102, 241, .15)
+        }
+
+        .stat-value {
+            font-size: 28px;
+            font-weight: 900;
+            background: linear-gradient(135deg, var(--accent2), #c084fc);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text
+        }
+
+        .stat-card.green .stat-value {
+            background: linear-gradient(135deg, var(--green), #4ade80);
+            -webkit-background-clip: text;
+            background-clip: text
+        }
+
+        .stat-card.orange .stat-value {
+            background: linear-gradient(135deg, var(--orange), #fbbf24);
+            -webkit-background-clip: text;
+            background-clip: text
+        }
+
+        .stat-card.red .stat-value {
+            background: linear-gradient(135deg, var(--red), #f87171);
+            -webkit-background-clip: text;
+            background-clip: text
+        }
+
+        .stat-label {
+            font-size: 12px;
+            color: var(--text2);
+            margin-top: 4px;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: .5px
+        }
+
+        /* TOOLBAR */
+        .toolbar {
+            max-width: 1440px;
+            margin: 0 auto;
+            padding: 0 24px 16px;
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+            align-items: center
+        }
+
+        .search-box {
+            flex: 1;
+            min-width: 260px;
+            position: relative
+        }
+
+        .search-box input {
+            width: 100%;
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 12px 16px 12px 44px;
+            color: var(--text);
+            font-size: 14px;
+            font-family: inherit;
+            transition: border-color .3s
+        }
+
+        .search-box input:focus {
+            outline: none;
+            border-color: var(--accent);
+            box-shadow: 0 0 0 3px rgba(99, 102, 241, .15)
+        }
+
+        .search-box input::placeholder {
+            color: var(--text2)
+        }
+
+        .search-box i {
+            position: absolute;
+            left: 16px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--text2);
+            font-size: 14px
+        }
+
+        .filter-select {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 12px 16px;
+            color: var(--text);
+            font-size: 13px;
+            font-family: inherit;
+            cursor: pointer;
+            min-width: 180px
+        }
+
+        .filter-select:focus {
+            outline: none;
+            border-color: var(--accent)
+        }
+
+        .view-btns {
+            display: flex;
+            gap: 4px
+        }
+
+        .view-btn {
+            width: 40px;
+            height: 40px;
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            color: var(--text2);
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all .2s
+        }
+
+        .view-btn.active,
+        .view-btn:hover {
+            background: var(--accent);
+            color: #fff;
+            border-color: var(--accent)
+        }
+
+        .result-count {
+            font-size: 13px;
+            color: var(--text2);
+            white-space: nowrap
+        }
+
+        /* GRID */
+        .main {
+            max-width: 1440px;
+            margin: 0 auto;
+            padding: 0 24px 40px
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 16px
+        }
+
+        .grid.list-view {
+            grid-template-columns: 1fr
+        }
+
+        /* CARD */
+        .card {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 20px;
+            cursor: pointer;
+            transition: all .3s ease;
+            position: relative;
+            overflow: hidden
+        }
+
+        .card:hover {
+            transform: translateY(-3px);
+            border-color: var(--accent);
+            box-shadow: 0 12px 40px rgba(99, 102, 241, .12)
+        }
+
+        .card-header {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            margin-bottom: 12px
+        }
+
+        .card-avatar {
+            width: 46px;
+            height: 46px;
+            border-radius: 12px;
+            overflow: hidden;
+            flex-shrink: 0;
+            background: var(--surface2)
+        }
+
+        .card-avatar img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover
+        }
+
+        .card-avatar.no-img {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 18px;
+            font-weight: 800;
+            color: var(--accent2);
+            background: linear-gradient(135deg, rgba(99, 102, 241, .15), rgba(168, 85, 247, .1))
+        }
+
+        .card-info {
+            flex: 1;
+            min-width: 0
+        }
+
+        .card-name {
+            font-size: 14px;
+            font-weight: 700;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis
+        }
+
+        .card-category {
+            font-size: 11px;
+            color: var(--text2);
+            margin-top: 2px;
+            display: flex;
+            align-items: center;
+            gap: 4px
+        }
+
+        .card-badges {
+            display: flex;
+            gap: 6px;
+            flex-wrap: wrap;
+            margin-bottom: 10px
+        }
+
+        .badge {
+            font-size: 10px;
+            padding: 3px 8px;
+            border-radius: 6px;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 4px
+        }
+
+        .badge.ready {
+            background: rgba(34, 197, 94, .12);
+            color: var(--green);
+            border: 1px solid rgba(34, 197, 94, .2)
+        }
+
+        .badge.not-ready {
+            background: rgba(239, 68, 68, .1);
+            color: var(--red);
+            border: 1px solid rgba(239, 68, 68, .15)
+        }
+
+        .badge.has-web {
+            background: rgba(59, 130, 246, .1);
+            color: #60a5fa;
+            border: 1px solid rgba(59, 130, 246, .15)
+        }
+
+        .badge.has-phone {
+            background: rgba(245, 158, 11, .1);
+            color: var(--orange);
+            border: 1px solid rgba(245, 158, 11, .15)
+        }
+
+        .card-meta {
+            display: flex;
+            gap: 12px;
+            font-size: 11px;
+            color: var(--text2)
+        }
+
+        .card-meta span {
+            display: flex;
+            align-items: center;
+            gap: 4px
+        }
+
+        .card-addr {
+            font-size: 11px;
+            color: var(--text2);
+            margin-top: 8px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis
+        }
+
+        /* LIST VIEW CARD */
+        .grid.list-view .card {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            padding: 14px 20px
+        }
+
+        .grid.list-view .card-header {
+            margin-bottom: 0;
+            flex: 1
+        }
+
+        .grid.list-view .card-badges {
+            margin-bottom: 0
+        }
+
+        .grid.list-view .card-addr {
+            display: none
+        }
+
+        /* MODAL */
+        .modal-overlay {
+            position: fixed;
+            inset: 0;
+            background: rgba(0, 0, 0, .7);
+            backdrop-filter: blur(8px);
+            z-index: 200;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            padding: 20px
+        }
+
+        .modal-overlay.open {
+            display: flex
+        }
+
+        .modal {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 20px;
+            width: 100%;
+            max-width: 720px;
+            max-height: 85vh;
+            overflow-y: auto;
+            position: relative;
+            animation: modalIn .3s ease
+        }
+
+        @keyframes modalIn {
+            from {
+                opacity: 0;
+                transform: scale(.95) translateY(10px)
+            }
+
+            to {
+                opacity: 1;
+                transform: scale(1) translateY(0)
+            }
+        }
+
+        .modal-close {
+            position: absolute;
+            top: 16px;
+            right: 16px;
+            width: 36px;
+            height: 36px;
+            background: var(--surface2);
+            border: none;
+            border-radius: 10px;
+            color: var(--text2);
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 16px;
+            z-index: 10;
+            transition: all .2s
+        }
+
+        .modal-close:hover {
+            background: var(--red);
+            color: #fff
+        }
+
+        .modal-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+            gap: 8px;
+            padding: 20px
+        }
+
+        .modal-gallery img {
+            width: 100%;
+            aspect-ratio: 1;
+            object-fit: cover;
+            border-radius: 12px;
+            cursor: pointer;
+            transition: transform .3s
+        }
+
+        .modal-gallery img:hover {
+            transform: scale(1.05)
+        }
+
+        .modal-body {
+            padding: 0 24px 24px
+        }
+
+        .modal-title {
+            font-size: 22px;
+            font-weight: 800;
+            margin-bottom: 4px
+        }
+
+        .modal-cat {
+            font-size: 13px;
+            color: var(--accent2);
+            margin-bottom: 16px;
+            display: flex;
+            align-items: center;
+            gap: 6px
+        }
+
+        .modal-section {
+            margin-bottom: 20px
+        }
+
+        .modal-section h3 {
+            font-size: 13px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: .5px;
+            color: var(--text2);
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 6px
+        }
+
+        .modal-info-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px
+        }
+
+        .modal-info-item {
+            background: var(--surface2);
+            border-radius: 12px;
+            padding: 12px;
+            font-size: 13px
+        }
+
+        .modal-info-item label {
+            display: block;
+            font-size: 10px;
+            color: var(--text2);
+            text-transform: uppercase;
+            letter-spacing: .5px;
+            margin-bottom: 4px;
+            font-weight: 600
+        }
+
+        .modal-info-item a {
+            color: var(--accent2);
+            text-decoration: none
+        }
+
+        .modal-info-item a:hover {
+            text-decoration: underline
+        }
+
+        .hours-grid {
+            display: grid;
+            gap: 4px
+        }
+
+        .hour-row {
+            display: flex;
+            justify-content: space-between;
+            padding: 6px 12px;
+            background: var(--surface2);
+            border-radius: 8px;
+            font-size: 12px
+        }
+
+        .hour-row .day {
+            font-weight: 600
+        }
+
+        .hour-row .time {
+            color: var(--accent2)
+        }
+
+        .hour-row .closed {
+            color: var(--red)
+        }
+
+        .review-card {
+            background: var(--surface2);
+            border-radius: 12px;
+            padding: 14px;
+            margin-bottom: 8px
+        }
+
+        .review-header {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 6px
+        }
+
+        .review-author {
+            font-weight: 600;
+            font-size: 13px
+        }
+
+        .review-stars {
+            color: var(--orange);
+            font-size: 11px
+        }
+
+        .review-text {
+            font-size: 12px;
+            color: var(--text2);
+            line-height: 1.5
+        }
+
+        .modal-actions {
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+            margin-top: 16px
+        }
+
+        .modal-btn {
+            padding: 10px 18px;
+            border-radius: 10px;
+            border: none;
+            font-size: 13px;
+            font-weight: 600;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            transition: all .2s;
+            font-family: inherit
+        }
+
+        .modal-btn.primary {
+            background: var(--accent);
+            color: #fff
+        }
+
+        .modal-btn.primary:hover {
+            background: var(--accent2)
+        }
+
+        .modal-btn.whatsapp {
+            background: #22c55e;
+            color: #fff
+        }
+
+        .modal-btn.whatsapp:hover {
+            background: #16a34a
+        }
+
+        .modal-btn.maps {
+            background: var(--surface2);
+            color: var(--text)
+        }
+
+        .modal-btn.maps:hover {
+            background: var(--border)
+        }
+
+        /* LOADING */
+        .loading {
+            text-align: center;
+            padding: 60px 20px;
+            color: var(--text2)
+        }
+
+        .loading i {
+            font-size: 32px;
+            color: var(--accent);
+            animation: spin 1s linear infinite;
+            margin-bottom: 16px;
+            display: block
+        }
+
+        @keyframes spin {
+            to {
+                transform: rotate(360deg)
+            }
+        }
+
+        /* EMPTY */
+        .empty {
+            text-align: center;
+            padding: 60px 20px;
+            color: var(--text2)
+        }
+
+        .empty i {
+            font-size: 48px;
+            margin-bottom: 16px;
+            color: var(--surface2);
+            display: block
+        }
+
+        /* IMAGE VIEWER */
+        .img-viewer {
+            position: fixed;
+            inset: 0;
+            background: rgba(0, 0, 0, .92);
+            z-index: 300;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            cursor: zoom-out
+        }
+
+        .img-viewer.open {
+            display: flex
+        }
+
+        .img-viewer img {
+            max-width: 90vw;
+            max-height: 90vh;
+            border-radius: 12px;
+            object-fit: contain
+        }
+
+        /* RESPONSIVE */
+        @media(max-width:768px) {
+            .header-inner {
+                flex-direction: column;
+                align-items: flex-start
+            }
+
+            .stats {
+                grid-template-columns: repeat(2, 1fr);
+                padding: 16px
+            }
+
+            .toolbar {
+                padding: 0 16px 12px
+            }
+
+            .search-box {
+                min-width: 100%
+            }
+
+            .grid {
+                grid-template-columns: 1fr;
+                padding: 0
+            }
+
+            .main {
+                padding: 0 16px 40px
+            }
+
+            .modal-info-grid {
+                grid-template-columns: 1fr
+            }
+
+            .modal {
+                max-height: 90vh;
+                border-radius: 16px
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- HEADER -->
+    <header class="header">
+        <div class="header-inner">
+            <div class="logo">
+                <div class="logo-icon"><i class="fas fa-store"></i></div>
+                <div>
+                    <h1>Kastamonu Esnaf <span>Admin</span></h1>
+                    <span class="header-badge" id="updateTime">Yükleniyor...</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- STATS -->
+    <section class="stats" id="statsGrid"></section>
+
+    <!-- TOOLBAR -->
+    <section class="toolbar">
+        <div class="search-box">
+            <i class="fas fa-search"></i>
+            <input type="text" id="searchInput" placeholder="İşletme adı veya adres ara...">
+        </div>
+        <select class="filter-select" id="categoryFilter">
+            <option value="">Tüm Kategoriler</option>
+        </select>
+        <select class="filter-select" id="statusFilter">
+            <option value="">Tüm Durumlar</option>
+            <option value="ready">✅ Site Hazır</option>
+            <option value="not-ready">❌ Site Hazır Değil</option>
+            <option value="has-phone">📞 Telefon Var</option>
+            <option value="has-photo">📷 Fotoğraf Var</option>
+            <option value="has-web">🌐 Web Sitesi Var</option>
+        </select>
+        <div class="view-btns">
+            <button class="view-btn active" data-view="grid" title="Kart Görünümü"><i
+                    class="fas fa-th-large"></i></button>
+            <button class="view-btn" data-view="list" title="Liste Görünümü"><i class="fas fa-list"></i></button>
+        </div>
+        <span class="result-count" id="resultCount"></span>
+    </section>
+
+    <!-- MAIN GRID -->
+    <main class="main">
+        <div class="loading" id="loading"><i class="fas fa-spinner"></i>İşletmeler yükleniyor...</div>
+        <div class="grid" id="grid"></div>
+        <div class="empty" id="empty" style="display:none"><i class="fas fa-search"></i>
+            <p>Aramanızla eşleşen işletme bulunamadı.</p>
+        </div>
+    </main>
+
+    <!-- DETAIL MODAL -->
+    <div class="modal-overlay" id="modalOverlay">
+        <div class="modal" id="modal">
+            <button class="modal-close" id="modalClose"><i class="fas fa-times"></i></button>
+            <div class="modal-gallery" id="modalGallery"></div>
+            <div class="modal-body" id="modalBody"></div>
+        </div>
+    </div>
+
+    <!-- IMAGE VIEWER -->
+    <div class="img-viewer" id="imgViewer"><img id="imgViewerImg" src="" alt=""></div>
+
+    <script>
+        let DATA = null, filteredData = [], currentView = 'grid';
+        const $ = id => document.getElementById(id);
+
+        // LOAD DATA
+        async function loadData() {
+            try {
+                const r = await fetch('data.json');
+                if (!r.ok) throw new Error('data.json bulunamadı');
+                DATA = await r.json();
+                renderStats(); renderCategories(); filterAndRender();
+                $('loading').style.display = 'none';
+                $('updateTime').textContent = 'Son güncelleme: ' + DATA.istatistikler.guncelleme_tarihi;
+            } catch (e) {
+                $('loading').innerHTML = '<i class="fas fa-exclamation-triangle" style="color:var(--red);animation:none"></i><p>data.json yüklenemedi!<br><small>Önce <code>python admin_veri_uretici.py</code> çalıştırın.</small></p>';
+            }
+        }
+
+        function renderStats() {
+            const s = DATA.istatistikler;
+            const cards = [
+                { v: s.toplam_isletme, l: 'Toplam İşletme', c: '' },
+                { v: s.toplam_kategori, l: 'Kategori', c: '' },
+                { v: s.site_hazir, l: 'Site Hazır', c: 'green' },
+                { v: s.site_hazir_degil, l: 'Site Hazır Değil', c: 'red' },
+                { v: s.telefon_var, l: 'Telefon Var', c: 'orange' },
+                { v: s.toplam_fotograf, l: 'Toplam Fotoğraf', c: '' },
+                { v: s.toplam_yorum, l: 'Toplam Yorum', c: '' },
+                { v: s.web_sitesi_var, l: 'Web Sitesi Olan', c: 'orange' }
+            ];
+            $('statsGrid').innerHTML = cards.map(c => `<div class="stat-card ${c.c}"><div class="stat-value">${c.v.toLocaleString('tr-TR')}</div><div class="stat-label">${c.l}</div></div>`).join('');
+        }
+
+        function renderCategories() {
+            const sel = $('categoryFilter');
+            DATA.kategoriler.forEach(k => {
+                const o = document.createElement('option');
+                o.value = k.ad; o.textContent = `${k.ad} (${k.sayi})`;
+                sel.appendChild(o);
+            });
+        }
+
+        function filterAndRender() {
+            const q = $('searchInput').value.toLowerCase().trim();
+            const cat = $('categoryFilter').value;
+            const status = $('statusFilter').value;
+
+            filteredData = DATA.isletmeler.filter(i => {
+                if (q && !i.isletme_adi.toLowerCase().includes(q) && !(i.adres || '').toLowerCase().includes(q)) return false;
+                if (cat && i.kategori !== cat) return false;
+                if (status === 'ready' && !i.site_hazir) return false;
+                if (status === 'not-ready' && i.site_hazir) return false;
+                if (status === 'has-phone' && (!i.telefon || i.telefon === '-')) return false;
+                if (status === 'has-photo' && i.fotograf_sayisi === 0) return false;
+                if (status === 'has-web' && !i.web_sitesi_var_mi) return false;
+                return true;
+            });
+
+            $('resultCount').textContent = filteredData.length + ' / ' + DATA.isletmeler.length + ' işletme';
+            renderGrid();
+        }
+
+        function getInitials(name) {
+            return name.split(/\s+/).slice(0, 2).map(w => w[0]).join('').toUpperCase();
+        }
+
+        function renderGrid() {
+            const grid = $('grid');
+            if (filteredData.length === 0) {
+                grid.innerHTML = ''; $('empty').style.display = 'block'; return;
+            }
+            $('empty').style.display = 'none';
+
+            // Render first 200 for performance
+            const items = filteredData.slice(0, 200);
+            grid.innerHTML = items.map(i => {
+                const avatar = i.fotograflar && i.fotograflar.length > 0
+                    ? `<div class="card-avatar"><img src="${i.fotograflar[0]}" alt="" loading="lazy" onerror="this.parentElement.className='card-avatar no-img';this.parentElement.innerHTML='${getInitials(i.isletme_adi)}'"></div>`
+                    : `<div class="card-avatar no-img">${getInitials(i.isletme_adi)}</div>`;
+
+                return `<div class="card" data-id="${i.id}">
+      <div class="card-header">
+        ${avatar}
+        <div class="card-info">
+          <div class="card-name" title="${i.isletme_adi}">${i.isletme_adi}</div>
+          <div class="card-category"><i class="fas fa-tag"></i>${i.kategori}</div>
+        </div>
+      </div>
+      <div class="card-badges">
+        ${i.site_hazir ? '<span class="badge ready"><i class="fas fa-check"></i>Site Hazır</span>' : '<span class="badge not-ready"><i class="fas fa-times"></i>Hazır Değil</span>'}
+        ${i.telefon && i.telefon !== '-' ? '<span class="badge has-phone"><i class="fas fa-phone"></i>Telefon</span>' : ''}
+        ${i.web_sitesi_var_mi ? '<span class="badge has-web"><i class="fas fa-globe"></i>Web</span>' : ''}
+      </div>
+      <div class="card-meta">
+        <span><i class="fas fa-camera"></i>${i.fotograf_sayisi} foto</span>
+        <span><i class="fas fa-star"></i>${i.yorum_sayisi} yorum</span>
+      </div>
+      ${i.adres ? `<div class="card-addr"><i class="fas fa-map-marker-alt"></i> ${i.adres}</div>` : ''}
+    </div>`;
+            }).join('');
+
+            if (filteredData.length > 200) {
+                grid.innerHTML += `<div style="grid-column:1/-1;text-align:center;padding:20px;color:var(--text2);font-size:13px">
+      <i class="fas fa-info-circle"></i> ${filteredData.length - 200} işletme daha var. Aramayı daraltarak daha fazla sonuç görebilirsiniz.
+    </div>`;
+            }
+        }
+
+        // MODAL
+        function openModal(id) {
+            const i = DATA.isletmeler.find(x => x.id === id);
+            if (!i) return;
+
+            // Gallery
+            $('modalGallery').innerHTML = i.fotograflar.length > 0
+                ? i.fotograflar.map(f => `<img src="${f}" alt="" loading="lazy" onclick="openImage('${f}')" onerror="this.style.display='none'">`).join('')
+                : '<div style="padding:20px;text-align:center;color:var(--text2);grid-column:1/-1"><i class="fas fa-image" style="font-size:32px;margin-bottom:8px;display:block"></i>Fotoğraf bulunamadı</div>';
+
+            // Build body
+            let html = `<h2 class="modal-title">${i.isletme_adi}</h2>
+    <div class="modal-cat"><i class="fas fa-tag"></i>${i.kategori}</div>`;
+
+            // Badges
+            html += `<div class="card-badges" style="margin-bottom:16px">
+    ${i.site_hazir ? `<span class="badge ready"><i class="fas fa-check"></i>Site Hazır — ${i.deploy_slug}</span>` : '<span class="badge not-ready"><i class="fas fa-times"></i>Site Hazır Değil</span>'}
+    ${i.web_sitesi_var_mi ? '<span class="badge has-web"><i class="fas fa-globe"></i>Web Sitesi Var</span>' : ''}
+  </div>`;
+
+            // Info grid
+            html += `<div class="modal-section"><h3><i class="fas fa-info-circle"></i>Bilgiler</h3>
+    <div class="modal-info-grid">
+      <div class="modal-info-item"><label>Telefon</label>${i.telefon || '—'}</div>
+      <div class="modal-info-item"><label>Adres</label>${i.adres || '—'}</div>
+      ${i.web_sitesi_linki ? `<div class="modal-info-item"><label>Web Sitesi</label><a href="${i.web_sitesi_linki}" target="_blank">${i.web_sitesi_linki}</a></div>` : ''}
+      <div class="modal-info-item"><label>Fotoğraf</label>${i.fotograf_sayisi} adet</div>
+      <div class="modal-info-item"><label>Yorum</label>${i.yorum_sayisi} adet</div>
+      <div class="modal-info-item"><label>Klasör</label><span style="font-size:11px;word-break:break-all">${i.klasor_yolu || ''}</span></div>
+    </div></div>`;
+
+            // Hours
+            if (i.calisma_saatleri && i.calisma_saatleri.length > 0) {
+                html += `<div class="modal-section"><h3><i class="fas fa-clock"></i>Çalışma Saatleri</h3><div class="hours-grid">
+      ${i.calisma_saatleri.map(s => `<div class="hour-row"><span class="day">${s.gun}</span><span class="${s.saat === 'Kapalı' ? 'closed' : 'time'}">${s.saat}</span></div>`).join('')}
+    </div></div>`;
+            }
+
+            // Reviews
+            if (i.yorumlar && i.yorumlar.length > 0) {
+                html += `<div class="modal-section"><h3><i class="fas fa-star"></i>Yorumlar</h3>
+      ${i.yorumlar.map(y => `<div class="review-card">
+        <div class="review-header"><span class="review-author">${y.yazar || 'Anonim'}</span><span class="review-stars">${'★'.repeat(y.yildiz || 5)}</span></div>
+        <div class="review-text">${(y.metin || '').substring(0, 200)}${(y.metin || '').length > 200 ? '...' : ''}</div>
+      </div>`).join('')}
+    </div>`;
+            }
+
+            // Action buttons
+            const tel = (i.telefon || '').replace(/\D/g, '');
+            html += `<div class="modal-actions">
+    ${tel ? `<a class="modal-btn whatsapp" href="https://wa.me/90${tel.startsWith('0') ? tel.slice(1) : tel}" target="_blank"><i class="fab fa-whatsapp"></i>WhatsApp</a>
+    <a class="modal-btn primary" href="tel:${i.telefon}"><i class="fas fa-phone"></i>Ara</a>` : ''}
+    ${i.google_maps_url ? `<a class="modal-btn maps" href="${i.google_maps_url}" target="_blank"><i class="fas fa-map-marker-alt"></i>Haritada Aç</a>` : ''}
+    ${i.site_hazir ? `<a class="modal-btn primary" href="https://${i.deploy_slug}.vercel.app" target="_blank"><i class="fas fa-external-link-alt"></i>Siteyi Gör</a>` : ''}
+  </div>`;
+
+            $('modalBody').innerHTML = html;
+            $('modalOverlay').classList.add('open');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeModal() {
+            $('modalOverlay').classList.remove('open');
+            document.body.style.overflow = '';
+        }
+
+        function openImage(src) {
+            $('imgViewerImg').src = src;
+            $('imgViewer').classList.add('open');
+        }
+
+        // EVENT LISTENERS
+        $('searchInput').addEventListener('input', debounce(filterAndRender, 250));
+        $('categoryFilter').addEventListener('change', filterAndRender);
+        $('statusFilter').addEventListener('change', filterAndRender);
+
+        document.querySelectorAll('.view-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                document.querySelectorAll('.view-btn').forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+                currentView = btn.dataset.view;
+                $('grid').className = currentView === 'list' ? 'grid list-view' : 'grid';
+            });
+        });
+
+        $('grid').addEventListener('click', e => {
+            const card = e.target.closest('.card');
+            if (card) openModal(parseInt(card.dataset.id));
+        });
+
+        $('modalOverlay').addEventListener('click', e => {
+            if (e.target === $('modalOverlay')) closeModal();
+        });
+        $('modalClose').addEventListener('click', closeModal);
+        document.addEventListener('keydown', e => {
+            if (e.key === 'Escape') { closeModal(); $('imgViewer').classList.remove('open') }
+        });
+
+        $('imgViewer').addEventListener('click', () => $('imgViewer').classList.remove('open'));
+
+        function debounce(fn, ms) { let t; return (...a) => { clearTimeout(t); t = setTimeout(() => fn(...a), ms) } }
+
+        // INIT
+        loadData();
+    </script>
+</body>
+
+</html>
