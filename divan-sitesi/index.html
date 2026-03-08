@@ -1,0 +1,753 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Divan Sitesi | Kastamonu Kuzeykent Apartman</title>
+    <meta name="description"
+        content="Divan Sitesi — Kastamonu Kuzeykent'te modern yaşam alanı. Güvenli, bakımlı ve huzurlu apartman sitesi. 0551 181 20 24">
+    <meta name="theme-color" content="#4f46e5">
+    <meta property="og:title" content="Divan Sitesi — Kastamonu Kuzeykent">
+    <meta property="og:description" content="Kastamonu Kuzeykent'te modern ve güvenli yaşam. 0551 181 20 24">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="tr_TR">
+    <meta name="twitter:card" content="summary_large_image">
+    <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"Residence","name":"Divan Sitesi","description":"Kastamonu Kuzeykent'te modern apartman sitesi.","address":{"@type":"PostalAddress","streetAddress":"Kuzeykent, Akçaağaç Sk. 2 AA","addressLocality":"Kastamonu","postalCode":"37150","addressCountry":"TR"},"telephone":"+905511812024"}
+  </script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>tailwind.config = { theme: { extend: { colors: { primary: "#4f46e5" }, fontFamily: { sans: ['Inter', 'system-ui', '-apple-system', 'sans-serif'] } } } }</script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+        integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box
+        }
+
+        html {
+            scroll-behavior: smooth
+        }
+
+        body {
+            font-family: 'Inter', system-ui, sans-serif;
+            overflow-x: hidden
+        }
+
+        .navbar-glass {
+            background: rgba(255, 255, 255, .82);
+            backdrop-filter: blur(18px);
+            -webkit-backdrop-filter: blur(18px);
+            border-bottom: 1px solid rgba(255, 255, 255, .25)
+        }
+
+        .navbar-glass.scrolled {
+            box-shadow: 0 4px 30px rgba(0, 0, 0, .08)
+        }
+
+        .blob {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(80px);
+            opacity: .18;
+            animation: blobFloat 8s ease-in-out infinite alternate
+        }
+
+        @keyframes blobFloat {
+            0% {
+                transform: translate(0, 0) scale(1)
+            }
+
+            100% {
+                transform: translate(30px, -30px) scale(1.12)
+            }
+        }
+
+        .service-card {
+            transition: transform .35s cubic-bezier(.4, 0, .2, 1), box-shadow .35s cubic-bezier(.4, 0, .2, 1)
+        }
+
+        .service-card:hover {
+            transform: translateY(-8px) scale(1.03);
+            box-shadow: 0 25px 60px -12px rgba(0, 0, 0, .15)
+        }
+
+        .gallery-item {
+            overflow: hidden;
+            border-radius: 1rem
+        }
+
+        .gallery-item img {
+            transition: transform .5s cubic-bezier(.4, 0, .2, 1)
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.1)
+        }
+
+        .review-card {
+            transition: transform .3s ease
+        }
+
+        .review-card:hover {
+            transform: translateY(-4px)
+        }
+
+        .whatsapp-pulse {
+            animation: pulse-wp 2s cubic-bezier(.4, 0, .6, 1) infinite
+        }
+
+        @keyframes pulse-wp {
+
+            0%,
+            100% {
+                box-shadow: 0 0 0 0 rgba(37, 211, 102, .5)
+            }
+
+            50% {
+                box-shadow: 0 0 0 18px rgba(37, 211, 102, 0)
+            }
+        }
+
+        .mobile-bar {
+            transform: translateY(100%);
+            transition: transform .4s cubic-bezier(.4, 0, .2, 1)
+        }
+
+        .mobile-bar.visible {
+            transform: translateY(0)
+        }
+
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity .7s ease, transform .7s ease
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0)
+        }
+
+        .stat-badge {
+            transition: transform .3s ease
+        }
+
+        .stat-badge:hover {
+            transform: scale(1.08)
+        }
+
+        a:focus-visible,
+        button:focus-visible {
+            outline: 3px solid currentColor;
+            outline-offset: 3px;
+            border-radius: 4px
+        }
+
+        .nav-link {
+            position: relative
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: currentColor;
+            transition: width .3s ease
+        }
+
+        .nav-link:hover::after {
+            width: 100%
+        }
+
+        .section-divider {
+            height: 4px;
+            width: 60px;
+            border-radius: 999px
+        }
+
+        .logo-glow {
+            filter: drop-shadow(0 0 8px rgba(79, 70, 229, .5)) drop-shadow(0 0 20px rgba(79, 70, 229, .25));
+            transition: filter .3s ease, transform .3s ease
+        }
+
+        .group:hover .logo-glow {
+            filter: drop-shadow(0 0 12px rgba(79, 70, 229, .7)) drop-shadow(0 0 30px rgba(79, 70, 229, .4));
+            transform: scale(1.08)
+        }
+
+        .reviews-scroll {
+            display: flex;
+            gap: 1.5rem;
+            overflow-x: auto;
+            scroll-snap-type: x mandatory;
+            -webkit-overflow-scrolling: touch;
+            scrollbar-width: none;
+            padding-bottom: 1rem
+        }
+
+        .reviews-scroll::-webkit-scrollbar {
+            display: none
+        }
+
+        .reviews-scroll>* {
+            scroll-snap-align: start;
+            flex-shrink: 0
+        }
+    </style>
+</head>
+
+<body class="bg-gray-50 text-gray-800 antialiased">
+
+    <!-- NAVBAR -->
+    <nav id="navbar" class="navbar-glass fixed top-0 left-0 w-full z-50 transition-all duration-300"
+        aria-label="Ana Navigasyon">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16 lg:h-20">
+                <a href="#" class="flex items-center gap-3 group" aria-label="Ana Sayfa">
+                    <svg class="logo-glow w-10 h-10 lg:w-12 lg:h-12" viewBox="0 0 48 48" fill="none">
+                        <defs>
+                            <linearGradient id="logoGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" style="stop-color:#4f46e5" />
+                                <stop offset="100%" style="stop-color:#7c3aed" />
+                            </linearGradient>
+                        </defs>
+                        <circle cx="24" cy="24" r="23" fill="url(#logoGrad)" stroke="rgba(255,255,255,0.2)"
+                            stroke-width="1" />
+                        <g fill="white">
+                            <rect x="10" y="18" width="10" height="18" rx="1" />
+                            <rect x="22" y="12" width="10" height="24" rx="1" />
+                            <rect x="34" y="22" width="4" height="14" rx="1" />
+                            <rect x="12" y="20" width="2.5" height="3" rx=".5" fill="#4f46e5" opacity=".6" />
+                            <rect x="15.5" y="20" width="2.5" height="3" rx=".5" fill="#4f46e5" opacity=".6" />
+                            <rect x="12" y="25" width="2.5" height="3" rx=".5" fill="#4f46e5" opacity=".6" />
+                            <rect x="15.5" y="25" width="2.5" height="3" rx=".5" fill="#4f46e5" opacity=".6" />
+                            <rect x="12" y="30" width="2.5" height="3" rx=".5" fill="#4f46e5" opacity=".6" />
+                            <rect x="15.5" y="30" width="2.5" height="3" rx=".5" fill="#4f46e5" opacity=".6" />
+                            <rect x="24" y="14" width="2.5" height="3" rx=".5" fill="#7c3aed" opacity=".6" />
+                            <rect x="27.5" y="14" width="2.5" height="3" rx=".5" fill="#7c3aed" opacity=".6" />
+                            <rect x="24" y="19" width="2.5" height="3" rx=".5" fill="#7c3aed" opacity=".6" />
+                            <rect x="27.5" y="19" width="2.5" height="3" rx=".5" fill="#7c3aed" opacity=".6" />
+                            <rect x="24" y="24" width="2.5" height="3" rx=".5" fill="#7c3aed" opacity=".6" />
+                            <rect x="27.5" y="24" width="2.5" height="3" rx=".5" fill="#7c3aed" opacity=".6" />
+                            <rect x="24" y="29" width="6" height="7" rx="1" fill="#7c3aed" opacity=".4" />
+                        </g>
+                    </svg>
+                    <div class="flex flex-col">
+                        <span
+                            class="text-sm lg:text-base font-bold text-gray-900 tracking-tight leading-tight">DİVAN</span>
+                        <span
+                            class="text-[10px] lg:text-xs text-primary font-semibold tracking-widest uppercase">Sitesi</span>
+                    </div>
+                </a>
+                <div class="hidden lg:flex items-center gap-8">
+                    <a href="#ozellikler"
+                        class="nav-link text-sm font-medium text-gray-600 hover:text-primary transition-colors">Özellikler</a>
+                    <a href="#hakkimizda"
+                        class="nav-link text-sm font-medium text-gray-600 hover:text-primary transition-colors">Hakkımızda</a>
+                    <a href="#galeri"
+                        class="nav-link text-sm font-medium text-gray-600 hover:text-primary transition-colors">Galeri</a>
+                    <a href="#yorumlar"
+                        class="nav-link text-sm font-medium text-gray-600 hover:text-primary transition-colors">Yorumlar</a>
+                    <a href="#iletisim"
+                        class="nav-link text-sm font-medium text-gray-600 hover:text-primary transition-colors">İletişim</a>
+                    <a href="tel:905511812024"
+                        class="inline-flex items-center gap-2 bg-primary text-white px-5 py-2.5 rounded-full text-sm font-semibold shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300"><i
+                            class="fas fa-phone-alt text-xs"></i> Hemen Ara</a>
+                </div>
+                <button id="menuToggle"
+                    class="lg:hidden flex flex-col items-center justify-center w-10 h-10 rounded-lg hover:bg-gray-100 transition-colors"
+                    aria-label="Menüyü Aç/Kapat" aria-expanded="false">
+                    <span class="hamburger-line block w-5 h-0.5 bg-gray-700 transition-all duration-300 mb-1"></span>
+                    <span class="hamburger-line block w-5 h-0.5 bg-gray-700 transition-all duration-300 mb-1"></span>
+                    <span class="hamburger-line block w-5 h-0.5 bg-gray-700 transition-all duration-300"></span>
+                </button>
+            </div>
+        </div>
+        <div id="mobileMenu"
+            class="lg:hidden max-h-0 overflow-hidden transition-all duration-500 ease-in-out bg-white/95 backdrop-blur-xl">
+            <div class="px-6 py-4 space-y-1 border-t border-gray-100">
+                <a href="#ozellikler"
+                    class="block py-3 text-gray-700 font-medium hover:text-primary hover:pl-2 transition-all">Özellikler</a>
+                <a href="#hakkimizda"
+                    class="block py-3 text-gray-700 font-medium hover:text-primary hover:pl-2 transition-all">Hakkımızda</a>
+                <a href="#galeri"
+                    class="block py-3 text-gray-700 font-medium hover:text-primary hover:pl-2 transition-all">Galeri</a>
+                <a href="#yorumlar"
+                    class="block py-3 text-gray-700 font-medium hover:text-primary hover:pl-2 transition-all">Yorumlar</a>
+                <a href="#iletisim"
+                    class="block py-3 text-gray-700 font-medium hover:text-primary hover:pl-2 transition-all">İletişim</a>
+                <div class="pt-3 flex flex-col gap-2">
+                    <a href="tel:905511812024"
+                        class="flex items-center justify-center gap-2 bg-primary text-white py-3 rounded-xl font-semibold shadow-md"><i
+                            class="fas fa-phone-alt"></i> Hemen Ara</a>
+                    <a href="https://wa.me/905511812024" target="_blank" rel="noopener noreferrer"
+                        class="flex items-center justify-center gap-2 bg-green-500 text-white py-3 rounded-xl font-semibold shadow-md"><i
+                            class="fab fa-whatsapp text-lg"></i> WhatsApp'tan Yaz</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- HERO -->
+    <section id="hero" class="relative min-h-screen flex items-center overflow-hidden bg-white">
+        <div class="blob w-72 h-72 bg-primary top-20 -left-20"></div>
+        <div class="blob w-96 h-96 bg-violet-500 bottom-10 right-0" style="animation-delay:3s;opacity:.12"></div>
+        <div class="blob w-48 h-48 bg-primary top-1/2 left-1/3" style="animation-delay:5s;opacity:.08"></div>
+        <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-32 pb-20 lg:pt-36 lg:pb-16 w-full">
+            <div class="max-w-3xl">
+                <div
+                    class="inline-flex items-center gap-2 bg-primary/10 text-primary px-4 py-2 rounded-full text-sm font-semibold mb-6 border border-primary/20">
+                    <i class="fas fa-building text-xs"></i> Kuzeykent Apartman Sitesi
+                </div>
+                <h1
+                    class="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-black text-gray-900 leading-tight tracking-tight mb-6">
+                    Huzurlu <span class="text-primary">Yaşamın</span> Adresi
+                </h1>
+                <p class="text-lg sm:text-xl text-gray-500 leading-relaxed mb-10 max-w-2xl">
+                    Divan Sitesi, Kastamonu Kuzeykent'te modern mimarisi, bakımlı çevresi ve güvenli yapısıyla aileniz
+                    için ideal bir yaşam alanı sunuyor.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4">
+                    <a href="tel:905511812024"
+                        class="inline-flex items-center justify-center gap-3 bg-primary text-white px-8 py-4 rounded-2xl text-base font-bold shadow-xl hover:shadow-2xl hover:scale-105 transition-all duration-300"><i
+                            class="fas fa-phone-alt"></i> Site Yönetimine Ulaşın</a>
+                    <a href="https://wa.me/905511812024" target="_blank" rel="noopener noreferrer"
+                        class="inline-flex items-center justify-center gap-3 bg-green-500 text-white px-8 py-4 rounded-2xl text-base font-bold shadow-xl hover:shadow-2xl hover:scale-105 transition-all duration-300"><i
+                            class="fab fa-whatsapp text-xl"></i> WhatsApp</a>
+                </div>
+                <div class="mt-10 flex flex-wrap items-center gap-4 sm:gap-6 text-sm text-gray-400">
+                    <div class="flex items-center gap-2 bg-white/80 px-3 py-2 rounded-full shadow-sm"><i
+                            class="fas fa-shield-halved text-primary"></i><span>Güvenli</span></div>
+                    <div class="flex items-center gap-2 bg-white/80 px-3 py-2 rounded-full shadow-sm"><i
+                            class="fas fa-tree text-primary"></i><span>Yeşil Alan</span></div>
+                    <div class="flex items-center gap-2 bg-white/80 px-3 py-2 rounded-full shadow-sm"><i
+                            class="fas fa-star text-primary"></i><span>4.6/5 Puan</span></div>
+                </div>
+            </div>
+        </div>
+        <div
+            class="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-gray-300 animate-bounce">
+            <span class="text-xs font-medium tracking-widest uppercase">Keşfedin</span><i
+                class="fas fa-chevron-down text-sm"></i>
+        </div>
+    </section>
+
+    <!-- ÖZELLİKLER -->
+    <section id="ozellikler" class="py-20 lg:py-28 bg-gray-50 fade-in">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <span
+                    class="inline-block text-primary text-sm font-bold tracking-widest uppercase mb-3">Özellikler</span>
+                <h2 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-gray-900 tracking-tight mb-4">Yaşam
+                    Alanınız</h2>
+                <div class="section-divider bg-primary mx-auto mb-6"></div>
+                <p class="text-gray-500 max-w-2xl mx-auto text-lg">Divan Sitesi'nde konforlu yaşamın tüm avantajları bir
+                    arada.</p>
+            </div>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
+                <div class="service-card bg-white rounded-2xl p-6 lg:p-8 shadow-xl border border-gray-100">
+                    <div class="w-14 h-14 bg-primary/10 text-primary rounded-2xl flex items-center justify-center mb-5">
+                        <i class="fas fa-shield-halved text-2xl"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-gray-900 mb-2">Güvenlik</h3>
+                    <p class="text-gray-500 text-sm leading-relaxed">Güvenli giriş sistemi ve aydınlatmalı ortak
+                        alanlar.</p>
+                </div>
+                <div class="service-card bg-white rounded-2xl p-6 lg:p-8 shadow-xl border border-gray-100">
+                    <div class="w-14 h-14 bg-primary/10 text-primary rounded-2xl flex items-center justify-center mb-5">
+                        <i class="fas fa-tree text-2xl"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-gray-900 mb-2">Yeşil Alanlar</h3>
+                    <p class="text-gray-500 text-sm leading-relaxed">Bakımlı bahçe ve çocuk oyun alanları.</p>
+                </div>
+                <div class="service-card bg-white rounded-2xl p-6 lg:p-8 shadow-xl border border-gray-100">
+                    <div class="w-14 h-14 bg-primary/10 text-primary rounded-2xl flex items-center justify-center mb-5">
+                        <i class="fas fa-car text-2xl"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-gray-900 mb-2">Otopark</h3>
+                    <p class="text-gray-500 text-sm leading-relaxed">Geniş ve düzenli otopark alanı.</p>
+                </div>
+                <div class="service-card bg-white rounded-2xl p-6 lg:p-8 shadow-xl border border-gray-100">
+                    <div class="w-14 h-14 bg-primary/10 text-primary rounded-2xl flex items-center justify-center mb-5">
+                        <i class="fas fa-broom text-2xl"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-gray-900 mb-2">Temizlik & Bakım</h3>
+                    <p class="text-gray-500 text-sm leading-relaxed">Düzenli site temizliği ve dış cephe bakımı.</p>
+                </div>
+                <div class="service-card bg-white rounded-2xl p-6 lg:p-8 shadow-xl border border-gray-100">
+                    <div class="w-14 h-14 bg-primary/10 text-primary rounded-2xl flex items-center justify-center mb-5">
+                        <i class="fas fa-location-dot text-2xl"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-gray-900 mb-2">Merkezi Konum</h3>
+                    <p class="text-gray-500 text-sm leading-relaxed">Kuzeykent'te market, okul ve ulaşıma yakın konum.
+                    </p>
+                </div>
+                <div class="service-card bg-white rounded-2xl p-6 lg:p-8 shadow-xl border border-gray-100">
+                    <div class="w-14 h-14 bg-primary/10 text-primary rounded-2xl flex items-center justify-center mb-5">
+                        <i class="fas fa-users text-2xl"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-gray-900 mb-2">Site Yönetimi</h3>
+                    <p class="text-gray-500 text-sm leading-relaxed">Profesyonel site yönetimi ve 7/24 iletişim imkânı.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- HAKKIMIZDA -->
+    <section id="hakkimizda" class="py-20 lg:py-28 bg-white fade-in">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+                <div>
+                    <span
+                        class="inline-block text-primary text-sm font-bold tracking-widest uppercase mb-3">Hakkımızda</span>
+                    <h2 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-gray-900 tracking-tight mb-6">Divan
+                        Sitesi</h2>
+                    <div class="section-divider bg-primary mb-8"></div>
+                    <p class="text-gray-500 text-lg leading-relaxed mb-6">
+                        Divan Sitesi, Kastamonu Kuzeykent'in en tercih edilen yaşam alanlarından biridir. Modern
+                        mimarisi, geniş daireleri ve bakımlı ortak alanlarıyla sakinlerine konforlu bir yaşam
+                        sunmaktadır.
+                    </p>
+                    <p class="text-gray-500 text-base leading-relaxed mb-8">
+                        Aktif site yönetimi sayesinde güvenlik, temizlik ve bakım hizmetleri düzenli olarak
+                        sağlanmaktadır. Ailenizle huzur içinde yaşayabileceğiniz, komşuluk ilişkilerinin güçlü olduğu
+                        bir topluluk.
+                    </p>
+                    <a href="#iletisim"
+                        class="inline-flex items-center gap-2 text-primary font-bold hover:gap-4 transition-all duration-300">Bilgi
+                        Alın <i class="fas fa-arrow-right"></i></a>
+                </div>
+                <div class="grid grid-cols-2 gap-4 lg:gap-6">
+                    <div
+                        class="stat-badge bg-gradient-to-br from-primary/5 to-primary/10 rounded-2xl p-6 lg:p-8 text-center border border-primary/10">
+                        <div class="text-3xl lg:text-4xl font-black text-primary mb-1">4.6</div>
+                        <div class="text-sm text-gray-500 font-medium">Google Puanı</div>
+                    </div>
+                    <div
+                        class="stat-badge bg-gradient-to-br from-primary/5 to-primary/10 rounded-2xl p-6 lg:p-8 text-center border border-primary/10">
+                        <div class="text-3xl lg:text-4xl font-black text-primary mb-1"><i class="fas fa-building"></i>
+                        </div>
+                        <div class="text-sm text-gray-500 font-medium">Modern Yapı</div>
+                    </div>
+                    <div
+                        class="stat-badge bg-gradient-to-br from-primary/5 to-primary/10 rounded-2xl p-6 lg:p-8 text-center border border-primary/10">
+                        <div class="text-3xl lg:text-4xl font-black text-primary mb-1"><i class="fas fa-tree"></i></div>
+                        <div class="text-sm text-gray-500 font-medium">Yeşil Çevre</div>
+                    </div>
+                    <div
+                        class="stat-badge bg-gradient-to-br from-primary/5 to-primary/10 rounded-2xl p-6 lg:p-8 text-center border border-primary/10">
+                        <div class="text-3xl lg:text-4xl font-black text-primary mb-1"><i class="fas fa-heart"></i>
+                        </div>
+                        <div class="text-sm text-gray-500 font-medium">Huzurlu Yaşam</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- GALERİ -->
+    <section id="galeri" class="py-20 lg:py-28 bg-gray-50 fade-in">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <span class="inline-block text-primary text-sm font-bold tracking-widest uppercase mb-3">Galeri</span>
+                <h2 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-gray-900 tracking-tight mb-4">Sitemizden
+                    Kareler</h2>
+                <div class="section-divider bg-primary mx-auto mb-6"></div>
+            </div>
+            <div class="grid grid-cols-2 lg:grid-cols-3 gap-4 lg:gap-6">
+                <div class="gallery-item aspect-square shadow-lg"><img
+                        src="https://lh3.googleusercontent.com/gps-cs-s/AHVAweqrPt8cS6xvlWx5w446_UY3j20iREnhmch1n61H7QVPlIjauAXBLwCdXJ7yZj5K2iQ0YRStXpGCpEJJdAYuxIHpWcJbaNvOpsfxV5hM1Dpv-8o43Lie87YkS9qq41iAD_RpAotZ=s800"
+                        alt="Divan Sitesi dış görünüm" class="w-full h-full object-cover" loading="lazy"></div>
+                <div class="gallery-item aspect-square shadow-lg"><img
+                        src="https://lh3.googleusercontent.com/gps-cs-s/AHVAwerULpsyailBrDEnMla3YnhLaeoLVg_Mb6F9yMwFm13KugxyjI7SeJoTq9JLlcZjODvtf2OieEVB6ROiN2NAcBz0ItI-WIVCxy8PMmo-GvzqYhxauc8G7X6NORcB_C2iqTEpEg48hw=s800"
+                        alt="Divan Sitesi çevre" class="w-full h-full object-cover" loading="lazy"></div>
+                <div class="gallery-item aspect-square shadow-lg"><img
+                        src="https://lh3.googleusercontent.com/gps-cs-s/AHVAwepOTBBvZu-eVluAh5ngWN1TKlotT_oiUbpLc6jjKXwIIgU_RBeXlK0Oe6kqXU933rkA8xbRuQC7uyEEvwQeoBYusPk5ZON79ZCwCu40qVjWCus_KOJKsVRwO6XLU9bFefM2-4gZpw=s800"
+                        alt="Divan Sitesi bina" class="w-full h-full object-cover" loading="lazy"></div>
+                <div class="gallery-item aspect-square shadow-lg"><img
+                        src="https://lh3.googleusercontent.com/gps-cs-s/AHVAwerTngg_sVa-ItH7awOnEpXVckUVJBQXy0JhRrWkd8NcFYcq2gHoTm6IKvzusGV0a_OVw9Nm1_bTUugqtLUTT9Hibm1xj8JvNCEcjj5xjnTIiMBlwq7DdsNqrm-EUs6Bx97U2JZ3=s800"
+                        alt="Divan Sitesi alan" class="w-full h-full object-cover" loading="lazy"></div>
+                <div class="gallery-item aspect-square shadow-lg"><img
+                        src="https://lh3.googleusercontent.com/gps-cs-s/AHVAweoVtHOZY8QhgrSLn53E8kGweTRIxkEKhq5ckPXxxhURb8L6HaXkIM24FJWYWJV5_9XLmk75QJfPW_9WP0Vr6FjBox7Yd_OyOdXNHWJSX0vJ6kq8CVjaeB9qyOikKSo3yZttcrhV7Q=s800"
+                        alt="Divan Sitesi bahçe" class="w-full h-full object-cover" loading="lazy"></div>
+                <div class="gallery-item aspect-square shadow-lg"><img
+                        src="https://lh3.googleusercontent.com/gps-cs-s/AHVAweqWDmJn7aRHG7HtvcuAbNqVU1djUUFVAOMrWpa6DkaT0638DppUfqHr_1yRS1lcZAmT1I8ySVfp422-WxvYmg7xNmp5JSq78Es91cEl4DURYDl7Pt0Fwji_VELxryw5uUHw_zc=s800"
+                        alt="Divan Sitesi genel" class="w-full h-full object-cover" loading="lazy"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- YORUMLAR -->
+    <section id="yorumlar" class="py-20 lg:py-28 bg-white fade-in">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <span class="inline-block text-primary text-sm font-bold tracking-widest uppercase mb-3">Yorumlar</span>
+                <h2 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-gray-900 tracking-tight mb-4">
+                    Sakinlerimiz Ne Diyor?</h2>
+                <div class="section-divider bg-primary mx-auto mb-6"></div>
+                <div class="flex items-center justify-center gap-2 mt-4"><span
+                        class="text-3xl font-black text-primary">4.6</span><span class="text-gray-400">/5</span>
+                    <div class="flex gap-0.5 ml-2"><i class="fas fa-star text-yellow-400"></i><i
+                            class="fas fa-star text-yellow-400"></i><i class="fas fa-star text-yellow-400"></i><i
+                            class="fas fa-star text-yellow-400"></i><i class="fas fa-star-half-alt text-yellow-400"></i>
+                    </div><span class="text-gray-400 text-sm ml-2">(5 değerlendirme)</span>
+                </div>
+            </div>
+            <div class="reviews-scroll px-4 -mx-4">
+                <div class="review-card bg-gray-50 rounded-2xl p-6 shadow-md border border-gray-100 w-72 sm:w-80">
+                    <div class="flex items-center gap-3 mb-3">
+                        <div
+                            class="w-10 h-10 bg-primary text-white rounded-full flex items-center justify-center font-bold text-sm">
+                            ÜC</div>
+                        <div>
+                            <div class="font-semibold text-gray-900 text-sm">Ümit Can ZORLU</div>
+                            <div class="flex gap-0.5"><i class="fas fa-star text-yellow-400 text-xs"></i><i
+                                    class="fas fa-star text-yellow-400 text-xs"></i><i
+                                    class="fas fa-star text-yellow-400 text-xs"></i><i
+                                    class="fas fa-star text-yellow-400 text-xs"></i><i
+                                    class="fas fa-star text-yellow-400 text-xs"></i></div>
+                        </div>
+                    </div>
+                    <p class="text-gray-500 text-sm leading-relaxed">Harika bir site, yaşam kalitesi çok yüksek.</p>
+                </div>
+                <div class="review-card bg-gray-50 rounded-2xl p-6 shadow-md border border-gray-100 w-72 sm:w-80">
+                    <div class="flex items-center gap-3 mb-3">
+                        <div
+                            class="w-10 h-10 bg-violet-500 text-white rounded-full flex items-center justify-center font-bold text-sm">
+                            EN</div>
+                        <div>
+                            <div class="font-semibold text-gray-900 text-sm">ELA NİSA</div>
+                            <div class="flex gap-0.5"><i class="fas fa-star text-yellow-400 text-xs"></i><i
+                                    class="fas fa-star text-yellow-400 text-xs"></i><i
+                                    class="fas fa-star text-yellow-400 text-xs"></i><i
+                                    class="fas fa-star text-yellow-400 text-xs"></i><i
+                                    class="far fa-star text-yellow-400 text-xs"></i></div>
+                        </div>
+                    </div>
+                    <p class="text-gray-500 text-sm leading-relaxed">Güzel ve bakımlı bir yaşam alanı.</p>
+                </div>
+                <div class="review-card bg-gray-50 rounded-2xl p-6 shadow-md border border-gray-100 w-72 sm:w-80">
+                    <div class="flex items-center gap-3 mb-3">
+                        <div
+                            class="w-10 h-10 bg-emerald-500 text-white rounded-full flex items-center justify-center font-bold text-sm">
+                            4M</div>
+                        <div>
+                            <div class="font-semibold text-gray-900 text-sm">4mevsimkastamonu</div>
+                            <div class="flex gap-0.5"><i class="fas fa-star text-yellow-400 text-xs"></i><i
+                                    class="fas fa-star text-yellow-400 text-xs"></i><i
+                                    class="fas fa-star text-yellow-400 text-xs"></i><i
+                                    class="fas fa-star text-yellow-400 text-xs"></i><i
+                                    class="fas fa-star text-yellow-400 text-xs"></i></div>
+                        </div>
+                    </div>
+                    <p class="text-gray-500 text-sm leading-relaxed">Konumu ve çevresi çok güzel.</p>
+                </div>
+                <div class="review-card bg-gray-50 rounded-2xl p-6 shadow-md border border-gray-100 w-72 sm:w-80">
+                    <div class="flex items-center gap-3 mb-3">
+                        <div
+                            class="w-10 h-10 bg-amber-500 text-white rounded-full flex items-center justify-center font-bold text-sm">
+                            ÖF</div>
+                        <div>
+                            <div class="font-semibold text-gray-900 text-sm">Ömer Faruk Demirci</div>
+                            <div class="flex gap-0.5"><i class="fas fa-star text-yellow-400 text-xs"></i><i
+                                    class="fas fa-star text-yellow-400 text-xs"></i><i
+                                    class="fas fa-star text-yellow-400 text-xs"></i><i
+                                    class="fas fa-star text-yellow-400 text-xs"></i><i
+                                    class="far fa-star text-yellow-400 text-xs"></i></div>
+                        </div>
+                    </div>
+                    <p class="text-gray-500 text-sm leading-relaxed">Huzurlu ve sakin bir ortam.</p>
+                </div>
+                <div class="review-card bg-gray-50 rounded-2xl p-6 shadow-md border border-gray-100 w-72 sm:w-80">
+                    <div class="flex items-center gap-3 mb-3">
+                        <div
+                            class="w-10 h-10 bg-rose-500 text-white rounded-full flex items-center justify-center font-bold text-sm">
+                            EÇ</div>
+                        <div>
+                            <div class="font-semibold text-gray-900 text-sm">Erbil Çelik</div>
+                            <div class="flex gap-0.5"><i class="fas fa-star text-yellow-400 text-xs"></i><i
+                                    class="fas fa-star text-yellow-400 text-xs"></i><i
+                                    class="fas fa-star text-yellow-400 text-xs"></i><i
+                                    class="fas fa-star text-yellow-400 text-xs"></i><i
+                                    class="fas fa-star text-yellow-400 text-xs"></i></div>
+                        </div>
+                    </div>
+                    <p class="text-gray-500 text-sm leading-relaxed">Tavsiye ederim, memnunuz.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- HARİTA -->
+    <section id="harita" class="fade-in">
+        <div class="w-full h-80 lg:h-96 bg-gray-200 relative overflow-hidden">
+            <iframe src="https://maps.google.com/maps?q=41.422179,33.7919121&t=&z=16&ie=UTF8&iwloc=&output=embed"
+                width="100%" height="100%" style="border:0" allowfullscreen loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade" title="Divan Sitesi Harita"></iframe>
+        </div>
+    </section>
+
+    <!-- İLETİŞİM -->
+    <section id="iletisim" class="py-20 lg:py-28 bg-gray-50 fade-in">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <span class="inline-block text-primary text-sm font-bold tracking-widest uppercase mb-3">İletişim</span>
+                <h2 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-gray-900 tracking-tight mb-4">Bize
+                    Ulaşın</h2>
+                <div class="section-divider bg-primary mx-auto mb-6"></div>
+            </div>
+            <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-4xl mx-auto">
+                <a href="tel:905511812024"
+                    class="group flex flex-col items-center text-center bg-white hover:bg-primary/5 rounded-2xl p-8 transition-all duration-300 border border-gray-100 hover:border-primary/20">
+                    <div
+                        class="w-14 h-14 bg-primary/10 text-primary rounded-2xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+                        <i class="fas fa-phone-alt text-xl"></i>
+                    </div>
+                    <h3 class="font-bold text-gray-900 mb-1">Telefon</h3>
+                    <p class="text-gray-500 text-sm">0551 181 20 24</p>
+                </a>
+                <a href="https://wa.me/905511812024" target="_blank" rel="noopener noreferrer"
+                    class="group flex flex-col items-center text-center bg-white hover:bg-green-50 rounded-2xl p-8 transition-all duration-300 border border-gray-100 hover:border-green-200">
+                    <div
+                        class="w-14 h-14 bg-green-100 text-green-600 rounded-2xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+                        <i class="fab fa-whatsapp text-2xl"></i>
+                    </div>
+                    <h3 class="font-bold text-gray-900 mb-1">WhatsApp</h3>
+                    <p class="text-gray-500 text-sm">Mesaj Gönderin</p>
+                </a>
+                <a href="https://maps.google.com/?q=Kuzeykent+Akçaağaç+Sk.+2+AA+Kastamonu" target="_blank"
+                    rel="noopener noreferrer"
+                    class="group flex flex-col items-center text-center bg-white hover:bg-primary/5 rounded-2xl p-8 transition-all duration-300 border border-gray-100 hover:border-primary/20 sm:col-span-2 lg:col-span-1">
+                    <div
+                        class="w-14 h-14 bg-primary/10 text-primary rounded-2xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+                        <i class="fas fa-map-marker-alt text-xl"></i>
+                    </div>
+                    <h3 class="font-bold text-gray-900 mb-1">Adres</h3>
+                    <p class="text-gray-500 text-sm">Kuzeykent, Akçaağaç Sk. 2 AA, Kastamonu</p>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- WHATSAPP FLOATING -->
+    <a href="https://wa.me/905511812024" target="_blank" rel="noopener noreferrer"
+        class="whatsapp-pulse fixed bottom-20 sm:bottom-6 right-4 sm:right-6 z-40 w-14 h-14 lg:w-16 lg:h-16 bg-green-500 text-white rounded-full flex items-center justify-center shadow-2xl hover:scale-110 hover:bg-green-600 transition-all duration-300"
+        aria-label="WhatsApp ile İletişime Geç"><i class="fab fa-whatsapp text-2xl lg:text-3xl"></i></a>
+
+    <!-- FOOTER -->
+    <footer class="bg-gray-900 text-white pt-16 pb-24 lg:pb-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-12 mb-12">
+                <div>
+                    <div class="flex items-center gap-3 mb-4">
+                        <svg class="w-10 h-10" viewBox="0 0 48 48" fill="none">
+                            <circle cx="24" cy="24" r="23" fill="#4f46e5" />
+                            <g fill="white">
+                                <rect x="10" y="18" width="10" height="18" rx="1" />
+                                <rect x="22" y="12" width="10" height="24" rx="1" />
+                                <rect x="34" y="22" width="4" height="14" rx="1" />
+                                <rect x="12" y="20" width="2.5" height="3" rx=".5" fill="#4f46e5" opacity=".6" />
+                                <rect x="15.5" y="20" width="2.5" height="3" rx=".5" fill="#4f46e5" opacity=".6" />
+                                <rect x="24" y="14" width="2.5" height="3" rx=".5" fill="#4f46e5" opacity=".6" />
+                                <rect x="27.5" y="14" width="2.5" height="3" rx=".5" fill="#4f46e5" opacity=".6" />
+                                <rect x="24" y="19" width="2.5" height="3" rx=".5" fill="#4f46e5" opacity=".6" />
+                                <rect x="27.5" y="19" width="2.5" height="3" rx=".5" fill="#4f46e5" opacity=".6" />
+                                <rect x="24" y="29" width="6" height="7" rx="1" fill="#4f46e5" opacity=".4" />
+                            </g>
+                        </svg>
+                        <span class="text-lg font-bold">DİVAN SİTESİ</span>
+                    </div>
+                    <p class="text-gray-400 text-sm leading-relaxed">Kastamonu Kuzeykent'te huzurlu yaşamın adresi.</p>
+                </div>
+                <div>
+                    <h3 class="text-sm font-bold uppercase tracking-widest text-gray-400 mb-4">Hızlı Linkler</h3>
+                    <ul class="space-y-3">
+                        <li><a href="#ozellikler"
+                                class="text-gray-300 hover:text-white transition-colors text-sm">Özellikler</a></li>
+                        <li><a href="#hakkimizda"
+                                class="text-gray-300 hover:text-white transition-colors text-sm">Hakkımızda</a></li>
+                        <li><a href="#galeri"
+                                class="text-gray-300 hover:text-white transition-colors text-sm">Galeri</a></li>
+                        <li><a href="#iletisim"
+                                class="text-gray-300 hover:text-white transition-colors text-sm">İletişim</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-sm font-bold uppercase tracking-widest text-gray-400 mb-4">İletişim</h3>
+                    <ul class="space-y-3">
+                        <li class="flex items-center gap-3 text-gray-300 text-sm"><i
+                                class="fas fa-phone-alt text-primary"></i><a href="tel:905511812024"
+                                class="hover:text-white transition-colors">0551 181 20 24</a></li>
+                        <li class="flex items-start gap-3 text-gray-300 text-sm"><i
+                                class="fas fa-map-marker-alt text-primary mt-0.5"></i><span>Kuzeykent, Akçaağaç Sk. 2
+                                AA, Kastamonu</span></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 pt-8 text-center">
+                <p class="text-gray-500 text-xs">&copy; 2026 Divan Sitesi. Tüm hakları saklıdır.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- MOBİL BAR -->
+    <div id="mobileBottomBar"
+        class="mobile-bar fixed bottom-0 left-0 w-full z-50 lg:hidden bg-white/95 backdrop-blur-xl border-t border-gray-200 shadow-2xl">
+        <div class="flex">
+            <a href="tel:905511812024"
+                class="flex-1 flex items-center justify-center gap-2 py-4 bg-primary text-white font-bold text-sm active:scale-95 transition-transform"><i
+                    class="fas fa-phone-alt"></i> Hemen Ara</a>
+            <a href="https://wa.me/905511812024" target="_blank" rel="noopener noreferrer"
+                class="flex-1 flex items-center justify-center gap-2 py-4 bg-green-500 text-white font-bold text-sm active:scale-95 transition-transform"><i
+                    class="fab fa-whatsapp text-lg"></i> WhatsApp</a>
+        </div>
+    </div>
+
+    <script>
+            (function () {
+                'use strict';
+                var navbar = document.getElementById('navbar');
+                window.addEventListener('scroll', function () { navbar.classList.toggle('scrolled', window.pageYOffset > 50) }, { passive: true });
+                var menuToggle = document.getElementById('menuToggle'), mobileMenu = document.getElementById('mobileMenu'), isMenuOpen = false;
+                menuToggle.addEventListener('click', function () {
+                    isMenuOpen = !isMenuOpen; menuToggle.setAttribute('aria-expanded', isMenuOpen);
+                    mobileMenu.style.maxHeight = isMenuOpen ? mobileMenu.scrollHeight + 'px' : '0';
+                    var lines = menuToggle.querySelectorAll('.hamburger-line');
+                    if (isMenuOpen) { lines[0].style.transform = 'translateY(6px) rotate(45deg)'; lines[1].style.opacity = '0'; lines[2].style.transform = 'translateY(-6px) rotate(-45deg)' }
+                    else { lines[0].style.transform = 'none'; lines[1].style.opacity = '1'; lines[2].style.transform = 'none' }
+                });
+                mobileMenu.querySelectorAll('a[href^="#"]').forEach(function (link) {
+                    link.addEventListener('click', function () {
+                        isMenuOpen = false; mobileMenu.style.maxHeight = '0'; menuToggle.setAttribute('aria-expanded', 'false');
+                        var lines = menuToggle.querySelectorAll('.hamburger-line'); lines[0].style.transform = 'none'; lines[1].style.opacity = '1'; lines[2].style.transform = 'none'
+                    });
+                });
+                var mobileBar = document.getElementById('mobileBottomBar');
+                window.addEventListener('scroll', function () { mobileBar.classList.toggle('visible', window.pageYOffset > 300) }, { passive: true });
+                if ('IntersectionObserver' in window) {
+                    var fadeObserver = new IntersectionObserver(function (entries) { entries.forEach(function (entry) { if (entry.isIntersecting) { entry.target.classList.add('visible'); fadeObserver.unobserve(entry.target) } }) }, { threshold: .1, rootMargin: '0px 0px -50px 0px' });
+                    document.querySelectorAll('.fade-in').forEach(function (el) { fadeObserver.observe(el) });
+                } else { document.querySelectorAll('.fade-in').forEach(function (el) { el.classList.add('visible') }) }
+                document.querySelectorAll('a[href^="#"]').forEach(function (anchor) {
+                    anchor.addEventListener('click', function (e) {
+                        var target = document.querySelector(this.getAttribute('href'));
+                        if (target) { e.preventDefault(); var offset = navbar.offsetHeight + 20; window.scrollTo({ top: target.getBoundingClientRect().top + window.pageYOffset - offset, behavior: 'smooth' }) }
+                    });
+                });
+            })();
+    </script>
+</body>
+
+</html>

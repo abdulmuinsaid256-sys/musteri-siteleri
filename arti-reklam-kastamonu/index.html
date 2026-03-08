@@ -1,0 +1,863 @@
+<!DOCTYPE html>
+<html lang="tr" class="dark">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>ARTI REKLAM Kastamonu | Profesyonel Reklam Ajansı</title>
+    <meta name="description"
+        content="Kastamonu'nun öncü reklam ajansı. Açık hava reklamcılığı, dijital baskı, tabela ve kurumsal kimlik hizmetleri. (0366) 220 02 34">
+    <meta name="theme-color" content="#f59e0b">
+
+    <!-- Open Graph & Schema -->
+    <meta property="og:title" content="ARTI REKLAM Kastamonu">
+    <meta property="og:description"
+        content="Markanızı büyütün. Kastamonu'nun lider reklam ajansından profesyonel çözümler.">
+    <meta property="og:type" content="local_business">
+    <meta property="og:locale" content="tr_TR">
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "name": "ARTI REKLAM Kastamonu",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Kuzeykent Mahallesi Ufo İş Merkezi No:31/5",
+        "addressLocality": "Kastamonu Merkez",
+        "addressRegion": "Kastamonu",
+        "postalCode": "37150",
+        "addressCountry": "TR"
+      },
+      "telephone": "+903662200234",
+      "openingHours": ["Mo-Su 08:00-20:00"]
+    }
+    </script>
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: { primary: "#f59e0b" },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        display: ['Outfit', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Font Awesome & Google Fonts -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;700;900&display=swap"
+        rel="stylesheet">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            overflow-x: hidden;
+            background-color: #09090b;
+            color: #f4f4f5;
+        }
+
+        /* Glassmorphism Dark */
+        .glass-dark {
+            background: rgba(9, 9, 11, 0.75);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border-bottom: 1px solid rgba(245, 158, 11, 0.15);
+        }
+
+        .glass-bottom {
+            background: rgba(9, 9, 11, 0.85);
+            backdrop-filter: blur(16px);
+            border-top: 1px solid rgba(245, 158, 11, 0.2);
+        }
+
+        /* Animations */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .fade-in.is-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .scale-in {
+            opacity: 0;
+            transform: scale(0.95);
+            transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .scale-in.is-visible {
+            opacity: 1;
+            transform: scale(1);
+        }
+
+        /* Glow Effects */
+        .glow-button {
+            transition: all 0.3s ease;
+            box-shadow: 0 0 20px rgba(245, 158, 11, 0.3);
+        }
+
+        .glow-button:hover {
+            box-shadow: 0 0 30px rgba(245, 158, 11, 0.6);
+            transform: translateY(-2px);
+        }
+
+        .whatsapp-glow {
+            box-shadow: 0 0 15px rgba(37, 211, 102, 0.3);
+        }
+
+        .whatsapp-glow:hover {
+            box-shadow: 0 0 25px rgba(37, 211, 102, 0.5);
+            transform: translateY(-2px);
+        }
+
+        .pulse-ring {
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% {
+                box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.6);
+            }
+
+            70% {
+                box-shadow: 0 0 0 15px rgba(37, 211, 102, 0);
+            }
+
+            100% {
+                box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
+            }
+        }
+
+        /* SVG Glow */
+        .svg-glow {
+            filter: drop-shadow(0 0 15px rgba(245, 158, 11, 0.6));
+        }
+
+        /* Custom Hover Cards */
+        .service-card {
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            background: linear-gradient(145deg, rgba(39, 39, 42, 0.6) 0%, rgba(24, 24, 27, 0.8) 100%);
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            border-color: rgba(245, 158, 11, 0.5);
+            box-shadow: 0 20px 40px rgba(245, 158, 11, 0.15);
+            background: linear-gradient(145deg, rgba(39, 39, 42, 0.9) 0%, rgba(24, 24, 27, 1) 100%);
+        }
+
+        .service-icon-wrap {
+            transition: all 0.4s ease;
+        }
+
+        .service-card:hover .service-icon-wrap {
+            transform: scale(1.1) rotate(-5deg);
+            box-shadow: 0 0 20px rgba(245, 158, 11, 0.4);
+        }
+
+        /* FAQ Accordion */
+        .faq-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s ease-out;
+        }
+
+        .faq-item.active .faq-content {
+            max-height: 250px;
+        }
+
+        .faq-item.active .faq-icon {
+            transform: rotate(180deg);
+            color: #f59e0b;
+        }
+
+        .faq-item.active .faq-header {
+            color: #f59e0b;
+        }
+
+        /* Background Grid Pattern */
+        .bg-grid {
+            background-image: linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px), linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+            background-size: 40px 40px;
+        }
+
+        /* Modern Gradient Text */
+        .text-gradient {
+            background: linear-gradient(to right, #f59e0b, #fbbf24);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        /* Hexagon Backgrounds */
+        .hex-bg {
+            position: absolute;
+            opacity: 0.03;
+            z-index: 0;
+            pointer-events: none;
+        }
+
+        @media (max-width: 768px) {
+            body {
+                padding-bottom: 70px;
+            }
+        }
+    </style>
+</head>
+
+<body class="antialiased selection:bg-primary selection:text-white bg-zinc-950">
+
+    <!-- Ambient Glow Drops -->
+    <div class="fixed top-0 left-1/4 w-96 h-96 bg-primary/10 rounded-full blur-[100px] pointer-events-none z-0"></div>
+    <div
+        class="fixed bottom-0 right-1/4 w-[500px] h-[500px] bg-orange-600/10 rounded-full blur-[120px] pointer-events-none z-0">
+    </div>
+
+    <!-- 🌟 NAVBAR -->
+    <nav class="glass-dark fixed w-full z-50 top-0 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-24">
+                <a href="#" class="flex items-center gap-4 group">
+                    <div
+                        class="w-14 h-14 rounded-2xl bg-gradient-to-br from-primary to-orange-600 flex items-center justify-center svg-glow transition-all duration-500 group-hover:scale-105 group-hover:rotate-3 shadow-lg border border-orange-400/30">
+                        <i class="fas fa-bullhorn text-white text-xl"></i>
+                    </div>
+                    <div class="flex flex-col justify-center">
+                        <span
+                            class="font-display font-black text-white text-2xl leading-none tracking-tight group-hover:text-primary transition-colors">ARTI
+                            REKLAM</span>
+                        <span
+                            class="text-[11px] font-bold text-zinc-400 tracking-[0.2em] uppercase mt-1">Kastamonu</span>
+                    </div>
+                </a>
+
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex items-center gap-8">
+                    <a href="#farkimiz"
+                        class="text-sm font-medium text-zinc-300 hover:text-primary transition-colors">Neden Biz?</a>
+                    <a href="#hizmetler"
+                        class="text-sm font-medium text-zinc-300 hover:text-primary transition-colors">Hizmetlerimiz</a>
+                    <a href="#sss"
+                        class="text-sm font-medium text-zinc-300 hover:text-primary transition-colors">SSS</a>
+                    <div class="h-6 w-px bg-zinc-800"></div>
+                    <a href="tel:903662200234"
+                        class="glow-button bg-primary text-zinc-950 px-6 py-3 rounded-xl text-sm font-bold flex items-center gap-2 hover:bg-orange-400 transition-colors">
+                        <i class="fas fa-phone-alt"></i> (0366) 220 02 34
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 🌟 HERO SECTION -->
+    <section class="relative h-screen min-h-[700px] flex items-center justify-center overflow-hidden bg-zinc-950">
+        <!-- Background Image with Dark Professional Agency theme -->
+        <div class="absolute inset-0 z-0 scale-in is-visible">
+            <img src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80"
+                alt="Artı Reklam Ajansı Çalışma Ortamı"
+                class="w-full h-full object-cover opacity-30 mix-blend-luminosity">
+            <div class="absolute inset-0 bg-gradient-to-r from-zinc-950 via-zinc-950/90 to-zinc-900/60"></div>
+            <!-- Tech Grid Overlay -->
+            <div class="absolute inset-0 bg-grid opacity-30"></div>
+        </div>
+
+        <div class="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-20 fade-in">
+            <div class="max-w-3xl">
+                <div
+                    class="inline-flex items-center gap-2 bg-zinc-900/80 backdrop-blur-md text-zinc-300 border border-zinc-800 px-4 py-2 rounded-full text-xs font-bold tracking-[0.15em] uppercase mb-8 shadow-2xl">
+                    <span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span> Dijital ve Açık Hava
+                    Reklamcılığı
+                </div>
+
+                <h1
+                    class="text-5xl md:text-7xl lg:text-8xl font-display font-black text-white leading-[1.05] tracking-tight mb-6 p-1">
+                    Markanızı <br>
+                    <span class="text-gradient">Zirveye Taşıyın.</span>
+                </h1>
+
+                <p class="text-lg md:text-xl text-zinc-400 mb-10 font-light leading-relaxed max-w-xl">
+                    Kastamonu'da firmanızın görünürlüğünü artıran yaratıcı tasarımlar, kaliteli baskılar ve akılda
+                    kalıcı kurumsal kimlik çözümleri sunuyoruz.
+                </p>
+
+                <!-- Trust Badge (Simulated Reviews for B2B) -->
+                <div class="flex flex-wrap items-center gap-4 mb-12">
+                    <div class="flex -space-x-3">
+                        <img class="w-10 h-10 border-2 border-zinc-950 rounded-full"
+                            src="https://randomuser.me/api/portraits/men/32.jpg" alt="Müşteri">
+                        <img class="w-10 h-10 border-2 border-zinc-950 rounded-full"
+                            src="https://randomuser.me/api/portraits/men/44.jpg" alt="Müşteri">
+                        <img class="w-10 h-10 border-2 border-zinc-950 rounded-full"
+                            src="https://randomuser.me/api/portraits/women/68.jpg" alt="Müşteri">
+                        <img class="w-10 h-10 border-2 border-zinc-950 rounded-full"
+                            src="https://randomuser.me/api/portraits/men/85.jpg" alt="Müşteri">
+                        <div
+                            class="w-10 h-10 border-2 border-zinc-950 rounded-full bg-zinc-800 flex items-center justify-center text-xs font-bold text-white">
+                            +100</div>
+                    </div>
+                    <div class="flex flex-col">
+                        <div class="flex text-primary text-sm mb-1">
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                                class="fas fa-star"></i><i class="fas fa-star"></i>
+                        </div>
+                        <span class="text-zinc-300 font-semibold text-sm">100+ Mutlu İşletme Sahibi</span>
+                    </div>
+                </div>
+
+                <div class="flex flex-col sm:flex-row gap-5">
+                    <a href="tel:903662200234"
+                        class="glow-button justify-center sm:justify-start bg-primary text-zinc-950 px-8 py-4 rounded-xl font-bold text-lg flex items-center gap-3">
+                        <i class="fas fa-phone-alt"></i> Bizi Arayın
+                    </a>
+                    <a href="https://wa.me/903662200234?text=Merhaba,%20reklam%20ve%20tabela%20işleri%20için%20fiyat%20almak%20istiyorum."
+                        target="_blank"
+                        class="whatsapp-glow justify-center sm:justify-start bg-zinc-900 text-white border border-zinc-800 px-8 py-4 rounded-xl font-bold text-lg flex items-center gap-3 hover:bg-zinc-800 transition-colors">
+                        <i class="fab fa-whatsapp text-[#25D366] text-xl"></i> Projenizi Anlatın
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Scroll Down Indicator -->
+        <div
+            class="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center animate-bounce opacity-50 hidden md:flex">
+            <span class="text-xs text-zinc-500 font-bold tracking-widest uppercase mb-2">Keşfet</span>
+            <i class="fas fa-chevron-down text-zinc-400"></i>
+        </div>
+    </section>
+
+    <!-- 🌟 NEDEN BİZ? (TRUST BAND) -->
+    <section id="farkimiz" class="relative z-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-12 sm:mt-16 fade-in">
+        <div class="bg-zinc-900/90 backdrop-blur-xl rounded-2xl shadow-2xl p-6 md:p-10 border border-zinc-800/80">
+            <div class="grid md:grid-cols-3 gap-8 divide-y md:divide-y-0 md:divide-x divide-zinc-800">
+                <div class="flex items-start gap-5 px-2 pt-2 md:pt-0">
+                    <div
+                        class="w-14 h-14 shrink-0 rounded-2xl bg-zinc-950 border border-zinc-800 text-primary flex items-center justify-center text-2xl shadow-inner">
+                        <i class="fas fa-rocket"></i>
+                    </div>
+                    <div>
+                        <h3 class="font-display font-bold text-white text-lg mb-1">Hızlı Teslimat</h3>
+                        <p class="text-zinc-400 text-sm leading-relaxed">Kendi atölyemizde üretiyor, aracı kullanmadan
+                            en hızlı şekilde teslim ediyoruz.</p>
+                    </div>
+                </div>
+                <div class="flex items-start gap-5 px-2 pt-8 md:pt-0 pl-0 md:pl-8">
+                    <div
+                        class="w-14 h-14 shrink-0 rounded-2xl bg-zinc-950 border border-zinc-800 text-primary flex items-center justify-center text-2xl shadow-inner">
+                        <i class="fas fa-gem"></i>
+                    </div>
+                    <div>
+                        <h3 class="font-display font-bold text-white text-lg mb-1">Premium Kalite</h3>
+                        <p class="text-zinc-400 text-sm leading-relaxed">Uzun ömürlü malzemeler ve yüksek çözünürlüklü
+                            dijital baskı teknolojileri.</p>
+                    </div>
+                </div>
+                <div class="flex items-start gap-5 px-2 pt-8 md:pt-0 pl-0 md:pl-8">
+                    <div
+                        class="w-14 h-14 shrink-0 rounded-2xl bg-zinc-950 border border-zinc-800 text-primary flex items-center justify-center text-2xl shadow-inner">
+                        <i class="fas fa-handshake"></i>
+                    </div>
+                    <div>
+                        <h3 class="font-display font-bold text-white text-lg mb-1">%100 Memnuniyet</h3>
+                        <p class="text-zinc-400 text-sm leading-relaxed">Tasarım onayından montaja kadar profesyonel
+                            iletişim ve kusursuz işçilik.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 🌟 HAKKIMIZDA -->
+    <section class="py-24 lg:py-32 fade-in relative overflow-hidden">
+        <!-- Decoration -->
+        <i class="fas fa-bullseye absolute -right-20 top-20 text-[300px] text-zinc-900/50 z-0"></i>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid lg:grid-cols-2 gap-16 items-center">
+                <!-- Text Content -->
+                <div class="order-2 lg:order-1">
+                    <div class="flex items-center gap-3 mb-4">
+                        <div class="h-px w-8 bg-primary"></div>
+                        <span class="text-primary font-bold tracking-[0.2em] text-xs uppercase">Biz Kimiz?</span>
+                    </div>
+                    <h2 class="text-4xl md:text-5xl font-display font-black text-white mb-8 leading-tight">İşletmenizin
+                        <br>Görünen Yüzüyüz.
+                    </h2>
+
+                    <p class="text-zinc-400 text-lg leading-relaxed mb-6 font-light">
+                        <strong>ARTI REKLAM Kastamonu</strong> olarak, yılların getirdiği tecrübe ile bölgesel ve ulusal
+                        markalara vizyon katıyoruz. Bir işletmenin sadece tabeladan ibaret olmadığını; kurumsal
+                        kimliğin, tasarımın ve doğru reklamın satışları nasıl katladığını çok iyi biliyoruz.
+                    </p>
+                    <p class="text-zinc-400 text-lg leading-relaxed mb-10 font-light">
+                        Müşterilerimizin ihtiyaçlarını dinliyor, ücretsiz keşif yapıyor ve bütçeye en uygun, en
+                        gösterişli çözümleri sunuyoruz. Dijital baskıdan totem tabelaya, araç giydirmeden promosyon
+                        ürünlerine kadar tüm reklam kalemlerini tek çatı altında bulabileceğiniz güvenilir iş
+                        ortağınızız.
+                    </p>
+
+                    <!-- Feature Tags -->
+                    <div class="flex flex-wrap gap-3">
+                        <span
+                            class="bg-zinc-900 border border-zinc-800 text-zinc-300 px-4 py-2 rounded-lg text-sm font-semibold"><i
+                                class="fas fa-check text-primary mr-2"></i> Kendi Üretimimiz</span>
+                        <span
+                            class="bg-zinc-900 border border-zinc-800 text-zinc-300 px-4 py-2 rounded-lg text-sm font-semibold"><i
+                                class="fas fa-check text-primary mr-2"></i> Ücretsiz Keşif</span>
+                        <span
+                            class="bg-zinc-900 border border-zinc-800 text-zinc-300 px-4 py-2 rounded-lg text-sm font-semibold"><i
+                                class="fas fa-check text-primary mr-2"></i> Garanti & Bakım</span>
+                    </div>
+                </div>
+
+                <!-- Featured Image Box -->
+                <div class="order-1 lg:order-2 relative">
+                    <div
+                        class="absolute inset-0 bg-primary rounded-3xl transform rotate-3 scale-100 z-0 opacity-20 blur-md">
+                    </div>
+                    <div class="absolute inset-0 border border-zinc-700 rounded-3xl transform -rotate-3 scale-105 z-0">
+                    </div>
+                    <!-- Street View thumbnail used aesthetically -->
+                    <div
+                        class="relative z-10 rounded-3xl overflow-hidden shadow-2xl bg-zinc-900 border border-zinc-800 p-2">
+                        <img src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80"
+                            alt="Artı Reklam Ofis ve Üretim"
+                            class="w-full rounded-2xl object-cover aspect-square hover:scale-105 transition-transform duration-700 opacity-90">
+                    </div>
+
+                    <!-- Floating Element -->
+                    <div
+                        class="absolute -bottom-6 -left-6 md:-left-12 z-20 bg-zinc-900 border border-zinc-700 p-6 rounded-2xl shadow-2xl backdrop-blur-sm">
+                        <div
+                            class="text-5xl font-black text-transparent bg-clip-text bg-gradient-to-r from-primary to-orange-400 mb-1">
+                            100%</div>
+                        <p class="font-display font-bold text-zinc-300 text-sm uppercase tracking-wider">MÜŞTERİ Hacmi
+                            <br>Artışı
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 🌟 HİZMETLERİMİZ -->
+    <section id="hizmetler" class="py-24 lg:py-32 bg-zinc-950 relative z-10 border-y border-white/5">
+        <div class="absolute inset-0 bg-grid opacity-20"></div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="text-center max-w-2xl mx-auto mb-20 fade-in">
+                <div class="flex items-center justify-center gap-3 mb-4">
+                    <div class="h-px w-8 bg-primary"></div>
+                    <span class="text-primary font-bold tracking-[0.2em] text-xs uppercase">Uzmanlık Alanlarımız</span>
+                    <div class="h-px w-8 bg-primary"></div>
+                </div>
+                <h2 class="text-4xl md:text-5xl font-display font-black text-white mb-6">Neler Yapıyoruz?</h2>
+                <p class="text-zinc-400">Markenızı sokakta, ofiste ve elinizde en iyi şekilde temsil edecek materyaller
+                    üretiyoruz.</p>
+            </div>
+
+            <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Service 1 -->
+                <div
+                    class="service-card p-10 rounded-3xl flex flex-col items-start fade-in cursor-default group relative overflow-hidden">
+                    <div
+                        class="absolute top-0 right-0 w-32 h-32 bg-primary/10 rounded-full blur-2xl group-hover:bg-primary/20 transition-colors">
+                    </div>
+                    <div
+                        class="service-icon-wrap w-16 h-16 bg-zinc-900 border border-zinc-700 text-primary rounded-2xl flex items-center justify-center text-3xl mb-8 relative z-10">
+                        <i class="fas fa-sign"></i>
+                    </div>
+                    <h3 class="font-display font-bold text-2xl text-white mb-4 relative z-10">Tabela Sistemleri</h3>
+                    <p class="text-zinc-400 text-sm leading-relaxed relative z-10 font-light">Işıklı/ışıksız tabela,
+                        kutu harf, totem, çatı tabelası ve yönlendirme panoları ile işletmenizin fark edilmesini
+                        sağlıyoruz.</p>
+                </div>
+
+                <!-- Service 2 -->
+                <div class="service-card p-10 rounded-3xl flex flex-col items-start fade-in cursor-default group relative overflow-hidden"
+                    style="transition-delay: 100ms;">
+                    <div
+                        class="absolute top-0 right-0 w-32 h-32 bg-primary/10 rounded-full blur-2xl group-hover:bg-primary/20 transition-colors">
+                    </div>
+                    <div
+                        class="service-icon-wrap w-16 h-16 bg-zinc-900 border border-zinc-700 text-primary rounded-2xl flex items-center justify-center text-3xl mb-8 relative z-10">
+                        <i class="fas fa-print"></i>
+                    </div>
+                    <h3 class="font-display font-bold text-2xl text-white mb-4 relative z-10">Dijital Baskı</h3>
+                    <p class="text-zinc-400 text-sm leading-relaxed relative z-10 font-light">Yüksek çözünürlüklü
+                        branda, folyo, one way vision (delikli folyo) ve mesh baskı ile cam giydirme ve afiş
+                        ihtiyaçlarınız için.</p>
+                </div>
+
+                <!-- Service 3 -->
+                <div class="service-card p-10 rounded-3xl flex flex-col items-start fade-in cursor-default group relative overflow-hidden"
+                    style="transition-delay: 200ms;">
+                    <div
+                        class="absolute top-0 right-0 w-32 h-32 bg-primary/10 rounded-full blur-2xl group-hover:bg-primary/20 transition-colors">
+                    </div>
+                    <div
+                        class="service-icon-wrap w-16 h-16 bg-zinc-900 border border-zinc-700 text-primary rounded-2xl flex items-center justify-center text-3xl mb-8 relative z-10">
+                        <i class="fas fa-car-side"></i>
+                    </div>
+                    <h3 class="font-display font-bold text-2xl text-white mb-4 relative z-10">Araç Giydirme</h3>
+                    <p class="text-zinc-400 text-sm leading-relaxed relative z-10 font-light">Şirket araçlarınızı mobil
+                        birer reklam panosuna dönüştüren kısmi veya komple üst düzey folyo araç kaplama işlemleri.</p>
+                </div>
+
+                <!-- Service 4 -->
+                <div
+                    class="service-card p-10 rounded-3xl flex flex-col items-start fade-in cursor-default group relative overflow-hidden">
+                    <div
+                        class="absolute top-0 right-0 w-32 h-32 bg-primary/10 rounded-full blur-2xl group-hover:bg-primary/20 transition-colors">
+                    </div>
+                    <div
+                        class="service-icon-wrap w-16 h-16 bg-zinc-900 border border-zinc-700 text-primary rounded-2xl flex items-center justify-center text-3xl mb-8 relative z-10">
+                        <i class="fas fa-id-card"></i>
+                    </div>
+                    <h3 class="font-display font-bold text-2xl text-white mb-4 relative z-10">Kurumsal Kimlik</h3>
+                    <p class="text-zinc-400 text-sm leading-relaxed relative z-10 font-light">Logo tasarımı, kartvizit,
+                        broşür, katalog, el ilanı ve kurumsal evrak (antetli kağıt, zarf) tasarımları ve matbaa baskısı.
+                    </p>
+                </div>
+
+                <!-- Service 5 -->
+                <div class="service-card p-10 rounded-3xl flex flex-col items-start fade-in cursor-default group relative overflow-hidden"
+                    style="transition-delay: 100ms;">
+                    <div
+                        class="absolute top-0 right-0 w-32 h-32 bg-primary/10 rounded-full blur-2xl group-hover:bg-primary/20 transition-colors">
+                    </div>
+                    <div
+                        class="service-icon-wrap w-16 h-16 bg-zinc-900 border border-zinc-700 text-primary rounded-2xl flex items-center justify-center text-3xl mb-8 relative z-10">
+                        <i class="fas fa-cube"></i>
+                    </div>
+                    <h3 class="font-display font-bold text-2xl text-white mb-4 relative z-10">Promosyon Ürünleri</h3>
+                    <p class="text-zinc-400 text-sm leading-relaxed relative z-10 font-light">Müşterilerinize markanızı
+                        hatırlatacak takvim, ajanda, kalem, kupa, anahtarlık ve özel gün eşantiyon baskıları.</p>
+                </div>
+
+                <!-- Service 6 -->
+                <div class="service-card p-10 rounded-3xl flex flex-col items-start fade-in cursor-default group relative overflow-hidden"
+                    style="transition-delay: 200ms;">
+                    <div
+                        class="absolute top-0 right-0 w-32 h-32 bg-primary/10 rounded-full blur-2xl group-hover:bg-primary/20 transition-colors">
+                    </div>
+                    <div
+                        class="service-icon-wrap w-16 h-16 bg-zinc-900 border border-zinc-700 text-primary rounded-2xl flex items-center justify-center text-3xl mb-8 relative z-10">
+                        <i class="fas fa-desktop"></i>
+                    </div>
+                    <h3 class="font-display font-bold text-2xl text-white mb-4 relative z-10">CNC & Lazer Kesim</h3>
+                    <p class="text-zinc-400 text-sm leading-relaxed relative z-10 font-light">Pleksi, ahşap (MDF),
+                        dakota (fotoblok) gibi materyallerde milimetrik kesim, dekoratif harf ve pano imalatı.</p>
+                </div>
+            </div>
+
+            <div class="text-center mt-16 fade-in">
+                <a href="https://wa.me/903662200234?text=Merhaba,%20hizmetlerinizle%20ilgili%20detaylı%20bilgi%20ve%20teklif%20almak%20istiyorum."
+                    target="_blank"
+                    class="inline-flex items-center gap-2 text-primary hover:text-white font-semibold transition-colors border-b border-primary/30 hover:border-white pb-1">
+                    Özel Projeniz Mi Var? Hemen Bize Ulaşın <i class="fas fa-arrow-right text-sm ml-1"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- 🌟 SIKÇA SORULAN SORULAR (SSS) -->
+    <section id="sss" class="py-24 lg:py-32 bg-[#0a0a0c] fade-in relative">
+        <!-- Glow spot -->
+        <div
+            class="absolute left-1/2 top-0 -translate-x-1/2 w-[800px] h-[300px] bg-primary/5 blur-[120px] rounded-[100%] pointer-events-none">
+        </div>
+
+        <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="text-center mb-16">
+                <div class="flex items-center justify-center gap-3 mb-4">
+                    <div class="h-px w-8 bg-primary"></div>
+                    <span class="text-primary font-bold tracking-[0.2em] text-xs uppercase">Aklınızdaki Sorular</span>
+                    <div class="h-px w-8 bg-primary"></div>
+                </div>
+                <h2 class="text-4xl md:text-5xl font-display font-black text-white mb-6">Sıkça Sorulan Sorular</h2>
+            </div>
+
+            <div class="space-y-4">
+                <!-- SSS 1 -->
+                <div class="faq-item bg-zinc-900/50 border border-zinc-800 rounded-2xl overflow-hidden cursor-pointer hover:border-zinc-700 transition-colors backdrop-blur-sm"
+                    onclick="this.classList.toggle('active')">
+                    <div class="px-6 py-6 flex justify-between items-center">
+                        <h4 class="faq-header font-bold text-zinc-200 text-lg transition-colors pr-6">Hangi reklam
+                            hizmetlerini sunuyorsunuz?</h4>
+                        <div class="w-8 h-8 rounded-full bg-zinc-800 flex items-center justify-center shrink-0">
+                            <i class="fas fa-chevron-down faq-icon text-zinc-400 transition-transform"></i>
+                        </div>
+                    </div>
+                    <div class="faq-content bg-zinc-900/80 px-6">
+                        <p class="text-zinc-400 pb-6 pt-2 text-sm leading-relaxed border-t border-zinc-800 font-light">
+                            A'dan Z'ye tüm açık hava ve basılı reklam ihtiyaçlarınıza profesyonel çözümler üretiyoruz.
+                            Işıklı/ışıksız tabela imalatı, araç giydirme, cephe kaplama, cam vitrin folyo yazıları,
+                            branda baskı, broşür, logo ve kurumsal kimlik matbaa tasarımları başlıca
+                            yetkinliklerimizdir.</p>
+                    </div>
+                </div>
+
+                <!-- SSS 2 -->
+                <div class="faq-item bg-zinc-900/50 border border-zinc-800 rounded-2xl overflow-hidden cursor-pointer hover:border-zinc-700 transition-colors backdrop-blur-sm"
+                    onclick="this.classList.toggle('active')">
+                    <div class="px-6 py-6 flex justify-between items-center">
+                        <h4 class="faq-header font-bold text-zinc-200 text-lg transition-colors pr-6">Tabela ve reklam
+                            fiyatlandırması nasıl yapılıyor? Ücretsiz keşif var mı?</h4>
+                        <div class="w-8 h-8 rounded-full bg-zinc-800 flex items-center justify-center shrink-0">
+                            <i class="fas fa-chevron-down faq-icon text-zinc-400 transition-transform"></i>
+                        </div>
+                    </div>
+                    <div class="faq-content bg-zinc-900/80 px-6">
+                        <p class="text-zinc-400 pb-6 pt-2 text-sm leading-relaxed border-t border-zinc-800 font-light">
+                            Evet, işletmenize gelerek <strong class="text-zinc-200">ücretsiz keşif ve
+                                ölçülendirme</strong> yapıyoruz. Tabela, harf veya baskı boyutlarına, kullanılacak
+                            malzeme kalitesine (pleksi, alüminyum, kompozit vb.) ve montaj zorluğuna göre size en
+                            rekabetçi fiyat teklifini, 3D görselleştirme onayı ile birlikte sunuyoruz.</p>
+                    </div>
+                </div>
+
+                <!-- SSS 3 -->
+                <div class="faq-item bg-zinc-900/50 border border-zinc-800 rounded-2xl overflow-hidden cursor-pointer hover:border-zinc-700 transition-colors backdrop-blur-sm"
+                    onclick="this.classList.toggle('active')">
+                    <div class="px-6 py-6 flex justify-between items-center">
+                        <h4 class="faq-header font-bold text-zinc-200 text-lg transition-colors pr-6">Sipariş
+                            verildikten sonra tasarım, üretim ve montaj süreci ne kadar sürüyor?</h4>
+                        <div class="w-8 h-8 rounded-full bg-zinc-800 flex items-center justify-center shrink-0">
+                            <i class="fas fa-chevron-down faq-icon text-zinc-400 transition-transform"></i>
+                        </div>
+                    </div>
+                    <div class="faq-content bg-zinc-900/80 px-6">
+                        <p class="text-zinc-400 pb-6 pt-2 text-sm leading-relaxed border-t border-zinc-800 font-light">
+                            Sürecimiz hız ve kalite üzerine kuruludur. Dijital baskı (branda, folyo) işleriniz
+                            genellikle 1-2 gün içinde hazır olurken; detaylı kutu harf ve kompozit tabela tarzı montajlı
+                            işler, onaylanan tasarıma göre atölyemizde üretilip söz verilen tam günde, ekiplerimizce
+                            yerinize kusursuz monte edilir.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 🌟 GOOGLE MAPS & İLETİŞİM -->
+    <section id="iletisim" class="fade-in relative z-10">
+        <div class="w-full h-[400px] relative">
+            <iframe src="https://maps.google.com/maps?q=41.4255311,33.7780336&t=&z=16&ie=UTF8&iwloc=&output=embed"
+                class="absolute inset-0 w-full h-full border-0 grayscale invert opacity-80 mix-blend-lighten"
+                allowfullscreen="" loading="lazy" style="filter: grayscale(100%) invert(90%) contrast(120%);"></iframe>
+
+            <!-- Floating Contact Badge -->
+            <div
+                class="absolute left-1/2 -translate-x-1/2 top-10 bg-zinc-900/90 backdrop-blur-md px-8 py-4 rounded-full border border-zinc-700 shadow-2xl flex items-center gap-4">
+                <i class="fas fa-map-marker-alt text-primary text-xl animate-bounce"></i>
+                <span class="text-white font-bold tracking-widest text-sm uppercase">Kuzeykent Ufo İş Merkezi</span>
+            </div>
+        </div>
+
+        <div
+            class="bg-zinc-950 text-white pt-20 pb-28 md:pb-20 relative z-10 border-t border-zinc-800 shadow-[0_-20px_50px_rgba(0,0,0,0.5)] mb-[72px] md:mb-0">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid md:grid-cols-12 gap-12 lg:gap-8">
+
+                    <!-- Brand Column -->
+                    <div class="md:col-span-5 lg:col-span-4">
+                        <a href="#" class="flex items-center gap-3 mb-6 inline-block">
+                            <div
+                                class="w-12 h-12 rounded-lg bg-primary flex items-center justify-center shadow-[0_0_15px_rgba(245,158,11,0.5)]">
+                                <i class="fas fa-bullhorn text-xl text-zinc-950"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-display font-black text-2xl tracking-tight text-white leading-none">ARTI
+                                    REKLAM</h3>
+                            </div>
+                        </a>
+                        <p class="text-zinc-400 text-sm leading-relaxed mb-8 max-w-sm">Kastamonu reklam ve tabela
+                            sektöründe öncü, yenilikçi ve kaliteli ajans. Markanızın görünen yüzü olmak için buradayız.
+                        </p>
+
+                        <!-- Social Links -->
+                        <div class="flex gap-3">
+                            <a href="http://www.facebook.com/artireklamcim" target="_blank"
+                                class="w-10 h-10 rounded-full bg-zinc-900 border border-zinc-800 flex items-center justify-center text-zinc-400 hover:text-white hover:bg-[#1877F2] hover:border-[#1877F2] transition-colors">
+                                <i class="fab fa-facebook-f"></i>
+                            </a>
+                            <a href="#"
+                                class="w-10 h-10 rounded-full bg-zinc-900 border border-zinc-800 flex items-center justify-center text-zinc-400 hover:text-white hover:bg-gradient-to-tr from-[#f09433] via-[#e6683c] hover:border-transparent transition-colors">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                            <a href="https://wa.me/903662200234" target="_blank"
+                                class="w-10 h-10 rounded-full bg-zinc-900 border border-zinc-800 flex items-center justify-center text-zinc-400 hover:text-white hover:bg-[#25D366] hover:border-[#25D366] transition-colors">
+                                <i class="fab fa-whatsapp"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Contact Details -->
+                    <div class="md:col-span-7 lg:col-span-5 grid sm:grid-cols-2 gap-8 md:gap-8">
+                        <div>
+                            <h4 class="font-display font-bold text-lg text-white mb-6 uppercase tracking-wider">İletişim
+                            </h4>
+                            <ul class="space-y-5 text-sm">
+                                <li>
+                                    <a href="tel:903662200234" class="flex items-start gap-4 group">
+                                        <div
+                                            class="w-10 h-10 rounded-full bg-zinc-900 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-zinc-950 transition-colors shrink-0">
+                                            <i class="fas fa-phone-alt"></i>
+                                        </div>
+                                        <div class="pt-1">
+                                            <span
+                                                class="text-[10px] text-zinc-500 uppercase font-black tracking-widest block mb-0.5">Ofis
+                                                Hattı</span>
+                                            <span
+                                                class="text-zinc-300 font-medium text-base group-hover:text-white transition-colors">(0366)
+                                                220 02 34</span>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <div class="flex items-start gap-4">
+                                        <div
+                                            class="w-10 h-10 rounded-full bg-zinc-900 flex items-center justify-center text-primary shrink-0">
+                                            <i class="fas fa-map-marked-alt"></i>
+                                        </div>
+                                        <div class="pt-1">
+                                            <span
+                                                class="text-[10px] text-zinc-500 uppercase font-black tracking-widest block mb-0.5">Adres</span>
+                                            <span
+                                                class="text-zinc-300 text-sm leading-relaxed border-b border-zinc-800/50 pb-2">Kuzeykent
+                                                Mah. Ufo İş
+                                                Merkezi No:31/5, 37150 Kastamonu</span>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <!-- Saatler -->
+                        <div class="w-full">
+                            <h4 class="font-display font-bold text-lg text-white mb-6 uppercase tracking-wider">Saatler
+                            </h4>
+                            <div class="bg-zinc-900/50 border border-zinc-800 rounded-xl p-5">
+                                <div class="flex items-center gap-3 mb-3 pb-3 border-b border-zinc-800">
+                                    <i class="far fa-clock text-primary"></i>
+                                    <span class="text-zinc-300 font-medium">Her Gün Açığız</span>
+                                </div>
+                                <div class="flex justify-between text-sm">
+                                    <span class="text-zinc-500">Pzt - Pzr</span>
+                                    <span class="text-white font-bold">08:00 - 20:00</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Footer Info Panel -->
+                    <div class="md:col-span-12 lg:col-span-3 mt-4 md:mt-0">
+                        <div
+                            class="bg-primary/10 border border-primary/20 rounded-2xl p-6 h-full flex flex-col justify-center">
+                            <h4 class="font-display font-bold text-white mb-2">Hemen Teklif Alın</h4>
+                            <p class="text-zinc-400 text-sm mb-4">İşletmenizin reklam ihtiyaçları için ücretsiz keşif
+                                fırsatını kaçırmayın.</p>
+                            <a href="tel:903662200234"
+                                class="text-center bg-primary text-zinc-950 font-bold py-3 rounded-lg hover:bg-white transition-colors">
+                                Keşif İste
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mt-16 pt-8 border-t border-zinc-800 text-center">
+                    <p class="text-zinc-500 text-xs font-medium mb-4 md:mb-0">© 2026 Artı Reklam Kastamonu. Tüm Hakları
+                        Saklıdır.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 🌟 FLOATING WHATSAPP -->
+    <a href="https://wa.me/903662200234?text=Merhaba,%20firmanızdan%20reklam%20teklifi%20almak%20istiyorum."
+        target="_blank"
+        class="fixed right-4 bottom-24 md:bottom-6 z-40 bg-[#25D366] text-white w-[60px] h-[60px] rounded-full flex items-center justify-center text-3xl shadow-[0_4px_20px_rgba(37,211,102,0.4)] pulse-ring hover:scale-110 transition-transform">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- 🌟 MOBILE BOTTOM APP BAR (Sadece mobilde görünür) -->
+    <div class="md:hidden glass-bottom fixed bottom-0 left-0 w-full z-50 pb-safe shadow-[0_-10px_30px_rgba(0,0,0,0.8)]">
+        <div class="flex justify-around items-center h-[72px] px-2 relative">
+            <a href="#hero"
+                class="flex flex-col items-center justify-center w-full text-zinc-500 hover:text-primary transition-colors">
+                <i class="fas fa-home text-xl mb-1 mt-1"></i>
+                <span class="text-[10px] font-bold tracking-wider">AJANS</span>
+            </a>
+            <a href="#hizmetler"
+                class="flex flex-col items-center justify-center w-full text-zinc-500 hover:text-primary transition-colors pr-2">
+                <i class="fas fa-th-large text-xl mb-1 mt-1"></i>
+                <span class="text-[10px] font-bold tracking-wider">HİZMET</span>
+            </a>
+
+            <!-- Magic Call Button (Pop-up) -->
+            <a href="tel:903662200234"
+                class="absolute left-1/2 -top-6 -translate-x-1/2 flex flex-col items-center justify-center z-50 group">
+                <div
+                    class="w-16 h-16 rounded-2xl bg-primary text-zinc-950 flex items-center justify-center text-2xl shadow-[0_10px_25px_rgba(245,158,11,0.4)] border-[3px] border-zinc-950 group-active:scale-95 transition-transform rotate-45">
+                    <i class="fas fa-phone-alt -rotate-45"></i>
+                </div>
+            </a>
+            <div class="w-16 shrink-0"></div> <!-- Spacer for center element -->
+
+            <a href="#farkimiz"
+                class="flex flex-col items-center justify-center w-full text-zinc-500 hover:text-primary transition-colors pl-2">
+                <i class="fas fa-gem text-xl mb-1 mt-1"></i>
+                <span class="text-[10px] font-bold tracking-wider">KALİTE</span>
+            </a>
+            <a href="https://wa.me/903662200234?text=Merhaba" target="_blank"
+                class="flex flex-col items-center justify-center w-full text-zinc-500 hover:text-[#25D366] active:text-[#25D366] transition-colors">
+                <i class="fab fa-whatsapp text-xl mb-1 mt-1"></i>
+                <span class="text-[10px] font-bold tracking-wider">DESTEK</span>
+            </a>
+        </div>
+    </div>
+
+    <!-- 🌟 JAVASCRIPT ANIMASYONLARI -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const observerOptions = { root: null, rootMargin: '0px', threshold: 0.15 };
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('is-visible');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, observerOptions);
+
+            document.querySelectorAll('.fade-in, .scale-in').forEach((el) => {
+                observer.observe(el);
+            });
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,634 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CGN GARAGE | Profesyonel Oto Servis Kastamonu</title>
+    <meta name="description"
+        content="CGN Garage — Kastamonu'da profesyonel araba bakım, onarım ve modifiye hizmeti. 0532 177 06 37">
+    <meta name="theme-color" content="#1a1a2e">
+    <meta property="og:title" content="CGN GARAGE — Profesyonel Oto Servis Kastamonu">
+    <meta property="og:description" content="Kastamonu'da oto bakım, onarım ve modifiye. 0532 177 06 37">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="tr_TR">
+    <meta name="twitter:card" content="summary_large_image">
+    <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"AutoRepair","name":"CGN GARAGE","description":"Kastamonu'da profesyonel oto servis ve garaj hizmeti.","address":{"@type":"PostalAddress","streetAddress":"Kuzeykent Mah. Miralay Halitbey Cd.","addressLocality":"Kastamonu","postalCode":"37100","addressCountry":"TR"},"telephone":"+905321770637","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],"opens":"10:00","closes":"23:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Sunday","opens":"09:00","closes":"17:00"}]}
+  </script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>tailwind.config = { theme: { extend: { colors: { primary: "#4f46e5", dark: "#1a1a2e", darker: "#0f0f1a" }, fontFamily: { sans: ['Inter', 'system-ui', '-apple-system', 'sans-serif'] } } } }</script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+        integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box
+        }
+
+        html {
+            scroll-behavior: smooth
+        }
+
+        body {
+            font-family: 'Inter', system-ui, sans-serif;
+            overflow-x: hidden;
+            background: #0f0f1a
+        }
+
+        .navbar-glass {
+            background: rgba(15, 15, 26, .88);
+            backdrop-filter: blur(18px);
+            -webkit-backdrop-filter: blur(18px);
+            border-bottom: 1px solid rgba(79, 70, 229, .15)
+        }
+
+        .navbar-glass.scrolled {
+            box-shadow: 0 4px 30px rgba(0, 0, 0, .3)
+        }
+
+        .blob {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(80px);
+            opacity: .12;
+            animation: blobFloat 8s ease-in-out infinite alternate
+        }
+
+        @keyframes blobFloat {
+            0% {
+                transform: translate(0, 0) scale(1)
+            }
+
+            100% {
+                transform: translate(30px, -30px) scale(1.12)
+            }
+        }
+
+        .service-card {
+            transition: transform .35s cubic-bezier(.4, 0, .2, 1), box-shadow .35s cubic-bezier(.4, 0, .2, 1)
+        }
+
+        .service-card:hover {
+            transform: translateY(-8px) scale(1.03);
+            box-shadow: 0 25px 60px -12px rgba(79, 70, 229, .2)
+        }
+
+        .gallery-item {
+            overflow: hidden;
+            border-radius: 1rem
+        }
+
+        .gallery-item img {
+            transition: transform .5s cubic-bezier(.4, 0, .2, 1)
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.1)
+        }
+
+        .whatsapp-pulse {
+            animation: pulse-wp 2s cubic-bezier(.4, 0, .6, 1) infinite
+        }
+
+        @keyframes pulse-wp {
+
+            0%,
+            100% {
+                box-shadow: 0 0 0 0 rgba(37, 211, 102, .5)
+            }
+
+            50% {
+                box-shadow: 0 0 0 18px rgba(37, 211, 102, 0)
+            }
+        }
+
+        .mobile-bar {
+            transform: translateY(100%);
+            transition: transform .4s cubic-bezier(.4, 0, .2, 1)
+        }
+
+        .mobile-bar.visible {
+            transform: translateY(0)
+        }
+
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity .7s ease, transform .7s ease
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0)
+        }
+
+        .stat-badge {
+            transition: transform .3s ease
+        }
+
+        .stat-badge:hover {
+            transform: scale(1.08)
+        }
+
+        a:focus-visible,
+        button:focus-visible {
+            outline: 3px solid #4f46e5;
+            outline-offset: 3px;
+            border-radius: 4px
+        }
+
+        .nav-link {
+            position: relative
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: #4f46e5;
+            transition: width .3s ease
+        }
+
+        .nav-link:hover::after {
+            width: 100%
+        }
+
+        .section-divider {
+            height: 4px;
+            width: 60px;
+            border-radius: 999px;
+            background: linear-gradient(90deg, #4f46e5, #7c3aed)
+        }
+
+        .logo-glow {
+            filter: drop-shadow(0 0 8px rgba(79, 70, 229, .5)) drop-shadow(0 0 20px rgba(79, 70, 229, .25));
+            transition: filter .3s ease, transform .3s ease
+        }
+
+        .group:hover .logo-glow {
+            filter: drop-shadow(0 0 12px rgba(79, 70, 229, .7)) drop-shadow(0 0 30px rgba(79, 70, 229, .4));
+            transform: scale(1.08)
+        }
+    </style>
+</head>
+
+<body class="bg-darker text-gray-300 antialiased">
+
+    <!-- NAVBAR -->
+    <nav id="navbar" class="navbar-glass fixed top-0 left-0 w-full z-50 transition-all duration-300"
+        aria-label="Ana Navigasyon">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16 lg:h-20">
+                <a href="#" class="flex items-center gap-3 group" aria-label="Ana Sayfa">
+                    <svg class="logo-glow w-10 h-10 lg:w-12 lg:h-12" viewBox="0 0 48 48" fill="none">
+                        <defs>
+                            <linearGradient id="logoGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" style="stop-color:#4f46e5" />
+                                <stop offset="100%" style="stop-color:#7c3aed" />
+                            </linearGradient>
+                        </defs>
+                        <circle cx="24" cy="24" r="23" fill="url(#logoGrad)" stroke="rgba(255,255,255,0.15)"
+                            stroke-width="1" />
+                        <g transform="translate(12,14)" fill="white">
+                            <path
+                                d="M12 0C5.4 0 0 3.6 0 8v4c0 1.1.9 2 2 2h1v6a2 2 0 002 2h14a2 2 0 002-2v-6h1a2 2 0 002-2V8c0-4.4-5.4-8-12-8zM5 16a2 2 0 110-4 2 2 0 010 4zm14 0a2 2 0 110-4 2 2 0 010 4zM21 10H3V8c0-3.3 4-6 9-6s9 2.7 9 6v2z" />
+                        </g>
+                    </svg>
+                    <div class="flex flex-col">
+                        <span class="text-sm lg:text-base font-black text-white tracking-wider leading-tight">CGN</span>
+                        <span
+                            class="text-[10px] lg:text-xs text-primary font-semibold tracking-widest uppercase">Garage</span>
+                    </div>
+                </a>
+                <div class="hidden lg:flex items-center gap-8">
+                    <a href="#hizmetler"
+                        class="nav-link text-sm font-medium text-gray-400 hover:text-primary transition-colors">Hizmetler</a>
+                    <a href="#hakkimizda"
+                        class="nav-link text-sm font-medium text-gray-400 hover:text-primary transition-colors">Hakkımızda</a>
+                    <a href="#galeri"
+                        class="nav-link text-sm font-medium text-gray-400 hover:text-primary transition-colors">Galeri</a>
+                    <a href="#saatler"
+                        class="nav-link text-sm font-medium text-gray-400 hover:text-primary transition-colors">Saatler</a>
+                    <a href="#iletisim"
+                        class="nav-link text-sm font-medium text-gray-400 hover:text-primary transition-colors">İletişim</a>
+                    <a href="tel:905321770637"
+                        class="inline-flex items-center gap-2 bg-primary text-white px-5 py-2.5 rounded-full text-sm font-semibold shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300"><i
+                            class="fas fa-phone-alt text-xs"></i> Randevu Al</a>
+                </div>
+                <button id="menuToggle"
+                    class="lg:hidden flex flex-col items-center justify-center w-10 h-10 rounded-lg hover:bg-white/5 transition-colors"
+                    aria-label="Menüyü Aç/Kapat" aria-expanded="false">
+                    <span class="hamburger-line block w-5 h-0.5 bg-gray-300 transition-all duration-300 mb-1"></span>
+                    <span class="hamburger-line block w-5 h-0.5 bg-gray-300 transition-all duration-300 mb-1"></span>
+                    <span class="hamburger-line block w-5 h-0.5 bg-gray-300 transition-all duration-300"></span>
+                </button>
+            </div>
+        </div>
+        <div id="mobileMenu"
+            class="lg:hidden max-h-0 overflow-hidden transition-all duration-500 ease-in-out bg-dark/95 backdrop-blur-xl">
+            <div class="px-6 py-4 space-y-1 border-t border-white/5">
+                <a href="#hizmetler"
+                    class="block py-3 text-gray-300 font-medium hover:text-primary hover:pl-2 transition-all">Hizmetler</a>
+                <a href="#hakkimizda"
+                    class="block py-3 text-gray-300 font-medium hover:text-primary hover:pl-2 transition-all">Hakkımızda</a>
+                <a href="#galeri"
+                    class="block py-3 text-gray-300 font-medium hover:text-primary hover:pl-2 transition-all">Galeri</a>
+                <a href="#saatler"
+                    class="block py-3 text-gray-300 font-medium hover:text-primary hover:pl-2 transition-all">Saatler</a>
+                <a href="#iletisim"
+                    class="block py-3 text-gray-300 font-medium hover:text-primary hover:pl-2 transition-all">İletişim</a>
+                <div class="pt-3 flex flex-col gap-2">
+                    <a href="tel:905321770637"
+                        class="flex items-center justify-center gap-2 bg-primary text-white py-3 rounded-xl font-semibold shadow-md"><i
+                            class="fas fa-phone-alt"></i> Randevu Al</a>
+                    <a href="https://wa.me/905321770637" target="_blank" rel="noopener noreferrer"
+                        class="flex items-center justify-center gap-2 bg-green-500 text-white py-3 rounded-xl font-semibold shadow-md"><i
+                            class="fab fa-whatsapp text-lg"></i> WhatsApp'tan Yaz</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- HERO -->
+    <section id="hero" class="relative min-h-screen flex items-center overflow-hidden bg-darker">
+        <div class="blob w-72 h-72 bg-primary top-20 -left-20"></div>
+        <div class="blob w-96 h-96 bg-violet-600 bottom-10 right-0" style="animation-delay:3s"></div>
+        <div class="blob w-48 h-48 bg-primary top-1/2 left-1/3" style="animation-delay:5s;opacity:.08"></div>
+        <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-32 pb-20 lg:pt-36 lg:pb-16 w-full">
+            <div class="max-w-3xl">
+                <div
+                    class="inline-flex items-center gap-2 bg-primary/10 text-primary px-4 py-2 rounded-full text-sm font-semibold mb-6 border border-primary/20">
+                    <i class="fas fa-wrench text-xs"></i> Profesyonel Oto Servis
+                </div>
+                <h1
+                    class="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-black text-white leading-tight tracking-tight mb-6">
+                    Aracınız <span class="text-primary">Emin</span> Ellerde
+                </h1>
+                <p class="text-lg sm:text-xl text-gray-400 leading-relaxed mb-10 max-w-2xl">
+                    CGN Garage, Kastamonu Kuzeykent'te profesyonel oto bakım, onarım ve modifiye hizmetleri sunuyor.
+                    Aracınıza hak ettiği özeni gösteriyoruz.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4">
+                    <a href="tel:905321770637"
+                        class="inline-flex items-center justify-center gap-3 bg-primary text-white px-8 py-4 rounded-2xl text-base font-bold shadow-xl shadow-primary/30 hover:shadow-2xl hover:scale-105 transition-all duration-300"><i
+                            class="fas fa-phone-alt"></i> Randevu Al</a>
+                    <a href="https://wa.me/905321770637" target="_blank" rel="noopener noreferrer"
+                        class="inline-flex items-center justify-center gap-3 bg-green-500 text-white px-8 py-4 rounded-2xl text-base font-bold shadow-xl hover:shadow-2xl hover:scale-105 transition-all duration-300"><i
+                            class="fab fa-whatsapp text-xl"></i> WhatsApp</a>
+                </div>
+                <div class="mt-10 flex flex-wrap items-center gap-4 sm:gap-6 text-sm text-gray-500">
+                    <div class="flex items-center gap-2 bg-white/5 px-3 py-2 rounded-full border border-white/10"><i
+                            class="fas fa-wrench text-primary"></i><span>Bakım & Onarım</span></div>
+                    <div class="flex items-center gap-2 bg-white/5 px-3 py-2 rounded-full border border-white/10"><i
+                            class="fas fa-car text-primary"></i><span>Modifiye</span></div>
+                    <div class="flex items-center gap-2 bg-white/5 px-3 py-2 rounded-full border border-white/10"><i
+                            class="fas fa-clock text-primary"></i><span>7 Gün Açık</span></div>
+                </div>
+            </div>
+        </div>
+        <div
+            class="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-gray-600 animate-bounce">
+            <span class="text-xs font-medium tracking-widest uppercase">Hizmetlerimiz</span><i
+                class="fas fa-chevron-down text-sm"></i>
+        </div>
+    </section>
+
+    <!-- HİZMETLER -->
+    <section id="hizmetler" class="py-20 lg:py-28 bg-dark fade-in">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <span
+                    class="inline-block text-primary text-sm font-bold tracking-widest uppercase mb-3">Hizmetlerimiz</span>
+                <h2 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white tracking-tight mb-4">Uzman Servis
+                </h2>
+                <div class="section-divider mx-auto mb-6"></div>
+                <p class="text-gray-400 max-w-2xl mx-auto text-lg">Aracınız için ihtiyaç duyduğunuz her türlü hizmet tek
+                    çatı altında.</p>
+            </div>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
+                <div class="service-card bg-darker rounded-2xl p-6 lg:p-8 shadow-xl border border-white/5">
+                    <div class="w-14 h-14 bg-primary/10 text-primary rounded-2xl flex items-center justify-center mb-5">
+                        <i class="fas fa-oil-can text-2xl"></i></div>
+                    <h3 class="text-lg font-bold text-white mb-2">Yağ & Bakım</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">Motor yağı değişimi, filtre bakımı ve periyodik
+                        bakım hizmeti.</p>
+                </div>
+                <div class="service-card bg-darker rounded-2xl p-6 lg:p-8 shadow-xl border border-white/5">
+                    <div class="w-14 h-14 bg-primary/10 text-primary rounded-2xl flex items-center justify-center mb-5">
+                        <i class="fas fa-gears text-2xl"></i></div>
+                    <h3 class="text-lg font-bold text-white mb-2">Motor Onarım</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">Motor arıza tespiti, tamir ve revizyon işlemleri.
+                    </p>
+                </div>
+                <div class="service-card bg-darker rounded-2xl p-6 lg:p-8 shadow-xl border border-white/5">
+                    <div class="w-14 h-14 bg-primary/10 text-primary rounded-2xl flex items-center justify-center mb-5">
+                        <i class="fas fa-car-side text-2xl"></i></div>
+                    <h3 class="text-lg font-bold text-white mb-2">Modifiye</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">Araç modifikasyonu, performans artırma ve aksesuar
+                        montajı.</p>
+                </div>
+                <div class="service-card bg-darker rounded-2xl p-6 lg:p-8 shadow-xl border border-white/5">
+                    <div class="w-14 h-14 bg-primary/10 text-primary rounded-2xl flex items-center justify-center mb-5">
+                        <i class="fas fa-spray-can text-2xl"></i></div>
+                    <h3 class="text-lg font-bold text-white mb-2">Boya & Kaporta</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">Profesyonel boya, kaporta düzeltme ve çizik
+                        giderme.</p>
+                </div>
+                <div class="service-card bg-darker rounded-2xl p-6 lg:p-8 shadow-xl border border-white/5">
+                    <div class="w-14 h-14 bg-primary/10 text-primary rounded-2xl flex items-center justify-center mb-5">
+                        <i class="fas fa-microchip text-2xl"></i></div>
+                    <h3 class="text-lg font-bold text-white mb-2">Elektrik & Elektronik</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">Araç elektrik arıza tespiti ve elektronik onarım.
+                    </p>
+                </div>
+                <div class="service-card bg-darker rounded-2xl p-6 lg:p-8 shadow-xl border border-white/5">
+                    <div class="w-14 h-14 bg-primary/10 text-primary rounded-2xl flex items-center justify-center mb-5">
+                        <i class="fas fa-tire text-2xl"></i></div>
+                    <h3 class="text-lg font-bold text-white mb-2">Fren & Süspansiyon</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">Fren balata, disk değişimi ve süspansiyon bakımı.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- HAKKIMIZDA -->
+    <section id="hakkimizda" class="py-20 lg:py-28 bg-darker fade-in">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+                <div>
+                    <span
+                        class="inline-block text-primary text-sm font-bold tracking-widest uppercase mb-3">Hakkımızda</span>
+                    <h2 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white tracking-tight mb-6">CGN <span
+                            class="text-primary">Garage</span></h2>
+                    <div class="section-divider mb-8"></div>
+                    <p class="text-gray-400 text-lg leading-relaxed mb-6">
+                        CGN Garage, Kastamonu Kuzeykent'te araç sahiplerine profesyonel bakım, onarım ve modifiye
+                        hizmeti sunan güvenilir bir oto servistir. Her marka ve model araç için uzman kadromuzla
+                        yanınızdayız.
+                    </p>
+                    <p class="text-gray-500 text-base leading-relaxed mb-8">
+                        Kaliteli yedek parça kullanımı, şeffaf fiyat politikası ve müşteri memnuniyeti odaklı hizmet
+                        anlayışımızla aracınıza en iyi bakımı sağlıyoruz. Haftanın 7 günü hizmetinizdeyiz.
+                    </p>
+                    <a href="#iletisim"
+                        class="inline-flex items-center gap-2 text-primary font-bold hover:gap-4 transition-all duration-300">Randevu
+                        Alın <i class="fas fa-arrow-right"></i></a>
+                </div>
+                <div class="grid grid-cols-2 gap-4 lg:gap-6">
+                    <div class="stat-badge bg-dark rounded-2xl p-6 lg:p-8 text-center border border-white/5">
+                        <div class="text-3xl lg:text-4xl font-black text-primary mb-1"><i class="fas fa-wrench"></i>
+                        </div>
+                        <div class="text-sm text-gray-400 font-medium">Uzman Kadro</div>
+                    </div>
+                    <div class="stat-badge bg-dark rounded-2xl p-6 lg:p-8 text-center border border-white/5">
+                        <div class="text-3xl lg:text-4xl font-black text-primary mb-1">7/7</div>
+                        <div class="text-sm text-gray-400 font-medium">Her Gün Açık</div>
+                    </div>
+                    <div class="stat-badge bg-dark rounded-2xl p-6 lg:p-8 text-center border border-white/5">
+                        <div class="text-3xl lg:text-4xl font-black text-primary mb-1"><i class="fas fa-car"></i></div>
+                        <div class="text-sm text-gray-400 font-medium">Tüm Markalar</div>
+                    </div>
+                    <div class="stat-badge bg-dark rounded-2xl p-6 lg:p-8 text-center border border-white/5">
+                        <div class="text-3xl lg:text-4xl font-black text-primary mb-1"><i
+                                class="fas fa-shield-halved"></i></div>
+                        <div class="text-sm text-gray-400 font-medium">Garantili İş</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- GALERİ -->
+    <section id="galeri" class="py-20 lg:py-28 bg-dark fade-in">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <span class="inline-block text-primary text-sm font-bold tracking-widest uppercase mb-3">Galeri</span>
+                <h2 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white tracking-tight mb-4">Garajımızdan
+                    Kareler</h2>
+                <div class="section-divider mx-auto mb-6"></div>
+            </div>
+            <div class="grid grid-cols-2 gap-4 lg:gap-6">
+                <div class="gallery-item aspect-square shadow-lg"><img
+                        src="https://lh3.googleusercontent.com/p/AF1QipNwvCwkE1DFYAygOg6UTdlSBOX2qitfNy44GeCs=s800"
+                        alt="CGN Garage çalışma 1" class="w-full h-full object-cover" loading="lazy"></div>
+                <div class="gallery-item aspect-square shadow-lg"><img
+                        src="https://lh3.googleusercontent.com/p/AF1QipMQ82WeYAMtRP3vtuoOmoXoVItipxWR62d0YnxF=s800"
+                        alt="CGN Garage çalışma 2" class="w-full h-full object-cover" loading="lazy"></div>
+                <div class="gallery-item aspect-square shadow-lg"><img
+                        src="https://lh3.googleusercontent.com/gps-cs-s/AHVAwep3aX4NEuiJRnI_Jsa2NDlUvuFhpsZLsWQPcFAO9y9Dvn3yfS2MQK1174lupYEW4f8-Xp3GQmNTBLZ3n1f8zQHBy4NKdjqFyY0Xj8JTKlmgvRxw3VDXQ29ISRsHZOx3DqEqNKVAKeE6VmNh=s800"
+                        alt="CGN Garage çalışma 3" class="w-full h-full object-cover" loading="lazy"></div>
+                <div class="gallery-item aspect-square shadow-lg"><img
+                        src="https://lh3.googleusercontent.com/p/AF1QipPt2Gx7fWw_wV5_VwStW_rOTTm6gkUEKmXD77ct=s800"
+                        alt="CGN Garage çalışma 4" class="w-full h-full object-cover" loading="lazy"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ÇALIŞMA SAATLERİ -->
+    <section id="saatler" class="py-20 lg:py-28 bg-darker fade-in">
+        <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <span class="inline-block text-primary text-sm font-bold tracking-widest uppercase mb-3">Çalışma
+                    Saatleri</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight mb-4">7 Gün Hizmetinizdeyiz
+                </h2>
+                <div class="section-divider mx-auto mb-6"></div>
+            </div>
+            <div class="bg-dark rounded-3xl shadow-xl overflow-hidden border border-white/5">
+                <div class="divide-y divide-white/5">
+                    <div class="flex items-center justify-between px-6 py-4 hover:bg-white/5 transition-colors"><span
+                            class="font-medium text-gray-300">Pazartesi</span><span
+                            class="text-primary font-semibold text-sm bg-primary/10 px-3 py-1 rounded-full">10:00 —
+                            23:00</span></div>
+                    <div class="flex items-center justify-between px-6 py-4 hover:bg-white/5 transition-colors"><span
+                            class="font-medium text-gray-300">Salı</span><span
+                            class="text-primary font-semibold text-sm bg-primary/10 px-3 py-1 rounded-full">10:00 —
+                            23:00</span></div>
+                    <div class="flex items-center justify-between px-6 py-4 hover:bg-white/5 transition-colors"><span
+                            class="font-medium text-gray-300">Çarşamba</span><span
+                            class="text-primary font-semibold text-sm bg-primary/10 px-3 py-1 rounded-full">10:00 —
+                            23:00</span></div>
+                    <div class="flex items-center justify-between px-6 py-4 hover:bg-white/5 transition-colors"><span
+                            class="font-medium text-gray-300">Perşembe</span><span
+                            class="text-primary font-semibold text-sm bg-primary/10 px-3 py-1 rounded-full">10:00 —
+                            23:00</span></div>
+                    <div class="flex items-center justify-between px-6 py-4 hover:bg-white/5 transition-colors"><span
+                            class="font-medium text-gray-300">Cuma</span><span
+                            class="text-primary font-semibold text-sm bg-primary/10 px-3 py-1 rounded-full">10:00 —
+                            23:00</span></div>
+                    <div class="flex items-center justify-between px-6 py-4 hover:bg-white/5 transition-colors"><span
+                            class="font-medium text-gray-300">Cumartesi</span><span
+                            class="text-primary font-semibold text-sm bg-primary/10 px-3 py-1 rounded-full">10:00 —
+                            23:00</span></div>
+                    <div class="flex items-center justify-between px-6 py-4 hover:bg-white/5 transition-colors"><span
+                            class="font-medium text-gray-300">Pazar</span><span
+                            class="text-amber-400 font-semibold text-sm bg-amber-500/10 px-3 py-1 rounded-full">09:00 —
+                            17:00</span></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- HARİTA -->
+    <section id="harita" class="fade-in">
+        <div class="w-full h-80 lg:h-96 bg-dark relative overflow-hidden">
+            <iframe src="https://maps.google.com/maps?q=41.4207711,33.7725754&t=&z=16&ie=UTF8&iwloc=&output=embed"
+                width="100%" height="100%" style="border:0" allowfullscreen loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade" title="CGN Garage Harita"></iframe>
+        </div>
+    </section>
+
+    <!-- İLETİŞİM -->
+    <section id="iletisim" class="py-20 lg:py-28 bg-dark fade-in">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <span class="inline-block text-primary text-sm font-bold tracking-widest uppercase mb-3">İletişim</span>
+                <h2 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white tracking-tight mb-4">Randevu &
+                    İletişim</h2>
+                <div class="section-divider mx-auto mb-6"></div>
+            </div>
+            <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-4xl mx-auto">
+                <a href="tel:905321770637"
+                    class="group flex flex-col items-center text-center bg-darker hover:bg-primary/5 rounded-2xl p-8 transition-all duration-300 border border-white/5 hover:border-primary/20">
+                    <div
+                        class="w-14 h-14 bg-primary/10 text-primary rounded-2xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+                        <i class="fas fa-phone-alt text-xl"></i></div>
+                    <h3 class="font-bold text-white mb-1">Telefon</h3>
+                    <p class="text-gray-400 text-sm">0532 177 06 37</p>
+                </a>
+                <a href="https://wa.me/905321770637" target="_blank" rel="noopener noreferrer"
+                    class="group flex flex-col items-center text-center bg-darker hover:bg-green-500/5 rounded-2xl p-8 transition-all duration-300 border border-white/5 hover:border-green-500/20">
+                    <div
+                        class="w-14 h-14 bg-green-500/10 text-green-500 rounded-2xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+                        <i class="fab fa-whatsapp text-2xl"></i></div>
+                    <h3 class="font-bold text-white mb-1">WhatsApp</h3>
+                    <p class="text-gray-400 text-sm">Mesaj Gönderin</p>
+                </a>
+                <a href="https://maps.google.com/?q=Kuzeykent+Miralay+Halitbey+Cd+Kastamonu" target="_blank"
+                    rel="noopener noreferrer"
+                    class="group flex flex-col items-center text-center bg-darker hover:bg-primary/5 rounded-2xl p-8 transition-all duration-300 border border-white/5 hover:border-primary/20 sm:col-span-2 lg:col-span-1">
+                    <div
+                        class="w-14 h-14 bg-primary/10 text-primary rounded-2xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+                        <i class="fas fa-map-marker-alt text-xl"></i></div>
+                    <h3 class="font-bold text-white mb-1">Adres</h3>
+                    <p class="text-gray-400 text-sm">Kuzeykent Mah. Miralay Halitbey Cd.</p>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- WHATSAPP FLOATING -->
+    <a href="https://wa.me/905321770637" target="_blank" rel="noopener noreferrer"
+        class="whatsapp-pulse fixed bottom-20 sm:bottom-6 right-4 sm:right-6 z-40 w-14 h-14 lg:w-16 lg:h-16 bg-green-500 text-white rounded-full flex items-center justify-center shadow-2xl hover:scale-110 hover:bg-green-600 transition-all duration-300"
+        aria-label="WhatsApp ile İletişime Geç"><i class="fab fa-whatsapp text-2xl lg:text-3xl"></i></a>
+
+    <!-- FOOTER -->
+    <footer class="bg-black text-white pt-16 pb-24 lg:pb-8 border-t border-white/5">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-12 mb-12">
+                <div>
+                    <div class="flex items-center gap-3 mb-4">
+                        <svg class="w-10 h-10" viewBox="0 0 48 48" fill="none">
+                            <circle cx="24" cy="24" r="23" fill="#4f46e5" />
+                            <g transform="translate(12,14)" fill="white">
+                                <path
+                                    d="M12 0C5.4 0 0 3.6 0 8v4c0 1.1.9 2 2 2h1v6a2 2 0 002 2h14a2 2 0 002-2v-6h1a2 2 0 002-2V8c0-4.4-5.4-8-12-8zM5 16a2 2 0 110-4 2 2 0 010 4zm14 0a2 2 0 110-4 2 2 0 010 4zM21 10H3V8c0-3.3 4-6 9-6s9 2.7 9 6v2z" />
+                            </g>
+                        </svg>
+                        <span class="text-lg font-black">CGN GARAGE</span>
+                    </div>
+                    <p class="text-gray-500 text-sm leading-relaxed">Kastamonu'da profesyonel oto servis ve garaj.</p>
+                </div>
+                <div>
+                    <h3 class="text-sm font-bold uppercase tracking-widest text-gray-500 mb-4">Hızlı Linkler</h3>
+                    <ul class="space-y-3">
+                        <li><a href="#hizmetler"
+                                class="text-gray-400 hover:text-white transition-colors text-sm">Hizmetler</a></li>
+                        <li><a href="#hakkimizda"
+                                class="text-gray-400 hover:text-white transition-colors text-sm">Hakkımızda</a></li>
+                        <li><a href="#galeri"
+                                class="text-gray-400 hover:text-white transition-colors text-sm">Galeri</a></li>
+                        <li><a href="#iletisim"
+                                class="text-gray-400 hover:text-white transition-colors text-sm">İletişim</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-sm font-bold uppercase tracking-widest text-gray-500 mb-4">İletişim</h3>
+                    <ul class="space-y-3">
+                        <li class="flex items-center gap-3 text-gray-400 text-sm"><i
+                                class="fas fa-phone-alt text-primary"></i><a href="tel:905321770637"
+                                class="hover:text-white transition-colors">0532 177 06 37</a></li>
+                        <li class="flex items-start gap-3 text-gray-400 text-sm"><i
+                                class="fas fa-map-marker-alt text-primary mt-0.5"></i><span>Kuzeykent Mah. Miralay
+                                Halitbey Cd. Kastamonu</span></li>
+                        <li class="flex items-center gap-3 text-gray-400 text-sm"><i
+                                class="fas fa-clock text-primary"></i><span>7 Gün Açık</span></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-white/5 pt-8 text-center">
+                <p class="text-gray-600 text-xs">&copy; 2026 CGN Garage. Tüm hakları saklıdır.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- MOBİL BAR -->
+    <div id="mobileBottomBar"
+        class="mobile-bar fixed bottom-0 left-0 w-full z-50 lg:hidden bg-dark/95 backdrop-blur-xl border-t border-white/10 shadow-2xl">
+        <div class="flex">
+            <a href="tel:905321770637"
+                class="flex-1 flex items-center justify-center gap-2 py-4 bg-primary text-white font-bold text-sm active:scale-95 transition-transform"><i
+                    class="fas fa-phone-alt"></i> Randevu Al</a>
+            <a href="https://wa.me/905321770637" target="_blank" rel="noopener noreferrer"
+                class="flex-1 flex items-center justify-center gap-2 py-4 bg-green-500 text-white font-bold text-sm active:scale-95 transition-transform"><i
+                    class="fab fa-whatsapp text-lg"></i> WhatsApp</a>
+        </div>
+    </div>
+
+    <script>
+            (function () {
+                'use strict';
+                var navbar = document.getElementById('navbar');
+                window.addEventListener('scroll', function () { navbar.classList.toggle('scrolled', window.pageYOffset > 50) }, { passive: true });
+                var menuToggle = document.getElementById('menuToggle'), mobileMenu = document.getElementById('mobileMenu'), isMenuOpen = false;
+                menuToggle.addEventListener('click', function () {
+                    isMenuOpen = !isMenuOpen; menuToggle.setAttribute('aria-expanded', isMenuOpen);
+                    mobileMenu.style.maxHeight = isMenuOpen ? mobileMenu.scrollHeight + 'px' : '0';
+                    var lines = menuToggle.querySelectorAll('.hamburger-line');
+                    if (isMenuOpen) { lines[0].style.transform = 'translateY(6px) rotate(45deg)'; lines[1].style.opacity = '0'; lines[2].style.transform = 'translateY(-6px) rotate(-45deg)' }
+                    else { lines[0].style.transform = 'none'; lines[1].style.opacity = '1'; lines[2].style.transform = 'none' }
+                });
+                mobileMenu.querySelectorAll('a[href^="#"]').forEach(function (link) {
+                    link.addEventListener('click', function () {
+                        isMenuOpen = false; mobileMenu.style.maxHeight = '0'; menuToggle.setAttribute('aria-expanded', 'false');
+                        var lines = menuToggle.querySelectorAll('.hamburger-line'); lines[0].style.transform = 'none'; lines[1].style.opacity = '1'; lines[2].style.transform = 'none'
+                    });
+                });
+                var mobileBar = document.getElementById('mobileBottomBar');
+                window.addEventListener('scroll', function () { mobileBar.classList.toggle('visible', window.pageYOffset > 300) }, { passive: true });
+                if ('IntersectionObserver' in window) {
+                    var fadeObserver = new IntersectionObserver(function (entries) { entries.forEach(function (entry) { if (entry.isIntersecting) { entry.target.classList.add('visible'); fadeObserver.unobserve(entry.target) } }) }, { threshold: .1, rootMargin: '0px 0px -50px 0px' });
+                    document.querySelectorAll('.fade-in').forEach(function (el) { fadeObserver.observe(el) });
+                } else { document.querySelectorAll('.fade-in').forEach(function (el) { el.classList.add('visible') }) }
+                document.querySelectorAll('a[href^="#"]').forEach(function (anchor) {
+                    anchor.addEventListener('click', function (e) {
+                        var target = document.querySelector(this.getAttribute('href'));
+                        if (target) { e.preventDefault(); var offset = navbar.offsetHeight + 20; window.scrollTo({ top: target.getBoundingClientRect().top + window.pageYOffset - offset, behavior: 'smooth' }) }
+                    });
+                });
+            })();
+    </script>
+</body>
+
+</html>

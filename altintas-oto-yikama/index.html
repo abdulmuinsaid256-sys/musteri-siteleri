@@ -1,0 +1,710 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Altıntaş Oto Yıkama | 24 Saat Oto Yıkama Kastamonu</title>
+    <meta name="description"
+        content="Altıntaş Oto Yıkama — Kastamonu'da 24 saat profesyonel oto yıkama. İç-dış temizlik, detaylı bakım. 0546 841 03 39">
+    <meta name="theme-color" content="#020c1b">
+    <meta property="og:title" content="Altıntaş Oto Yıkama — 24 Saat Kastamonu">
+    <meta property="og:description" content="24 saat profesyonel oto yıkama hizmeti. 0546 841 03 39">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="tr_TR">
+    <meta name="twitter:card" content="summary_large_image">
+    <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"AutoWash","name":"Altıntaş Oto Yıkama","description":"Kastamonu'da 24 saat profesyonel oto yıkama.","address":{"@type":"PostalAddress","streetAddress":"Mehmet Akif Ersoy, Rauf Denktaş Cd. 56 D:n","addressLocality":"Kastamonu","postalCode":"37200","addressCountry":"TR"},"telephone":"+905468410339","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],"opens":"00:00","closes":"23:59"}]}
+  </script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>tailwind.config = { theme: { extend: { colors: { primary: "#3b82f6", accent: "#60a5fa", dark: "#0a1929", darker: "#020c1b" }, fontFamily: { sans: ['Inter', 'system-ui', '-apple-system', 'sans-serif'] } } } }</script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+        integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box
+        }
+
+        html {
+            scroll-behavior: smooth
+        }
+
+        body {
+            font-family: 'Inter', system-ui, sans-serif;
+            overflow-x: hidden;
+            background: #020c1b
+        }
+
+        .navbar-glass {
+            background: rgba(2, 12, 27, .88);
+            backdrop-filter: blur(18px);
+            -webkit-backdrop-filter: blur(18px);
+            border-bottom: 1px solid rgba(59, 130, 246, .1)
+        }
+
+        .navbar-glass.scrolled {
+            box-shadow: 0 4px 30px rgba(0, 0, 0, .4)
+        }
+
+        .blob {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(80px);
+            opacity: .12;
+            animation: blobFloat 8s ease-in-out infinite alternate
+        }
+
+        @keyframes blobFloat {
+            0% {
+                transform: translate(0, 0) scale(1)
+            }
+
+            100% {
+                transform: translate(30px, -30px) scale(1.12)
+            }
+        }
+
+        .service-card {
+            transition: transform .35s cubic-bezier(.4, 0, .2, 1), box-shadow .35s cubic-bezier(.4, 0, .2, 1)
+        }
+
+        .service-card:hover {
+            transform: translateY(-8px) scale(1.03);
+            box-shadow: 0 25px 60px -12px rgba(59, 130, 246, .25)
+        }
+
+        .gallery-item {
+            overflow: hidden;
+            border-radius: 1rem
+        }
+
+        .gallery-item img {
+            transition: transform .5s cubic-bezier(.4, 0, .2, 1)
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.1)
+        }
+
+        .whatsapp-pulse {
+            animation: pulse-wp 2s cubic-bezier(.4, 0, .6, 1) infinite
+        }
+
+        @keyframes pulse-wp {
+
+            0%,
+            100% {
+                box-shadow: 0 0 0 0 rgba(37, 211, 102, .5)
+            }
+
+            50% {
+                box-shadow: 0 0 0 18px rgba(37, 211, 102, 0)
+            }
+        }
+
+        .mobile-bar {
+            transform: translateY(100%);
+            transition: transform .4s cubic-bezier(.4, 0, .2, 1)
+        }
+
+        .mobile-bar.visible {
+            transform: translateY(0)
+        }
+
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity .7s ease, transform .7s ease
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0)
+        }
+
+        .stat-badge {
+            transition: transform .3s ease
+        }
+
+        .stat-badge:hover {
+            transform: scale(1.08)
+        }
+
+        a:focus-visible,
+        button:focus-visible {
+            outline: 3px solid #3b82f6;
+            outline-offset: 3px;
+            border-radius: 4px
+        }
+
+        .nav-link {
+            position: relative
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: #3b82f6;
+            transition: width .3s ease
+        }
+
+        .nav-link:hover::after {
+            width: 100%
+        }
+
+        .section-divider {
+            height: 4px;
+            width: 60px;
+            border-radius: 999px;
+            background: linear-gradient(90deg, #3b82f6, #60a5fa)
+        }
+
+        .logo-glow {
+            filter: drop-shadow(0 0 8px rgba(59, 130, 246, .5)) drop-shadow(0 0 20px rgba(59, 130, 246, .25));
+            transition: filter .3s ease, transform .3s ease
+        }
+
+        .group:hover .logo-glow {
+            filter: drop-shadow(0 0 12px rgba(59, 130, 246, .7)) drop-shadow(0 0 30px rgba(59, 130, 246, .4));
+            transform: scale(1.08)
+        }
+
+        .water-gradient {
+            background: linear-gradient(135deg, #3b82f6 0%, #60a5fa 50%, #3b82f6 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text
+        }
+
+        .badge-24h {
+            animation: badge24Pulse 3s ease-in-out infinite
+        }
+
+        @keyframes badge24Pulse {
+
+            0%,
+            100% {
+                box-shadow: 0 0 0 0 rgba(59, 130, 246, .3)
+            }
+
+            50% {
+                box-shadow: 0 0 0 10px rgba(59, 130, 246, 0)
+            }
+        }
+
+        .water-drop {
+            animation: waterDrop 4s ease-in-out infinite
+        }
+
+        @keyframes waterDrop {
+
+            0%,
+            100% {
+                transform: translateY(0)
+            }
+
+            50% {
+                transform: translateY(-6px)
+            }
+        }
+
+        .shimmer {
+            position: relative;
+            overflow: hidden
+        }
+
+        .shimmer::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 60%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(59, 130, 246, .08), transparent);
+            animation: shimmer 3s ease-in-out infinite
+        }
+
+        @keyframes shimmer {
+            0% {
+                left: -100%
+            }
+
+            100% {
+                left: 200%
+            }
+        }
+    </style>
+</head>
+
+<body class="bg-darker text-gray-300 antialiased">
+
+    <!-- NAVBAR -->
+    <nav id="navbar" class="navbar-glass fixed top-0 left-0 w-full z-50 transition-all duration-300"
+        aria-label="Ana Navigasyon">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16 lg:h-20">
+                <a href="#" class="flex items-center gap-3 group" aria-label="Ana Sayfa">
+                    <svg class="logo-glow w-10 h-10 lg:w-12 lg:h-12" viewBox="0 0 48 48" fill="none">
+                        <defs>
+                            <linearGradient id="logoGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" style="stop-color:#3b82f6" />
+                                <stop offset="100%" style="stop-color:#60a5fa" />
+                            </linearGradient>
+                        </defs>
+                        <circle cx="24" cy="24" r="23" fill="url(#logoGrad)" stroke="rgba(255,255,255,0.15)"
+                            stroke-width="1" />
+                        <g transform="translate(9,7)" fill="white">
+                            <path d="M15 6c-5 0-9 3.5-9 8 0 7 9 16 9 16s9-9 9-16c0-4.5-4-8-9-8z" opacity=".25" />
+                            <path d="M15 8a3.5 3.5 0 100 7 3.5 3.5 0 000-7z" opacity=".5" />
+                            <path
+                                d="M26 20H4l-1.5-3h3l.8-1.5h5l.8 1.5h3L26 20zM5 21h16a2.5 2.5 0 012.5 2.5v.5a1 1 0 01-1 1h-19a1 1 0 01-1-1v-.5A2.5 2.5 0 015 21z"
+                                opacity=".95" />
+                            <circle cx="7" cy="25" r="1.5" fill="#3b82f6" />
+                            <circle cx="23" cy="25" r="1.5" fill="#3b82f6" />
+                        </g>
+                    </svg>
+                    <div class="flex flex-col">
+                        <span
+                            class="text-sm lg:text-base font-black text-white tracking-tight leading-tight">ALTINTAŞ</span>
+                        <span class="text-[10px] lg:text-xs text-primary font-semibold tracking-widest uppercase">Oto
+                            Yıkama</span>
+                    </div>
+                </a>
+                <div class="hidden lg:flex items-center gap-8">
+                    <a href="#hizmetler"
+                        class="nav-link text-sm font-medium text-gray-400 hover:text-primary transition-colors">Hizmetler</a>
+                    <a href="#hakkimizda"
+                        class="nav-link text-sm font-medium text-gray-400 hover:text-primary transition-colors">Hakkımızda</a>
+                    <a href="#galeri"
+                        class="nav-link text-sm font-medium text-gray-400 hover:text-primary transition-colors">Galeri</a>
+                    <a href="#iletisim"
+                        class="nav-link text-sm font-medium text-gray-400 hover:text-primary transition-colors">İletişim</a>
+                    <a href="tel:905468410339"
+                        class="inline-flex items-center gap-2 bg-primary text-white px-5 py-2.5 rounded-full text-sm font-semibold shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300"><i
+                            class="fas fa-phone-alt text-xs"></i> Hemen Ara</a>
+                </div>
+                <button id="menuToggle"
+                    class="lg:hidden flex flex-col items-center justify-center w-10 h-10 rounded-lg hover:bg-white/5 transition-colors"
+                    aria-label="Menüyü Aç/Kapat" aria-expanded="false">
+                    <span class="hamburger-line block w-5 h-0.5 bg-gray-300 transition-all duration-300 mb-1"></span>
+                    <span class="hamburger-line block w-5 h-0.5 bg-gray-300 transition-all duration-300 mb-1"></span>
+                    <span class="hamburger-line block w-5 h-0.5 bg-gray-300 transition-all duration-300"></span>
+                </button>
+            </div>
+        </div>
+        <div id="mobileMenu"
+            class="lg:hidden max-h-0 overflow-hidden transition-all duration-500 ease-in-out bg-dark/95 backdrop-blur-xl">
+            <div class="px-6 py-4 space-y-1 border-t border-white/5">
+                <a href="#hizmetler"
+                    class="block py-3 text-gray-300 font-medium hover:text-primary hover:pl-2 transition-all">Hizmetler</a>
+                <a href="#hakkimizda"
+                    class="block py-3 text-gray-300 font-medium hover:text-primary hover:pl-2 transition-all">Hakkımızda</a>
+                <a href="#galeri"
+                    class="block py-3 text-gray-300 font-medium hover:text-primary hover:pl-2 transition-all">Galeri</a>
+                <a href="#iletisim"
+                    class="block py-3 text-gray-300 font-medium hover:text-primary hover:pl-2 transition-all">İletişim</a>
+                <div class="pt-3 flex flex-col gap-2">
+                    <a href="tel:905468410339"
+                        class="flex items-center justify-center gap-2 bg-primary text-white py-3 rounded-xl font-semibold shadow-md"><i
+                            class="fas fa-phone-alt"></i> Hemen Ara</a>
+                    <a href="https://wa.me/905468410339" target="_blank" rel="noopener noreferrer"
+                        class="flex items-center justify-center gap-2 bg-green-500 text-white py-3 rounded-xl font-semibold shadow-md"><i
+                            class="fab fa-whatsapp text-lg"></i> WhatsApp'tan Yaz</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- HERO -->
+    <section id="hero" class="relative min-h-screen flex items-center overflow-hidden bg-darker">
+        <div class="blob w-96 h-96 bg-blue-500 top-10 -left-20"></div>
+        <div class="blob w-72 h-72 bg-cyan-400 bottom-20 right-0" style="animation-delay:3s"></div>
+        <div class="blob w-48 h-48 bg-blue-600 top-1/2 left-1/2" style="animation-delay:5s;opacity:.07"></div>
+        <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-32 pb-20 lg:pt-36 lg:pb-16 w-full">
+            <div class="flex flex-col items-center text-center">
+                <div class="flex items-center gap-3 mb-8">
+                    <div
+                        class="badge-24h inline-flex items-center gap-2 bg-primary/10 text-primary px-5 py-2.5 rounded-full text-sm font-bold border border-primary/20">
+                        <i class="fas fa-clock text-xs"></i> 24 Saat Açık
+                    </div>
+                    <div
+                        class="inline-flex items-center gap-2 bg-cyan-400/10 text-cyan-400 px-4 py-2.5 rounded-full text-sm font-bold border border-cyan-400/20">
+                        <i class="fas fa-droplet text-xs water-drop"></i> Profesyonel Yıkama
+                    </div>
+                </div>
+                <h1
+                    class="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-black text-white leading-tight tracking-tight mb-6">
+                    Aracınız <span class="water-gradient">Pırıl Pırıl</span> Parlasın
+                </h1>
+                <p class="text-lg sm:text-xl text-gray-400 leading-relaxed mb-10 max-w-2xl">
+                    Altıntaş Oto Yıkama, Kastamonu'da 24 saat profesyonel iç-dış araç temizliği hizmeti sunuyor.
+                    Aracınızı yeni gibi teslim alın, her zaman tertemiz yola çıkın.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4">
+                    <a href="tel:905468410339"
+                        class="inline-flex items-center justify-center gap-3 bg-primary text-white px-8 py-4 rounded-2xl text-base font-bold shadow-xl shadow-primary/30 hover:shadow-2xl hover:scale-105 transition-all duration-300"><i
+                            class="fas fa-phone-alt"></i> Hemen Ara</a>
+                    <a href="https://wa.me/905468410339" target="_blank" rel="noopener noreferrer"
+                        class="inline-flex items-center justify-center gap-3 bg-green-500 text-white px-8 py-4 rounded-2xl text-base font-bold shadow-xl hover:shadow-2xl hover:scale-105 transition-all duration-300"><i
+                            class="fab fa-whatsapp text-xl"></i> WhatsApp Randevu</a>
+                </div>
+                <div class="mt-12 flex flex-wrap items-center justify-center gap-4 sm:gap-8 text-sm text-gray-500">
+                    <div class="flex items-center gap-2 bg-white/5 px-4 py-2.5 rounded-full border border-white/10"><i
+                            class="fas fa-car-side text-primary"></i><span>İç & Dış Yıkama</span></div>
+                    <div class="flex items-center gap-2 bg-white/5 px-4 py-2.5 rounded-full border border-white/10"><i
+                            class="fas fa-spray-can-sparkles text-primary"></i><span>Detaylı Temizlik</span></div>
+                    <div class="flex items-center gap-2 bg-white/5 px-4 py-2.5 rounded-full border border-white/10"><i
+                            class="fas fa-clock text-primary"></i><span>24 Saat Hizmet</span></div>
+                </div>
+            </div>
+        </div>
+        <div
+            class="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-gray-600 animate-bounce">
+            <span class="text-xs font-medium tracking-widest uppercase">Keşfedin</span><i
+                class="fas fa-chevron-down text-sm"></i>
+        </div>
+    </section>
+
+    <!-- HİZMETLER -->
+    <section id="hizmetler" class="py-20 lg:py-28 bg-dark fade-in">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <span
+                    class="inline-block text-primary text-sm font-bold tracking-widest uppercase mb-3">Hizmetlerimiz</span>
+                <h2 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white tracking-tight mb-4">Profesyonel
+                    Yıkama</h2>
+                <div class="section-divider mx-auto mb-6"></div>
+                <p class="text-gray-400 max-w-2xl mx-auto text-lg">Aracınız için en iyi bakım ve temizlik hizmeti.</p>
+            </div>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
+                <div class="service-card shimmer bg-darker rounded-2xl p-6 lg:p-8 shadow-xl border border-white/5">
+                    <div class="w-14 h-14 bg-primary/10 text-primary rounded-2xl flex items-center justify-center mb-5">
+                        <i class="fas fa-droplet text-2xl"></i></div>
+                    <h3 class="text-lg font-bold text-white mb-2">Dış Yıkama</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">Basınçlı su ve özel köpükle aracınızın dış yüzeyini
+                        pırıl pırıl yapıyoruz.</p>
+                </div>
+                <div class="service-card shimmer bg-darker rounded-2xl p-6 lg:p-8 shadow-xl border border-white/5">
+                    <div class="w-14 h-14 bg-primary/10 text-primary rounded-2xl flex items-center justify-center mb-5">
+                        <i class="fas fa-couch text-2xl"></i></div>
+                    <h3 class="text-lg font-bold text-white mb-2">İç Temizlik</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">Koltuk, paspas, tavan astarı ve torpido dahil
+                        detaylı iç temizlik.</p>
+                </div>
+                <div class="service-card shimmer bg-darker rounded-2xl p-6 lg:p-8 shadow-xl border border-white/5">
+                    <div class="w-14 h-14 bg-primary/10 text-primary rounded-2xl flex items-center justify-center mb-5">
+                        <i class="fas fa-spray-can-sparkles text-2xl"></i></div>
+                    <h3 class="text-lg font-bold text-white mb-2">Detaylı Bakım</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">Motor yıkama, jant temizliği ve lastik parlatma
+                        dahil full bakım paketi.</p>
+                </div>
+                <div class="service-card shimmer bg-darker rounded-2xl p-6 lg:p-8 shadow-xl border border-white/5">
+                    <div class="w-14 h-14 bg-primary/10 text-primary rounded-2xl flex items-center justify-center mb-5">
+                        <i class="fas fa-shield-halved text-2xl"></i></div>
+                    <h3 class="text-lg font-bold text-white mb-2">Boya Koruma</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">Nano seramik kaplama ve cila ile aracınızın
+                        boyasını koruyoruz.</p>
+                </div>
+                <div class="service-card shimmer bg-darker rounded-2xl p-6 lg:p-8 shadow-xl border border-white/5">
+                    <div class="w-14 h-14 bg-primary/10 text-primary rounded-2xl flex items-center justify-center mb-5">
+                        <i class="fas fa-wind text-2xl"></i></div>
+                    <h3 class="text-lg font-bold text-white mb-2">Kurutma & Parlatma</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">Özel mikro fiber bezle lekesiz kurutma ve parlatma
+                        hizmeti.</p>
+                </div>
+                <div class="service-card shimmer bg-darker rounded-2xl p-6 lg:p-8 shadow-xl border border-white/5">
+                    <div class="w-14 h-14 bg-primary/10 text-primary rounded-2xl flex items-center justify-center mb-5">
+                        <i class="fas fa-clock text-2xl"></i></div>
+                    <h3 class="text-lg font-bold text-white mb-2">24 Saat Yıkama</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">Gündüz gece fark etmez, istediğiniz saatte
+                        aracınızı yıkatın.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- HAKKIMIZDA -->
+    <section id="hakkimizda" class="py-20 lg:py-28 bg-darker fade-in">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+                <div>
+                    <span
+                        class="inline-block text-primary text-sm font-bold tracking-widest uppercase mb-3">Hakkımızda</span>
+                    <h2 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white tracking-tight mb-6">Neden
+                        <span class="water-gradient">Altıntaş?</span></h2>
+                    <div class="section-divider mb-8"></div>
+                    <p class="text-gray-400 text-lg leading-relaxed mb-6">
+                        Altıntaş Oto Yıkama, Kastamonu Rauf Denktaş Caddesi üzerinde 24 saat kesintisiz hizmet veren
+                        profesyonel bir oto yıkama istasyonudur. Deneyimli ekibimiz ve özel temizlik ürünlerimizle
+                        aracınızı ilk günkü parlaklığına kavuşturuyoruz.
+                    </p>
+                    <p class="text-gray-500 text-base leading-relaxed mb-8">
+                        İç-dış yıkama, detaylı temizlik, motor yıkama ve boya koruma hizmetlerimizle aracınıza hak
+                        ettiği bakımı sağlıyoruz. Pazar hariç 24 saat açığız — ne zaman isterseniz gelin!
+                    </p>
+                    <a href="tel:905468410339"
+                        class="inline-flex items-center gap-2 text-primary font-bold hover:gap-4 transition-all duration-300">Randevu
+                        Alın <i class="fas fa-arrow-right"></i></a>
+                </div>
+                <div class="grid grid-cols-2 gap-4 lg:gap-6">
+                    <div class="stat-badge bg-dark rounded-2xl p-6 lg:p-8 text-center border border-white/5">
+                        <div class="text-3xl lg:text-4xl font-black text-primary mb-1">24<span class="text-lg">h</span>
+                        </div>
+                        <div class="text-sm text-gray-400 font-medium">Kesintisiz Hizmet</div>
+                    </div>
+                    <div class="stat-badge bg-dark rounded-2xl p-6 lg:p-8 text-center border border-white/5">
+                        <div class="text-3xl lg:text-4xl font-black text-cyan-400 mb-1"><i class="fas fa-droplet"></i>
+                        </div>
+                        <div class="text-sm text-gray-400 font-medium">Profesyonel Ekip</div>
+                    </div>
+                    <div class="stat-badge bg-dark rounded-2xl p-6 lg:p-8 text-center border border-white/5">
+                        <div class="text-3xl lg:text-4xl font-black text-primary mb-1"><i
+                                class="fas fa-spray-can-sparkles"></i></div>
+                        <div class="text-sm text-gray-400 font-medium">Özel Ürünler</div>
+                    </div>
+                    <div class="stat-badge bg-dark rounded-2xl p-6 lg:p-8 text-center border border-white/5">
+                        <div class="text-3xl lg:text-4xl font-black text-primary mb-1"><i class="fas fa-car-side"></i>
+                        </div>
+                        <div class="text-sm text-gray-400 font-medium">Her Araç Tipi</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- GALERİ -->
+    <section id="galeri" class="py-20 lg:py-28 bg-dark fade-in">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <span class="inline-block text-primary text-sm font-bold tracking-widest uppercase mb-3">Galeri</span>
+                <h2 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white tracking-tight mb-4">İşimizden
+                    Kareler</h2>
+                <div class="section-divider mx-auto mb-6"></div>
+            </div>
+            <div class="grid grid-cols-2 gap-4 lg:gap-6">
+                <div class="gallery-item aspect-square shadow-lg"><img
+                        src="https://lh3.googleusercontent.com/gps-cs-s/AHVAwept-BiZnkAVnQrlinAFXxO8WwXD1IweZf2ElVDdme9jinC-FbdRvfKrVfER6HkyrJzSH_I4AsUMVKgS9grIihJQwCWZA1zp0GMeebm2E7CwbGLdmkogYoaihEOEvedAFepNyQITEdwfTpbo=s800"
+                        alt="Altıntaş Oto Yıkama 1" class="w-full h-full object-cover" loading="lazy"></div>
+                <div class="gallery-item aspect-square shadow-lg"><img
+                        src="https://lh3.googleusercontent.com/gps-cs-s/AHVAwerm9x5BVWiNeErYZux5uBQ2ohlCUoOXgW_hCKGKA3tNyw4OfccpNV1N0SWgCWTMEjnyqWamZ8KOGQANVv-WXY4ELa73hgeSHu2pvuM4DdVFijdGfnYTk6r1YoSoSb47VfaYt-EnbU9dGpWo=s800"
+                        alt="Altıntaş Oto Yıkama 2" class="w-full h-full object-cover" loading="lazy"></div>
+                <div class="gallery-item aspect-square shadow-lg"><img
+                        src="https://lh3.googleusercontent.com/gps-cs-s/AHVAwepRZtToDUF7GpsRvhHcoL_nwrPRKM3wmwlIylC07y2Ubse5PellLJYyyF_FrIyeN2yhdLJnyHXxQjq15q8n8s4gMPaKw_cmOcnd9_MVqFbSMRt08HaPE02468aJsrRQvcwFkLP4dWJUR6Y=s800"
+                        alt="Altıntaş Oto Yıkama 3" class="w-full h-full object-cover" loading="lazy"></div>
+                <div class="gallery-item aspect-square shadow-lg"><img
+                        src="https://lh3.googleusercontent.com/gps-cs-s/AHVAwerneUmKHa1PHK1lOYzIDQB4QVAr7C2F-t0i6wv7k83zF6glgdLTgfmmIXPqE23cgO3aUK7q2PSoVZ7PDXgupyQSxQ8brXedaoEru96gLbkX0u2RbRunAtL-580EdfYyh5dolsrH2q7iCF1-=s800"
+                        alt="Altıntaş Oto Yıkama 4" class="w-full h-full object-cover" loading="lazy"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ÇALIŞMA SAATLERİ -->
+    <section id="saatler" class="py-20 lg:py-28 bg-darker fade-in">
+        <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <span class="inline-block text-primary text-sm font-bold tracking-widest uppercase mb-3">Çalışma
+                    Saatleri</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight mb-4">24 Saat Hizmetinizdeyiz
+                </h2>
+                <div class="section-divider mx-auto mb-6"></div>
+            </div>
+            <div class="bg-dark rounded-3xl shadow-xl overflow-hidden border border-white/5">
+                <div class="divide-y divide-white/5">
+                    <div class="flex items-center justify-between px-6 py-4 hover:bg-white/5 transition-colors"><span
+                            class="font-medium text-gray-300">Pazartesi</span><span
+                            class="text-primary font-semibold text-sm bg-primary/10 px-3 py-1 rounded-full">24 Saat
+                            Açık</span></div>
+                    <div class="flex items-center justify-between px-6 py-4 hover:bg-white/5 transition-colors"><span
+                            class="font-medium text-gray-300">Salı</span><span
+                            class="text-primary font-semibold text-sm bg-primary/10 px-3 py-1 rounded-full">24 Saat
+                            Açık</span></div>
+                    <div class="flex items-center justify-between px-6 py-4 hover:bg-white/5 transition-colors"><span
+                            class="font-medium text-gray-300">Çarşamba</span><span
+                            class="text-primary font-semibold text-sm bg-primary/10 px-3 py-1 rounded-full">24 Saat
+                            Açık</span></div>
+                    <div class="flex items-center justify-between px-6 py-4 hover:bg-white/5 transition-colors"><span
+                            class="font-medium text-gray-300">Perşembe</span><span
+                            class="text-primary font-semibold text-sm bg-primary/10 px-3 py-1 rounded-full">24 Saat
+                            Açık</span></div>
+                    <div class="flex items-center justify-between px-6 py-4 hover:bg-white/5 transition-colors"><span
+                            class="font-medium text-gray-300">Cuma</span><span
+                            class="text-primary font-semibold text-sm bg-primary/10 px-3 py-1 rounded-full">24 Saat
+                            Açık</span></div>
+                    <div class="flex items-center justify-between px-6 py-4 hover:bg-white/5 transition-colors"><span
+                            class="font-medium text-gray-300">Cumartesi</span><span
+                            class="text-primary font-semibold text-sm bg-primary/10 px-3 py-1 rounded-full">24 Saat
+                            Açık</span></div>
+                    <div class="flex items-center justify-between px-6 py-4 hover:bg-white/5 transition-colors"><span
+                            class="font-medium text-gray-300">Pazar</span><span
+                            class="text-red-400 font-semibold text-sm bg-red-500/10 px-3 py-1 rounded-full">Kapalı</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- HARİTA -->
+    <section id="harita" class="fade-in">
+        <div class="w-full h-80 lg:h-96 bg-dark relative overflow-hidden">
+            <iframe src="https://maps.google.com/maps?q=41.4011663,33.7867296&t=&z=16&ie=UTF8&iwloc=&output=embed"
+                width="100%" height="100%" style="border:0" allowfullscreen loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade" title="Altıntaş Oto Yıkama Harita"></iframe>
+        </div>
+    </section>
+
+    <!-- İLETİŞİM -->
+    <section id="iletisim" class="py-20 lg:py-28 bg-dark fade-in">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <span class="inline-block text-primary text-sm font-bold tracking-widest uppercase mb-3">İletişim</span>
+                <h2 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white tracking-tight mb-4">Bize Ulaşın
+                </h2>
+                <div class="section-divider mx-auto mb-6"></div>
+            </div>
+            <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-4xl mx-auto">
+                <a href="tel:905468410339"
+                    class="group flex flex-col items-center text-center bg-darker hover:bg-primary/5 rounded-2xl p-8 transition-all duration-300 border border-white/5 hover:border-primary/20">
+                    <div
+                        class="w-14 h-14 bg-primary/10 text-primary rounded-2xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+                        <i class="fas fa-phone-alt text-xl"></i></div>
+                    <h3 class="font-bold text-white mb-1">Telefon</h3>
+                    <p class="text-gray-400 text-sm">0546 841 03 39</p>
+                </a>
+                <a href="https://wa.me/905468410339" target="_blank" rel="noopener noreferrer"
+                    class="group flex flex-col items-center text-center bg-darker hover:bg-green-500/5 rounded-2xl p-8 transition-all duration-300 border border-white/5 hover:border-green-500/20">
+                    <div
+                        class="w-14 h-14 bg-green-500/10 text-green-500 rounded-2xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+                        <i class="fab fa-whatsapp text-2xl"></i></div>
+                    <h3 class="font-bold text-white mb-1">WhatsApp</h3>
+                    <p class="text-gray-400 text-sm">Randevu Alın</p>
+                </a>
+                <a href="https://maps.google.com/?q=Mehmet+Akif+Ersoy+Rauf+Denktas+Cd+Kastamonu" target="_blank"
+                    rel="noopener noreferrer"
+                    class="group flex flex-col items-center text-center bg-darker hover:bg-primary/5 rounded-2xl p-8 transition-all duration-300 border border-white/5 hover:border-primary/20 sm:col-span-2 lg:col-span-1">
+                    <div
+                        class="w-14 h-14 bg-primary/10 text-primary rounded-2xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+                        <i class="fas fa-map-marker-alt text-xl"></i></div>
+                    <h3 class="font-bold text-white mb-1">Adres</h3>
+                    <p class="text-gray-400 text-sm">M. Akif Ersoy, Rauf Denktaş Cd. 56</p>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- WHATSAPP FLOATING -->
+    <a href="https://wa.me/905468410339" target="_blank" rel="noopener noreferrer"
+        class="whatsapp-pulse fixed bottom-20 sm:bottom-6 right-4 sm:right-6 z-40 w-14 h-14 lg:w-16 lg:h-16 bg-green-500 text-white rounded-full flex items-center justify-center shadow-2xl hover:scale-110 hover:bg-green-600 transition-all duration-300"
+        aria-label="WhatsApp ile Randevu Alın"><i class="fab fa-whatsapp text-2xl lg:text-3xl"></i></a>
+
+    <!-- FOOTER -->
+    <footer class="bg-black text-white pt-16 pb-24 lg:pb-8 border-t border-white/5">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-12 mb-12">
+                <div>
+                    <div class="flex items-center gap-3 mb-4">
+                        <svg class="w-10 h-10" viewBox="0 0 48 48" fill="none">
+                            <circle cx="24" cy="24" r="23" fill="#3b82f6" />
+                            <g transform="translate(9,7)" fill="white">
+                                <path
+                                    d="M26 20H4l-1.5-3h3l.8-1.5h5l.8 1.5h3L26 20zM5 21h16a2.5 2.5 0 012.5 2.5v.5a1 1 0 01-1 1h-19a1 1 0 01-1-1v-.5A2.5 2.5 0 015 21z"
+                                    opacity=".95" />
+                                <circle cx="7" cy="25" r="1.5" fill="#3b82f6" />
+                                <circle cx="23" cy="25" r="1.5" fill="#3b82f6" />
+                                <path d="M15 6c-5 0-9 3.5-9 8 0 7 9 16 9 16s9-9 9-16c0-4.5-4-8-9-8z" opacity=".25" />
+                            </g>
+                        </svg>
+                        <span class="text-lg font-black">ALTINTAŞ OTO YIKAMA</span>
+                    </div>
+                    <p class="text-gray-500 text-sm leading-relaxed">Kastamonu'da 24 saat profesyonel oto yıkama.</p>
+                </div>
+                <div>
+                    <h3 class="text-sm font-bold uppercase tracking-widest text-gray-500 mb-4">Hızlı Linkler</h3>
+                    <ul class="space-y-3">
+                        <li><a href="#hizmetler"
+                                class="text-gray-400 hover:text-white transition-colors text-sm">Hizmetler</a></li>
+                        <li><a href="#hakkimizda"
+                                class="text-gray-400 hover:text-white transition-colors text-sm">Hakkımızda</a></li>
+                        <li><a href="#galeri"
+                                class="text-gray-400 hover:text-white transition-colors text-sm">Galeri</a></li>
+                        <li><a href="#iletisim"
+                                class="text-gray-400 hover:text-white transition-colors text-sm">İletişim</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-sm font-bold uppercase tracking-widest text-gray-500 mb-4">İletişim</h3>
+                    <ul class="space-y-3">
+                        <li class="flex items-center gap-3 text-gray-400 text-sm"><i
+                                class="fas fa-phone-alt text-primary"></i><a href="tel:905468410339"
+                                class="hover:text-white transition-colors">0546 841 03 39</a></li>
+                        <li class="flex items-start gap-3 text-gray-400 text-sm"><i
+                                class="fas fa-map-marker-alt text-primary mt-0.5"></i><span>M. Akif Ersoy, Rauf Denktaş
+                                Cd. 56, Kastamonu</span></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-white/5 pt-8 text-center">
+                <p class="text-gray-600 text-xs">&copy; 2026 Altıntaş Oto Yıkama. Tüm hakları saklıdır.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- MOBİL BAR -->
+    <div id="mobileBottomBar"
+        class="mobile-bar fixed bottom-0 left-0 w-full z-50 lg:hidden bg-dark/95 backdrop-blur-xl border-t border-white/10 shadow-2xl">
+        <div class="flex">
+            <a href="tel:905468410339"
+                class="flex-1 flex items-center justify-center gap-2 py-4 bg-primary text-white font-bold text-sm active:scale-95 transition-transform"><i
+                    class="fas fa-phone-alt"></i> Hemen Ara</a>
+            <a href="https://wa.me/905468410339" target="_blank" rel="noopener noreferrer"
+                class="flex-1 flex items-center justify-center gap-2 py-4 bg-green-500 text-white font-bold text-sm active:scale-95 transition-transform"><i
+                    class="fab fa-whatsapp text-lg"></i> WhatsApp</a>
+        </div>
+    </div>
+
+    <script>
+            (function () {
+                'use strict';
+                var navbar = document.getElementById('navbar');
+                window.addEventListener('scroll', function () { navbar.classList.toggle('scrolled', window.pageYOffset > 50) }, { passive: true });
+                var menuToggle = document.getElementById('menuToggle'), mobileMenu = document.getElementById('mobileMenu'), isMenuOpen = false;
+                menuToggle.addEventListener('click', function () {
+                    isMenuOpen = !isMenuOpen; menuToggle.setAttribute('aria-expanded', isMenuOpen);
+                    mobileMenu.style.maxHeight = isMenuOpen ? mobileMenu.scrollHeight + 'px' : '0';
+                    var lines = menuToggle.querySelectorAll('.hamburger-line');
+                    if (isMenuOpen) { lines[0].style.transform = 'translateY(6px) rotate(45deg)'; lines[1].style.opacity = '0'; lines[2].style.transform = 'translateY(-6px) rotate(-45deg)' }
+                    else { lines[0].style.transform = 'none'; lines[1].style.opacity = '1'; lines[2].style.transform = 'none' }
+                });
+                mobileMenu.querySelectorAll('a[href^="#"]').forEach(function (link) {
+                    link.addEventListener('click', function () {
+                        isMenuOpen = false; mobileMenu.style.maxHeight = '0'; menuToggle.setAttribute('aria-expanded', 'false');
+                        var lines = menuToggle.querySelectorAll('.hamburger-line'); lines[0].style.transform = 'none'; lines[1].style.opacity = '1'; lines[2].style.transform = 'none'
+                    });
+                });
+                var mobileBar = document.getElementById('mobileBottomBar');
+                window.addEventListener('scroll', function () { mobileBar.classList.toggle('visible', window.pageYOffset > 300) }, { passive: true });
+                if ('IntersectionObserver' in window) {
+                    var fadeObserver = new IntersectionObserver(function (entries) { entries.forEach(function (entry) { if (entry.isIntersecting) { entry.target.classList.add('visible'); fadeObserver.unobserve(entry.target) } }) }, { threshold: .1, rootMargin: '0px 0px -50px 0px' });
+                    document.querySelectorAll('.fade-in').forEach(function (el) { fadeObserver.observe(el) });
+                } else { document.querySelectorAll('.fade-in').forEach(function (el) { el.classList.add('visible') }) }
+                document.querySelectorAll('a[href^="#"]').forEach(function (anchor) {
+                    anchor.addEventListener('click', function (e) {
+                        var target = document.querySelector(this.getAttribute('href'));
+                        if (target) { e.preventDefault(); var offset = navbar.offsetHeight + 20; window.scrollTo({ top: target.getBoundingClientRect().top + window.pageYOffset - offset, behavior: 'smooth' }) }
+                    });
+                });
+            })();
+    </script>
+</body>
+
+</html>
