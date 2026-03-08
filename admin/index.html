@@ -1168,7 +1168,7 @@
 
         // ============ API DETECTION ============
         async function detectAPI() {
-            const urls = ['http://localhost:5000', 'http://127.0.0.1:5000'];
+            const urls = ['https://api.kastamonuesnaf.com.tr', 'http://localhost:5000', 'http://127.0.0.1:5000'];
             // Check if custom API URL is set
             const saved = localStorage.getItem('api_url');
             if (saved) urls.unshift(saved);
