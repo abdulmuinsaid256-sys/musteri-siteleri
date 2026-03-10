@@ -6,23 +6,25 @@
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
     <title>MuinWeb Satış Paneli</title>
     <meta name="robots" content="noindex,nofollow">
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&display=swap"
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@600;700;800&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <style>
         :root {
-            --bg: #0f172a;
-            --sidebar: #1e293b;
-            --panel: #0b1120;
+            --bg: #f8fafc;
+            --surface: #ffffff;
+            --text-main: #0f172a;
+            --text-muted: #64748b;
+            --border: #e2e8f0;
             --accent: #10b981;
             /* WhatsApp Green */
             --accent-hover: #059669;
-            --text-main: #f8fafc;
-            --text-muted: #94a3b8;
-            --border: #334155;
-            --success: #22c55e;
-            --warning: #eab308;
+            --primary: #0ea5e9;
             --danger: #ef4444;
+            --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -2px rgba(0, 0, 0, 0.05);
+            --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.05), 0 4px 6px -4px rgba(0, 0, 0, 0.025);
+            --radius: 16px;
         }
 
         * {
@@ -32,17 +34,14 @@
         }
 
         body {
-            font-family: 'Outfit', sans-serif;
+            font-family: 'Inter', sans-serif;
             background: var(--bg);
             color: var(--text-main);
-            height: 100vh;
-            overflow: hidden;
-            display: flex;
-            flex-direction: column;
+            line-height: 1.5;
         }
 
         ::-webkit-scrollbar {
-            width: 6px;
+            width: 8px;
         }
 
         ::-webkit-scrollbar-track {
@@ -50,30 +49,32 @@
         }
 
         ::-webkit-scrollbar-thumb {
-            background: var(--border);
+            background: #cbd5e1;
             border-radius: 4px;
         }
 
         /* HEADER */
         header {
-            height: 70px;
-            background: var(--sidebar);
+            background: var(--surface);
             border-bottom: 1px solid var(--border);
+            padding: 16px 24px;
             display: flex;
             align-items: center;
             justify-content: space-between;
-            padding: 0 24px;
-            flex-shrink: 0;
-            z-index: 10;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: var(--shadow);
         }
 
         .logo {
             display: flex;
             align-items: center;
-            gap: 12px;
+            gap: 10px;
+            font-family: 'Outfit', sans-serif;
             font-weight: 800;
             font-size: 20px;
-            letter-spacing: -0.5px;
+            color: var(--text-main);
         }
 
         .logo i {
@@ -88,8 +89,8 @@
         }
 
         .back-btn {
-            background: transparent;
-            color: var(--text-muted);
+            background: var(--surface);
+            color: var(--text-main);
             border: 1px solid var(--border);
             padding: 8px 16px;
             border-radius: 8px;
@@ -97,415 +98,366 @@
             font-size: 14px;
             font-weight: 600;
             transition: all 0.2s;
-        }
-
-        .back-btn:hover {
-            background: var(--bg);
-            color: var(--text-main);
-        }
-
-        .stats-badge {
-            background: rgba(16, 185, 129, 0.1);
-            color: var(--accent);
-            padding: 6px 12px;
-            border-radius: 8px;
-            font-size: 13px;
-            font-weight: 700;
-            border: 1px solid rgba(16, 185, 129, 0.2);
-        }
-
-        /* MAIN LAYOUT */
-        .app-container {
-            display: flex;
-            flex: 1;
-            overflow: hidden;
-        }
-
-        /* SIDEBAR (LIST) */
-        .sidebar {
-            width: 380px;
-            background: var(--sidebar);
-            border-right: 1px solid var(--border);
-            display: flex;
-            flex-direction: column;
-        }
-
-        .search-area {
-            padding: 16px;
-            border-bottom: 1px solid var(--border);
-        }
-
-        .search-input {
-            width: 100%;
-            background: var(--bg);
-            border: 1px solid var(--border);
-            border-radius: 10px;
-            padding: 12px 16px;
-            color: #fff;
-            font-family: inherit;
-            font-size: 14px;
-            outline: none;
-            transition: 0.2s;
-        }
-
-        .search-input:focus {
-            border-color: var(--accent);
-            box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.1);
-        }
-
-        .filter-area {
-            display: flex;
-            gap: 8px;
-            padding-top: 12px;
-        }
-
-        .filter-btn {
-            flex: 1;
-            background: var(--bg);
-            border: 1px solid var(--border);
-            color: var(--text-muted);
-            padding: 8px;
-            border-radius: 8px;
-            font-size: 12px;
-            font-weight: 600;
-            cursor: pointer;
-            transition: 0.2s;
-        }
-
-        .filter-btn.active {
-            background: rgba(16, 185, 129, 0.1);
-            color: var(--accent);
-            border-color: rgba(16, 185, 129, 0.3);
-        }
-
-        .client-list {
-            flex: 1;
-            overflow-y: auto;
-            padding: 12px;
-            display: flex;
-            flex-direction: column;
-            gap: 8px;
-        }
-
-        .client-item {
-            background: var(--bg);
-            border: 1px solid var(--border);
-            border-radius: 12px;
-            padding: 16px;
-            cursor: pointer;
-            transition: 0.2s;
-            display: flex;
-            gap: 12px;
-        }
-
-        .client-item:hover {
-            border-color: #475569;
-            transform: translateX(2px);
-        }
-
-        .client-item.active {
-            border-color: var(--accent);
-            background: rgba(16, 185, 129, 0.05);
-        }
-
-        .client-item.sent {
-            opacity: 0.6;
-        }
-
-        .client-avatar {
-            width: 44px;
-            height: 44px;
-            border-radius: 10px;
-            background: #334155;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: 800;
-            color: #fff;
-            flex-shrink: 0;
-        }
-
-        .client-info {
-            flex: 1;
-            min-width: 0;
-        }
-
-        .client-name {
-            font-weight: 700;
-            font-size: 15px;
-            white-space: nowrap;
-            overflow: hidden;
-            text-overflow: ellipsis;
-            margin-bottom: 4px;
-        }
-
-        .client-cat {
-            font-size: 12px;
-            color: var(--text-muted);
-            display: flex;
-            align-items: center;
-            gap: 4px;
-        }
-
-        .status-dot {
-            width: 8px;
-            height: 8px;
-            border-radius: 50%;
-            background: var(--border);
-            margin-top: 4px;
-        }
-
-        .status-dot.sent {
-            background: var(--success);
-            box-shadow: 0 0 8px var(--success);
-        }
-
-        /* MAIN PANEL */
-        .main-panel {
-            flex: 1;
-            background: var(--panel);
-            display: flex;
-            flex-direction: column;
-            position: relative;
-        }
-
-        .empty-state {
-            position: absolute;
-            inset: 0;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            color: var(--text-muted);
-        }
-
-        .empty-state i {
-            font-size: 64px;
-            color: var(--border);
-            margin-bottom: 16px;
-        }
-
-        .detail-view {
-            display: none;
-            flex-direction: column;
-            height: 100%;
-            overflow-y: auto;
-            padding: 40px;
-        }
-
-        .detail-view.active {
-            display: flex;
-        }
-
-        .d-header {
-            display: flex;
-            gap: 24px;
-            margin-bottom: 40px;
-            align-items: center;
-        }
-
-        .d-avatar {
-            width: 100px;
-            height: 100px;
-            border-radius: 20px;
-            font-size: 36px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: 900;
-            background: linear-gradient(135deg, #1e293b, #0f172a);
-            border: 2px solid var(--border);
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
-        }
-
-        .d-info h2 {
-            font-size: 32px;
-            font-weight: 800;
-            margin-bottom: 8px;
-            letter-spacing: -1px;
-        }
-
-        .d-badges {
-            display: flex;
-            gap: 8px;
-            margin-top: 12px;
-        }
-
-        .d-badge {
-            background: var(--sidebar);
-            padding: 6px 12px;
-            border-radius: 8px;
-            font-size: 12px;
-            font-weight: 600;
-            border: 1px solid var(--border);
             display: flex;
             align-items: center;
             gap: 6px;
         }
 
-        .d-badge i {
-            color: var(--text-muted);
+        .back-btn:hover {
+            background: var(--bg);
+            border-color: #cbd5e1;
         }
 
-        .d-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 24px;
-            margin-bottom: 40px;
+        .stats-badge {
+            background: rgba(16, 185, 129, 0.1);
+            color: var(--accent-hover);
+            padding: 6px 12px;
+            border-radius: 8px;
+            font-size: 13px;
+            font-weight: 700;
+            border: 1px solid rgba(16, 185, 129, 0.2);
         }
 
-        .d-card {
-            background: var(--sidebar);
+        /* MAIN CONTAINER */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 32px 24px;
+        }
+
+        /* FILTERS BAR */
+        .filters-card {
+            background: var(--surface);
             border: 1px solid var(--border);
-            border-radius: 16px;
-            padding: 24px;
+            border-radius: var(--radius);
+            padding: 20px;
+            margin-bottom: 32px;
+            box-shadow: var(--shadow);
+            display: flex;
+            flex-wrap: wrap;
+            gap: 16px;
+            align-items: center;
         }
 
-        .d-card h3 {
-            font-size: 14px;
+        .filter-group {
+            flex: 1;
+            min-width: 200px;
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+            position: relative;
+        }
+
+        .filter-group label {
+            font-size: 12px;
+            font-weight: 700;
             color: var(--text-muted);
             text-transform: uppercase;
-            letter-spacing: 1px;
-            margin-bottom: 16px;
+            letter-spacing: 0.5px;
+        }
+
+        .filter-group i.input-icon {
+            position: absolute;
+            left: 14px;
+            top: 38px;
+            color: var(--text-muted);
+            font-size: 14px;
+        }
+
+        .filter-input,
+        .filter-select {
+            width: 100%;
+            background: var(--bg);
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            padding: 12px 16px;
+            font-family: inherit;
+            font-size: 14px;
+            color: var(--text-main);
+            outline: none;
+            transition: all 0.2s;
+            appearance: none;
+        }
+
+        .filter-input {
+            padding-left: 38px;
+        }
+
+        .filter-input:focus,
+        .filter-select:focus {
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(14, 165, 233, 0.1);
+            background: var(--surface);
+        }
+
+        .filter-select {
+            padding-right: 36px;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%2364748b'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M19 9l-7 7-7-7'%3E%3C/path%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-position: right 12px center;
+            background-size: 16px;
+            cursor: pointer;
+        }
+
+        .status-toggles {
+            display: flex;
+            gap: 8px;
+            align-items: flex-end;
+            height: 100%;
+        }
+
+        .toggle-btn {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            color: var(--text-muted);
+            padding: 11px 16px;
+            border-radius: 10px;
+            font-size: 13px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: 0.2s;
             display: flex;
             align-items: center;
-            gap: 8px;
+            gap: 6px;
+        }
+
+        .toggle-btn:hover {
+            background: var(--bg);
+        }
+
+        .toggle-btn.active {
+            background: rgba(14, 165, 233, 0.1);
+            color: var(--primary);
+            border-color: var(--primary);
+        }
+
+        /* GRID LAYOUT */
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 24px;
+        }
+
+        /* CARD DESIGN */
+        .card {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 24px;
+            transition: all 0.3s;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+        }
+
+        .card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-lg);
+            border-color: #cbd5e1;
+        }
+
+        .card.sent {
+            opacity: 0.7;
+            border-color: rgba(16, 185, 129, 0.3);
+            background: #f0fdf4;
+        }
+
+        .card-header {
+            display: flex;
+            gap: 16px;
+            margin-bottom: 20px;
+            align-items: flex-start;
+        }
+
+        .card-avatar {
+            width: 56px;
+            height: 56px;
+            border-radius: 14px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+            font-weight: 800;
+            color: #fff;
+            flex-shrink: 0;
+            box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.1);
+        }
+
+        .card-info {
+            flex: 1;
+            min-width: 0;
+        }
+
+        .card-title {
+            font-family: 'Outfit', sans-serif;
+            font-size: 18px;
+            font-weight: 700;
+            color: var(--text-main);
+            margin-bottom: 4px;
+            line-height: 1.2;
+            text-overflow: ellipsis;
+            overflow: hidden;
+            white-space: nowrap;
+        }
+
+        .card-cat {
+            font-size: 13px;
+            color: var(--primary);
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 4px;
+        }
+
+        .card-body {
+            margin-bottom: 20px;
+            flex: 1;
         }
 
         .info-row {
             display: flex;
-            margin-bottom: 12px;
-            padding-bottom: 12px;
-            border-bottom: 1px solid var(--border);
-        }
-
-        .info-row:last-child {
-            margin-bottom: 0;
-            padding-bottom: 0;
-            border-bottom: none;
-        }
-
-        .info-label {
-            width: 120px;
-            color: var(--text-muted);
+            align-items: flex-start;
+            gap: 8px;
             font-size: 13px;
-            font-weight: 500;
-        }
-
-        .info-val {
-            flex: 1;
-            font-weight: 600;
-            font-size: 14px;
-        }
-
-        /* WHATSAPP SECTION */
-        .wp-box {
-            background: linear-gradient(135deg, rgba(16, 185, 129, 0.1), rgba(5, 150, 105, 0.05));
-            border: 1px solid rgba(16, 185, 129, 0.3);
-            border-radius: 20px;
-            padding: 32px;
-            text-align: center;
-        }
-
-        .wp-box h3 {
-            font-size: 24px;
-            margin-bottom: 12px;
-        }
-
-        .wp-box p {
             color: var(--text-muted);
-            margin-bottom: 24px;
-            line-height: 1.6;
+            margin-bottom: 8px;
         }
 
-        .message-preview {
-            background: var(--panel);
-            border: 1px solid rgba(16, 185, 129, 0.2);
-            border-radius: 12px;
-            padding: 20px;
-            text-align: left;
-            margin-bottom: 24px;
-            position: relative;
-            font-size: 15px;
-            line-height: 1.5;
-            color: #e2e8f0;
+        .info-row i {
+            margin-top: 3px;
+            width: 14px;
+            text-align: center;
+            color: #94a3b8;
         }
 
-        .message-preview::before {
-            content: "Mesaj Taslağı";
-            position: absolute;
-            top: -10px;
-            left: 16px;
-            background: var(--panel);
-            padding: 0 8px;
-            font-size: 11px;
-            font-weight: 700;
-            color: var(--accent);
-            text-transform: uppercase;
-            letter-spacing: 1px;
+        .info-row span {
+            flex: 1;
+            line-height: 1.4;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
         }
 
-        .btn-large {
-            display: inline-flex;
+        .card-stats {
+            display: flex;
+            gap: 16px;
+            margin-top: 12px;
+            padding-top: 12px;
+            border-top: 1px dashed var(--border);
+        }
+
+        .stat {
+            font-size: 12px;
+            font-weight: 600;
+            color: var(--text-main);
+            display: flex;
             align-items: center;
-            gap: 12px;
+            gap: 4px;
+        }
+
+        .stat i {
+            color: #f59e0b;
+        }
+
+        .card-footer {
+            display: flex;
+            gap: 10px;
+            align-items: center;
+        }
+
+        .btn-wp {
+            flex: 1;
             background: var(--accent);
             color: #fff;
-            text-decoration: none;
-            padding: 16px 32px;
-            border-radius: 14px;
-            font-size: 18px;
-            font-weight: 700;
-            outline: none;
             border: none;
+            border-radius: 10px;
+            padding: 12px 16px;
+            font-size: 14px;
+            font-weight: 600;
+            font-family: inherit;
             cursor: pointer;
-            transition: all 0.3s;
-            box-shadow: 0 10px 20px rgba(16, 185, 129, 0.3);
-        }
-
-        .btn-large:hover {
-            background: var(--accent-hover);
-            transform: translateY(-3px);
-            box-shadow: 0 15px 25px rgba(16, 185, 129, 0.4);
-        }
-
-        .mark-sent-row {
-            margin-top: 16px;
+            transition: all 0.2s;
             display: flex;
             align-items: center;
             justify-content: center;
-            gap: 10px;
+            gap: 8px;
+            box-shadow: 0 4px 12px rgba(16, 185, 129, 0.2);
         }
 
-        .btn-outline {
-            background: transparent;
+        .btn-wp:hover {
+            background: var(--accent-hover);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 16px rgba(16, 185, 129, 0.3);
+        }
+
+        .btn-mark {
+            background: var(--surface);
             border: 1px solid var(--border);
             color: var(--text-muted);
-            padding: 8px 16px;
-            border-radius: 8px;
+            width: 44px;
+            height: 44px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
             cursor: pointer;
-            font-family: inherit;
-            font-size: 13px;
-            font-weight: 600;
             transition: 0.2s;
+            font-size: 16px;
         }
 
-        .btn-outline:hover {
-            background: var(--sidebar);
+        .btn-mark:hover {
+            background: var(--bg);
             color: var(--text-main);
+            border-color: var(--text-muted);
         }
 
-        .btn-outline.active {
+        .btn-mark.is-sent {
             background: rgba(16, 185, 129, 0.1);
             color: var(--accent);
             border-color: var(--accent);
+        }
+
+        .badge-sent {
+            position: absolute;
+            top: 16px;
+            right: 16px;
+            background: #dcfce7;
+            color: #166534;
+            padding: 4px 10px;
+            border-radius: 20px;
+            font-size: 11px;
+            font-weight: 700;
+            border: 1px solid #bbf7d0;
+            display: flex;
+            align-items: center;
+            gap: 4px;
+        }
+
+        .empty-state {
+            text-align: center;
+            padding: 64px 20px;
+            color: var(--text-muted);
+            grid-column: 1 / -1;
+            background: var(--surface);
+            border-radius: var(--radius);
+            border: 2px dashed var(--border);
+        }
+
+        .empty-state i {
+            font-size: 48px;
+            color: #cbd5e1;
+            margin-bottom: 16px;
         }
 
         /* AUTH OVERLAY */
         #authOverlay {
             position: fixed;
             inset: 0;
-            background: var(--bg);
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(8px);
             z-index: 9999;
             display: flex;
             align-items: center;
@@ -514,23 +466,34 @@
             gap: 20px;
         }
 
+        .auth-box {
+            background: #fff;
+            padding: 40px;
+            border-radius: 24px;
+            box-shadow: var(--shadow-lg);
+            text-align: center;
+            border: 1px solid var(--border);
+        }
+
         #authInput {
-            background: var(--sidebar);
+            background: var(--bg);
             border: 1px solid var(--border);
             border-radius: 12px;
-            padding: 12px 16px;
-            color: #fff;
+            padding: 14px 16px;
+            color: var(--text-main);
             font-family: inherit;
             font-size: 16px;
-            width: 260px;
+            width: 280px;
             outline: none;
             text-align: center;
             letter-spacing: 2px;
+            margin-bottom: 16px;
+            display: block;
         }
 
         #authInput:focus {
-            border-color: var(--accent);
-            box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.1);
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(14, 165, 233, 0.1);
         }
 
         .auth-btn {
@@ -538,12 +501,12 @@
             color: #fff;
             border: none;
             border-radius: 12px;
-            padding: 12px 24px;
+            padding: 14px 24px;
             font-weight: 700;
             cursor: pointer;
             transition: 0.2s;
             font-family: inherit;
-            width: 260px;
+            width: 280px;
             font-size: 16px;
         }
 
@@ -557,103 +520,76 @@
 
     <!-- AUTH OVERLAY -->
     <div id="authOverlay">
-        <i class="fab fa-whatsapp" style="font-size: 64px; color: var(--accent); margin-bottom: 20px;"></i>
-        <h2>Satış Paneline Giriş</h2>
-        <p style="color:var(--text-muted); font-size: 14px; margin-bottom: 12px;">Yetkili personelin şifresini girin.
-        </p>
-        <input type="password" id="authInput" placeholder="••••••••" onkeypress="if(event.key==='Enter') checkAuth()">
-        <button onclick="checkAuth()" class="auth-btn">Giriş Yap</button>
-        <div id="authError" style="color:var(--danger); font-size:13px; display:none; margin-top:8px;">Hatalı şifre!
+        <div class="auth-box">
+            <i class="fab fa-whatsapp" style="font-size: 56px; color: var(--accent); margin-bottom: 20px;"></i>
+            <h2 style="font-family:'Outfit',sans-serif; margin-bottom: 8px;">Satış Paneline Giriş</h2>
+            <p style="color:var(--text-muted); font-size: 14px; margin-bottom: 24px;">Yetkili personelin şifresini
+                girin.</p>
+            <input type="password" id="authInput" placeholder="••••••••"
+                onkeypress="if(event.key==='Enter') checkAuth()">
+            <button onclick="checkAuth()" class="auth-btn">Giriş Yap</button>
+            <div id="authError"
+                style="color:var(--danger); font-size:13px; display:none; margin-top:12px; font-weight: 600;">Hatalı
+                şifre!</div>
         </div>
     </div>
 
     <!-- HEADER -->
     <header>
         <div class="logo">
-            <i class="fab fa-whatsapp"></i> MuinWeb Satış Paneli
+            <i class="fab fa-whatsapp"></i> CRM Satış Paneli
         </div>
         <div class="header-actions">
-            <span class="stats-badge" id="headerStats">0 İşletme</span>
+            <span class="stats-badge" id="headerStats">Yükleniyor...</span>
             <a href="index.html" class="back-btn"><i class="fas fa-arrow-left"></i> Admin Panele Dön</a>
         </div>
     </header>
 
     <!-- CONTENT -->
-    <div class="app-container">
+    <div class="container">
 
-        <!-- SIDEBAR -->
-        <div class="sidebar">
-            <div class="search-area">
-                <input type="text" id="searchInput" class="search-input" placeholder="İşletme adı ara...">
-                <div class="filter-area">
-                    <button class="filter-btn active" data-filter="all" onclick="setFilter('all')">Hepsi</button>
-                    <button class="filter-btn" data-filter="pending" onclick="setFilter('pending')">Bekleyen</button>
-                    <button class="filter-btn" data-filter="sent" onclick="setFilter('sent')">Gönderilen</button>
-                </div>
-            </div>
-            <div class="client-list" id="clientList">
-                <!-- List items will be rendered here -->
-            </div>
-        </div>
-
-        <!-- MAIN PANEL -->
-        <div class="main-panel">
-            <div class="empty-state" id="emptyState">
-                <i class="fas fa-paper-plane"></i>
-                <h2>İşletme Seçin</h2>
-                <p>Mesaj göndermek için soldaki listeden bir potansiyel müşteri seçin.</p>
+        <!-- FILTERS -->
+        <div class="filters-card">
+            <div class="filter-group" style="flex: 2;">
+                <label>İşletme Ara</label>
+                <i class="fas fa-search input-icon"></i>
+                <input type="text" id="searchInput" class="filter-input" placeholder="İşletme adı veya adres yazın...">
             </div>
 
-            <div class="detail-view" id="detailView">
-                <div class="d-header">
-                    <div class="d-avatar" id="dAvatar">MW</div>
-                    <div class="d-info">
-                        <h2 id="dName">İşletme Adı</h2>
-                        <div class="d-badges">
-                            <span class="d-badge" id="dCat"><i class="fas fa-tag"></i> Kategori</span>
-                            <span class="d-badge" id="dPhone"><i class="fas fa-phone"></i> Telefon</span>
-                        </div>
-                    </div>
-                </div>
+            <div class="filter-group">
+                <label>Kategori</label>
+                <select id="catFilter" class="filter-select">
+                    <option value="">Tüm Kategoriler</option>
+                </select>
+            </div>
 
-                <div class="d-grid">
-                    <div class="d-card">
-                        <h3><i class="fas fa-building"></i> İşletme Bilgileri</h3>
-                        <div class="info-row">
-                            <div class="info-label">Adres</div>
-                            <div class="info-val" id="dAddress">-</div>
-                        </div>
-                        <div class="info-row">
-                            <div class="info-label">Google Puanı</div>
-                            <div class="info-val" id="dRating">-</div>
-                        </div>
-                        <div class="info-row">
-                            <div class="info-label">Yorum Sayısı</div>
-                            <div class="info-val" id="dReviews">-</div>
-                        </div>
-                        <div class="info-row">
-                            <div class="info-label">Fotoğraf</div>
-                            <div class="info-val" id="dPhotos">-</div>
-                        </div>
-                    </div>
-                </div>
+            <div class="filter-group">
+                <label>Bölge / Mahalle (Adres İçinde)</label>
+                <select id="locFilter" class="filter-select">
+                    <option value="">Tüm Bölgeler</option>
+                    <option value="Kuzeykent">Kuzeykent</option>
+                    <option value="İnönü">İnönü Mah.</option>
+                    <option value="Merkez">Merkez</option>
+                    <option value="Tosya">Tosya</option>
+                    <option value="Taşköprü">Taşköprü</option>
+                </select>
+            </div>
 
-                <div class="wp-box">
-                    <h3>Satışı Başlat</h3>
-                    <p>Müşterinin WhatsApp hattına otomatik mesaj taslağı gönderin.</p>
-
-                    <div class="message-preview" id="dMessagePreview"></div>
-
-                    <button class="btn-large" onclick="openWhatsApp()"><i class="fas fa-paper-plane"></i> WhatsApp'ı Aç
-                        & Gönder</button>
-
-                    <div class="mark-sent-row">
-                        <button class="btn-outline" id="btnToggleSent" onclick="toggleSentStatus()"><i
-                                class="fas fa-check"></i> 'Gönderildi' Olarak İşaretle</button>
-                    </div>
-                </div>
+            <div class="status-toggles">
+                <button class="toggle-btn active" data-status="all" onclick="setStatus('all')"><i
+                        class="fas fa-list"></i> Hepsi</button>
+                <button class="toggle-btn" data-status="pending" onclick="setStatus('pending')"><i
+                        class="fas fa-clock"></i> Bekleyen</button>
+                <button class="toggle-btn" data-status="sent" onclick="setStatus('sent')"><i
+                        class="fas fa-check-double"></i> Gönderilenler</button>
             </div>
         </div>
+
+        <!-- GRID -->
+        <div class="grid" id="grid">
+            <!-- Cards will be injected here -->
+        </div>
+
     </div>
 
     <script>
@@ -679,15 +615,19 @@
             document.getElementById('authInput').focus();
         }
 
-        // App Data & Logic
+        // App Data
         let DATA = [];
         let filteredData = [];
-        let currentFilter = 'all';
-        let currentBusiness = null;
+        let CATEGORIES = new Set();
+        let currentStatusFilter = 'all';
         let sentLog = JSON.parse(localStorage.getItem('wp_sent') || '{}');
 
-        // Prepare colors for avatars
-        const colors = ['#ef4444', '#f97316', '#10b981', '#0ea5e9', '#6366f1', '#8b5cf6', '#d946ef'];
+        // Colors for avatars
+        const colors = [
+            ['#ef4444', '#b91c1c'], ['#f97316', '#c2410c'], ['#f59e0b', '#b45309'],
+            ['#10b981', '#047857'], ['#0ea5e9', '#0369a1'], ['#6366f1', '#4338ca'],
+            ['#8b5cf6', '#6d28d9'], ['#d946ef', '#a21caf'], ['#f43f5e', '#be123c']
+        ];
         function getColor(id) { return colors[id % colors.length]; }
         function getInitials(name) { return name.split(/\s+/).slice(0, 2).map(w => w[0]).join('').toUpperCase(); }
 
@@ -713,139 +653,144 @@
 
                 // FILTER POTENTIAL CLIENTS ONLY: NO WEBSITE, HAS PHONE
                 DATA = DATA.filter(i => (!i.site_hazir && !i.web_sitesi_linki && i.telefon && i.telefon !== '-'));
+
+                // Extract categories
+                DATA.forEach(i => { if (i.kategori) CATEGORIES.add(i.kategori) });
+                populateCategories();
+
                 applyFilters();
 
             } catch (error) {
                 console.error("Veri yuklenemedi", error);
-                document.getElementById('clientList').innerHTML = '<div style="padding: 20px; color: var(--danger); text-align:center;">Veritabanına ulaşılamadı. `data.json` dosyasını kontrol edin.</div>';
+                document.getElementById('grid').innerHTML = '<div class="empty-state">Veritabanına ulaşılamadı. `data.json` dosyasını kontrol edin.</div>';
             }
         }
 
-        function setFilter(filterType) {
-            currentFilter = filterType;
-            document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
-            document.querySelector(`.filter-btn[data-filter="${filterType}"]`).classList.add('active');
+        function populateCategories() {
+            const select = document.getElementById('catFilter');
+            const sorted = Array.from(CATEGORIES).sort();
+            sorted.forEach(c => {
+                const opt = document.createElement('option');
+                opt.value = c; opt.textContent = c;
+                select.appendChild(opt);
+            });
+        }
+
+        function setStatus(status) {
+            currentStatusFilter = status;
+            document.querySelectorAll('.toggle-btn').forEach(b => b.classList.remove('active'));
+            document.querySelector(`.toggle-btn[data-status="${status}"]`).classList.add('active');
             applyFilters();
         }
 
         document.getElementById('searchInput').addEventListener('input', applyFilters);
+        document.getElementById('catFilter').addEventListener('change', applyFilters);
+        document.getElementById('locFilter').addEventListener('change', applyFilters);
 
         function applyFilters() {
             const query = document.getElementById('searchInput').value.toLowerCase();
+            const cat = document.getElementById('catFilter').value;
+            const loc = document.getElementById('locFilter').value.toLowerCase();
 
             filteredData = DATA.filter(i => {
                 // Search
-                if (query && !i.isletme_adi.toLowerCase().includes(query) && !(i.kategori || '').toLowerCase().includes(query)) return false;
+                if (query && !i.isletme_adi.toLowerCase().includes(query) && !(i.adres || '').toLowerCase().includes(query)) return false;
+
+                // Category
+                if (cat && i.kategori !== cat) return false;
+
+                // Location
+                if (loc && !(i.adres || '').toLowerCase().includes(loc)) return false;
 
                 // Status Filter
                 const isSent = !!sentLog[i.id] || i.mesaj_durumu === 'Gonderildi';
-                if (currentFilter === 'pending' && isSent) return false;
-                if (currentFilter === 'sent' && !isSent) return false;
+                if (currentStatusFilter === 'pending' && isSent) return false;
+                if (currentStatusFilter === 'sent' && !isSent) return false;
 
                 return true;
             });
 
-            document.getElementById('headerStats').innerHTML = `<i class="fas fa-bullseye"></i> ${filteredData.length} Hedef`;
-            renderList();
+            document.getElementById('headerStats').innerHTML = `<i class="fas fa-bullseye"></i> ${filteredData.length} Müşteri Bulundu`;
+            renderGrid();
         }
 
-        function renderList() {
-            const list = document.getElementById('clientList');
+        function renderGrid() {
+            const grid = document.getElementById('grid');
             if (filteredData.length === 0) {
-                list.innerHTML = '<div style="text-align:center; padding: 40px 20px; color: var(--text-muted);">Sonuç bulunamadı</div>';
+                grid.innerHTML = '<div class="empty-state"><i class="fas fa-search"></i><h3>Sonuç bulunamadı</h3><p>Filtreleri veya arama kelimenizi değiştirin.</p></div>';
                 return;
             }
 
-            list.innerHTML = filteredData.map(i => {
+            // Kapasite için ilk 100'ü göster
+            const items = filteredData.slice(0, 100);
+
+            grid.innerHTML = items.map(i => {
                 const isSent = !!sentLog[i.id] || i.mesaj_durumu === 'Gonderildi';
-                const activeClass = (currentBusiness && currentBusiness.id === i.id) ? 'active' : '';
-                const sentClass = isSent ? 'sent' : '';
+                const c = getColor(i.id);
+
+                // Calculate average rating
+                let avgRating = '-';
+                if (i.yorumlar && i.yorumlar.length > 0) {
+                    const sum = i.yorumlar.reduce((a, b) => a + (b.yildiz || 5), 0);
+                    avgRating = (sum / i.yorumlar.length).toFixed(1);
+                }
+
                 return `
-                <div class="client-item ${activeClass} ${sentClass}" onclick="selectBusiness(${i.id})">
-                    <div class="client-avatar" style="background: ${getColor(i.id)}">${getInitials(i.isletme_adi)}</div>
-                    <div class="client-info">
-                        <div class="client-name">${i.isletme_adi}</div>
-                        <div class="client-cat"><i class="fas fa-tag"></i> ${i.kategori}</div>
+                <div class="card ${isSent ? 'sent' : ''}" id="card-${i.id}">
+                    ${isSent ? '<div class="badge-sent"><i class="fas fa-check-double"></i> Gönderildi</div>' : ''}
+                    
+                    <div class="card-header">
+                        <div class="card-avatar" style="background: linear-gradient(135deg, ${c[0]}, ${c[1]})">${getInitials(i.isletme_adi)}</div>
+                        <div class="card-info">
+                            <h3 class="card-title" title="${i.isletme_adi}">${i.isletme_adi}</h3>
+                            <div class="card-cat"><i class="fas fa-tag"></i> ${i.kategori}</div>
+                        </div>
                     </div>
-                    <div class="status-dot ${sentClass}"></div>
+                    
+                    <div class="card-body">
+                        <div class="info-row"><i class="fas fa-phone"></i> <span>${i.telefon}</span></div>
+                        <div class="info-row"><i class="fas fa-map-marker-alt"></i> <span title="${i.adres || '-'}">${i.adres || '-'}</span></div>
+                        <div class="card-stats">
+                            <div class="stat"><i class="fas fa-star"></i> ${avgRating} Puan</div>
+                            <div class="stat"><i class="fas fa-comment"></i> ${i.yorum_sayisi || 0} Yorum</div>
+                        </div>
+                    </div>
+
+                    <div class="card-footer">
+                        <button class="btn-wp" onclick="openWhatsApp(${i.id})"><i class="fab fa-whatsapp"></i> Mesaj Gönder</button>
+                        <button class="btn-mark ${isSent ? 'is-sent' : ''}" onclick="toggleSentStatus(${i.id})" title="${isSent ? 'Geri Al' : 'Gönderildi İşaretle'}">
+                            <i class="fas ${isSent ? 'fa-check-double' : 'fa-check'}"></i>
+                        </button>
+                    </div>
                 </div>`;
             }).join('');
-        }
 
-        function selectBusiness(id) {
-            currentBusiness = DATA.find(x => x.id === id);
-            renderList(); // Update active state in list
-
-            if (!currentBusiness) return;
-
-            // Show main panel, hide empty state
-            document.getElementById('emptyState').style.display = 'none';
-            document.getElementById('detailView').classList.add('active');
-
-            // Header
-            document.getElementById('dAvatar').innerHTML = getInitials(currentBusiness.isletme_adi);
-            document.getElementById('dAvatar').style.background = `linear-gradient(135deg, ${getColor(id)}, #1e293b)`;
-            document.getElementById('dName').textContent = currentBusiness.isletme_adi;
-            document.getElementById('dCat').innerHTML = `<i class="fas fa-tag"></i> ${currentBusiness.kategori}`;
-            document.getElementById('dPhone').innerHTML = `<i class="fas fa-phone"></i> ${currentBusiness.telefon}`;
-
-            // Info Grid
-            document.getElementById('dAddress').textContent = currentBusiness.adres || '-';
-
-            // Calculate average rating if not provided directly
-            let avgRating = '-';
-            if (currentBusiness.yorumlar && currentBusiness.yorumlar.length > 0) {
-                const sum = currentBusiness.yorumlar.reduce((a, b) => a + (b.yildiz || 5), 0);
-                avgRating = (sum / currentBusiness.yorumlar.length).toFixed(1) + ' / 5.0';
-            }
-            document.getElementById('dRating').textContent = avgRating;
-            document.getElementById('dReviews').textContent = currentBusiness.yorum_sayisi || '0';
-            document.getElementById('dPhotos').textContent = currentBusiness.fotograf_sayisi || '0';
-
-            // Message Template
-            const msgTemplate = `Merhaba, ben Abdulmuin.
-Kastamonu'daki işletmeler için modern web siteleri hazırlıyorum.
-
-*${currentBusiness.isletme_adi}* İşletmenizin Google'da daha profesyonel görünmesi ve müşterilerinizin size daha kolay ulaşabilmesi için sade ve mobil uyumlu tanıtım siteleri yapıyorum.
-
-İsterseniz size örnek bir çalışma hazırlayıp gönderebilirim.
-Beğenirseniz devam edebiliriz, beğenmezseniz hiçbir ücret yok.`;
-            document.getElementById('dMessagePreview').innerText = msgTemplate;
-
-            // Sent button state
-            const isSent = !!sentLog[id] || currentBusiness.mesaj_durumu === 'Gonderildi';
-            const btn = document.getElementById('btnToggleSent');
-            if (isSent) {
-                btn.classList.add('active');
-                btn.innerHTML = `<i class="fas fa-check-double"></i> Gönderildi (Geri Al)`;
-            } else {
-                btn.classList.remove('active');
-                btn.innerHTML = `<i class="fas fa-check"></i> 'Gönderildi' Olarak İşaretle`;
+            if (filteredData.length > 100) {
+                grid.innerHTML += `<div style="grid-column: 1/-1; text-align:center; padding: 20px; color: var(--text-muted); font-size:14px;"><i class="fas fa-info-circle"></i> ${filteredData.length - 100} sonuç daha var. Daha dar bir arama yapın.</div>`;
             }
         }
 
-        function openWhatsApp() {
-            if (!currentBusiness) return;
-            const text = document.getElementById('dMessagePreview').innerText;
+        function openWhatsApp(id) {
+            const i = DATA.find(x => x.id === id);
+            if (!i) return;
 
-            const rawPhone = currentBusiness.telefon.replace(/\D/g, '');
+            const msgTemplate = `Merhaba, ben Abdulmuin.\nKastamonu'daki işletmeler için modern web siteleri hazırlıyorum.\n\n*${i.isletme_adi}* İşletmenizin Google'da daha profesyonel görünmesi ve müşterilerinizin size daha kolay ulaşabilmesi için sade ve mobil uyumlu tanıtım siteleri yapıyorum.\n\nİsterseniz size örnek bir çalışma hazırlayıp gönderebilirim.\nBeğenirseniz devam edebiliriz, beğenmezseniz hiçbir ücret yok.`;
+
+            const rawPhone = i.telefon.replace(/\D/g, '');
             let phoneNo = rawPhone;
             if (phoneNo.length === 10) phoneNo = '90' + phoneNo;
             else if (phoneNo.startsWith('0')) phoneNo = '90' + phoneNo.substring(1);
 
-            const url = `https://wa.me/${phoneNo}?text=${encodeURIComponent(text)}`;
+            const url = `https://wa.me/${phoneNo}?text=${encodeURIComponent(msgTemplate)}`;
             window.open(url, '_blank');
 
             // Auto-mark as sent
-            if (!sentLog[currentBusiness.id]) {
-                toggleSentStatus();
+            if (!sentLog[i.id]) {
+                toggleSentStatus(i.id, false); // false = dont fully re-render just to keep flow smooth if needed, but here we can re-render easily.
             }
         }
 
-        function toggleSentStatus() {
-            if (!currentBusiness) return;
-            const id = currentBusiness.id;
-
+        function toggleSentStatus(id) {
             const isSent = !!sentLog[id];
             if (isSent) {
                 delete sentLog[id];
@@ -854,8 +799,7 @@ Beğenirseniz devam edebiliriz, beğenmezseniz hiçbir ücret yok.`;
             }
 
             localStorage.setItem('wp_sent', JSON.stringify(sentLog));
-            selectBusiness(id); // Re-render detail view buttons
-            applyFilters(); // Re-render the list
+            applyFilters(); // Re-render to update UI states
         }
 
     </script>
