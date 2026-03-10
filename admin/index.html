@@ -441,10 +441,11 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 18px;
+            font-size: 20px;
             font-weight: 800;
-            color: var(--accent2);
-            background: linear-gradient(135deg, rgba(99, 102, 241, .15), rgba(168, 85, 247, .1))
+            color: #fff;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
+            background: linear-gradient(135deg, var(--avatar-c1, #6366f1), var(--avatar-c2, #a855f7));
         }
 
         .card-info {
@@ -1117,6 +1118,27 @@
 </head>
 
 <body>
+    <!-- LOGIN OVERLAY -->
+    <div id="authOverlay"
+        style="position:fixed;inset:0;background:var(--bg);z-index:9999;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:20px;">
+        <div style="text-align:center;">
+            <div class="logo-icon" style="margin:0 auto 16px;width:64px;height:64px;font-size:28px;"><i
+                    class="fas fa-lock"></i></div>
+            <h2 style="margin-bottom:8px">Admin Girişi</h2>
+            <p style="color:var(--text2);font-size:14px;margin-bottom:24px">Lütfen yönetici şifresini girin.</p>
+        </div>
+        <div style="display:flex;gap:10px;width:100%;max-width:300px;">
+            <input type="password" id="authInput" placeholder="Şifre..."
+                style="flex:1;background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:12px 16px;color:var(--text);font-family:inherit;font-size:16px;"
+                onkeypress="if(event.key==='Enter') checkAuth()">
+            <button onclick="checkAuth()"
+                style="background:var(--accent);color:#fff;border:none;border-radius:12px;padding:0 20px;font-weight:600;cursor:pointer;transition:all .2s"><i
+                    class="fas fa-arrow-right"></i></button>
+        </div>
+        <div id="authError" style="color:var(--red);font-size:13px;display:none;margin-top:8px;"><i
+                class="fas fa-exclamation-circle"></i> Hatalı şifre!</div>
+    </div>
+
 
     <header class="header">
         <div class="header-inner">
@@ -1199,8 +1221,75 @@
     <div class="toast" id="toast"></div>
 
     <script>
+        const _k = "=UTN2YjbpVXb";
+
+        function checkAuth() {
+            const val = document.getElementById('authInput').value;
+            const dec = atob(_k.split('').reverse().join(''));
+
+            if (val === dec) {
+                localStorage.setItem('admin_auth', 'true');
+                document.getElementById('authOverlay').style.display = 'none';
+                initApp();
+            } else {
+                document.getElementById('authError').style.display = 'block';
+                document.getElementById('authInput').value = '';
+                document.getElementById('authInput').focus();
+            }
+        }
+
+        function verifyAuthOnLoad() {
+            if (localStorage.getItem('admin_auth') === 'true') {
+                document.getElementById('authOverlay').style.display = 'none';
+                initApp();
+            } else {
+                document.getElementById('authInput').focus();
+            }
+        }
+
         let DATA = null, filteredData = [], currentView = 'grid', API_URL = '', API_ACTIVE = false, currentModalId = null;
         const $ = id => document.getElementById(id);
+
+        function initApp() {
+            detectAPI();
+            document.querySelectorAll('.tab-btn').forEach(b => {
+                b.onclick = () => {
+                    document.querySelectorAll('.tab-btn').forEach(x => x.classList.remove('active'));
+                    b.classList.add('active');
+                    const t = b.dataset.tab;
+                    $('isletmePanel').className = t === 'isletme' ? 'isletme-panel' : 'isletme-panel hidden';
+                    $('logPanel').className = t === 'log' ? 'log-panel active' : 'log-panel';
+                    if (t === 'isletme') filterAndRender();
+                };
+            });
+
+            document.querySelectorAll('.view-btn').forEach(b => {
+                b.onclick = () => {
+                    document.querySelectorAll('.view-btn').forEach(x => x.classList.remove('active'));
+                    b.classList.add('active');
+                    currentView = b.dataset.view;
+                    $('grid').className = currentView === 'list' ? 'grid list-view' : 'grid';
+                };
+            });
+
+            // Filter Events
+            $('searchInput').oninput = filterAndRender;
+            $('categoryFilter').onchange = filterAndRender;
+            $('statusFilter').onchange = filterAndRender;
+
+            // Modal & Global Events
+            $('modalClose').onclick = closeModal;
+            $('modalOverlay').onclick = e => { if (e.target === $('modalOverlay') || e.target.classList.contains('img-viewer')) closeModal(); };
+            $('grid').onclick = e => { const c = e.target.closest('.card'); if (c) openModal(parseInt(c.dataset.id)); };
+            $('imgViewer').onclick = function (e) { if (e.target === this) this.classList.remove('open'); };
+
+            // Theme Toggle
+            if (localStorage.getItem('theme') === 'light') document.documentElement.classList.add('light-theme');
+            $('themeToggle').onclick = () => {
+                document.documentElement.classList.toggle('light-theme');
+                localStorage.setItem('theme', document.documentElement.classList.contains('light-theme') ? 'light' : 'dark');
+            };
+        }
 
         // ============ API DETECTION ============
         async function detectAPI() {
@@ -1295,6 +1384,17 @@
 
         function getInitials(n) { return n.split(/\s+/).slice(0, 2).map(w => w[0]).join('').toUpperCase(); }
 
+        const avatarColors = [
+            ['#ef4444', '#b91c1c'], ['#f97316', '#c2410c'], ['#f59e0b', '#b45309'],
+            ['#10b981', '#047857'], ['#06b6d4', '#0e7490'], ['#3b82f6', '#1d4ed8'],
+            ['#6366f1', '#4338ca'], ['#8b5cf6', '#6d28d9'], ['#d946ef', '#a21caf'],
+            ['#f43f5e', '#be123c']
+        ];
+
+        function getAvatarColors(id) {
+            return avatarColors[id % avatarColors.length];
+        }
+
         function getDurumBadge(i) {
             if (i.satildi) return '<span class="badge sold"><i class="fas fa-check-double"></i>Satıldı</span>';
             if (i.durum === 'Takipte') return '<span class="badge tracking"><i class="fas fa-clock"></i>Takipte</span>';
@@ -1308,9 +1408,11 @@
             $('empty').style.display = 'none';
             const items = filteredData.slice(0, 200);
             grid.innerHTML = items.map(i => {
+                const colors = getAvatarColors(i.id);
+                const colorStyle = `--avatar-c1:${colors[0]}; --avatar-c2:${colors[1]}`;
                 const avatar = i.fotograflar && i.fotograflar.length > 0
-                    ? `<div class="card-avatar"><img src="${i.fotograflar[0]}" alt="" loading="lazy" onerror="this.parentElement.className='card-avatar no-img';this.parentElement.innerHTML='${getInitials(i.isletme_adi)}'"></div>`
-                    : `<div class="card-avatar no-img">${getInitials(i.isletme_adi)}</div>`;
+                    ? `<div class="card-avatar"><img src="${i.fotograflar[0]}" alt="" loading="lazy" onerror="this.parentElement.className='card-avatar no-img';this.parentElement.style='${colorStyle}';this.parentElement.innerHTML='${getInitials(i.isletme_adi)}'"></div>`
+                    : `<div class="card-avatar no-img" style="${colorStyle}">${getInitials(i.isletme_adi)}</div>`;
                 const cardClass = i.satildi ? 'card satildi' : i.durum === 'Takipte' ? 'card takipte' : 'card';
                 return `<div class="${cardClass}" data-id="${i.id}">
       <div class="card-header">${avatar}<div class="card-info"><div class="card-name" title="${i.isletme_adi}">${i.isletme_adi}</div><div class="card-category"><i class="fas fa-tag"></i>${i.kategori}</div></div></div>
