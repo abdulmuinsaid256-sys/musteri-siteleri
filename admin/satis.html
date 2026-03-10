@@ -805,6 +805,12 @@ Detaylı bilgi için:
             const finalMessage = msgTemplate.replace(/\u00f6rnek bir tan\u0131t\u0131m sitesi/i, 'işletmenize özel örnek bir web sitesi');
             const url = `https://web.whatsapp.com/send?phone=${phoneNo}&text=${encodeURIComponent(finalMessage)}`;
             window.open(url, '_blank', 'noopener,noreferrer');
+
+            if (!sentLog[i.id]) {
+                sentLog[i.id] = true;
+                localStorage.setItem('wp_sent', JSON.stringify(sentLog));
+                applyFilters();
+            }
         }
 
         function toggleSentStatus(id) {
