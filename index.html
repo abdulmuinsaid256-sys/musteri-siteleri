@@ -1,0 +1,1589 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>MuinWeb — Kastamonu'daki İşletmeler İçin Profesyonel Web Sitesi</title>
+    <meta name="description"
+        content="MuinWeb — Kastamonu'daki işletmeler için modern, mobil uyumlu ve profesyonel web siteleri tasarlıyorum.">
+    <meta property="og:title" content="MuinWeb — Profesyonel Web Sitesi Hizmeti">
+    <meta property="og:description" content="Kastamonu'daki işletmeler için modern web siteleri.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://kastamonuesnaf.com.tr">
+    <meta property="og:locale" content="tr_TR">
+    <link rel="canonical" href="https://kastamonuesnaf.com.tr">
+    <link rel="alternate" hreflang="tr" href="https://kastamonuesnaf.com.tr">
+    <link rel="icon"
+        href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect rx='18' width='100' height='100' fill='%230c1222'/><text x='50' y='64' font-size='36' text-anchor='middle' fill='%2338bdf8' font-family='system-ui' font-weight='800'>MW</text></svg>">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <script
+        type="application/ld+json">{"@context":"https://schema.org","@type":"ProfessionalService","name":"MuinWeb","url":"https://kastamonuesnaf.com.tr","description":"Kastamonu'daki işletmeler için modern web sitesi hizmeti","address":{"@type":"PostalAddress","addressLocality":"Kastamonu","addressCountry":"TR"},"telephone":"+905050658089","priceRange":"₺₺"}</script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth
+        }
+
+        :root {
+            --bg: #ffffff;
+            --bg2: #f8fafc;
+            --bg3: #f1f5f9;
+            --dark: #0c1222;
+            --dark2: #1e293b;
+            --text: #0f172a;
+            --text2: #475569;
+            --text3: #94a3b8;
+            --border: #e2e8f0;
+            --accent: #0ea5e9;
+            --accent2: #0284c7;
+            --accent-soft: #f0f9ff;
+            --green: #16a34a;
+            --green2: #15803d;
+            --radius: 14px;
+            --shadow: 0 1px 3px rgba(0, 0, 0, .05);
+            --shadow-lg: 0 10px 40px rgba(0, 0, 0, .07)
+        }
+
+        body {
+            font-family: 'Inter', system-ui, sans-serif;
+            color: var(--text);
+            background: var(--bg);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+            overflow-x: hidden
+        }
+
+        h1,
+        h2,
+        h3 {
+            font-family: 'Outfit', 'Inter', sans-serif;
+            line-height: 1.2
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit
+        }
+
+        .container {
+            max-width: 1120px;
+            margin: 0 auto;
+            padding: 0 24px
+        }
+
+        /* NAV */
+        .nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: rgba(255, 255, 255, .92);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--border);
+            z-index: 100;
+            transition: box-shadow .3s
+        }
+
+        .nav.scrolled {
+            box-shadow: var(--shadow)
+        }
+
+        .nav-inner {
+            display: flex;
+            align-items: center;
+            height: 64px;
+            max-width: 1120px;
+            margin: 0 auto;
+            padding: 0 24px
+        }
+
+        .nav-logo {
+            display: flex;
+            align-items: center;
+            gap: 10px
+        }
+
+        .logo-mark {
+            width: 36px;
+            height: 36px;
+            background: var(--dark);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden
+        }
+
+        .logo-mark::before {
+            content: 'MW';
+            font-family: 'Outfit', sans-serif;
+            font-weight: 800;
+            font-size: 13px;
+            color: var(--accent);
+            letter-spacing: -.5px
+        }
+
+        .logo-text {
+            font-family: 'Outfit', sans-serif;
+            font-weight: 700;
+            font-size: 18px;
+            letter-spacing: -.5px
+        }
+
+        .logo-text em {
+            font-style: normal;
+            color: var(--accent)
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 28px;
+            margin-left: auto
+        }
+
+        .nav-links a {
+            font-size: 13.5px;
+            font-weight: 500;
+            color: var(--text2);
+            transition: color .2s
+        }
+
+        .nav-links a:hover {
+            color: var(--text)
+        }
+
+        .nav-cta {
+            margin-left: 28px;
+            display: inline-flex;
+            align-items: center;
+            gap: 7px;
+            background: var(--green);
+            color: #fff;
+            font-size: 13px;
+            font-weight: 600;
+            padding: 9px 18px;
+            border-radius: 10px;
+            transition: background .2s
+        }
+
+        .nav-cta:hover {
+            background: var(--green2)
+        }
+
+        .mob-btn {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 22px;
+            color: var(--text);
+            cursor: pointer;
+            padding: 8px
+        }
+
+        .mob-menu {
+            display: none;
+            position: absolute;
+            top: 64px;
+            left: 0;
+            right: 0;
+            background: #fff;
+            border-bottom: 1px solid var(--border);
+            padding: 16px 24px
+        }
+
+        .mob-menu.open {
+            display: block
+        }
+
+        .mob-menu a {
+            display: block;
+            padding: 12px 0;
+            font-size: 14px;
+            font-weight: 500;
+            color: var(--text2);
+            border-bottom: 1px solid var(--bg2)
+        }
+
+        .mob-menu a:last-child {
+            border: none
+        }
+
+        .mob-menu .nav-cta {
+            display: flex;
+            justify-content: center;
+            margin: 14px 0 0;
+            padding: 13px
+        }
+
+        /* HERO */
+        .hero {
+            padding: 120px 0 80px;
+            position: relative
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -100px;
+            right: -100px;
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, rgba(14, 165, 233, .05) 0%, transparent 70%);
+            pointer-events: none
+        }
+
+        .hero-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 64px;
+            align-items: center
+        }
+
+        @media (max-width: 768px) {
+            .hero-grid {
+                grid-template-columns: 1fr;
+                text-align: center;
+                gap: 36px
+            }
+
+            .hero-desc {
+                margin: 0 auto 28px;
+                max-width: 100%
+            }
+
+            .hero-btns {
+                justify-content: center;
+                width: 100%
+            }
+
+            .hero h1 {
+                text-align: center
+            }
+
+            .hero-badge {
+                margin-left: auto;
+                margin-right: auto
+            }
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 7px;
+            font-size: 12px;
+            font-weight: 600;
+            color: var(--accent);
+            background: var(--accent-soft);
+            padding: 6px 14px;
+            border-radius: 40px;
+            margin-bottom: 24px;
+            letter-spacing: .2px
+        }
+
+        .hero-badge .pulse {
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background: var(--accent);
+            box-shadow: 0 0 0 3px rgba(14, 165, 233, .2)
+        }
+
+        .hero h1 {
+            font-size: clamp(32px, 4.5vw, 50px);
+            font-weight: 800;
+            color: var(--text);
+            letter-spacing: -.5px;
+            margin-bottom: 20px
+        }
+
+        .hero h1 span {
+            color: var(--accent)
+        }
+
+        .hero-desc {
+            font-size: 16px;
+            color: var(--text2);
+            line-height: 1.7;
+            margin-bottom: 32px;
+            max-width: 460px
+        }
+
+        .hero-btns {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 14px;
+            font-weight: 600;
+            padding: 13px 26px;
+            border-radius: 11px;
+            transition: all .25s;
+            cursor: pointer;
+            border: none
+        }
+
+        .btn-accent {
+            background: var(--accent);
+            color: #fff
+        }
+
+        .btn-accent:hover {
+            background: var(--accent2);
+            transform: translateY(-1px)
+        }
+
+        .btn-dark {
+            background: var(--dark);
+            color: #fff
+        }
+
+        .btn-dark:hover {
+            background: #000;
+            transform: translateY(-1px)
+        }
+
+        .btn-green {
+            background: var(--green);
+            color: #fff
+        }
+
+        .btn-green:hover {
+            background: var(--green2);
+            transform: translateY(-1px)
+        }
+
+        .btn-ghost {
+            background: transparent;
+            color: var(--text);
+            border: 1.5px solid var(--border)
+        }
+
+        .btn-ghost:hover {
+            border-color: var(--text)
+        }
+
+        /* Hero Visual */
+        .hero-visual {
+            position: relative
+        }
+
+        .hero-mockup {
+            background: #fff;
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 14px;
+            box-shadow: var(--shadow-lg)
+        }
+
+        .mock-bar {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            margin-bottom: 12px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid var(--bg2)
+        }
+
+        .mock-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%
+        }
+
+        .mock-dot:nth-child(1) {
+            background: #fca5a5
+        }
+
+        .mock-dot:nth-child(2) {
+            background: #fde68a
+        }
+
+        .mock-dot:nth-child(3) {
+            background: #86efac
+        }
+
+        .mock-url {
+            font-size: 11px;
+            color: var(--text3);
+            margin-left: 8px;
+            font-family: monospace
+        }
+
+        .mock-body {
+            background: var(--bg2);
+            border-radius: 10px;
+            padding: 20px;
+            min-height: 220px
+        }
+
+        .mock-body .bar {
+            height: 8px;
+            border-radius: 4px;
+            margin-bottom: 10px;
+            background: var(--border)
+        }
+
+        .mock-body .w60 {
+            width: 60%
+        }
+
+        .mock-body .w40 {
+            width: 40%
+        }
+
+        .mock-body .block {
+            height: 72px;
+            background: #fff;
+            border-radius: 8px;
+            border: 1px solid var(--border);
+            margin: 16px 0
+        }
+
+        .mock-body .cols {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 8px
+        }
+
+        .mock-body .col-c {
+            height: 44px;
+            background: #fff;
+            border-radius: 6px;
+            border: 1px solid var(--border)
+        }
+
+        .mock-body .btn-row {
+            display: flex;
+            gap: 6px;
+            margin-top: 14px
+        }
+
+        .mock-body .mini-btn {
+            height: 26px;
+            border-radius: 6px;
+            flex: 1
+        }
+
+        .mock-body .mini-btn:first-child {
+            background: var(--accent)
+        }
+
+        .mock-body .mini-btn:last-child {
+            background: var(--green)
+        }
+
+        .hero-tag {
+            position: absolute;
+            background: #fff;
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            padding: 8px 14px;
+            box-shadow: var(--shadow-lg);
+            font-size: 11px;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 8px
+        }
+
+        .hero-tag-1 {
+            bottom: -8px;
+            left: -10px
+        }
+
+        .hero-tag-2 {
+            top: 24px;
+            right: -8px
+        }
+
+        .tag-dot {
+            width: 7px;
+            height: 7px;
+            border-radius: 50%;
+            background: var(--green)
+        }
+
+        /* Trust */
+        .trust {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 12px;
+            margin-top: 64px
+        }
+
+        .trust-item {
+            text-align: center;
+            padding: 18px 12px;
+            background: var(--bg2);
+            border-radius: var(--radius);
+            border: 1px solid transparent;
+            transition: border-color .2s
+        }
+
+        .trust-item:hover {
+            border-color: var(--border)
+        }
+
+        .trust-item i {
+            font-size: 18px;
+            color: var(--accent);
+            margin-bottom: 8px;
+            display: block
+        }
+
+        .trust-item span {
+            font-size: 13px;
+            font-weight: 600;
+            color: var(--text)
+        }
+
+        /* SECTIONS */
+        .section {
+            padding: 96px 0
+        }
+
+        .section-alt {
+            background: var(--bg2)
+        }
+
+        .s-header {
+            text-align: center;
+            margin-bottom: 52px
+        }
+
+        .s-label {
+            font-size: 11px;
+            font-weight: 700;
+            color: var(--accent);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 12px;
+            display: block
+        }
+
+        .s-title {
+            font-size: clamp(26px, 3vw, 36px);
+            font-weight: 800;
+            color: var(--text);
+            letter-spacing: -.3px
+        }
+
+        /* Services */
+        .srv-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 16px
+        }
+
+        .srv {
+            padding: 28px;
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            background: #fff;
+            transition: all .3s
+        }
+
+        .srv:hover {
+            border-color: var(--accent);
+            box-shadow: 0 8px 24px rgba(14, 165, 233, .07);
+            transform: translateY(-2px)
+        }
+
+        .srv .ic {
+            width: 42px;
+            height: 42px;
+            background: var(--accent-soft);
+            border-radius: 11px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 16px;
+            font-size: 17px;
+            color: var(--accent)
+        }
+
+        .srv h3 {
+            font-size: 15px;
+            font-weight: 700;
+            margin-bottom: 6px;
+            font-family: 'Outfit', sans-serif
+        }
+
+        .srv p {
+            font-size: 13px;
+            color: var(--text2);
+            line-height: 1.6
+        }
+
+        /* Steps */
+        .steps {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 32px;
+            position: relative
+        }
+
+        .steps::before {
+            content: '';
+            position: absolute;
+            top: 30px;
+            left: 20%;
+            right: 20%;
+            height: 1px;
+            background: var(--border)
+        }
+
+        .step {
+            text-align: center;
+            position: relative;
+            z-index: 1
+        }
+
+        .step-n {
+            width: 46px;
+            height: 46px;
+            background: var(--dark);
+            color: var(--accent);
+            border-radius: 13px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 16px;
+            font-size: 18px;
+            font-weight: 800;
+            font-family: 'Outfit', sans-serif
+        }
+
+        .step h3 {
+            font-size: 15px;
+            font-weight: 700;
+            margin-bottom: 6px;
+            font-family: 'Outfit', sans-serif
+        }
+
+        .step p {
+            font-size: 13px;
+            color: var(--text2);
+            line-height: 1.6;
+            max-width: 260px;
+            margin: 0 auto
+        }
+
+        /* Packages */
+        .pkg-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 16px;
+            max-width: 960px;
+            margin: 0 auto
+        }
+
+        .pkg {
+            background: #fff;
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 30px;
+            transition: all .3s
+        }
+
+        .pkg:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-lg)
+        }
+
+        .pkg.pop {
+            border: 2px solid var(--dark);
+            position: relative
+        }
+
+        .pkg-tag {
+            position: absolute;
+            top: -1px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--dark);
+            color: var(--accent);
+            font-size: 10px;
+            font-weight: 700;
+            padding: 4px 14px;
+            border-radius: 0 0 8px 8px;
+            letter-spacing: .5px;
+            text-transform: uppercase
+        }
+
+        .pkg h3 {
+            font-size: 17px;
+            font-weight: 700;
+            margin-bottom: 3px;
+            font-family: 'Outfit', sans-serif
+        }
+
+        .pkg .sub {
+            font-size: 12px;
+            color: var(--text3);
+            margin-bottom: 18px
+        }
+
+        .pkg .price {
+            font-size: 34px;
+            font-weight: 800;
+            font-family: 'Outfit', sans-serif;
+            margin-bottom: 22px;
+            letter-spacing: -.5px
+        }
+
+        .pkg .price small {
+            font-size: 15px;
+            font-weight: 500;
+            color: var(--text3)
+        }
+
+        .pkg ul {
+            list-style: none;
+            margin-bottom: 24px
+        }
+
+        .pkg ul li {
+            font-size: 13px;
+            color: var(--text2);
+            padding: 7px 0;
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            border-bottom: 1px solid var(--bg2)
+        }
+
+        .pkg ul li:last-child {
+            border: none
+        }
+
+        .pkg ul li i {
+            color: var(--accent);
+            font-size: 11px;
+            margin-top: 3px
+        }
+
+        .pkg-b {
+            display: block;
+            text-align: center;
+            padding: 13px;
+            border-radius: 10px;
+            font-size: 13px;
+            font-weight: 600;
+            transition: all .25s
+        }
+
+        .pkg-b-ghost {
+            border: 1.5px solid var(--border);
+            color: var(--text)
+        }
+
+        .pkg-b-ghost:hover {
+            border-color: var(--dark);
+            background: var(--dark);
+            color: #fff
+        }
+
+        .pkg-b-dark {
+            background: var(--dark);
+            color: #fff
+        }
+
+        .pkg-b-dark:hover {
+            background: #000
+        }
+
+        /* Portfolio */
+        .folio-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 16px
+        }
+
+        .folio {
+            background: #fff;
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            overflow: hidden;
+            transition: all .3s
+        }
+
+        .folio:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-lg)
+        }
+
+        .folio-img {
+            height: 132px;
+            display: flex;
+            align-items: center;
+            justify-content: center
+        }
+
+        .folio-img i {
+            font-size: 28px;
+            opacity: .18
+        }
+
+        .folio-body {
+            padding: 16px 18px
+        }
+
+        .folio-t {
+            display: inline-block;
+            font-size: 10px;
+            font-weight: 700;
+            padding: 3px 9px;
+            border-radius: 6px;
+            margin-bottom: 6px;
+            text-transform: uppercase;
+            letter-spacing: .3px
+        }
+
+        .folio-body h3 {
+            font-size: 14px;
+            font-weight: 700;
+            font-family: 'Outfit', sans-serif
+        }
+
+        .folio-body p {
+            font-size: 11px;
+            color: var(--text3);
+            margin-top: 2px
+        }
+
+        /* About */
+        .about {
+            max-width: 600px;
+            margin: 0 auto;
+            text-align: center
+        }
+
+        .about-av {
+            width: 68px;
+            height: 68px;
+            background: var(--dark);
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 18px
+        }
+
+        .about-av span {
+            font-size: 24px;
+            font-weight: 800;
+            color: var(--accent);
+            font-family: 'Outfit', sans-serif
+        }
+
+        .about h2 {
+            font-size: 26px;
+            font-weight: 800;
+            margin-bottom: 14px;
+            font-family: 'Outfit', sans-serif
+        }
+
+        .about p {
+            font-size: 15px;
+            color: var(--text2);
+            line-height: 1.75
+        }
+
+        /* FAQ */
+        .faq-list {
+            max-width: 640px;
+            margin: 0 auto
+        }
+
+        .faq-i {
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            margin-bottom: 6px;
+            background: #fff;
+            transition: border-color .2s
+        }
+
+        .faq-i:hover {
+            border-color: var(--text3)
+        }
+
+        .faq-q {
+            display: flex;
+            align-items: center;
+            width: 100%;
+            padding: 16px 20px;
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--text);
+            background: none;
+            border: none;
+            cursor: pointer;
+            text-align: left;
+            font-family: 'Inter', sans-serif
+        }
+
+        .faq-q i {
+            margin-left: auto;
+            font-size: 11px;
+            color: var(--text3);
+            transition: transform .3s;
+            flex-shrink: 0
+        }
+
+        .faq-q.act i {
+            transform: rotate(45deg)
+        }
+
+        .faq-a {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height .3s
+        }
+
+        .faq-a p {
+            padding: 0 20px 16px;
+            font-size: 13px;
+            color: var(--text2);
+            line-height: 1.7
+        }
+
+        /* CTA */
+        .cta {
+            padding: 96px 0;
+            background: var(--dark);
+            text-align: center;
+            position: relative;
+            overflow: hidden
+        }
+
+        .cta::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(14, 165, 233, .08) 0%, transparent 70%);
+            transform: translate(-50%, -50%);
+            pointer-events: none
+        }
+
+        .cta h2 {
+            font-size: clamp(26px, 3vw, 36px);
+            font-weight: 800;
+            color: #fff;
+            margin-bottom: 12px;
+            font-family: 'Outfit', sans-serif;
+            letter-spacing: -.3px;
+            position: relative
+        }
+
+        .cta p {
+            font-size: 15px;
+            color: #64748b;
+            margin-bottom: 28px;
+            max-width: 420px;
+            margin-left: auto;
+            margin-right: auto;
+            line-height: 1.7;
+            position: relative
+        }
+
+        .cta .btn-green {
+            padding: 15px 32px;
+            font-size: 15px;
+            border-radius: 13px;
+            box-shadow: 0 6px 20px rgba(22, 163, 74, .2);
+            position: relative
+        }
+
+        /* Footer */
+        .footer {
+            padding: 40px 0 28px;
+            background: #080d18;
+            color: #475569
+        }
+
+        .footer-inner {
+            display: flex;
+            align-items: center;
+            gap: 24px;
+            padding-bottom: 24px;
+            border-bottom: 1px solid #1e293b
+        }
+
+        .f-logo {
+            display: flex;
+            align-items: center;
+            gap: 9px;
+            font-size: 14px;
+            font-weight: 700;
+            color: #e2e8f0;
+            font-family: 'Outfit', sans-serif
+        }
+
+        .f-mark {
+            width: 26px;
+            height: 26px;
+            background: #1e293b;
+            border-radius: 7px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 9px;
+            font-weight: 800;
+            color: var(--accent);
+            font-family: 'Outfit', sans-serif
+        }
+
+        .f-links {
+            display: flex;
+            gap: 24px;
+            margin-left: auto
+        }
+
+        .f-links a {
+            font-size: 12px;
+            color: #64748b;
+            transition: color .2s
+        }
+
+        .f-links a:hover {
+            color: #e2e8f0
+        }
+
+        .f-copy {
+            text-align: center;
+            padding-top: 20px;
+            font-size: 11px;
+            color: #334155
+        }
+
+        /* WA Float */
+        .wa-float {
+            position: fixed;
+            bottom: 24px;
+            right: 24px;
+            z-index: 90
+        }
+
+        .wa-btn {
+            width: 54px;
+            height: 54px;
+            background: var(--green);
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+            font-size: 22px;
+            box-shadow: 0 4px 16px rgba(22, 163, 74, .25);
+            transition: all .2s
+        }
+
+        .wa-btn:hover {
+            transform: scale(1.06);
+            background: var(--green2)
+        }
+
+        .wa-bub {
+            position: absolute;
+            bottom: 64px;
+            right: 0;
+            background: #fff;
+            border: 1px solid var(--border);
+            border-radius: 12px 12px 2px 12px;
+            padding: 10px 16px;
+            box-shadow: var(--shadow-lg);
+            font-size: 12px;
+            font-weight: 500;
+            color: var(--text);
+            white-space: nowrap;
+            opacity: 0;
+            transform: translateY(6px);
+            transition: all .3s;
+            pointer-events: none
+        }
+
+        .wa-bub.show {
+            opacity: 1;
+            transform: translateY(0)
+        }
+
+        /* Reveal */
+        .r {
+            opacity: 0;
+            transform: translateY(22px);
+            transition: opacity .65s cubic-bezier(.22, .61, .36, 1), transform .65s cubic-bezier(.22, .61, .36, 1)
+        }
+
+        .r.v {
+            opacity: 1;
+            transform: none
+        }
+
+        .d1 {
+            transition-delay: .1s
+        }
+
+        .d2 {
+            transition-delay: .18s
+        }
+
+        .d3 {
+            transition-delay: .26s
+        }
+
+        .d4 {
+            transition-delay: .32s
+        }
+
+        @media(max-width:1024px) {
+
+            .nav-links,
+            .nav-cta {
+                display: none
+            }
+
+            .mob-btn {
+                display: block
+            }
+
+            .hero-grid {
+                grid-template-columns: 1fr;
+                text-align: center;
+                gap: 36px
+            }
+
+            .hero-desc {
+                margin: 0 auto 28px
+            }
+
+            .hero-btns {
+                justify-content: center
+            }
+
+            .hero-visual {
+                max-width: 380px;
+                margin: 0 auto
+            }
+
+            .hero-tag {
+                display: none
+            }
+
+            .srv-grid {
+                grid-template-columns: 1fr 1fr;
+                gap: 12px
+            }
+
+            .steps {
+                grid-template-columns: 1fr;
+                gap: 20px
+            }
+
+            .steps::before {
+                display: none
+            }
+
+            .pkg-grid {
+                grid-template-columns: 1fr;
+                max-width: 380px
+            }
+
+            .folio-grid {
+                grid-template-columns: 1fr 1fr;
+                gap: 12px
+            }
+
+            .trust {
+                grid-template-columns: repeat(2, 1fr)
+            }
+
+            .footer-inner {
+                flex-direction: column;
+                text-align: center
+            }
+
+            .f-links {
+                margin-left: 0
+            }
+        }
+
+        @media(max-width:640px) {
+
+            .srv-grid,
+            .folio-grid {
+                grid-template-columns: 1fr
+            }
+
+            .hero {
+                padding: 100px 0 60px
+            }
+
+            .section {
+                padding: 72px 0
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav class="nav" id="nav">
+        <div class="nav-inner">
+            <a href="#" class="nav-logo">
+                <div class="logo-mark"></div>
+                <div class="logo-text">Muin<em>Web</em></div>
+            </a>
+            <div class="nav-links"><a href="#hizmetler">Hizmetler</a><a href="#nasil">Süreç</a><a
+                    href="#paketler">Paketler</a><a href="#ornekler">Portföy</a><a href="#hakkimda">Hakkımda</a></div>
+            <a href="https://wa.me/905050658089?text=Merhaba%2C%20web%20sitesi%20hakk%C4%B1nda%20bilgi%20almak%20istiyorum."
+                target="_blank" class="nav-cta"><i class="fab fa-whatsapp"></i>WhatsApp'tan Ulaş</a>
+            <button class="mob-btn" id="mobBtn" aria-label="Menü"><i class="fas fa-bars"></i></button>
+        </div>
+        <div class="mob-menu" id="mobMenu">
+            <a href="#hizmetler" class="ml">Hizmetler</a><a href="#nasil" class="ml">Süreç</a><a href="#paketler"
+                class="ml">Paketler</a><a href="#ornekler" class="ml">Portföy</a><a href="#hakkimda"
+                class="ml">Hakkımda</a>
+            <a href="https://wa.me/905050658089?text=Merhaba%2C%20bilgi%20almak%20istiyorum." target="_blank"
+                class="nav-cta ml"><i class="fab fa-whatsapp"></i>WhatsApp'tan Ulaş</a>
+        </div>
+    </nav>
+
+    <section class="hero" id="anasayfa">
+        <div class="container">
+            <div class="hero-grid">
+                <div>
+                    <div class="hero-badge r"><span class="pulse"></span>Kastamonu, Türkiye</div>
+                    <h1 class="r d1">İşletmeniz için <span>modern web sitesi</span> hazırlıyorum</h1>
+                    <p class="hero-desc r d2">Sade, hızlı ve mobil uyumlu tasarımlarla işletmenizin dijital dünyada
+                        profesyonel görünmesini sağlıyorum.</p>
+                    <div class="hero-btns r d3">
+                        <a href="#ornekler" class="btn btn-dark"><i class="fas fa-arrow-down"
+                                style="font-size:11px"></i>Çalışmaları Gör</a>
+                        <a href="https://wa.me/905050658089?text=Merhaba%2C%20bilgi%20almak%20istiyorum."
+                            target="_blank" class="btn btn-green"><i class="fab fa-whatsapp"></i>Hemen Yaz</a>
+                    </div>
+                </div>
+                <div class="hero-visual r d2">
+                    <div class="hero-mockup">
+                        <div class="mock-bar"><span class="mock-dot"></span><span class="mock-dot"></span><span
+                                class="mock-dot"></span><span class="mock-url">isletmeniz.com.tr</span></div>
+                        <div class="mock-body">
+                            <div class="bar w60"></div>
+                            <div class="bar w40"></div>
+                            <div class="block"></div>
+                            <div class="cols">
+                                <div class="col-c"></div>
+                                <div class="col-c"></div>
+                                <div class="col-c"></div>
+                            </div>
+                            <div class="btn-row">
+                                <div class="mini-btn"></div>
+                                <div class="mini-btn"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="hero-tag hero-tag-1"><span class="tag-dot"></span>Mobil Uyumlu</div>
+                    <div class="hero-tag hero-tag-2"><i class="fas fa-bolt"
+                            style="color:var(--accent);font-size:12px"></i>Hızlı Teslim</div>
+                </div>
+            </div>
+            <div class="trust">
+                <div class="trust-item r"><i class="fas fa-mobile-screen-button"></i><span>Mobil Uyumlu</span></div>
+                <div class="trust-item r d1"><i class="fas fa-bolt"></i><span>Hızlı Teslim</span></div>
+                <div class="trust-item r d2"><i class="fas fa-pen-ruler"></i><span>Profesyonel Tasarım</span></div>
+                <div class="trust-item r d3"><i class="fab fa-whatsapp"></i><span>Kolay İletişim</span></div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section section-alt" id="hizmetler">
+        <div class="container">
+            <div class="s-header r"><span class="s-label">Hizmetler</span>
+                <h2 class="s-title">İşletmeniz için dijital çözümler</h2>
+            </div>
+            <div class="srv-grid">
+                <div class="srv r">
+                    <div class="ic"><i class="fas fa-globe"></i></div>
+                    <h3>Tanıtım Web Sitesi</h3>
+                    <p>İşletmenizi en iyi şekilde tanıtan modern web siteleri tasarlıyorum.</p>
+                </div>
+                <div class="srv r d1">
+                    <div class="ic"><i class="fas fa-mobile-alt"></i></div>
+                    <h3>Mobil Uyumlu Tasarım</h3>
+                    <p>Her cihazdan sorunsuz açılan tam responsive yapılar.</p>
+                </div>
+                <div class="srv r d2">
+                    <div class="ic"><i class="fab fa-whatsapp"></i></div>
+                    <h3>WhatsApp Entegrasyonu</h3>
+                    <p>Müşterileriniz tek tıkla size ulaşabilir.</p>
+                </div>
+                <div class="srv r d3">
+                    <div class="ic"><i class="fas fa-rocket"></i></div>
+                    <h3>Hızlı Yayınlama</h3>
+                    <p>SEO uyumlu yapı ile Google'da görünürlük.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section" id="nasil">
+        <div class="container">
+            <div class="s-header r"><span class="s-label">Süreç</span>
+                <h2 class="s-title">3 adımda web siteniz hazır</h2>
+            </div>
+            <div class="steps">
+                <div class="step r">
+                    <div class="step-n">1</div>
+                    <h3>İletişime Geçin</h3>
+                    <p>WhatsApp'tan yazın, ihtiyaçlarınızı birlikte belirleyelim.</p>
+                </div>
+                <div class="step r d1">
+                    <div class="step-n">2</div>
+                    <h3>Tasarım & Geliştirme</h3>
+                    <p>Web sitenizi profesyonelce hazırlıyorum.</p>
+                </div>
+                <div class="step r d2">
+                    <div class="step-n">3</div>
+                    <h3>Yayına Alın</h3>
+                    <p>Siteniz canlıya alınır, müşterileriniz sizi bulur.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section section-alt" id="paketler">
+        <div class="container">
+            <div class="s-header r"><span class="s-label">Fiyatlandırma</span>
+                <h2 class="s-title">Web sitesi paketleri</h2>
+            </div>
+            <div class="pkg-grid">
+                <div class="pkg r">
+                    <h3>Başlangıç</h3>
+                    <p class="sub">Yeni başlayanlar için</p>
+                    <div class="price">4.500 <small>TL</small></div>
+                    <ul>
+                        <li><i class="fas fa-check"></i>Tek sayfa modern web sitesi</li>
+                        <li><i class="fas fa-check"></i>Mobil uyumlu tasarım</li>
+                        <li><i class="fas fa-check"></i>Telefon ve WhatsApp butonu</li>
+                        <li><i class="fas fa-check"></i>Harita ve adres bölümü</li>
+                        <li><i class="fas fa-check"></i>Hizmetler bölümü</li>
+                        <li><i class="fas fa-check"></i>1 revize hakkı</li>
+                    </ul><a
+                        href="https://wa.me/905050658089?text=Merhaba%2C%20Ba%C5%9Flang%C4%B1%C3%A7%20Paketi%20hakk%C4%B1nda%20bilgi%20almak%20istiyorum."
+                        target="_blank" class="pkg-b pkg-b-ghost">İletişime Geç</a>
+                </div>
+                <div class="pkg pop r d1">
+                    <div class="pkg-tag">Popüler</div>
+                    <h3>Profesyonel</h3>
+                    <p class="sub">Büyüyen işletmeler için</p>
+                    <div class="price">7.500 <small>TL</small></div>
+                    <ul>
+                        <li><i class="fas fa-check"></i>Premium tek sayfa tasarım</li>
+                        <li><i class="fas fa-check"></i>Mobil uyumlu yapı</li>
+                        <li><i class="fas fa-check"></i>Galeri bölümü</li>
+                        <li><i class="fas fa-check"></i>Müşteri yorumları bölümü</li>
+                        <li><i class="fas fa-check"></i>WhatsApp entegrasyonu</li>
+                        <li><i class="fas fa-check"></i>Temel SEO düzeni</li>
+                        <li><i class="fas fa-check"></i>2 revize hakkı</li>
+                    </ul><a
+                        href="https://wa.me/905050658089?text=Merhaba%2C%20Profesyonel%20Paket%20hakk%C4%B1nda%20bilgi%20almak%20istiyorum."
+                        target="_blank" class="pkg-b pkg-b-dark">Profesyonel Paketi Seç</a>
+                </div>
+                <div class="pkg r d2">
+                    <h3>Premium</h3>
+                    <p class="sub">Tam kapsamlı çözüm</p>
+                    <div class="price">12.000 <small>TL</small></div>
+                    <ul>
+                        <li><i class="fas fa-check"></i>Premium tasarım</li>
+                        <li><i class="fas fa-check"></i>Mobil öncelikli yapı</li>
+                        <li><i class="fas fa-check"></i>İşletmeye özel içerik</li>
+                        <li><i class="fas fa-check"></i>Galeri ve hizmet bölümleri</li>
+                        <li><i class="fas fa-check"></i>Domain bağlantı desteği</li>
+                        <li><i class="fas fa-check"></i>1 ay destek</li>
+                        <li><i class="fas fa-check"></i>3 revize hakkı</li>
+                    </ul><a
+                        href="https://wa.me/905050658089?text=Merhaba%2C%20Premium%20Paket%20hakk%C4%B1nda%20bilgi%20almak%20istiyorum."
+                        target="_blank" class="pkg-b pkg-b-ghost">Premium İçin Yaz</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section" id="ornekler">
+        <div class="container">
+            <div class="s-header r"><span class="s-label">Portföy</span>
+                <h2 class="s-title">Hazırlanan örnek siteler</h2>
+                <p style="font-size:13px;color:var(--text3);margin-top:8px">Demo olarak hazırlanan çalışmalar</p>
+            </div>
+            <div class="folio-grid">
+                <div class="folio r">
+                    <div class="folio-img" style="background:linear-gradient(135deg,#fefce8,#fef9c3)"><i
+                            class="fas fa-cut" style="color:#ca8a04"></i></div>
+                    <div class="folio-body"><span class="folio-t" style="background:#fef9c3;color:#854d0e">Kuaför</span>
+                        <h3>Modern Kuaför Salonu</h3>
+                        <p>Demo çalışma</p>
+                    </div>
+                </div>
+                <div class="folio r d1">
+                    <div class="folio-img" style="background:linear-gradient(135deg,#f0fdf4,#dcfce7)"><i
+                            class="fas fa-paw" style="color:#16a34a"></i></div>
+                    <div class="folio-body"><span class="folio-t"
+                            style="background:#dcfce7;color:#166534">Veteriner</span>
+                        <h3>Veteriner Kliniği</h3>
+                        <p>Demo çalışma</p>
+                    </div>
+                </div>
+                <div class="folio r d2">
+                    <div class="folio-img" style="background:linear-gradient(135deg,#fff7ed,#fed7aa)"><i
+                            class="fas fa-mug-hot" style="color:#c2410c"></i></div>
+                    <div class="folio-body"><span class="folio-t" style="background:#ffedd5;color:#9a3412">Kafe</span>
+                        <h3>Butik Kafe</h3>
+                        <p>Demo çalışma</p>
+                    </div>
+                </div>
+                <div class="folio r">
+                    <div class="folio-img" style="background:linear-gradient(135deg,#f0f9ff,#e0f2fe)"><i
+                            class="fas fa-tooth" style="color:#0284c7"></i></div>
+                    <div class="folio-body"><span class="folio-t" style="background:#e0f2fe;color:#075985">Diş
+                            Kliniği</span>
+                        <h3>Diş Polikliniği</h3>
+                        <p>Demo çalışma</p>
+                    </div>
+                </div>
+                <div class="folio r d1">
+                    <div class="folio-img" style="background:linear-gradient(135deg,#f5f3ff,#ede9fe)"><i
+                            class="fas fa-house" style="color:#7c3aed"></i></div>
+                    <div class="folio-body"><span class="folio-t" style="background:#ede9fe;color:#5b21b6">Emlak</span>
+                        <h3>Emlak Danışmanlığı</h3>
+                        <p>Demo çalışma</p>
+                    </div>
+                </div>
+                <div class="folio r d2">
+                    <div class="folio-img" style="background:linear-gradient(135deg,#f8fafc,#e2e8f0)"><i
+                            class="fas fa-car" style="color:#475569"></i></div>
+                    <div class="folio-body"><span class="folio-t" style="background:#f1f5f9;color:#334155">Oto
+                            Servis</span>
+                        <h3>Oto Servis & Bakım</h3>
+                        <p>Demo çalışma</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section section-alt" id="hakkimda">
+        <div class="container">
+            <div class="about r">
+                <div class="about-av"><span>MW</span></div>
+                <h2>Merhaba, ben Abdulmuin</h2>
+                <p>Kastamonu Üniversitesi Bilgisayar Mühendisliği öğrencisiyim. Kastamonu'daki işletmeler için sade,
+                    hızlı ve modern web siteleri hazırlıyorum. Amacım küçük ve orta ölçekli işletmelerin internette daha
+                    profesyonel görünmesini sağlamak.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="section" id="sss">
+        <div class="container">
+            <div class="s-header r"><span class="s-label">SSS</span>
+                <h2 class="s-title">Sıkça sorulan sorular</h2>
+            </div>
+            <div class="faq-list">
+                <div class="faq-i r"><button class="faq-q" onclick="faq(this)">Web sitesi ne kadar sürede hazırlanır?<i
+                            class="fas fa-plus"></i></button>
+                    <div class="faq-a">
+                        <p>Genellikle 3–5 iş günü içerisinde web siteniz hazır hale gelir.</p>
+                    </div>
+                </div>
+                <div class="faq-i r"><button class="faq-q" onclick="faq(this)">Mobil uyumlu oluyor mu?<i
+                            class="fas fa-plus"></i></button>
+                    <div class="faq-a">
+                        <p>Evet, tüm siteler mobil öncelikli olarak tasarlanır. Her cihazdan sorunsuz görüntülenir.</p>
+                    </div>
+                </div>
+                <div class="faq-i r"><button class="faq-q" onclick="faq(this)">Kendi domainim olabilir mi?<i
+                            class="fas fa-plus"></i></button>
+                    <div class="faq-a">
+                        <p>Evet, .com veya .com.tr uzantılı domain alabilirsiniz. Domain desteği premium paketlerde
+                            dahildir.</p>
+                    </div>
+                </div>
+                <div class="faq-i r"><button class="faq-q" onclick="faq(this)">Sonradan düzenleme yapılabilir mi?<i
+                            class="fas fa-plus"></i></button>
+                    <div class="faq-a">
+                        <p>Elbette. Pakete göre ücretsiz revize hakkınız var. Sonrasında uygun fiyatlı destek
+                            sağlıyorum.</p>
+                    </div>
+                </div>
+                <div class="faq-i r"><button class="faq-q" onclick="faq(this)">Örnek site görebilir miyim?<i
+                            class="fas fa-plus"></i></button>
+                    <div class="faq-a">
+                        <p>Bu sayfadaki Portföy bölümünden demo çalışmalarımı inceleyebilirsiniz.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta" id="iletisim">
+        <div class="container r">
+            <h2>İşletmeniz için web sitesi hazırlayalım</h2>
+            <p>Örnek çalışmalarımı inceleyebilir veya WhatsApp üzerinden bana yazabilirsiniz.</p>
+            <a href="https://wa.me/905050658089?text=Merhaba%2C%20web%20sitesi%20hakk%C4%B1nda%20bilgi%20almak%20istiyorum."
+                target="_blank" class="btn btn-green"><i class="fab fa-whatsapp"></i>WhatsApp'tan Yaz</a>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-inner">
+                <div class="f-logo">
+                    <div class="f-mark">MW</div>MuinWeb
+                </div>
+                <div class="f-links"><a href="#anasayfa">Ana Sayfa</a><a href="#paketler">Paketler</a><a
+                        href="#ornekler">Portföy</a><a href="#iletisim">İletişim</a></div>
+            </div>
+            <div class="f-copy">© 2025 MuinWeb. Tüm hakları saklıdır.</div>
+        </div>
+    </footer>
+
+    <div class="wa-float">
+        <div class="wa-bub" id="waBub">Size nasıl yardımcı olabilirim? 👋</div>
+        <a href="https://wa.me/905050658089?text=Merhaba%2C%20bilgi%20almak%20istiyorum." target="_blank" class="wa-btn"
+            id="waBtn" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+    </div>
+
+    <script>
+        const mb = document.getElementById('mobBtn'), mm = document.getElementById('mobMenu');
+        mb.onclick = () => { mm.classList.toggle('open'); const i = mb.querySelector('i'); i.classList.toggle('fa-bars'); i.classList.toggle('fa-xmark') };
+        document.querySelectorAll('.ml').forEach(l => l.onclick = () => { mm.classList.remove('open'); mb.querySelector('i').className = 'fas fa-bars' });
+        window.addEventListener('scroll', () => document.getElementById('nav').classList.toggle('scrolled', scrollY > 10));
+        function faq(b) { const a = b.nextElementSibling; const o = a.style.maxHeight; document.querySelectorAll('.faq-a').forEach(x => x.style.maxHeight = null); document.querySelectorAll('.faq-q').forEach(x => x.classList.remove('act')); if (!o) { a.style.maxHeight = a.scrollHeight + 'px'; b.classList.add('act') } }
+        const obs = new IntersectionObserver(e => e.forEach(x => { if (x.isIntersecting) { x.target.classList.add('v'); obs.unobserve(x.target) } }), { threshold: .08, rootMargin: '0px 0px -20px' });
+        document.querySelectorAll('.r').forEach(el => obs.observe(el));
+        const wb = document.getElementById('waBub'), wbt = document.getElementById('waBtn');
+        setTimeout(() => { wb.classList.add('show'); setTimeout(() => wb.classList.remove('show'), 4000) }, 2500);
+        wbt.onmouseenter = () => wb.classList.add('show'); wbt.onmouseleave = () => setTimeout(() => wb.classList.remove('show'), 1500);
+    </script>
+</body>
+
+</html>

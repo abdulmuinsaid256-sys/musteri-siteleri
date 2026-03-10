@@ -1183,6 +1183,7 @@
                 <option value="fiyat-soruldu">💬 Fiyat Soruldu</option>
                 <option value="has-phone">📞 Telefon Var</option>
                 <option value="has-photo">📷 Fotoğraf Var</option>
+                <option value="hedef-kitle">🎯 Hedef Kitle (Websiz + Tel)</option>
             </select>
             <div class="view-btns">
                 <button class="view-btn active" data-view="grid" title="Kart"><i class="fas fa-th-large"></i></button>
@@ -1376,13 +1377,47 @@
                 if (status === 'fiyat-soruldu' && i.durum !== 'Fiyat Soruldu') return false;
                 if (status === 'has-phone' && (!i.telefon || i.telefon === '-')) return false;
                 if (status === 'has-photo' && i.fotograf_sayisi === 0) return false;
+                if (status === 'hedef-kitle' && (i.site_hazir || !i.telefon || i.telefon === '-')) return false;
                 return true;
             });
             $('resultCount').textContent = filteredData.length + ' / ' + DATA.isletmeler.length + ' isletme';
             renderGrid();
         }
 
-        function getInitials(n) { return n.split(/\s+/).slice(0, 2).map(w => w[0]).join('').toUpperCase(); }
+        // ============ WHATSAPP AUTOMATION ============
+        function sendWhatsApp(id, e) {
+            e.stopPropagation(); // Karta tiklamayi engelle
+            const i = DATA.isletmeler.find(x => x.id === id);
+            if (!i || !i.telefon || i.telefon === '-') return;
+
+            // Mesaj sablonu
+            const text = `Merhaba ${i.isletme_adi} yetkilisi. İşletmenizin Google'da daha profesyonel görünmesini sağlayan modern bir tanıtım sitesi hazırlıyorum. İncelemek ister misiniz? Referans: kastamonuesnaf.com.tr/tanitim-sitesi/index.html`;
+
+            const tel = i.telefon.replace(/\D/g, '');
+            let phoneNo = tel;
+            if (phoneNo.length === 10) phoneNo = '90' + phoneNo;
+            else if (phoneNo.startsWith('0')) phoneNo = '90' + phoneNo.substring(1);
+
+            const url = `https://wa.me/${phoneNo}?text=${encodeURIComponent(text)}`;
+            window.open(url, '_blank');
+
+            // LocalStorage durumunu guncelle ("Mesaj Gonderildi" isareti icin)
+            const msgs = JSON.parse(localStorage.getItem('wp_sent') || '{}');
+            msgs[id] = true;
+            localStorage.setItem('wp_sent', JSON.stringify(msgs));
+
+            // API Varsa kaydet
+            if (API_ACTIVE) {
+                fetch(API_URL + '/api/isletme/' + id, {
+                    method: 'PUT', headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ mesaj_durumu: 'Gonderildi', notlar: (i.notlar || '') + '\\n- WP Mesaji Gonderildi' })
+                }).catch(e => { });
+            }
+
+            filterAndRender(); // UI Guncelle
+        }
+
+        function getInitials(n) { return n.split(/\\s+/).slice(0, 2).map(w => w[0]).join('').toUpperCase(); }
 
         const avatarColors = [
             ['#ef4444', '#b91c1c'], ['#f97316', '#c2410c'], ['#f59e0b', '#b45309'],
@@ -1406,7 +1441,10 @@
             const grid = $('grid');
             if (filteredData.length === 0) { grid.innerHTML = ''; $('empty').style.display = 'block'; return; }
             $('empty').style.display = 'none';
+
+            const msgs = JSON.parse(localStorage.getItem('wp_sent') || '{}');
             const items = filteredData.slice(0, 200);
+
             grid.innerHTML = items.map(i => {
                 const colors = getAvatarColors(i.id);
                 const colorStyle = `--avatar-c1:${colors[0]}; --avatar-c2:${colors[1]}`;
@@ -1414,12 +1452,19 @@
                     ? `<div class="card-avatar"><img src="${i.fotograflar[0]}" alt="" loading="lazy" onerror="this.parentElement.className='card-avatar no-img';this.parentElement.style='${colorStyle}';this.parentElement.innerHTML='${getInitials(i.isletme_adi)}'"></div>`
                     : `<div class="card-avatar no-img" style="${colorStyle}">${getInitials(i.isletme_adi)}</div>`;
                 const cardClass = i.satildi ? 'card satildi' : i.durum === 'Takipte' ? 'card takipte' : 'card';
+
+                const isSent = msgs[i.id] || i.mesaj_durumu === 'Gonderildi';
+                const wpBadge = isSent ? '<span class="badge" style="background:#dcfce7;color:#166534;border:1px solid #bbf7d0"><i class="fas fa-check-double"></i>Gönderildi</span>' : '';
+                const wpButton = (!i.site_hazir && i.telefon && i.telefon !== '-' && !isSent)
+                    ? `<button onclick="sendWhatsApp(${i.id}, event)" style="margin-left:auto;background:var(--green);color:#fff;border:none;border-radius:6px;padding:4px 10px;font-size:11px;font-weight:700;cursor:pointer"><i class="fab fa-whatsapp"></i> WP Gönder</button>` : '';
+
                 return `<div class="${cardClass}" data-id="${i.id}">
-      <div class="card-header">${avatar}<div class="card-info"><div class="card-name" title="${i.isletme_adi}">${i.isletme_adi}</div><div class="card-category"><i class="fas fa-tag"></i>${i.kategori}</div></div></div>
+      <div class="card-header">${avatar}<div class="card-info"><div class="card-name" title="${i.isletme_adi}">${i.isletme_adi}</div><div class="card-category"><i class="fas fa-tag"></i>${i.kategori}</div></div>${wpButton}</div>
       <div class="card-badges">
         ${i.site_hazir ? '<span class="badge ready"><i class="fas fa-check"></i>Site Hazır</span>' : '<span class="badge not-ready"><i class="fas fa-times"></i>Hazır Değil</span>'}
         ${getDurumBadge(i)}
         ${i.telefon && i.telefon !== '-' ? '<span class="badge has-phone"><i class="fas fa-phone"></i>Telefon</span>' : ''}
+        ${wpBadge}
       </div>
       <div class="card-meta"><span><i class="fas fa-camera"></i>${i.fotograf_sayisi} foto</span><span><i class="fas fa-star"></i>${i.yorum_sayisi} yorum</span>${i.fiyat ? `<span><i class="fas fa-lira-sign"></i>${i.fiyat}</span>` : ''}</div>
       ${i.adres ? `<div class="card-addr"><i class="fas fa-map-marker-alt"></i> ${i.adres}</div>` : ''}
