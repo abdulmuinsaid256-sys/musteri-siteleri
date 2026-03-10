@@ -802,12 +802,8 @@ Beğenirseniz devam ederiz, beğenmezseniz hiçbir ücret yok.
 Detaylı bilgi için:
 🌐 https://kastamonuesnaf.com.tr`;
 
-            const url = `https://wa.me/${phoneNo}?text=${encodeURIComponent(msgTemplate)}`;
-            window.open(url, '_blank');
-
-            if (!sentLog[i.id]) {
-                toggleSentStatus(i.id, false);
-            }
+            const url = `https://web.whatsapp.com/send?phone=${phoneNo}&text=${encodeURIComponent(msgTemplate)}`;
+            window.open(url, '_blank', 'noopener,noreferrer');
         }
 
         function toggleSentStatus(id) {

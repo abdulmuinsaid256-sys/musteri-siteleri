@@ -419,7 +419,8 @@
 
         /* Hero Visual */
         .hero-visual {
-            position: relative
+            position: relative;
+            text-align: left
         }
 
         .hero-mockup {
@@ -492,6 +493,11 @@
             margin-bottom: 18px
         }
 
+        .mock-copy {
+            flex: 1;
+            min-width: 0
+        }
+
         .mock-pill {
             display: inline-flex;
             align-items: center;
@@ -523,29 +529,53 @@
         }
 
         .mock-side {
-            display: flex;
-            flex-direction: column;
+            display: grid;
+            grid-template-columns: 1fr;
             gap: 10px;
-            min-width: 138px
+            min-width: 152px
         }
 
         .mock-mini {
-            padding: 12px;
+            padding: 14px;
             border-radius: 16px;
-            background: #fff;
+            background: linear-gradient(180deg, #fff 0%, #f8fafc 100%);
             border: 1px solid rgba(226, 232, 240, .9);
-            box-shadow: 0 14px 24px rgba(15, 23, 42, .06)
+            box-shadow: 0 14px 24px rgba(15, 23, 42, .06);
+            position: relative;
+            overflow: hidden
+        }
+
+        .mock-mini::after {
+            content: '';
+            position: absolute;
+            left: 14px;
+            right: 14px;
+            bottom: 0;
+            height: 3px;
+            border-radius: 999px;
+            background: linear-gradient(90deg, rgba(14, 165, 233, .9) 0%, rgba(22, 163, 74, .9) 100%)
+        }
+
+        .mock-mini-kicker {
+            display: block;
+            margin-bottom: 8px;
+            font-size: 10px;
+            font-weight: 800;
+            letter-spacing: .12em;
+            text-transform: uppercase;
+            color: var(--text3)
         }
 
         .mock-mini strong {
             display: block;
             font-size: 15px;
             color: var(--text);
-            margin-bottom: 2px
+            margin-bottom: 4px
         }
 
         .mock-mini span {
             font-size: 11px;
+            line-height: 1.5;
             color: var(--text3)
         }
 
@@ -564,8 +594,15 @@
             padding: 14px;
             display: flex;
             flex-direction: column;
-            justify-content: space-between;
+            gap: 12px;
             box-shadow: 0 12px 20px rgba(15, 23, 42, .05)
+        }
+
+        .col-top {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 10px
         }
 
         .col-line {
@@ -575,8 +612,27 @@
             background: var(--accent-soft)
         }
 
+        .col-icon {
+            width: 34px;
+            height: 34px;
+            border-radius: 12px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(14, 165, 233, .1);
+            color: var(--accent);
+            box-shadow: 0 10px 18px rgba(14, 165, 233, .1)
+        }
+
+        .col-copy {
+            display: flex;
+            flex-direction: column;
+            gap: 6px
+        }
+
         .col-c strong {
-            font-size: 12px;
+            display: block;
+            font-size: 13px;
             color: var(--text)
         }
 
@@ -599,9 +655,11 @@
             display: flex;
             align-items: center;
             justify-content: center;
+            gap: 8px;
             font-size: 12px;
             font-weight: 700;
-            color: #fff
+            color: #fff;
+            box-shadow: 0 16px 24px rgba(15, 23, 42, .08)
         }
 
         .mock-body .mini-btn:first-child {
@@ -2042,20 +2100,113 @@
 
             .mock-head {
                 flex-direction: column;
-                align-items: stretch
+                align-items: stretch;
+                gap: 14px;
+                margin-bottom: 14px
             }
 
             .mock-side {
-                flex-direction: row;
+                grid-template-columns: repeat(2, minmax(0, 1fr));
                 min-width: 0
             }
 
             .mock-body .cols {
-                grid-template-columns: 1fr
+                grid-template-columns: 1fr;
+                gap: 10px
             }
 
             .mock-body .btn-row {
-                flex-direction: column
+                display: grid;
+                grid-template-columns: repeat(2, minmax(0, 1fr))
+            }
+
+            .hero-visual {
+                max-width: 100%;
+                text-align: left
+            }
+
+            .hero-mockup {
+                padding: 14px;
+                border-radius: 24px
+            }
+
+            .mock-bar {
+                margin-bottom: 12px;
+                padding-bottom: 12px
+            }
+
+            .mock-url {
+                min-width: 0;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                white-space: nowrap
+            }
+
+            .mock-body {
+                padding: 18px;
+                min-height: auto;
+                border-radius: 20px
+            }
+
+            .mock-pill {
+                align-self: flex-start;
+                margin-bottom: 8px;
+                font-size: 11px;
+                padding: 7px 10px
+            }
+
+            .mock-title {
+                font-size: 22px;
+                margin-bottom: 8px
+            }
+
+            .mock-text {
+                max-width: none;
+                font-size: 12.5px;
+                line-height: 1.7
+            }
+
+            .mock-mini {
+                min-height: 0;
+                padding: 13px 12px
+            }
+
+            .mock-mini-kicker {
+                margin-bottom: 6px;
+                font-size: 9px
+            }
+
+            .mock-mini strong {
+                font-size: 14px
+            }
+
+            .mock-mini span {
+                font-size: 10px
+            }
+
+            .mock-body .col-c {
+                min-height: 0;
+                padding: 13px
+            }
+
+            .col-icon {
+                width: 32px;
+                height: 32px;
+                border-radius: 10px
+            }
+
+            .col-c strong {
+                font-size: 12.5px
+            }
+
+            .col-c span {
+                font-size: 10.5px
+            }
+
+            .mock-body .mini-btn {
+                min-height: 50px;
+                padding: 0 10px;
+                font-size: 11px
             }
 
             .section {
@@ -2141,6 +2292,15 @@
                 align-items: center;
                 gap: 10px
             }
+
+        }
+
+        @media(max-width:390px) {
+
+            .mock-side,
+            .mock-body .btn-row {
+                grid-template-columns: 1fr
+            }
         }
     </style>
 </head>
@@ -2196,38 +2356,55 @@
                                 class="mock-dot"></span><span class="mock-url">isletmeniz.com.tr</span></div>
                         <div class="mock-body">
                             <div class="mock-head">
-                                <div>
+                                <div class="mock-copy">
                                     <span class="mock-pill"><i class="fas fa-star"></i>İşletmeye Özel Tasarım</span>
                                     <h3 class="mock-title">Sade ama güven veren bir ana sayfa düzeni</h3>
                                     <p class="mock-text">Hero, hizmetler, çalışma saatleri, harita ve iletişim
                                         bölümleri mobilde rahat görüntülenecek şekilde hazırlanır.</p>
                                 </div>
                                 <div class="mock-side">
-                                    <div class="mock-mini"><strong>3-5 Gün</strong><span>ortalama teslim planı</span>
-                                    </div>
-                                    <div class="mock-mini"><strong>Tek Tık</strong><span>WhatsApp iletişimi</span></div>
+                                    <div class="mock-mini"><small class="mock-mini-kicker">Teslim</small><strong>3-5
+                                            Gün</strong><span>ortalama teslim planı</span></div>
+                                    <div class="mock-mini"><small class="mock-mini-kicker">İletişim</small><strong>Tek
+                                            Tık</strong><span>WhatsApp
+                                            iletişimi</span></div>
                                 </div>
                             </div>
                             <div class="cols">
                                 <div class="col-c">
-                                    <div class="col-line"></div>
-                                    <strong>Hizmetler</strong>
-                                    <span>İşletmenizin sunduğu hizmetler net ve düzenli görünür.</span>
+                                    <div class="col-top">
+                                        <div class="col-line"></div>
+                                        <div class="col-icon"><i class="fas fa-briefcase"></i></div>
+                                    </div>
+                                    <div class="col-copy">
+                                        <strong>Hizmetler</strong>
+                                        <span>İşletmenizin sunduğu hizmetler net ve düzenli görünür.</span>
+                                    </div>
                                 </div>
                                 <div class="col-c">
-                                    <div class="col-line"></div>
-                                    <strong>Yorumlar</strong>
-                                    <span>Müşteri güvenini artıran referans alanları eklenir.</span>
+                                    <div class="col-top">
+                                        <div class="col-line"></div>
+                                        <div class="col-icon"><i class="fas fa-comment-dots"></i></div>
+                                    </div>
+                                    <div class="col-copy">
+                                        <strong>Yorumlar</strong>
+                                        <span>Müşteri güvenini artıran referans alanları eklenir.</span>
+                                    </div>
                                 </div>
                                 <div class="col-c">
-                                    <div class="col-line"></div>
-                                    <strong>İletişim</strong>
-                                    <span>Telefon, harita ve WhatsApp tek ekranda bulunur.</span>
+                                    <div class="col-top">
+                                        <div class="col-line"></div>
+                                        <div class="col-icon"><i class="fas fa-phone-volume"></i></div>
+                                    </div>
+                                    <div class="col-copy">
+                                        <strong>İletişim</strong>
+                                        <span>Telefon, harita ve WhatsApp tek ekranda bulunur.</span>
+                                    </div>
                                 </div>
                             </div>
                             <div class="btn-row">
-                                <div class="mini-btn">WhatsApp CTA</div>
-                                <div class="mini-btn">Teklif Al</div>
+                                <div class="mini-btn"><i class="fab fa-whatsapp"></i>WhatsApp</div>
+                                <div class="mini-btn"><i class="fas fa-paper-plane"></i>Teklif Al</div>
                             </div>
                         </div>
                     </div>
@@ -2368,7 +2545,7 @@
                         <li><i class="fas fa-check"></i>Standart renk & tasarım</li>
                         <li><i class="fas fa-check"></i>Kurumsal Kimlik</li>
                         <li><i class="fas fa-check"></i>SSL Sertifikası</li>
-                        <li><i class="fas fa-check"></i>1 Yıllık Sunucu (Hosting) Hizmeti</li>
+                        <li><i class="fas fa-check"></i>Limitsiz Sunucu (Hosting) Hizmeti</li>
                         <li><i class="fas fa-check"></i>1 Yıllık Alan Adı (.com/.com.tr)</li>
                         <li><i class="fas fa-check"></i>1 adet revizyon hakkı</li>
                     </ul><a
@@ -2392,7 +2569,7 @@
                         <li><i class="fas fa-check"></i>İşletmeye özel renk paleti</li>
                         <li><i class="fas fa-check"></i>Kurumsal Kimlik</li>
                         <li><i class="fas fa-check"></i>SSL Sertifikası</li>
-                        <li><i class="fas fa-check"></i>1 Yıllık Sunucu (Hosting) Hizmeti</li>
+                        <li><i class="fas fa-check"></i>Limitsiz Sunucu (Hosting) Hizmeti</li>
                         <li><i class="fas fa-check"></i>1 Yıllık Alan Adı (.com/.com.tr)</li>
                         <li><i class="fas fa-check"></i>Kurumsal E-Posta Hesabı</li>
                         <li><i class="fas fa-check"></i>2 adet revizyon hakkı</li>
@@ -2414,7 +2591,7 @@
                         <li><i class="fas fa-check"></i>Özel formlar & Rezervasyon</li>
                         <li><i class="fas fa-check"></i>Kurumsal Kimlik</li>
                         <li><i class="fas fa-check"></i>SSL Sertifikası</li>
-                        <li><i class="fas fa-check"></i>1 Yıllık Sunucu (Hosting) Hizmeti</li>
+                        <li><i class="fas fa-check"></i>Limitsiz Sunucu (Hosting) Hizmeti</li>
                         <li><i class="fas fa-check"></i>1 Yıllık Alan Adı (.com/.com.tr)</li>
                         <li><i class="fas fa-check"></i>Kurumsal E-Posta Hesabı</li>
                         <li><i class="fas fa-check"></i>1 Yıllık teknik bakım & destek</li>
