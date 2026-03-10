@@ -803,7 +803,15 @@
             document.getElementById('dPhotos').textContent = currentBusiness.fotograf_sayisi || '0';
 
             // Message Template
-            const msgTemplate = `Merhaba *${currentBusiness.isletme_adi}* yetkilisi.\n\nİşletmenizin Google'da çok daha profesyonel görünmesini ve müşteri kazanmasını sağlayan modern bir tanıtım sitesi hazırlıyorum. İncelemek ister misiniz?\n\nReferans Çalışmamız:\n👉 https://kastamonuesnaf.com.tr/tanitim-sitesi/index.html`;
+            const msgTemplate = `Merhaba, ben Abdulmuin.
+Kastamonu'daki işletmeler için modern web siteleri hazırlıyorum.
+
+*${currentBusiness.isletme_adi}* İşletmenizin Google'da daha profesyonel görünmesi ve müşterilerinizin size daha kolay ulaşabilmesi için sade ve mobil uyumlu tanıtım siteleri yapıyorum.
+
+İsterseniz size örnek bir çalışma hazırlayıp gönderebilirim.
+
+Örnek siteler:
+👉 https://kastamonuesnaf.com.tr`;
             document.getElementById('dMessagePreview').innerText = msgTemplate;
 
             // Sent button state
