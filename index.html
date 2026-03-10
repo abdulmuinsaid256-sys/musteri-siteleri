@@ -1155,6 +1155,14 @@
         }
 
         @media(max-width:1024px) {
+            .nav-inner {
+                justify-content: center;
+                position: relative;
+            }
+
+            .nav-logo img {
+                height: 44px !important;
+            }
 
             .nav-links,
             .nav-cta {
@@ -1162,7 +1170,11 @@
             }
 
             .mob-btn {
-                display: block
+                display: block;
+                position: absolute;
+                right: 24px;
+                top: 50%;
+                transform: translateY(-50%);
             }
 
             .hero-grid {
@@ -1249,7 +1261,7 @@
     <nav class="nav" id="nav">
         <div class="nav-inner">
             <a href="#" class="nav-logo">
-                <img src="muinweb_logo_1.png" alt="MuinWeb" style="height: 48px; width: auto; display: block;">
+                <img src="muinweblogo.webp" alt="MuinWeb" style="height: 64px; width: auto; display: block;">
             </a>
             <div class="nav-links"><a href="#hizmetler">Hizmetler</a><a href="#nasil">Süreç</a><a
                     href="#paketler">Paketler</a><!-- <a href="#ornekler">Portföy</a> --><a
@@ -1558,7 +1570,7 @@
         <div class="container">
             <div class="footer-inner">
                 <div class="f-logo">
-                    <img src="muinweb_logo_1.png" alt="MuinWeb" style="height: 32px; width: auto; opacity: 0.9;">
+                    <img src="muinweblogo.webp" alt="MuinWeb" style="height: 40px; width: auto; opacity: 0.9;">
                 </div>
                 <div class="f-links"><a href="#anasayfa">Ana Sayfa</a><a href="#paketler">Paketler</a><!-- <a
                         href="#ornekler">Portföy</a> --><a href="#iletisim">İletişim</a></div>
